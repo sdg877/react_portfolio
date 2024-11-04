@@ -19,7 +19,6 @@ const App = () => {
 
   return (
     <div>
-      {/* Conditionally render the NavBar only if the current path is not the home path */}
       {location.pathname !== '/' && <NavBar />}
 
       <Routes>
