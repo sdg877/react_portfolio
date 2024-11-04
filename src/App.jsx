@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar.jsx";
 import AboutMe from "./pages/AboutMe.jsx";
 import Home from "./pages/Home.jsx";
 import Education from "./pages/Education.jsx";
+import Experience from "./pages/Experience.jsx"
 import Projects from "./pages/Projects.jsx";
 import Skills from "./pages/Skills.jsx";
 import ProjectOne from "./pages/ProjectPages/ProjectOne.jsx";
@@ -19,6 +20,7 @@ import GourmetGallery from "./pages/ProjectPages/GourmetGallery.jsx";
 import Snake from "./pages/ProjectPages/Snake.jsx";
 import SpookSpotters from "./pages/ProjectPages/SpookSpotters.jsx";
 import LayOut from "./components/LayOut.jsx";
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
   const location = useLocation();
@@ -31,6 +33,7 @@ const App = () => {
 
       <Routes>
         <Route path="/about" element={<AboutMe />} />
+        <Route path="/experience" element={<Experience />} />
         <Route path="/education" element={<Education />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/projects/GourmetGallery" element={<GourmetGallery />} />
@@ -43,6 +46,8 @@ const App = () => {
         <Route path="/projects" element={<Projects />} />
         <Route path="/" element={<Home />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 };
