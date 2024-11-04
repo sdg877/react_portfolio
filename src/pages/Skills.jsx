@@ -1,8 +1,9 @@
 import React from 'react';
+import '../App.css'
 
 const Skills = () => {
   return (
-    <div>
+    <div className="info-card">
       <h3>Skills</h3>
       <div className="skill-icons">
         <i className="devicon-amazonwebservices-plain-wordmark"></i>
@@ -13,13 +14,13 @@ const Skills = () => {
         <i className="devicon-djangorest-line-wordmark"></i>
         <i className="devicon-express-original-wordmark"></i>
         <i className="devicon-git-plain-wordmark"></i>
-        <i className="devicon-github-original-wordmark colored"></i>
+        <i className="devicon-github-original"></i>
         <i className="devicon-html5-plain-wordmark"></i>
         <i className="devicon-javascript-plain"></i>
         <i className="devicon-mongodb-plain-wordmark"></i>
         <i className="devicon-mongoose-original-wordmark"></i>
         <i className="devicon-nodejs-plain-wordmark"></i>
-        <i className="devicon-oauth-plain colored"></i>
+        <i className="devicon-oauth-plain"></i>
         <i className="devicon-postgresql-plain-wordmark"></i>
         <i className="devicon-postman-plain-wordmark"></i>
         <i className="devicon-python-plain-wordmark"></i>
