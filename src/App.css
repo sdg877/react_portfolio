@@ -24,7 +24,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #bb86fc;
+  color: #A383D7;
 }
 
 .project-container {
@@ -46,6 +46,13 @@ body {
 .project-item img {
   border-radius: 8px;
   width: 100%;
+}
+
+.project-image {
+  width: 200px; 
+  height: 200px; 
+  border-radius: 8px; 
+  object-fit: cover; 
 }
 
 footer {
@@ -70,7 +77,7 @@ footer {
 }
 
 .footer-link {
-  color: #bb86fc;
+  color: #A383D7; 
   text-decoration: none;
 }
 
@@ -135,7 +142,7 @@ footer {
 
 h2 {
   font-size: 1.5rem;
-  color: #bb86fc;
+  color: #A383D7; 
 }
 
 .skill-icons {
@@ -156,3 +163,11 @@ h2 {
   transform: scale(1.1);
 }
 
+a {
+  color: #A383D7; 
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline; 
+}
