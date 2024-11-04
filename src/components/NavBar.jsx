@@ -15,15 +15,15 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <ul>
+      <div className="nav-links">
         {links
           .filter(link => link.path !== currentPath) 
           .map(link => (
-            <li key={link.path}>
-              <Link to={link.path}>{link.label}</Link>
-            </li>
+            <Link key={link.path} to={link.path} className="nav-link">
+              {link.label}
+            </Link>
           ))}
-      </ul>
+      </div>
     </nav>
   );
 };
