@@ -2,9 +2,9 @@ import React from 'react'
 
 const AboutMe = () => {
   return (
-    <div>
+    <div className="about-me-card">
     <h3>About Me</h3>
-    <p className="text-container-index"> 
+    <p> 
       An experienced administrator with a diverse background across TV, Advertising, and Publishing industries. 
       Driven by a passion for learning, I ventured into Software Engineering seeking a challenge and a fresh career direction. 
       My journey began with an access course with Open University in Maths, Science, and Technology achieving a distinction (95%) amidst the 2020 lockdown. 
