@@ -12,13 +12,14 @@ body {
 
 .navbar {
   background-color: #1e1e1e;
-  padding: 15px;
+  padding: 16px;
+  text-align: center;
 }
 
 .navbar a {
   color: #e0e0e0;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 0 20px;
   transition: color 0.3s;
 }
 
@@ -45,21 +46,6 @@ body {
 .project-item img {
   border-radius: 8px;
   width: 100%;
-}
-
-.nav-button {
-  background-color: #bb86fc;
-  color: #ffffff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  margin: 10px;
-}
-
-.nav-button:hover {
-  background-color: #3700b3;
 }
 
 footer {
@@ -151,3 +137,22 @@ h2 {
   font-size: 1.5rem;
   color: #bb86fc;
 }
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.skill-icons i {
+  font-size: 3rem;
+  margin: 10px;
+  color: #e0e0e0;
+  transition: transform 0.3s;
+}
+
+.skill-icons i:hover {
+  transform: scale(1.1);
+}
+
