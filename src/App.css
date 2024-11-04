@@ -31,7 +31,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
 }
 
 .project-item {
@@ -144,6 +143,12 @@ h2 {
   font-size: 1.5rem;
   color: #A383D7; 
 }
+
+.info-card h5 {
+  margin-bottom: 10px; /* Adjust this value as needed */
+  font-size: 1.2rem;
+}
+
 
 .skill-icons {
   display: flex;
