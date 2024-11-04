@@ -3,7 +3,7 @@ import GourmetGalleryImage from "../../Images/GourmetGallery.png"
 
 const GourmetGallery = () => {
   return (
-    <div className="text-container">
+    <div className="info-card">
       <h2>Gourmet Gallery</h2>
       <div>
         <img src={GourmetGalleryImage} alt="Gourmet Gallery" style={{ width: '200px', height: '200px' }} />

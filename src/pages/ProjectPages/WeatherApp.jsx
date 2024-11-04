@@ -3,7 +3,7 @@ import WeatherAppImage from "../../Images/WeatherApp.png";
 
 const WeatherApp = () => {
   return (
-    <div className='text-container'>
+    <div className='info-card'>
     <h2>Weather App</h2>
     <div>
     <img src={WeatherAppImage} alt="Weather App" style={{ width: '200px', height: '200px' }} />

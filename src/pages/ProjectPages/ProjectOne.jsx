@@ -3,7 +3,7 @@ import ProjectOneImage from "../../Images/ProjectOne.jpg";
 
 const ProjectOne = () => {
   return (
-    <div className='text-container'>
+    <div className='info-card'>
     <h2>Confidential MERN Stack Project</h2>
     <div>
     <img src={ProjectOneImage} alt="Project One" style={{ width: '200px', height: '200px' }} />

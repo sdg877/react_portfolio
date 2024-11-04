@@ -3,7 +3,7 @@ import SnakeImage from '../../Images/Snake.png'
 
 const Snake = () => {
   return (
-    <div className='text-container'>
+    <div className='info-card'>
     <h2>Unit 1 Project - Snake</h2>
     <div>
     <img src={SnakeImage} alt="Snake" style={{ width: '200px', height: '200px' }} />

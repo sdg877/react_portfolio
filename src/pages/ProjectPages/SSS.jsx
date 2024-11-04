@@ -3,7 +3,7 @@ import SSSImage from '../../Images/SSS.png';
 
 const SSS = () => {
   return (
-    <div className='text-container'>
+    <div className='info-card'>
     <h2>Unit 4 Project - Sustainable Swap Shop</h2>
     <div>
     <img src={SSSImage} alt="Sustainable Swap Shop" style={{ width: '200px', height: '200px' }} />

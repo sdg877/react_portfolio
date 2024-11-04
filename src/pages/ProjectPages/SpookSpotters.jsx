@@ -3,7 +3,7 @@ import SpookSpottersImage from "../../Images/SpookSpotters.png";
 
 const SpookSpotters = () => {
   return (
-    <div className='text-container'>
+    <div className='info-card'>
     <h2>Unit 2 Project - UK Spook Spotters</h2>
     <div>
     <img src={SpookSpottersImage} alt="SpookSpotters" style={{ width: '200px', height: '200px' }} />

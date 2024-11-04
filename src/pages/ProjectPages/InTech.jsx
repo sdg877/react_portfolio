@@ -3,7 +3,7 @@ import InTechImage from "../../Images/InTech.png"
 
 const InTech = () => {
   return (
-    <div className='text-container'>
+    <div className='info-card'>
     <h2>Unit 3 Project - inTech Jobs</h2>
     <div>
         <img src={InTechImage} alt="inTech" style={{ width: '200px', height: '200px' }} />
