@@ -1,7 +1,7 @@
 body {
   background-color: #121212;
   color: #e0e0e0;
-  font-family: 'Electrolize', sans-serif;
+  font-family: "Electrolize", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -34,7 +34,7 @@ body {
 }
 
 .project-item {
-  background-color: #1e1e1e; 
+  background-color: #1e1e1e;
   border-radius: 8px;
   margin: 15px;
   padding: 10px;
@@ -48,14 +48,14 @@ body {
 }
 
 .nav-button {
-  background-color: #bb86fc; 
+  background-color: #bb86fc;
   color: #ffffff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
-  margin: 10px; 
+  margin: 10px;
 }
 
 .nav-button:hover {
@@ -69,24 +69,31 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+  text-align: center;
 }
 
-.footer-container {
-  display: flex;
-  justify-content: space-between; 
-  margin-bottom: 10px; 
+.footer-heading {
+  font-size: 0.9rem;
+  margin: 0;
 }
 
-.footer-contact, .footer-social {
-  flex: 1; 
+.footer-contact p,
+.footer-social p {
+  font-size: 0.8rem;
+  margin: 5px 0;
 }
 
-.footer-bottom {
-  text-align: center; 
+.footer-link {
+  color: #bb86fc;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
 }
 
 .footer-text {
-  font-size: 0.8rem; 
+  font-size: 0.8rem;
   line-height: 1.5;
 }
 
@@ -124,23 +131,23 @@ footer {
 }
 
 .layout {
-  text-align: center; 
-  margin: 20px; 
+  text-align: center;
+  margin: 20px;
 }
 
 .profile-image {
-  width: 150px; 
-  height: auto; 
-  border-radius: 50%; 
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .layout-title {
-  font-size: 2rem; 
-  margin: 10px 0;  
+  font-size: 2rem;
+  margin: 10px 0;
 }
 
 h2 {
-  font-size: 1.5rem; 
-  color: #bb86fc; 
+  font-size: 1.5rem;
+  color: #bb86fc;
 }
