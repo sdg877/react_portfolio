@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutMe = () => {
   return (
-    <div className="about-me-card">
+    <div className="info-card">
     <h3>About Me</h3>
     <p> 
       An experienced administrator with a diverse background across TV, Advertising, and Publishing industries. 
@@ -22,13 +22,6 @@ const AboutMe = () => {
     <div>
       Some of the countries I have visited: 
       <div className="flags">🇧🇦🇧🇪🇧🇬🇨🇦🇨🇺🇭🇷🇪🇬🇪🇸🇫🇯🇫🇷🇫🇴🇬🇷🇭🇺🇮🇪🇮🇹🇳🇱🇳🇿🇵🇱🇵🇹🇩🇰🇹🇷🇺🇸🇺🇦🇲🇦</div>
-    </div>
-    <div>
-      <p className="contact"><strong>Contact Me</strong></p>
-      <div style={{ marginBottom: '20px' }}>
-        <a className="nav-button" href="mailto:sdrakegill@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
-        <a className="nav-button" href="https://www.linkedin.com/in/sdrakegill/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
     </div>
   </div>
 );
