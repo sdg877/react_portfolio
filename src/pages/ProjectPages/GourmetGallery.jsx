@@ -7,7 +7,7 @@ const GourmetGallery = () => {
       <h2>Gourmet Gallery</h2>
       <div>
         <img src={GourmetGalleryImage} alt="Gourmet Gallery" style={{ width: '200px', height: '200px' }} />
-        <br /><br />
+        <br />
         <p>
           This solo project was developed using the MERN stack and took approximately 45 hours to complete. It incorporates an
           external API and authentication system, enabling users to save their favorite recipes.

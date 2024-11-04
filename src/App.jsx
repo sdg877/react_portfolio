@@ -1,5 +1,6 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from './components/NavBar.jsx';
 import AboutMe from './Pages/AboutMe.jsx';
 import Education from './Pages/Education.jsx';
 import Home from './Pages/Home.jsx';
@@ -18,6 +19,10 @@ function App() {
   return (
     <div>
       <Router>
+        <div>
+
+        <NavBar />
+
         <Routes>
           <Route path="/about" element={<AboutMe />} />
           <Route path="/education" element={<Education />} />
@@ -34,6 +39,7 @@ function App() {
 
           <Route path="/" element={<Home />} />
         </Routes>
+        </div>
       </Router>
     </div>
   );
