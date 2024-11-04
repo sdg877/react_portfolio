@@ -34,11 +34,11 @@ body {
 }
 
 .project-item {
-  background-color: #1e1e1e; /* Dark background for project items */
+  background-color: #1e1e1e;
   border-radius: 8px;
   margin: 15px;
   padding: 10px;
-  width: 220px; /* Adjust as needed */
+  width: 220px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -47,10 +47,9 @@ body {
   width: 100%;
 }
 
-/* Button styles */
 .nav-button {
-  background-color: #bb86fc; /* Accent color for buttons */
-  color: #ffffff; /* White text for buttons */
+  background-color: #bb86fc;
+  color: #ffffff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -69,4 +68,37 @@ footer {
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+.about-me-card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.about-me-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.about-me-card p {
+  line-height: 1.6;
+}
+
+.flags {
+  font-size: 1.5rem;
+  margin-top: 5px;
+}
+
+.contact-links {
+  margin-top: 20px;
+}
+
+.contact-links a {
+  margin-right: 10px;
 }
