@@ -10,7 +10,7 @@ import SpookSpottersImage from '../Images/SpookSpotters.png';
 
 const Projects = () => {
   return (
-    <div className="text-container">
+    <div className="info-card">
       <h2>Projects</h2>
       <h5>Click on an image for more info.</h5>
       <div className="project-container">
