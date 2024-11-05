@@ -86,43 +86,30 @@ body {
 footer {
   background-color: #1e1e1e;
   color: #e0e0e0;
-  padding: 20px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+  padding: 15px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
-  flex-wrap: wrap;
-}
-
-/* Footer Text Styles */
-.footer-heading {
-  font-size: 1rem;
-  margin: 0;
-}
-
-.footer-contact p,
-.footer-social p {
   font-size: 0.9rem;
-  margin: 5px 0;
 }
 
+/* Footer Links and Sections */
 .footer-link {
   color: #a383d7;
   text-decoration: none;
+  margin: 5px 0;
 }
 
 .footer-link:hover {
   text-decoration: underline;
 }
 
-.footer-text {
-  font-size: 0.9rem;
-  line-height: 1.5;
+/* Optional: Spacing between sections */
+.footer-section {
+  margin: 10px 0;
 }
 
 .info-card {
@@ -200,9 +187,10 @@ footer {
 
 /* Profile Image */
 .profile-image {
-  width: 150px;
-  height: auto;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
+  object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -228,18 +216,48 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 .skill-icons i {
+  position: relative;
   font-size: 3rem;
-  margin: 10px;
+  margin: 19px;
   color: #e0e0e0;
   transition: transform 0.3s;
 }
 
 .skill-icons i:hover {
   transform: scale(1.1);
+}
+
+/* Tooltip styling */
+.skill-icons i::after {
+  content: attr(title);
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s, bottom 0.3s;
+  pointer-events: none;
+  font-size: 0.85rem;
+}
+
+/* Show tooltip on hover */
+.skill-icons i:hover::after {
+  opacity: 1;
+}
+
+.skill-group-title {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  text-align: center;
 }
 
 /* General Link Styles */
