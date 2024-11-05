@@ -88,12 +88,11 @@ const Projects = () => {
       <br />
       <p>
         <a
-          className="nav-button"
           href="https://github.com/sdg877"
           target="_blank"
           rel="noopener noreferrer"
         >
-          For all projects completed, please see my GitHub Page
+          For all projects, please see my GitHub Page
         </a>
       </p>
     </div>
