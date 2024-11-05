@@ -159,7 +159,7 @@ footer {
 .flag::after {
   content: attr(title);
   position: absolute;
-  top: 100%;
+  top: 80%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.75);
@@ -316,7 +316,7 @@ a:hover {
 /* Small Devices (Mobile Phones) */
 @media (max-width: 600px) {
   .info-card {
-    max-width: 90%;
+    max-width: 80%;
     margin: 10px auto;
     padding: 15px;
   }
@@ -373,5 +373,6 @@ a:hover {
 
   .profile-image {
     width: 100px;
+    height: 100px;
   }
 }
