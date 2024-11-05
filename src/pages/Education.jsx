@@ -5,21 +5,21 @@ const Education = () => {
     <div className="info-card">
         <h3>Education</h3>
         <p>
-            27/11/23 - 01/03/24 
-            <br />General Assembly
+            <strong>11/2023 - 03/2024
+            <br />General Assembly</strong>
             <br/>Software Engineering Bootcamp
             <br/><br/>
-            2020
-            <br/>Open University
+            <strong>2020
+            <br/>Open University</strong>
             <br/>Science, Maths and Technology access course (equivalent to A-levels)   
             <br/>Passed with a distinction (95%) - A grade  
             <br/><br/>
-            2009
-            <br/>City University
+            <strong>2009
+            <br/>City University</strong>
             <br/>Human Resources Management Course (Passed)  
             <br/><br/>
-            2004-05
-            <br/>City of Westminster College
+            <strong>2004 - 2005
+            <br/>City of Westminster College</strong>
             <br/>Level 3 NVQ in Business Administration  
 
         </p>
