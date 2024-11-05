@@ -1,5 +1,6 @@
 import React from "react";
 import SnakeImage from "../../Images/Snake.png";
+import { Link } from "react-router-dom";
 
 const Snake = () => {
   return (
@@ -33,11 +34,12 @@ const Snake = () => {
         online using GitHub.
         <br />
         <br />
+        <br />
+        <br />
         <a
           href="https://sdg877.github.io/Unit1_Project_Snake/"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Play Snake!
         </a>
@@ -47,10 +49,14 @@ const Snake = () => {
           href="https://github.com/sdg877/Unit1_Project_Snake"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           GitHub Link
         </a>
+        <br />
+        <br />
+        <Link to="/projects/WeatherApp">
+          Next Project: Weather App
+        </Link>
       </div>
     </div>
   );

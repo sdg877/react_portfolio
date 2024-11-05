@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherAppImage from "../../Images/WeatherApp.png";
+import { Link } from "react-router-dom";
 
 const WeatherApp = () => {
   return (
@@ -24,11 +25,12 @@ const WeatherApp = () => {
         API.
         <br />
         <br />
+        <br />
+        <br />
         <a
           href="https://appforlocalweather.netlify.app"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Check out my site!
         </a>
@@ -38,10 +40,14 @@ const WeatherApp = () => {
           href="https://github.com/sdg877/weather_app"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           GitHub Link
         </a>
+        <br />
+        <br />
+        <Link to="/projects/ProjectOne">
+        Next Project: Project One
+      </Link>
       </div>
     </div>
   );

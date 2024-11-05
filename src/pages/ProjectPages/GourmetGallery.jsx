@@ -1,5 +1,6 @@
 import React from "react";
 import GourmetGalleryImage from "../../Images/GourmetGallery.png";
+import { Link } from "react-router-dom";
 
 const GourmetGallery = () => {
   return (
@@ -34,7 +35,6 @@ const GourmetGallery = () => {
           href="https://gourmetgallery.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Check out my site!
         </a>
@@ -44,7 +44,6 @@ const GourmetGallery = () => {
           href="https://github.com/sdg877/recipe_site_fe"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Frontend GitHub Link
         </a>
@@ -54,10 +53,14 @@ const GourmetGallery = () => {
           href="https://github.com/sdg877/recipe_site_be"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Backend GitHub Link
         </a>
+        <br />
+        <br />
+        <Link to="/projects/SSS">
+          Next Project: Sustainable Swap Shop
+        </Link>
         <br />
       </div>
     </div>

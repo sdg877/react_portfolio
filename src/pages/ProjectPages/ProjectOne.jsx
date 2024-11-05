@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectOneImage from "../../Images/ProjectOne.jpg";
+import { Link } from "react-router-dom";
 
 const ProjectOne = () => {
   return (
@@ -55,6 +56,9 @@ const ProjectOne = () => {
         communication.
         <br />
         <br />
+        <Link to="/projects/GourmetGallery">
+        Next Project: Gourmet Gallery
+      </Link>
       </div>
     </div>
   );

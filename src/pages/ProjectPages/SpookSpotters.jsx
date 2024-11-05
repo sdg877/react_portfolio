@@ -1,5 +1,6 @@
 import React from "react";
 import SpookSpottersImage from "../../Images/SpookSpotters.png";
+import { Link } from "react-router-dom";
 
 const SpookSpotters = () => {
   return (
@@ -27,32 +28,38 @@ const SpookSpotters = () => {
         for users that are not logged in, login must be done by Google Oauth.
         <br />
         <br />
+        <br />
+        <br />
         <a
           href="https://unique-salmiakki-662491.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Check out my site!
         </a>
+        <br />
         <br />
         <a
           href="https://github.com/sdg877/Project2Frontend"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Frontend GitHub Link
         </a>
+        <br />
         <br />
         <a
           href="https://github.com/sdg877/Project2Backend"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Backend GitHub Link
         </a>
+        <br />
+        <br />
+        <Link to="/projects/Snake">
+          Next Project: Snake
+        </Link>
       </div>
     </div>
   );

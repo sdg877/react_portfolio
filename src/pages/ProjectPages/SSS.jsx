@@ -1,5 +1,6 @@
 import React from "react";
 import SSSImage from "../../Images/SSS.png";
+import { Link } from "react-router-dom";
 
 const SSS = () => {
   return (
@@ -31,11 +32,12 @@ const SSS = () => {
         Django’s built-in system.
         <br />
         <br />
+        <br />
+        <br />
         <a
           href="http://sustainableswapfe-production.up.railway.app"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Check out my site!
         </a>
@@ -45,7 +47,6 @@ const SSS = () => {
           href="https://github.com/sdg877/sustainableswapfe"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Frontend GitHub Link
         </a>
@@ -55,10 +56,14 @@ const SSS = () => {
           href="https://github.com/sdg877/sustainableswapbackend"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Backend GitHub Link
         </a>
+        <br />
+        <br />
+        <Link to="/projects/inTechJobs">
+        Next Project: inTech Jobs
+      </Link>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import InTechImage from "../../Images/InTech.png";
+import { Link } from "react-router-dom";
 
 const InTech = () => {
   return (
@@ -35,11 +36,12 @@ const InTech = () => {
         we worked as a team on authorization and linking the API.
         <br />
         <br />
+        <br />
+        <br />
         <a
           href="https://intechjobs.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Check out our site!
         </a>
@@ -49,7 +51,6 @@ const InTech = () => {
           href="https://github.com/sdg877/InTechFrontend"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Frontend GitHub Link
         </a>
@@ -59,10 +60,14 @@ const InTech = () => {
           href="https://github.com/sdg877/InTechBackend"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-button"
         >
           Backend GitHub Link
         </a>
+        <br />
+        <br />
+        <Link to="/projects/SpookSpotters">
+          Next Project: Spook Spotters
+        </Link>
       </div>
     </div>
   );
