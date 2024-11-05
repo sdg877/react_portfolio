@@ -89,18 +89,25 @@ footer {
   padding: 20px;
   position: relative;
   bottom: 0;
-  width: 100%;
-  text-align: center;
+  width: 100%; 
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap; 
 }
 
+/* Footer Text Styles */
 .footer-heading {
-  font-size: 0.9rem;
+  font-size: 1rem; 
   margin: 0;
 }
 
 .footer-contact p,
 .footer-social p {
-  font-size: 0.8rem;
+  font-size: 0.9rem; 
   margin: 5px 0;
 }
 
@@ -114,20 +121,21 @@ footer {
 }
 
 .footer-text {
-  font-size: 0.8rem;
+  font-size: 0.9rem; 
   line-height: 1.5;
 }
 
-/* Info Card Styles */
+
 .info-card {
   background-color: #1e1e1e;
   color: #e0e0e0;
   border-radius: 8px;
   padding: 20px;
-  margin: 20px auto;
-  max-width: 600px;
+  width: 80%;
+  max-width: 600px; 
+  margin: 20px auto; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  text-align: center; 
 }
 
 .info-card h3 {
@@ -229,4 +237,92 @@ a:hover {
 .nav-button:hover {
   background-color: #a383d7;
   color: #121212;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Medium Devices (Tablets) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px;
+  }
+
+  .nav-link {
+    margin: 0 15px;
+  }
+
+  .project-item {
+    width: 180px; 
+  }
+
+  .footer-heading {
+    font-size: 0.9rem; 
+  }
+
+  .info-card {
+    max-width: 100%; 
+  }
+}
+
+/* Small Devices (Mobile Phones) */
+@media (max-width: 600px) {
+  .info-card {
+    max-width: 90%; 
+    margin: 10px auto;
+    padding: 15px; 
+}
+
+  .info-card h3 {
+    font-size: 1.2rem; 
+  }
+
+  .info-card p {
+    font-size: 0.9rem; 
+  }
+
+  .info-card h5 {
+    font-size: 1rem;
+  }
+
+  footer {
+    padding: 15px;
+  }
+
+  .footer-heading,
+  .footer-contact p,
+  .footer-social p,
+  .footer-text {
+    font-size: 0.75rem;
+  }
+
+  .project-container {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .project-item {
+    width: 100%;
+    margin: 10px 0; 
+  }
+
+  .nav-link {
+    margin: 0 10px; 
+  }
+
+  .layout-title {
+    font-size: 1.5rem; 
+  }
+
+  .skill-icons i {
+    font-size: 2rem; 
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .profile-image {
+    width: 100px; 
+  }
 }
