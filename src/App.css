@@ -159,7 +159,7 @@ footer {
 .flag::after {
   content: attr(title);
   position: absolute;
-  bottom: 100%;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.75);
