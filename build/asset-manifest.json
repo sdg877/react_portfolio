@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.9e1bbf4d.css",
-    "main.js": "/static/js/main.f6741e16.js",
+    "main.css": "/static/css/main.7bb5cc07.css",
+    "main.js": "/static/js/main.5ab4e7a8.js",
     "static/js/453.bb257cf5.chunk.js": "/static/js/453.bb257cf5.chunk.js",
     "static/media/ProjectOne.jpg": "/static/media/ProjectOne.c20a32871721038596a5.jpg",
     "static/media/GourmetGallery.png": "/static/media/GourmetGallery.6196b61dffc99af2c23f.png",
+    "static/media/Sylvia.jpeg": "/static/media/Sylvia.9bc3ccf927833d2a5015.jpeg",
     "static/media/SpookSpotters.png": "/static/media/SpookSpotters.a6495d5e3f28a8ccd80f.png",
     "static/media/SSS.png": "/static/media/SSS.d187340dc25b0523d9e2.png",
     "static/media/InTech.png": "/static/media/InTech.3903bd9f2e84c06b4c71.png",
-    "static/media/Sylvia.jpeg": "/static/media/Sylvia.f70fc56b12e14cde523c.jpeg",
     "static/media/WeatherApp.png": "/static/media/WeatherApp.331712c096346bb5a14e.png",
     "static/media/Snake.png": "/static/media/Snake.7c8ec04dc5a11639caec.png",
     "index.html": "/index.html",
-    "main.9e1bbf4d.css.map": "/static/css/main.9e1bbf4d.css.map",
-    "main.f6741e16.js.map": "/static/js/main.f6741e16.js.map",
+    "main.7bb5cc07.css.map": "/static/css/main.7bb5cc07.css.map",
+    "main.5ab4e7a8.js.map": "/static/js/main.5ab4e7a8.js.map",
     "453.bb257cf5.chunk.js.map": "/static/js/453.bb257cf5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e1bbf4d.css",
-    "static/js/main.f6741e16.js"
+    "static/css/main.7bb5cc07.css",
+    "static/js/main.5ab4e7a8.js"
   ]
 }
