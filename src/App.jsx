@@ -7,9 +7,8 @@ import {
 } from "react-router-dom";
 import NavBar from "./components/NavBar.jsx";
 import AboutMe from "./pages/AboutMe.jsx";
-import Home from "./pages/Home.jsx";
 import Education from "./pages/Education.jsx";
-import Experience from "./pages/Experience.jsx"
+import Experience from "./pages/Experience.jsx";
 import Projects from "./pages/Projects.jsx";
 import Skills from "./pages/Skills.jsx";
 import ProjectOne from "./pages/ProjectPages/ProjectOne.jsx";
@@ -19,6 +18,7 @@ import WeatherApp from "./pages/ProjectPages/WeatherApp.jsx";
 import GourmetGallery from "./pages/ProjectPages/GourmetGallery.jsx";
 import Snake from "./pages/ProjectPages/Snake.jsx";
 import SpookSpotters from "./pages/ProjectPages/SpookSpotters.jsx";
+import Home from "./pages/Home.jsx";
 import LayOut from "./components/LayOut.jsx";
 import Footer from "./components/Footer.jsx";
 
@@ -29,21 +29,116 @@ const App = () => {
     <div>
       {location.pathname !== "/" && <NavBar />}
 
-      <LayOut />
-
       <Routes>
-        <Route path="/about" element={<AboutMe />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/education" element={<Education />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects/GourmetGallery" element={<GourmetGallery />} />
-        <Route path="/projects/Snake" element={<Snake />} />
-        <Route path="/projects/SpookSpotters" element={<SpookSpotters />} />
-        <Route path="/projects/SSS" element={<SSS />} />
-        <Route path="/projects/WeatherApp" element={<WeatherApp />} />
-        <Route path="/projects/InTechJobs" element={<InTech />} />
-        <Route path="/projects/ProjectOne" element={<ProjectOne />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route
+          path="/about"
+          element={
+            <div>
+              <LayOut />
+              <AboutMe />
+            </div>
+          }
+        />
+        <Route
+          path="/experience"
+          element={
+            <div>
+              <LayOut />
+              <Experience />
+            </div>
+          }
+        />
+        <Route
+          path="/education"
+          element={
+            <div>
+              <LayOut />
+              <Education />
+            </div>
+          }
+        />
+        <Route
+          path="/skills"
+          element={
+            <div>
+              <LayOut />
+              <Skills />
+            </div>
+          }
+        />
+        <Route
+          path="/projects"
+          element={
+            <div>
+              <LayOut />
+              <Projects />
+            </div>
+          }
+        />
+        <Route
+          path="/projects/GourmetGallery"
+          element={
+            <div>
+              <LayOut />
+              <GourmetGallery />
+            </div>
+          }
+        />
+        <Route
+          path="/projects/Snake"
+          element={
+            <div>
+              <LayOut />
+              <Snake />
+            </div>
+          }
+        />
+        <Route
+          path="/projects/SpookSpotters"
+          element={
+            <div>
+              <LayOut />
+              <SpookSpotters />
+            </div>
+          }
+        />
+        <Route
+          path="/projects/SSS"
+          element={
+            <div>
+              <LayOut />
+              <SSS />
+            </div>
+          }
+        />
+        <Route
+          path="/projects/WeatherApp"
+          element={
+            <div>
+              <LayOut />
+              <WeatherApp />
+            </div>
+          }
+        />
+        <Route
+          path="/projects/InTechJobs"
+          element={
+            <div>
+              <LayOut />
+              <InTech />
+            </div>
+          }
+        />
+        <Route
+          path="/projects/ProjectOne"
+          element={
+            <div>
+              <LayOut />
+              <ProjectOne />
+            </div>
+          }
+        />
+
         <Route path="/" element={<Home />} />
       </Routes>
 
