@@ -1,3 +1,4 @@
+/* Body Styles */
 body {
   background-color: #121212;
   color: #e0e0e0;
@@ -6,31 +7,58 @@ body {
   padding: 0;
 }
 
+/* App Layout */
 .App {
   text-align: center;
 }
 
+/* Navbar Styles */
 .navbar {
   background-color: #1e1e1e;
   padding: 16px;
   text-align: center;
 }
 
-.navbar a {
+.nav-links {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-link {
   color: #e0e0e0;
   text-decoration: none;
   margin: 0 20px;
-  transition: color 0.3s;
+  transition: color 0.3s, transform 0.3s;
 }
 
-.navbar a:hover {
-  color: #A383D7;
+.nav-link:hover {
+  color: #a383d7;
+  transform: scale(1.1);
 }
 
+/* Home Page Styles */
+.home-container h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.home-nav {
+  margin-top: 20px;
+}
+
+.nav-links-home {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* Project Styles */
 .project-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 20px;
 }
 
 .project-item {
@@ -48,12 +76,13 @@ body {
 }
 
 .project-image {
-  width: 200px; 
-  height: 200px; 
-  border-radius: 8px; 
-  object-fit: cover; 
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
+/* Footer Styles */
 footer {
   background-color: #1e1e1e;
   color: #e0e0e0;
@@ -76,7 +105,7 @@ footer {
 }
 
 .footer-link {
-  color: #A383D7; 
+  color: #a383d7;
   text-decoration: none;
 }
 
@@ -89,6 +118,7 @@ footer {
   line-height: 1.5;
 }
 
+/* Info Card Styles */
 .info-card {
   background-color: #1e1e1e;
   color: #e0e0e0;
@@ -109,11 +139,18 @@ footer {
   line-height: 1.6;
 }
 
+.info-card h5 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+/* Flags Style */
 .flags {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-top: 5px;
 }
 
+/* Contact Links */
 .contact-links {
   margin-top: 20px;
 }
@@ -122,11 +159,7 @@ footer {
   margin-right: 10px;
 }
 
-.layout {
-  text-align: center;
-  margin: 20px;
-}
-
+/* Profile Image */
 .profile-image {
   width: 150px;
   height: auto;
@@ -134,22 +167,24 @@ footer {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Layout Styles */
+.layout {
+  text-align: center;
+  margin: 20px;
+}
+
 .layout-title {
   font-size: 2rem;
   margin: 10px 0;
 }
 
+/* Heading Styles */
 h2 {
   font-size: 1.5rem;
-  color: #A383D7; 
+  color: #a383d7;
 }
 
-.info-card h5 {
-  margin-bottom: 10px; /* Adjust this value as needed */
-  font-size: 1.2rem;
-}
-
-
+/* Skill Icons */
 .skill-icons {
   display: flex;
   flex-wrap: wrap;
@@ -168,11 +203,30 @@ h2 {
   transform: scale(1.1);
 }
 
+/* General Link Styles */
 a {
-  color: #A383D7; 
+  color: #a383d7;
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
+}
+
+/* Nav Button Styles */
+.nav-button {
+  width: 120px;
+  height: 45px;
+  background-color: transparent;
+  color: #a383d7;
+  border: 2px solid #a383d7;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #a383d7;
+  color: #121212;
 }
