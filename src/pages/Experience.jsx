@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Experience = () => {
   return (
@@ -14,8 +15,9 @@ const Experience = () => {
         <br /><br />
         An intensive twelve-week course of live coding instruction, one-on-one coaching, and projects designed to transform students into full-stack software engineers. The course is broken up into four units which involve two weeks of intensive learning followed by a project week.
         <br /><br />
-        <a href="./projects.html" className="nav-button">Skip to Projects</a>
-        <br /><br />
+        <Link to="/projects/WeatherApp">
+          View Projects
+        </Link>
       </p>
       
       <p>
@@ -54,7 +56,7 @@ const Experience = () => {
       <br />
       
       <p>
-        <a className="nav-button" href="https://www.linkedin.com/in/sdrakegill/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/sdrakegill/" target="_blank" rel="noopener noreferrer">
           For full work experience, please see my LinkedIn.
         </a>
       </p>
