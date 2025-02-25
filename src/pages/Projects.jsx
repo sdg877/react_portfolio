@@ -7,6 +7,7 @@ import SnakeImage from "../Images/Snake.png";
 import InTechImage from "../Images/InTech.png";
 import GourmetGalleryImage from "../Images/GourmetGallery.png";
 import SpookSpottersImage from "../Images/SpookSpotters.png";
+import HTJImage from "../Images/HTJ.png"
 
 const Projects = () => {
   return (
@@ -14,6 +15,16 @@ const Projects = () => {
       <h3>Projects</h3>
       <h5>Click on an image for more info.</h5>
       <div className="project-container">
+      <div className="project-item">
+          <h5>Heather Treharne Jones</h5>
+          <Link to="/projects/HTJ">
+            <img
+              src={HTJImage}
+              alt="heather Treharne Jones site"
+              className="project-image"
+            />
+          </Link>
+        </div>
         <div className="project-item">
           <h5>Weather App</h5>
           <Link to="/projects/WeatherApp">
