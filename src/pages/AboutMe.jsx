@@ -43,18 +43,17 @@ const AboutMe = () => {
         <br />
         Now, as a Junior Software Engineer, I’m eager to combine my analytical
         skills, adaptability, and years of experience as a team player to
-        contribute to a dynamic development team. 
-        <br/>
-        <br/>
-        I’m a Londoner through and
-        through—originally from West London but now happily settled in South
-        London for the past seven years. I share my home with my boyfriend and
-        two cats, who undoubtedly think they run the place. When I’m not coding,
-        I find balance through swimming (with a good sauna session to top it
-        off) and enjoy experimenting in the kitchen—anything layered is my kind
-        of dish. I’ve lived in Germany and Australia, traveled to dozens of
-        countries, and am looking forward to exploring South Korea, Japan, and
-        Mexico next.
+        contribute to a dynamic development team.
+        <br />
+        <br />
+        I’m a Londoner through and through—originally from West London but now
+        happily settled in South London for the past seven years. I share my
+        home with my boyfriend and two cats, who undoubtedly think they run the
+        place. When I’m not coding, I find balance through swimming (with a good
+        sauna session to top it off) and enjoy experimenting in the
+        kitchen—anything layered is my kind of dish. I’ve lived in Germany and
+        Australia, traveled to dozens of countries, and am looking forward to
+        exploring South Korea, Japan, and Mexico next.
       </p>
       <br />
       <div>
