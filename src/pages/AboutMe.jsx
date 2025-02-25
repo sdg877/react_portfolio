@@ -32,30 +32,29 @@ const AboutMe = () => {
     <div className="info-card">
       <h3>About Me</h3>
       <p>
-        An experienced administrator with a diverse background across TV,
-        Advertising, and Publishing industries. Driven by a passion for
-        learning, I ventured into Software Engineering seeking a challenge and a
-        fresh career direction. My journey began with an access course with Open
-        University in Maths, Science, and Technology achieving a distinction
-        (95%) amidst the 2020 lockdown. Subsequently, immersing myself in coding
-        workshops allowed me to build a passion for technology and coding.
-        Despite fracturing my dominant elbow during my Software Engineering
-        Immersive course, I pushed through showing dedication and perseverance.
-        With two decades of experience as a confident problem solver and team
-        player, I am now eager to showcase my skills in a Junior Full-Stack
-        Developer role to contribute to a dynamic team and continue my
-        professional growth.
+        With two decades of experience in administration across TV, advertising,
+        and publishing, I decided it was time to take on a new challenge. During
+        the 2020 lockdown, I enrolled in an access course in Maths, Science, and
+        Technology with the Open University, earning a distinction (95%) and
+        discovering a genuine interest in technology. Coding workshops quickly
+        followed, and my passion for problem-solving led me to complete a
+        Software Engineering Immersive course.
         <br />
         <br />
-        I'm a born and bred Londoner, originating from West London and made the
-        (traitorous) move to South London seven years ago. I live with my
-        boyfriend and two cats. I enjoy swimming as it clears my head, I love
-        finishing a session off with half an hour in the sauna. I'm passionate
-        about cooking and love trying out new foods, I'm a particular fan of
-        layered dishes. I love travelling, having visited 10s of countries and
-        lived in Germany and Australia. Although my roots are now firmly set in
-        London, the next countries on my list to visit are South Korea, Japan
-        and Mexico.
+        Now, as a Junior Software Engineer, I’m eager to combine my analytical
+        skills, adaptability, and years of experience as a team player to
+        contribute to a dynamic development team. 
+        <br/>
+        <br/>
+        I’m a Londoner through and
+        through—originally from West London but now happily settled in South
+        London for the past seven years. I share my home with my boyfriend and
+        two cats, who undoubtedly think they run the place. When I’m not coding,
+        I find balance through swimming (with a good sauna session to top it
+        off) and enjoy experimenting in the kitchen—anything layered is my kind
+        of dish. I’ve lived in Germany and Australia, traveled to dozens of
+        countries, and am looking forward to exploring South Korea, Japan, and
+        Mexico next.
       </p>
       <br />
       <div>
