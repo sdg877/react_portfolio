@@ -40,7 +40,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <p className="footer-text">
-          © 2024 Sylvia Drake-Gill. All rights reserved. Built with React.
+          © 2025 Sylvia Drake-Gill. All rights reserved. Built with React.
         </p>
       </div>
     </footer>
