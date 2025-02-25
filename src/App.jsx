@@ -14,6 +14,7 @@ import Skills from "./pages/Skills.jsx";
 import ProjectOne from "./pages/ProjectPages/ProjectOne.jsx";
 import InTech from "./pages/ProjectPages/InTech.jsx";
 import SSS from "./pages/ProjectPages/SSS.jsx";
+import HTreharneJones from "./pages/ProjectPages/HTreharneJones.jsx";
 import WeatherApp from "./pages/ProjectPages/WeatherApp.jsx";
 import GourmetGallery from "./pages/ProjectPages/GourmetGallery.jsx";
 import Snake from "./pages/ProjectPages/Snake.jsx";
@@ -117,6 +118,15 @@ const App = () => {
             <div>
               <LayOut />
               <WeatherApp />
+            </div>
+          }
+        />
+                <Route
+          path="/projects/HTJ"
+          element={
+            <div>
+              <LayOut />
+              <HTreharneJones />
             </div>
           }
         />
