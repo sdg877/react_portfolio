@@ -55,7 +55,7 @@ const HTreharneJones = () => {
         </a>
         <br />
         <br />
-        <Link to="/projects/WeatherApp">Next Project: Weather App</Link>
+        <Link to="/projects/GourmetGallery">Next Project: Gourmet Gallery</Link>
         <br />
       </div>
     </div>
