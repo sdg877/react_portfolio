@@ -15,7 +15,6 @@ import ProjectOne from "./pages/ProjectPages/ProjectOne.jsx";
 import InTech from "./pages/ProjectPages/InTech.jsx";
 import SSS from "./pages/ProjectPages/SSS.jsx";
 import HTreharneJones from "./pages/ProjectPages/HTreharneJones.jsx";
-import WeatherApp from "./pages/ProjectPages/WeatherApp.jsx";
 import GourmetGallery from "./pages/ProjectPages/GourmetGallery.jsx";
 import Snake from "./pages/ProjectPages/Snake.jsx";
 import SpookSpotters from "./pages/ProjectPages/SpookSpotters.jsx";
@@ -41,7 +40,7 @@ const App = () => {
             </div>
           }
         />
-                <Route
+        <Route
           path="/contact"
           element={
             <div>
@@ -123,15 +122,6 @@ const App = () => {
           }
         />
         <Route
-          path="/projects/WeatherApp"
-          element={
-            <div>
-              <LayOut />
-              <WeatherApp />
-            </div>
-          }
-        />
-                <Route
           path="/projects/HTJ"
           element={
             <div>
