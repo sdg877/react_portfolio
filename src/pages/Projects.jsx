@@ -26,16 +26,6 @@ const Projects = () => {
           </Link>
         </div>
         <div className="project-item">
-          <h5>Weather App</h5>
-          <Link to="/projects/WeatherApp">
-            <img
-              src={WeatherAppImage}
-              alt="Weather App"
-              className="project-image"
-            />
-          </Link>
-        </div>
-        <div className="project-item">
           <h5>Confidential Project</h5>
           <Link to="/projects/ProjectOne">
             <img
