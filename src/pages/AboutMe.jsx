@@ -1,4 +1,5 @@
 import React from "react";
+import SylviaImage from "../Images/Sylvia.jpeg"; 
 
 const AboutMe = () => {
   const countries = [
@@ -31,6 +32,7 @@ const AboutMe = () => {
   return (
     <div className="info-card">
       <h3>About Me</h3>
+      <img src={SylviaImage} alt="Sylvia Drake-Gill" className="profile-image" />
       <p>
         With two decades of experience in administration across TV, advertising,
         and publishing, I decided it was time to take on a new challenge. During
