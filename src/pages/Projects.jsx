@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import WeatherAppImage from "../Images/WeatherApp.png";
 import SSSImage from "../Images/SSS.png";
 import ProjectOneImage from "../Images/ProjectOne.jpg";
 import SnakeImage from "../Images/Snake.png";
