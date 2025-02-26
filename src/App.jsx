@@ -19,6 +19,7 @@ import WeatherApp from "./pages/ProjectPages/WeatherApp.jsx";
 import GourmetGallery from "./pages/ProjectPages/GourmetGallery.jsx";
 import Snake from "./pages/ProjectPages/Snake.jsx";
 import SpookSpotters from "./pages/ProjectPages/SpookSpotters.jsx";
+import Contact from "./pages/Contact.jsx";
 import Home from "./pages/Home.jsx";
 import LayOut from "./components/LayOut.jsx";
 import Footer from "./components/Footer.jsx";
@@ -37,6 +38,15 @@ const App = () => {
             <div>
               <LayOut />
               <AboutMe />
+            </div>
+          }
+        />
+                <Route
+          path="/contact"
+          element={
+            <div>
+              <LayOut />
+              <Contact />
             </div>
           }
         />
