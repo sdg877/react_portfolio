@@ -29,31 +29,30 @@ const Weather = () => {
         }
 
         const weatherResponse = await axios.get(
-          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=Europe%2FLondon`
+          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weathercode,precipitation_probability,uv_index,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_probability_mean,uv_index_max&timezone=Europe%2FLondon`
         );
 
         const currentHour = new Date().getHours();
 
         const hourlyData = weatherResponse.data.hourly.time
           .slice(currentHour, currentHour + 12)
-          .map((time, index) => {
-            return {
-              time: time,
-              temperature:
-                weatherResponse.data.hourly.temperature_2m[currentHour + index],
-              weatherCode:
-                weatherResponse.data.hourly.weathercode[currentHour + index],
-            };
-          });
+          .map((time, index) => ({
+            time,
+            temperature: weatherResponse.data.hourly.temperature_2m[currentHour + index],
+            weatherCode: weatherResponse.data.hourly.weathercode[currentHour + index],
+            rainChance: weatherResponse.data.hourly.precipitation_probability[currentHour + index],
+            uvIndex: weatherResponse.data.hourly.uv_index[currentHour + index],
+            feelsLike: weatherResponse.data.hourly.apparent_temperature[currentHour + index],
+          }));
 
-        const dailyData = weatherResponse.data.daily.time.map(
-          (date, index) => ({
-            date,
-            tempMin: weatherResponse.data.daily.temperature_2m_min[index],
-            tempMax: weatherResponse.data.daily.temperature_2m_max[index],
-            weatherCode: weatherResponse.data.daily.weathercode[index],
-          })
-        );
+        const dailyData = weatherResponse.data.daily.time.map((date, index) => ({
+          date,
+          tempMin: weatherResponse.data.daily.temperature_2m_min[index],
+          tempMax: weatherResponse.data.daily.temperature_2m_max[index],
+          weatherCode: weatherResponse.data.daily.weathercode[index],
+          rainChance: weatherResponse.data.daily.precipitation_probability_mean[index],
+          uvIndex: weatherResponse.data.daily.uv_index_max[index],
+        }));
 
         setHourlyWeather(hourlyData);
         setDailyWeather(dailyData);
@@ -144,7 +143,10 @@ const Weather = () => {
           <div key={index} className="weather-card">
             <p>{formatTime(hour.time)}</p>
             <p className="weather-icon">{getWeatherIcon(hour.weatherCode)}</p>
-            <p>{Math.round(hour.temperature)}°C</p>
+            <p className="temp"> {Math.round(hour.temperature)}°C</p>
+            <p className="weatherdetail">Feels like: {Math.round(hour.feelsLike)}°C</p>
+            <p className="weatherdetail">Rain: {hour.rainChance}%</p>
+            <p className="weatherdetail">UV Index: {hour.uvIndex}</p>
           </div>
         ))}
       </div>
@@ -152,12 +154,14 @@ const Weather = () => {
       <h3>Next 7 Days</h3>
       <div className="weather-card-container">
         {dailyWeather.map((day, index) => (
-          <div key={index} className="weather-card">
+          <div key={index} className="weather-week-card">
             <p>{formatDate(day.date)}</p>
             <p className="weather-icon">{getWeatherIcon(day.weatherCode)}</p>
             <p>
               {Math.round(day.tempMin)}°C - {Math.round(day.tempMax)}°C
             </p>
+            <p>Rain: {day.rainChance}%</p>
+            <p>UV Index: {day.uvIndex}</p>
           </div>
         ))}
       </div>
