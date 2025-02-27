@@ -1,8 +1,7 @@
 /* Body Styles */
 body {
-  background-color: #121212;
-  color: #e0e0e0;
-  font-family: "Electrolize", sans-serif;
+  color: 	#4682B4;
+  font-family: "Ubuntu", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -10,30 +9,6 @@ body {
 /* App Layout */
 .App {
   text-align: center;
-}
-
-/* Navbar Styles */
-.navbar {
-  background-color: #1e1e1e;
-  padding: 16px;
-  text-align: center;
-}
-
-.nav-links {
-  display: flex;
-  justify-content: center;
-}
-
-.nav-link {
-  color: #e0e0e0;
-  text-decoration: none;
-  margin: 0 20px;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.nav-link:hover {
-  color: #a383d7;
-  transform: scale(1.1);
 }
 
 /* Home Page Styles */
@@ -63,7 +38,6 @@ body {
 
 
 .project-item {
-  background-color: #1e1e1e;
   border-radius: 8px;
   margin: 15px;
   padding: 10px;
@@ -91,38 +65,21 @@ body {
 }
 
 
-/* Footer Styles */
-footer {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
-  font-size: 0.9rem;
-}
-
 /* Footer Links and Sections */
-.footer-link {
-  color: #a383d7;
-  text-decoration: none;
-  margin: 5px 0;
-}
 
-.footer-link:hover {
-  text-decoration: underline;
-}
-
-/* Optional: Spacing between sections */
-.footer-section {
-  margin: 10px 0;
+.footer-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F5F5F5;
+  color: 	#D8BFD8;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 10;
 }
 
 .info-card {
-  background-color: #1e1e1e;
   color: #e0e0e0;
   border-radius: 8px;
   padding: 20px;
@@ -279,36 +236,9 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Nav Button Styles */
-.nav-button {
-  width: 120px;
-  height: 45px;
-  background-color: transparent;
-  color: #a383d7;
-  border: 2px solid #a383d7;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.3s, background-color 0.3s;
-}
 
-.nav-button:hover {
-  background-color: #a383d7;
-  color: #121212;
-}
 
-/* Media Queries for Responsive Design */
-
-/* Medium Devices (Tablets) */
 @media (max-width: 768px) {
-  .navbar {
-    padding: 12px;
-  }
-
-  .nav-link {
-    margin: 0 15px;
-  }
-
   .project-item {
     width: 180px;
   }
