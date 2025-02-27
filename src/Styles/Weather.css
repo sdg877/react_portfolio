@@ -9,7 +9,7 @@ body, html {
 
 .weather-container {
     padding: 20px;
-    max-width: 800px;
+    max-width: 125vh;
     margin: 0 auto;
     min-height: calc(100vh - 120px);
     display: flex;
@@ -28,12 +28,21 @@ body, html {
 
 .weather-card {
     background-color: #ffffff;
-    padding: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 120px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.weather-week-card {
+    background-color: #ffffff;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     min-width: 100px;
-    flex: 1 1 120px;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -113,4 +122,12 @@ h2, h3 {
 
 .rain-chance {
     color: #555;
+}
+
+.temp {
+    font-size: 18px;
+}
+
+.weatherdetail {
+    font-size: 13px;
 }
