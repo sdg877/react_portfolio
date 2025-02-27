@@ -1,5 +1,6 @@
 import React from "react";
 import SylviaImage from "../Images/Sylvia.jpeg"; 
+import "../Styles/About.css"
 
 const AboutMe = () => {
   const countries = [
