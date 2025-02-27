@@ -1,0 +1,49 @@
+/* Skill Icons */
+.skill-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 15px 0;
+  }
+  
+  .skill-icons i {
+    position: relative;
+    font-size: 3rem;
+    margin: 19px;
+    color: #e0e0e0;
+    transition: transform 0.3s;
+  }
+  
+  .skill-icons i:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Tooltip styling */
+  .skill-icons i::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s, bottom 0.3s;
+    pointer-events: none;
+    font-size: 0.85rem;
+  }
+  
+  /* Show tooltip on hover */
+  .skill-icons i:hover::after {
+    opacity: 1;
+  }
+  
+  .skill-group-title {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
