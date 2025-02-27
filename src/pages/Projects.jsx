@@ -7,6 +7,7 @@ import InTechImage from "../Images/InTech.png";
 import GourmetGalleryImage from "../Images/GourmetGallery.png";
 import SpookSpottersImage from "../Images/SpookSpotters.png";
 import HTJImage from "../Images/HTJ.png"
+import "../Styles/Projects.css"
 
 const Projects = () => {
   return (

@@ -1,6 +1,7 @@
 import React from "react";
 import GourmetGalleryImage from "../../Images/GourmetGallery.png";
 import { Link } from "react-router-dom";
+import "../Styles/Projects.css"
 
 const GourmetGallery = () => {
   return (

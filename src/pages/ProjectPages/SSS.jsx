@@ -1,6 +1,7 @@
 import React from "react";
 import SSSImage from "../../Images/SSS.png";
 import { Link } from "react-router-dom";
+import "../Styles/Projects.css"
 
 const SSS = () => {
   return (
