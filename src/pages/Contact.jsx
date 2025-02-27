@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "emailjs-com";
-import Spinner from "../components/Spinner.jsx"; // Adjust the import path as needed
+import Spinner from "../components/Spinner.jsx"; 
+import "../Styles/Contact.css"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
