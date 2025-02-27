@@ -1,0 +1,55 @@
+/* Profile Image */
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Flags Style */
+.flags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.flag {
+  font-size: 2rem;
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.flag:hover {
+  transform: scale(1.2);
+}
+
+.flag::after {
+  content: attr(title);
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 0.85rem;
+}
+
+.flag:hover::after {
+  opacity: 1;
+}
+
+/* Contact Links */
+.contact-links {
+  margin-top: 20px;
+}
+
+.contact-links a {
+  margin-right: 10px;
+}
