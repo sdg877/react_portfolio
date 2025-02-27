@@ -1,5 +1,3 @@
-/* Weather.css */
-
 body, html {
     height: 100%;
     margin: 0;
@@ -15,7 +13,7 @@ body, html {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 
 .weather-card-container {
@@ -130,4 +128,9 @@ h2, h3 {
 
 .weatherdetail {
     font-size: 13px;
+}
+
+.loading {
+    text-align: center;
+    font-size: 20px;
 }
