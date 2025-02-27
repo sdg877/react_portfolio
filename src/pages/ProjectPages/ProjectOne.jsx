@@ -1,7 +1,7 @@
 import React from "react";
 import ProjectOneImage from "../../Images/ProjectOne.jpg";
 import { Link } from "react-router-dom";
-import "../Styles/Projects.css"
+import "../../Styles/Projects.css"
 
 const ProjectOne = () => {
   return (

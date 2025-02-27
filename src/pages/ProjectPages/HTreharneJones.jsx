@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HTJImage from "../../Images/HTJ.png";
-import "../Styles/Projects.css"
+import "../../Styles/Projects.css"
 
 const HTreharneJones = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import SnakeImage from "../../Images/Snake.png";
 import { Link } from "react-router-dom";
-import "../Styles/Projects.css"
+import "../../Styles/Projects.css"
 
 const Snake = () => {
   return (
