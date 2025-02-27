@@ -5,7 +5,6 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import Navbar from "./components/Navbar.jsx";
 import AboutMe from "./pages/AboutMe.jsx";
 import Education from "./pages/Education.jsx";
 import Experience from "./pages/Experience.jsx";
@@ -21,7 +20,7 @@ import SpookSpotters from "./pages/ProjectPages/SpookSpotters.jsx";
 import Contact from "./pages/Contact.jsx";
 import Weather from "./pages/Weather.jsx";
 import Home from "./pages/Home.jsx";
-import LayOut from "./components/LayOut.jsx";
+import Layout from "./components/Layout.jsx";
 import Footer from "./components/Footer.jsx";
 
 const App = () => {
@@ -29,14 +28,13 @@ const App = () => {
 
   return (
     <div>
-      {location.pathname !== "/" && <Navbar />}
 
       <Routes>
       <Route
           path="/weather"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <Weather />
             </div>
           }
@@ -45,7 +43,7 @@ const App = () => {
           path="/about"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <AboutMe />
             </div>
           }
@@ -54,7 +52,7 @@ const App = () => {
           path="/contact"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <Contact />
             </div>
           }
@@ -63,7 +61,7 @@ const App = () => {
           path="/experience"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <Experience />
             </div>
           }
@@ -72,7 +70,7 @@ const App = () => {
           path="/education"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <Education />
             </div>
           }
@@ -81,7 +79,7 @@ const App = () => {
           path="/skills"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <Skills />
             </div>
           }
@@ -90,7 +88,7 @@ const App = () => {
           path="/projects"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <Projects />
             </div>
           }
@@ -99,7 +97,7 @@ const App = () => {
           path="/projects/GourmetGallery"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <GourmetGallery />
             </div>
           }
@@ -108,7 +106,7 @@ const App = () => {
           path="/projects/Snake"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <Snake />
             </div>
           }
@@ -117,7 +115,7 @@ const App = () => {
           path="/projects/SpookSpotters"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <SpookSpotters />
             </div>
           }
@@ -126,7 +124,7 @@ const App = () => {
           path="/projects/SSS"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <SSS />
             </div>
           }
@@ -135,7 +133,7 @@ const App = () => {
           path="/projects/HTJ"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <HTreharneJones />
             </div>
           }
@@ -144,7 +142,7 @@ const App = () => {
           path="/projects/InTechJobs"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <InTech />
             </div>
           }
@@ -153,7 +151,7 @@ const App = () => {
           path="/projects/ProjectOne"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <ProjectOne />
             </div>
           }
@@ -163,7 +161,7 @@ const App = () => {
           path="/"
           element={
             <div>
-              <LayOut />
+              <Layout />
               <Home />
             </div>
           }
