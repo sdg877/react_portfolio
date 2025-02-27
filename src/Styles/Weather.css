@@ -1,0 +1,116 @@
+/* Weather.css */
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.weather-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto; 
+}
+
+.weather-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.weather-card {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    min-width: 100px;
+    flex: 1 1 120px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.weather-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.weather-icon {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+
+.header {
+    padding: 10px 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+}
+
+.weather-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #ffffff;
+    padding: 5px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.weather-info:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.weather-icon {
+    font-size: 2rem;
+    transition: transform 0.2s;
+}
+
+.location, .temperature, .rain-chance {
+    margin: 0;
+    font-weight: bold;
+    color: #333;
+}
+
+.location {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.temperature {
+    font-weight: bold;
+}
+
+.rain-chance {
+    color: #555;
+}
