@@ -1,0 +1,17 @@
+/* Home Page Styles */
+.home-container h1 {
+    font-size: 2rem;
+    color: #fff;
+  }
+  
+  .home-nav {
+    margin-top: 20px;
+  }
+  
+  .nav-links-home {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
