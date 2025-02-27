@@ -5,7 +5,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import NavBar from "./components/NavBar.jsx";
+import Navbar from "./components/Navbar.jsx";
 import AboutMe from "./pages/AboutMe.jsx";
 import Education from "./pages/Education.jsx";
 import Experience from "./pages/Experience.jsx";
@@ -19,6 +19,7 @@ import GourmetGallery from "./pages/ProjectPages/GourmetGallery.jsx";
 import Snake from "./pages/ProjectPages/Snake.jsx";
 import SpookSpotters from "./pages/ProjectPages/SpookSpotters.jsx";
 import Contact from "./pages/Contact.jsx";
+import Weather from "./pages/Weather.jsx";
 import Home from "./pages/Home.jsx";
 import LayOut from "./components/LayOut.jsx";
 import Footer from "./components/Footer.jsx";
@@ -28,9 +29,18 @@ const App = () => {
 
   return (
     <div>
-      {location.pathname !== "/" && <NavBar />}
+      {location.pathname !== "/" && <Navbar />}
 
       <Routes>
+      <Route
+          path="/weather"
+          element={
+            <div>
+              <LayOut />
+              <Weather />
+            </div>
+          }
+        />
         <Route
           path="/about"
           element={
