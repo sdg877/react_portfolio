@@ -90,7 +90,7 @@ const Weather = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading weather...</p>;
+    return <p className="loading">Loading weather...</p>;
   }
 
   if (error) {
@@ -160,8 +160,8 @@ const Weather = () => {
             <p>
               {Math.round(day.tempMin)}°C - {Math.round(day.tempMax)}°C
             </p>
-            <p>Rain: {day.rainChance}%</p>
-            <p>UV Index: {day.uvIndex}</p>
+            <p className="weatherdetail">Rain: {day.rainChance}%</p>
+            <p className="weatherdetail">UV Index: {day.uvIndex}</p>
           </div>
         ))}
       </div>
