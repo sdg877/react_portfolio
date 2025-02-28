@@ -82,17 +82,33 @@
     color: #121212;
 }
 
-/* Footer */
 .footer {
     padding: 15px;
-    background-color: #f1f1f1;
+    background-color: #F5F5F5;
     text-align: center;
-    text-shadow: #121212;
     font-size: 15px;
-    position: relative;
-    bottom: 0;
     width: 100%;
     z-index: 10;
-    background-color: #F5F5F5;
-    color: 	#778899;
+    color: #778899;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    height: 40px;
+    line-height: 40px;
+    margin-top: auto;
   }
+
+  /* Layout Styles */
+.layout {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .layout-title {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+  
+  .layout-sub {
+    color: #666;
+  }
+  
+  
