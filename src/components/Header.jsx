@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Navbar from './Navbar'; 
 import '../Styles/Weather.css';
 
-const Header = () => {
+const Header = ({ showWeather }) => {
   const [location, setLocation] = useState('Loading...');
   const [temperature, setTemperature] = useState(null);
   const [rainChance, setRainChance] = useState(null);
@@ -18,15 +17,16 @@ const Header = () => {
             `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
           );
 
-          const locationName = locationResponse.data.address.neighbourhood || 
-                               locationResponse.data.address.suburb || 
-                               locationResponse.data.address.borough || 
-                               locationResponse.data.address.city_district ||
-                               locationResponse.data.address.city || 
-                               locationResponse.data.address.town || 
-                               locationResponse.data.address.village || 
-                               locationResponse.data.address.state || 
-                               'Your Area';
+          const locationName =
+            locationResponse.data.address.neighbourhood ||
+            locationResponse.data.address.suburb ||
+            locationResponse.data.address.borough ||
+            locationResponse.data.address.city_district ||
+            locationResponse.data.address.city ||
+            locationResponse.data.address.town ||
+            locationResponse.data.address.village ||
+            locationResponse.data.address.state ||
+            'Your Area';
           setLocation(locationName);
         } else {
           setLocation('London (Default)');
@@ -36,7 +36,7 @@ const Header = () => {
           `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,precipitation_probability,weathercode&timezone=auto`
         );
 
-        const currentHour = 0;
+        const currentHour = new Date().getHours(); // Get the actual current hour
         setTemperature(Math.round(weatherResponse.data.hourly.temperature_2m[currentHour]));
         setRainChance(weatherResponse.data.hourly.precipitation_probability[currentHour]);
 
@@ -67,39 +67,37 @@ const Header = () => {
       }
     };
 
+    const getWeatherIcon = (weatherCode) => {
+      const weatherIcons = {
+        0: '☀️', 
+        1: '🌤️', 
+        2: '⛅', 
+        3: '☁️', 
+        45: '🌫️', 
+        48: '🌫️', 
+        51: '🌦️', 
+        61: '🌧️', 
+        71: '❄️', 
+        80: '🌧️', 
+        95: '⛈️', 
+      };
+      return weatherIcons[weatherCode] || '🌈';
+    };
+
     getUserLocation();
   }, []);
-
-  const getWeatherIcon = (weatherCode) => {
-    const weatherIcons = {
-      0: '☀️', 
-      1: '🌤️', 
-      2: '⛅', 
-      3: '☁️', 
-      45: '🌫️', 
-      48: '🌫️', 
-      51: '🌦️', 
-      61: '🌧️', 
-      71: '❄️', 
-      80: '🌧️', 
-      95: '⛈️', 
-    };
-    return weatherIcons[weatherCode] || '🌈';
-  };
 
   return (
     <header className="header">
       <div className="header-content">
-        <div className="navbar-container">
-          <Navbar />
-        </div>
-
-        <Link to="/weather" className="weather-info" title="Click to see detailed weather information">
-          <h2 className="location">{location}</h2>
-          <span className="weather-icon">{weatherIcon}</span>
-          <p className="temperature">{temperature}°C</p>
-          <p className="rain-chance">💧 {rainChance}%</p>
-        </Link>
+        {showWeather && (
+          <Link to="/weather" className="weather-info" title="Click to see detailed weather information">
+            <h2 className="location">{location}</h2>
+            <span className="weather-icon">{weatherIcon}</span>
+            <p className="temperature">{temperature}°C</p>
+            <p className="rain-chance">💧 {rainChance}%</p>
+          </Link>
+        )}
       </div>
     </header>
   );
