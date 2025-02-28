@@ -7,6 +7,8 @@ const NavBar = () => {
   const currentPath = location.pathname;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  if (currentPath === '/') return null;
+
   const links = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Me' },
@@ -29,13 +31,16 @@ const NavBar = () => {
         <div className={`line ${isMenuOpen ? 'active' : ''}`}></div>
       </div>
       <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-        {links
-          .filter(link => link.path !== currentPath)
-          .map(link => (
-            <Link key={link.path} to={link.path} className="nav-link" onClick={() => setIsMenuOpen(false)}>
-              {link.label}
-            </Link>
-          ))}
+        {links.map(link => (
+          <Link 
+            key={link.path} 
+            to={link.path} 
+            className={`nav-link ${link.path === currentPath ? 'active' : ''}`} 
+            onClick={() => setIsMenuOpen(false)}
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
     </nav>
   );
