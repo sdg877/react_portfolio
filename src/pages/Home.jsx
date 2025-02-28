@@ -1,5 +1,6 @@
 import React from 'react';
 import "../Styles/Home.css";
+import "../Styles/Weather.css";
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
