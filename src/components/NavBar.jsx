@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import "../Styles/ComponentStyles.css"
+import "../Styles/ComponentStyles.css";
 
 const NavBar = () => {
   const location = useLocation();
@@ -30,14 +30,16 @@ const NavBar = () => {
       </div>
       <div className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
         {links.map(link => (
-          <Link 
-            key={link.path} 
-            to={link.path} 
-            className={`nav-link ${link.path === currentPath ? 'active' : ''}`} 
-            onClick={() => setIsMenuOpen(false)}
-          >
-            {link.label}
-          </Link>
+          link.path !== currentPath && ( 
+            <Link 
+              key={link.path} 
+              to={link.path} 
+              className="nav-link" 
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          )
         ))}
       </div>
     </nav>
