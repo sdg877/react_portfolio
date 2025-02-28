@@ -18,7 +18,11 @@ const Header = () => {
             `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
           );
 
-          const locationName = locationResponse.data.address.city || 
+          const locationName = locationResponse.data.address.neighbourhood || 
+                               locationResponse.data.address.suburb || 
+                               locationResponse.data.address.borough || 
+                               locationResponse.data.address.city_district ||
+                               locationResponse.data.address.city || 
                                locationResponse.data.address.town || 
                                locationResponse.data.address.village || 
                                locationResponse.data.address.state || 
@@ -29,7 +33,7 @@ const Header = () => {
         }
 
         const weatherResponse = await axios.get(
-          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,precipitation_probability,weathercode&timezone=Europe/London`
+          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,precipitation_probability,weathercode&timezone=auto`
         );
 
         const currentHour = 0;
