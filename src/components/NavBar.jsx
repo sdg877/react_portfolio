@@ -7,8 +7,6 @@ const NavBar = () => {
   const currentPath = location.pathname;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  if (currentPath === '/') return null;
-
   const links = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About Me' },
