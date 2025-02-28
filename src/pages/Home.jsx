@@ -1,20 +1,73 @@
 import React from 'react';
 import "../Styles/Home.css";
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Home = () => {
+  const buttonVariants = {
+    hidden: (direction) => ({
+      x: direction === 'left' ? '-100vw' : direction === 'right' ? '100vw' : 0,
+      y: direction === 'top' ? '-100vh' : direction === 'bottom' ? '100vh' : 0,
+      opacity: 0,
+    }),
+    visible: {
+      x: 0,
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        stiffness: 70,
+        damping: 10,
+      },
+    },
+    circular: {
+      rotate: 360,
+      transition: {
+        duration: 1,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const directions = ['left', 'right', 'top', 'bottom', 'left', 'right'];
+  const buttonLabels = ['About', 'Education', 'Experience', 'Projects', 'Skills', 'Contact'];
+
   return (
-    <div className="info-card home-container">
-      <h1>Welcome to My Portfolio</h1>
-      <p>Explore my projects and learn more about me.</p>
+    <div className="home-page">
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="home-title"
+      >
+        Welcome to My Portfolio
+      </motion.h1>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="home-description"
+      >
+        Explore my projects and learn more about me.
+      </motion.p>
+
       <nav className="home-nav">
-        <div className="nav-links-home">
-          <Link to="/about"><button className="nav-button">About Me</button></Link>
-          <Link to="/education"><button className="nav-button">Education</button></Link>
-          <Link to="/experience"><button className="nav-button">Experience</button></Link>
-          <Link to="/projects"><button className="nav-button">Projects</button></Link>
-          <Link to="/skills"><button className="nav-button">Skills</button></Link>
-        </div>
+        {buttonLabels.map((text, index) => (
+          <motion.div
+            key={text}
+            custom={directions[index]}
+            initial="hidden"
+            animate="visible"
+            whileInView="circular"
+            variants={buttonVariants}
+            className="home-button-wrapper"
+          >
+            <Link to={`/${text.toLowerCase().replace(' ', '')}`}>
+              <button className="home-nav-button">{text}</button>
+            </Link>
+          </motion.div>
+        ))}
       </nav>
     </div>
   );
