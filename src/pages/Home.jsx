@@ -40,7 +40,6 @@ const Home = () => {
         transition={{ duration: 0.6 }}
         className="home-title"
       >
-        Welcome to My Portfolio
       </motion.h1>
 
       <motion.p
