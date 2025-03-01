@@ -38,7 +38,7 @@ const AboutMe = () => {
         alt="Sylvia Drake-Gill"
         className="profile-image"
       />
-      <p>
+      <p className="about-p">
         For twenty years, I got things done in the fast-paced worlds of TV,
         advertising, and publishing. I'm good at solving problems and leading
         teams. In 2020, I decided to try something completely different and took
@@ -51,7 +51,7 @@ const AboutMe = () => {
         That curiosity led me to a Software Engineering Immersive course in
         2023. I'm not afraid of a challenge, and honestly, I'm excited to be a
         woman in a field that's usually dominated by men. I'm hardworking, I'm
-        driven, and I bring a bit of humor to everything I do. I'm a fast
+        driven, and I bring a bit of humour to everything I do. I'm a fast
         learner, and I'm ready to put my skills to work in a great development
         team.
         <br />
@@ -60,10 +60,10 @@ const AboutMe = () => {
         and traveling keep me balanced. I've lived in Germany and Australia, and
         I'm planning trips to South Korea, Japan, and Mexico. I approach
         everything, whether it's coding or exploring a new city, with a mix of
-        curiosity and a sense of fun."
+        curiosity and a sense of fun.
       </p>
       <br />
-      <div>
+      <div className="about-p">
         Some of the countries I have visited:
         <div className="flags">
           {countries.map((country, index) => (
