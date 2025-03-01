@@ -57,5 +57,10 @@
 
 .about-p {
   font-size: 18px;
-  color: #2f4f4f;;
+  color: #2f4f4f;
+  padding-top: 15px;
+}
+
+.about-title {
+  padding: 20px;
 }
