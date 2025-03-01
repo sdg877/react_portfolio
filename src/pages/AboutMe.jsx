@@ -32,7 +32,7 @@ const AboutMe = () => {
 
   return (
     <div className="info-card">
-      <h3>About Sylvia</h3>
+      <h3 className="about-title">About Sylvia</h3>
       <img
         src={SylviaImage}
         alt="Sylvia Drake-Gill"
