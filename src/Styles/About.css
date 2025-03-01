@@ -13,6 +13,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
+  margin-top: 20px;
 }
 
 .flag {
@@ -52,4 +53,9 @@
 
 .contact-links a {
   margin-right: 10px;
+}
+
+.about-p {
+  font-size: 18px;
+  color: #2f4f4f;;
 }
