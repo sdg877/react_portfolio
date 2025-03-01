@@ -1,6 +1,6 @@
 import React from "react";
-import SylviaImage from "../Images/Sylvia.jpeg"; 
-import "../Styles/About.css"
+import SylviaImage from "../Images/Sylvia.jpeg";
+import "../Styles/About.css";
 
 const AboutMe = () => {
   const countries = [
@@ -32,31 +32,35 @@ const AboutMe = () => {
 
   return (
     <div className="info-card">
-      <h3>About Me</h3>
-      <img src={SylviaImage} alt="Sylvia Drake-Gill" className="profile-image" />
+      <h3>About Sylvia</h3>
+      <img
+        src={SylviaImage}
+        alt="Sylvia Drake-Gill"
+        className="profile-image"
+      />
       <p>
-        With two decades of experience in administration across TV, advertising,
-        and publishing, I decided it was time to take on a new challenge. During
-        the 2020 lockdown, I enrolled in an access course in Maths, Science, and
-        Technology with the Open University, earning a distinction (95%) and
-        discovering a genuine interest in technology. Coding workshops quickly
-        followed, and my passion for problem-solving led me to complete a
-        Software Engineering Immersive course.
+        For twenty years, I got things done in the fast-paced worlds of TV,
+        advertising, and publishing. I'm good at solving problems and leading
+        teams. In 2020, I decided to try something completely different and took
+        a tech A-level equivalent course with the Open University. Turns out,
+        I'm pretty good at that too (95%). That sparked my interest in coding,
+        and by 2023, I was diving into workshops and teaching myself the basics.
+        I pick things up quickly, and I love figuring out how things work.
         <br />
         <br />
-        Now, as a Junior Software Engineer, I’m eager to combine my analytical
-        skills, adaptability, and years of experience as a team player to
-        contribute to a dynamic development team.
+        That curiosity led me to a Software Engineering Immersive course in
+        2023. I'm not afraid of a challenge, and honestly, I'm excited to be a
+        woman in a field that's usually dominated by men. I'm hardworking, I'm
+        driven, and I bring a bit of humor to everything I do. I'm a fast
+        learner, and I'm ready to put my skills to work in a great development
+        team.
         <br />
         <br />
-        I’m a Londoner through and through—originally from West London but now
-        happily settled in South London for the past seven years. I share my
-        home with my boyfriend and two cats, who undoubtedly think they run the
-        place. When I’m not coding, I find balance through swimming (with a good
-        sauna session to top it off) and enjoy experimenting in the
-        kitchen—anything layered is my kind of dish. I’ve lived in Germany and
-        Australia, traveled to dozens of countries, and am looking forward to
-        exploring South Korea, Japan, and Mexico next.
+        London is my home, but I love exploring the world. Swimming, cooking,
+        and traveling keep me balanced. I've lived in Germany and Australia, and
+        I'm planning trips to South Korea, Japan, and Mexico. I approach
+        everything, whether it's coding or exploring a new city, with a mix of
+        curiosity and a sense of fun."
       </p>
       <br />
       <div>
