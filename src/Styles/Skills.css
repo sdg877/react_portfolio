@@ -10,7 +10,7 @@
     position: relative;
     font-size: 3rem;
     margin: 19px;
-    color: #e0e0e0;
+    color: #2F4F4F;
     transition: transform 0.3s;
   }
   
@@ -45,5 +45,10 @@
     font-size: 1.5rem;
     margin: 20px 0;
     text-align: center;
+    color: darkslategray;
+  }
+
+  .soft-skills {
+    color: darkslategray;
   }
   
