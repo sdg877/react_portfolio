@@ -83,6 +83,7 @@ h2, h3 {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-right: 30px;
 }
 
 .header-container {
@@ -160,6 +161,37 @@ h2, h3 {
 }
 
 @media (max-width: 600px) {
+    .weather-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .weather-card, .weather-week-card {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 85vw; 
+        max-width: 85vw;
+        height: auto;
+        padding: 10px 20px;
+        text-align: left;
+    }
+
+    .weather-icon {
+        font-size: 2.5rem;
+        margin: 0 10px;
+    }
+
+    .weatherdetail, .temp {
+        font-size: 1rem;
+    }
+
+    .weather-card p, .weather-week-card p {
+        margin: 5px 10px;
+    }
     .header {
         max-width: 80vw; 
         margin-right: 10px;
@@ -181,7 +213,7 @@ h2, h3 {
         white-space: nowrap; 
         padding: 5px 10px; 
     }
-    
+
     .rain-chance {
         display: flex;
         align-items: center;
