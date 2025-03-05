@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "emailjs-com";
-import Spinner from "../components/Spinner.jsx"; 
-import "../Styles/Contact.css"
+import Spinner from "../components/Spinner.jsx";
+import "../Styles/Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -76,6 +76,7 @@ const Contact = () => {
           <input
             type="text"
             name="name"
+            id="name"
             value={formData.name}
             onChange={handleChange}
             required
@@ -90,6 +91,7 @@ const Contact = () => {
           <input
             type="email"
             name="email"
+            id="email" 
             value={formData.email}
             onChange={handleChange}
             required
@@ -104,6 +106,7 @@ const Contact = () => {
           <input
             type="text"
             name="subject"
+            id="subject" // Added id to match htmlFor
             value={formData.subject}
             onChange={handleChange}
             required
@@ -117,6 +120,7 @@ const Contact = () => {
           </label>
           <textarea
             name="message"
+            id="message" // Added id to match htmlFor
             value={formData.message}
             onChange={handleChange}
             required
@@ -125,9 +129,9 @@ const Contact = () => {
             disabled={loading}
           />
         </div>
-          <button type="submit" className="form-button" disabled={loading}>
-            {loading ? "Sending..." : "Send"}
-          </button>
+        <button type="submit" className="form-button" disabled={loading}>
+          {loading ? "Sending..." : "Send"}
+        </button>
       </form>
       <p className="contact-email">
         Sylvia Drake-Gill |{" "}
