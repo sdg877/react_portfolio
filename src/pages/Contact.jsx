@@ -64,7 +64,7 @@ const Contact = () => {
 
   return (
     <div className="contact-form-container">
-      <p className="contact-title">Please get in touch</p>
+      <p className="contact-title">Got a question? Get in touch!</p>
 
       {loading && <Spinner />}
 
@@ -125,11 +125,9 @@ const Contact = () => {
             disabled={loading}
           />
         </div>
-        <div className="form-field">
           <button type="submit" className="form-button" disabled={loading}>
             {loading ? "Sending..." : "Send"}
           </button>
-        </div>
       </form>
       <p className="contact-email">
         Sylvia Drake-Gill |{" "}
