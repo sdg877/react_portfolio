@@ -34,7 +34,8 @@ const Home = () => {
   const buttonLabels = ['About', 'Education', 'Experience', 'Projects', 'Skills', 'Contact'];
 
   return (
-    <div className="home-page">
+    <div className="home-container">
+      <div className='home-content'>
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -69,6 +70,7 @@ const Home = () => {
           </motion.div>
         ))}
       </nav>
+    </div>
     </div>
   );
 };
