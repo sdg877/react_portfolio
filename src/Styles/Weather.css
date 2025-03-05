@@ -161,6 +161,14 @@ h2, h3 {
 }
 
 @media (max-width: 600px) {
+    .location-title {
+        font-size: 18px;
+    }
+
+    .weather-title {
+        font-size: 17px;
+    }
+
     .weather-card-container {
         display: flex;
         flex-wrap: wrap;
