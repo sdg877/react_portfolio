@@ -6,6 +6,10 @@ html {
   box-sizing: border-box;
 }
 
+.weather-content-wrapper {
+  min-height: 600px; 
+}
+
 .weather-container {
   padding: 10px;
   max-width: 125vh;
@@ -14,6 +18,7 @@ html {
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
+  margin-bottom: 30px;
 }
 
 .weather-card-container {
@@ -23,6 +28,8 @@ html {
   justify-content: center;
   margin-top: 20px;
 }
+
+
 
 .weather-card {
   background-color: #ffffff;
