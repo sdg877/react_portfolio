@@ -18,12 +18,8 @@ const Layout = () => {
       </div>
 
       <div className="home-content">
-        {(isHomePage || location.pathname === '/weather') && (
-          <>
-            <h1 className="layout-title">Sylvia Drake-Gill</h1>
-            <h2 className="layout-sub">London-based Software Engineer</h2>
-          </>
-        )}
+        <h1 className="layout-title">Sylvia Drake-Gill</h1>
+        <h2 className="layout-sub">London-based Software Engineer</h2>
       </div>
     </div>
   );
