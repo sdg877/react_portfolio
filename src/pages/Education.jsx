@@ -12,7 +12,7 @@ const Education = () => {
       whileHover={{ scale: 1.05 }} 
     >
       <h3>Education</h3>
-      <p className="education-details">
+      <p className="details">
         <strong>11/2023 - 03/2024
         <br />General Assembly</strong>
         <br />Software Engineering Bootcamp
