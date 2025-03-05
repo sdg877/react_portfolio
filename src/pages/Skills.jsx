@@ -4,8 +4,6 @@ import "../Styles/Skills.css";
 const Skills = () => {
   return (
     <div className="info-card">
-      <h3>Skills</h3>
-
       <div className="skill-group">
         <strong className="skill-group-title">Frontend Skills</strong>
         <div className="skill-icons">
