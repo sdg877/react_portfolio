@@ -132,6 +132,21 @@ h3 {
   text-decoration: none;
 }
 
+body.dark .weather-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #5c7a7a;
+  padding: 5px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 250px;
+  margin-left: auto;
+}
+
 .weather-icon {
   font-size: 2rem;
   transition: transform 0.2s;
