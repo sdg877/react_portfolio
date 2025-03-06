@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import '../Styles/Weather.css';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "../Styles/Weather.css";
 
 const Header = ({ showWeather, toggleTheme, theme }) => {
-  const [location, setLocation] = useState('Loading...');
+  const [location, setLocation] = useState("Loading...");
   const [temperature, setTemperature] = useState(null);
   const [rainChance, setRainChance] = useState(null);
-  const [weatherIcon, setWeatherIcon] = useState('🌤️');
+  const [weatherIcon, setWeatherIcon] = useState("🌤️");
 
   useEffect(() => {
     const fetchWeather = async (latitude, longitude, fallback = false) => {
@@ -26,10 +26,10 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
             locationResponse.data.address.town ||
             locationResponse.data.address.village ||
             locationResponse.data.address.state ||
-            'Your Area';
+            "Your Area";
           setLocation(locationName);
         } else {
-          setLocation('London (Default)');
+          setLocation("London (Default)");
         }
 
         const weatherResponse = await axios.get(
@@ -37,17 +37,22 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
         );
 
         const currentHour = new Date().getHours();
-        setTemperature(Math.round(weatherResponse.data.hourly.temperature_2m[currentHour]));
-        setRainChance(weatherResponse.data.hourly.precipitation_probability[currentHour]);
+        setTemperature(
+          Math.round(weatherResponse.data.hourly.temperature_2m[currentHour])
+        );
+        setRainChance(
+          weatherResponse.data.hourly.precipitation_probability[currentHour]
+        );
 
-        const weatherCode = weatherResponse.data.hourly.weathercode[currentHour];
+        const weatherCode =
+          weatherResponse.data.hourly.weathercode[currentHour];
         setWeatherIcon(getWeatherIcon(weatherCode));
       } catch (error) {
-        console.error('Error fetching weather data for header:', error);
-        setLocation('Unable to fetch location');
-        setTemperature('--');
-        setRainChance('--');
-        setWeatherIcon('❓');
+        console.error("Error fetching weather data for header:", error);
+        setLocation("Unable to fetch location");
+        setTemperature("--");
+        setRainChance("--");
+        setWeatherIcon("❓");
       }
     };
 
@@ -69,11 +74,19 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
 
     const getWeatherIcon = (weatherCode) => {
       const weatherIcons = {
-        0: '☀️', 1: '🌤️', 2: '⛅', 3: '☁️', 
-        45: '🌫️', 48: '🌫️', 51: '🌦️', 
-        61: '🌧️', 71: '❄️', 80: '🌧️', 95: '⛈️', 
+        0: "☀️",
+        1: "🌤️",
+        2: "⛅",
+        3: "☁️",
+        45: "🌫️",
+        48: "🌫️",
+        51: "🌦️",
+        61: "🌧️",
+        71: "❄️",
+        80: "🌧️",
+        95: "⛈️",
       };
-      return weatherIcons[weatherCode] || '🌈';
+      return weatherIcons[weatherCode] || "🌈";
     };
 
     getUserLocation();
@@ -82,7 +95,6 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
   return (
     <header className="header">
       <div className="header-content">
-        {/* Move the hamburger menu to the right */}
         <button className="hamburger">
           <span className="line"></span>
           <span className="line"></span>
@@ -91,7 +103,11 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
 
         <div className="right-section">
           {showWeather && (
-            <Link to="/weather" className="weather-info" title="Click to see detailed weather information">
+            <Link
+              to="/weather"
+              className="weather-info"
+              title="Click to see detailed weather information"
+            >
               <h2 className="location">{location}</h2>
               <span className="weather-icon">{weatherIcon}</span>
               <p className="temperature">{temperature}°C</p>
