@@ -81,7 +81,7 @@ const Projects = () => {
             whileHover="hover"
           >
             <Link to={project.link} className="project-link">
-              <h5>{project.name}</h5>
+              <h5 className="project-name">{project.name}</h5>
               <img
                 src={project.image}
                 alt={project.name}
