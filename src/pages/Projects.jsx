@@ -1,102 +1,108 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
 import SSSImage from "../Images/SSS.png";
 import ProjectOneImage from "../Images/ProjectOne.jpg";
 import SnakeImage from "../Images/Snake.png";
 import InTechImage from "../Images/InTech.png";
 import GourmetGalleryImage from "../Images/GourmetGallery.png";
 import SpookSpottersImage from "../Images/SpookSpotters.png";
-import HTJImage from "../Images/HTJ.png"
-import "../Styles/Projects.css"
+import HTJImage from "../Images/HTJ.png";
+import "../Styles/Projects.css";
+
+const projectData = [
+  { name: "Heather Treharne Jones", link: "/projects/HTJ", image: HTJImage },
+  { name: "Confidential Project", link: "/projects/ProjectOne", image: ProjectOneImage },
+  { name: "Gourmet Gallery", link: "/projects/GourmetGallery", image: GourmetGalleryImage },
+  { name: "Sustainable Swap Shop", link: "/projects/SSS", image: SSSImage },
+  { name: "inTech Jobs", link: "/projects/InTechJobs", image: InTechImage },
+  { name: "Spook Spotters", link: "/projects/SpookSpotters", image: SpookSpottersImage },
+  { name: "Snake", link: "/projects/Snake", image: SnakeImage },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1, 
+    transition: { staggerChildren: 0.3, delayChildren: 0.5 } 
+  },
+};
+
+
+const getItemVariants = (index) => ({
+  hidden: { opacity: 0, x: index % 2 === 0 ? -120 : 120 }, 
+  visible: { 
+    opacity: 1, 
+    x: 0, 
+    transition: { type: "spring", stiffness: 80, damping: 15, duration: 0.8 } 
+  },
+  hover: { scale: 1.06, rotate: 1, transition: { type: "spring", stiffness: 200 } }
+});
 
 const Projects = () => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start("visible");
+  }, [controls]);
+
   return (
-    <div className="info-card">
-      <h3>Projects</h3>
-      <h5>Click on an image for more info.</h5>
-      <div className="project-container">
-      <div className="project-item">
-          <h5>Heather Treharne Jones</h5>
-          <Link to="/projects/HTJ">
-            <img
-              src={HTJImage}
-              alt="heather Treharne Jones site"
-              className="project-image"
-            />
-          </Link>
-        </div>
-        <div className="project-item">
-          <h5>Confidential Project</h5>
-          <Link to="/projects/ProjectOne">
-            <img
-              src={ProjectOneImage}
-              alt="Confidential"
-              className="project-image"
-            />
-          </Link>
-        </div>
-        <div className="project-item">
-          <h5>Gourmet Gallery</h5>
-          <Link to="/projects/GourmetGallery">
-            <img
-              src={GourmetGalleryImage}
-              alt="Gourmet Gallery"
-              className="project-image"
-            />
-          </Link>
-        </div>
-        <div className="project-item">
-          <h5>Sustainable Swap Shop</h5>
-          <Link to="/projects/SSS">
-            <img
-              src={SSSImage}
-              alt="Sustainable Swap Shop"
-              className="project-image"
-            />
-          </Link>
-        </div>
-        <div className="project-item">
-          <h5>inTech Jobs</h5>
-          <Link to="/projects/InTechJobs">
-            <img
-              src={InTechImage}
-              alt="inTech"
-              className="project-image"
-            />
-          </Link>
-        </div>
-        <div className="project-item">
-          <h5>Spook Spotters</h5>
-          <Link to="/projects/SpookSpotters">
-            <img
-              src={SpookSpottersImage}
-              alt="Spook Spotters"
-              className="project-image"
-            />
-          </Link>
-        </div>
-        <div className="project-item">
-          <h5>Snake</h5>
-          <Link to="/projects/Snake">
-            <img
-              src={SnakeImage}
-              alt="Snake Project"
-              className="project-image"
-            />
-          </Link>
-        </div>
-      </div>
-      <br />
-      <p>
-        <a
-          href="https://github.com/sdg877"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+    <motion.div
+      key="projects-container"
+      className="info-card"
+      variants={containerVariants}
+      initial="hidden"
+      animate={controls}
+    >
+      <motion.h3 
+        initial={{ opacity: 0, y: -30 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        Projects
+      </motion.h3>
+      
+      <motion.h5 
+        initial={{ opacity: 0, y: -20 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
+        Click on an image for more info.
+      </motion.h5>
+
+      <motion.div className="project-container">
+        {projectData.map((project, index) => (
+          <motion.div
+            key={project.name}
+            className="project-item"
+            variants={getItemVariants(index)}
+            initial="hidden"
+            animate={controls}
+            whileHover="hover"
+          >
+            <h5>{project.name}</h5>
+            <Link to={project.link}>
+              <motion.img
+                src={project.image}
+                alt={project.name}
+                className="project-image"
+                whileHover={{ scale: 1.1, rotate: 2 }}
+              />
+            </Link>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <motion.p 
+        initial={{ opacity: 0 }} 
+        animate={{ opacity: 1 }} 
+        transition={{ duration: 1.5, ease: "easeOut" }}
+      >
+        <a href="https://github.com/sdg877" target="_blank" rel="noopener noreferrer" className="custom-link">
           For all projects, please see my GitHub Page
         </a>
-      </p>
-    </div>
+      </motion.p>
+    </motion.div>
   );
 };
 
