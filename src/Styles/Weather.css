@@ -73,13 +73,21 @@ h3 {
 }
 
 .header {
+  align-items: right;
   padding: 10px 20px;
   width: 100%;
-  max-width: 100vw;
   position: relative;
-  box-sizing: border-box;
-  overflow: hidden;
+  background-color: white;
 }
+
+
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto; /* Push it to the right */
+}
+
 
 .header-content {
   display: flex;
@@ -93,7 +101,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 15px;
   width: 100%;
   position: relative;
 }
