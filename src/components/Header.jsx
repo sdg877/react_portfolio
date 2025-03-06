@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../Styles/Weather.css';
 
-const Header = ({ showWeather }) => {
+const Header = ({ showWeather, toggleTheme, theme }) => {
   const [location, setLocation] = useState('Loading...');
   const [temperature, setTemperature] = useState(null);
   const [rainChance, setRainChance] = useState(null);
@@ -36,7 +36,7 @@ const Header = ({ showWeather }) => {
           `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,precipitation_probability,weathercode&timezone=auto`
         );
 
-        const currentHour = new Date().getHours(); // Get the actual current hour
+        const currentHour = new Date().getHours();
         setTemperature(Math.round(weatherResponse.data.hourly.temperature_2m[currentHour]));
         setRainChance(weatherResponse.data.hourly.precipitation_probability[currentHour]);
 
@@ -69,17 +69,9 @@ const Header = ({ showWeather }) => {
 
     const getWeatherIcon = (weatherCode) => {
       const weatherIcons = {
-        0: '☀️', 
-        1: '🌤️', 
-        2: '⛅', 
-        3: '☁️', 
-        45: '🌫️', 
-        48: '🌫️', 
-        51: '🌦️', 
-        61: '🌧️', 
-        71: '❄️', 
-        80: '🌧️', 
-        95: '⛈️', 
+        0: '☀️', 1: '🌤️', 2: '⛅', 3: '☁️', 
+        45: '🌫️', 48: '🌫️', 51: '🌦️', 
+        61: '🌧️', 71: '❄️', 80: '🌧️', 95: '⛈️', 
       };
       return weatherIcons[weatherCode] || '🌈';
     };
@@ -90,14 +82,26 @@ const Header = ({ showWeather }) => {
   return (
     <header className="header">
       <div className="header-content">
-        {showWeather && (
-          <Link to="/weather" className="weather-info" title="Click to see detailed weather information">
-            <h2 className="location">{location}</h2>
-            <span className="weather-icon">{weatherIcon}</span>
-            <p className="temperature">{temperature}°C</p>
-            <p className="rain-chance">💧 {rainChance}%</p>
-          </Link>
-        )}
+        {/* Move the hamburger menu to the right */}
+        <button className="hamburger">
+          <span className="line"></span>
+          <span className="line"></span>
+          <span className="line"></span>
+        </button>
+
+        <div className="right-section">
+          {showWeather && (
+            <Link to="/weather" className="weather-info" title="Click to see detailed weather information">
+              <h2 className="location">{location}</h2>
+              <span className="weather-icon">{weatherIcon}</span>
+              <p className="temperature">{temperature}°C</p>
+              <p className="rain-chance">💧 {rainChance}%</p>
+            </Link>
+          )}
+          <button onClick={toggleTheme} className="theme-toggle">
+            {theme === "light" ? "Dark Mode" : "Light Mode"}
+          </button>
+        </div>
       </div>
     </header>
   );
