@@ -95,8 +95,8 @@ const HTreharneJones = () => {
         <br />
         <br />
         <motion.div whileHover={{ scale: 1.05 }}>
-          <Link to="/projects/GourmetGallery" className="custom-link-bottom">
-            Next Project: Gourmet Gallery
+          <Link to="/projects/ProjectOne" className="custom-link-bottom">
+            Next Project: Project One
           </Link>
         </motion.div>
         <br />
