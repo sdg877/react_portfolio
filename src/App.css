@@ -15,6 +15,48 @@ body {
   flex-direction: column;
 }
 
+body.light {
+  background-color: white;
+  color: black;
+}
+
+body.dark {
+  background-color: 	#696969;
+  color: white;
+}
+
+.theme-toggle {
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  margin-left: 10px; /* Add spacing between weather and button */
+}
+
+body.dark .theme-toggle {
+  background-color: #D3D3D3;
+  color: black;
+}
+
+body.dark .theme-toggle:hover {
+  background-color: #666;
+}
+
+/* Align header elements horizontally */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.weather-info {
+  margin-right: 10px;
+}
+
+
 .main-container {
   flex: 1; /* Allow content to grow and take up available space */
   display: flex; 
