@@ -1,65 +1,87 @@
 import React from "react";
-import SnakeImage from "../../Images/Snake.png";
 import { Link } from "react-router-dom";
-import "../../Styles/Projects.css"
+import { motion } from "framer-motion";
+import SnakeImage from "../../Images/Snake.png";
+import "../../Styles/Projects.css";
 
 const Snake = () => {
   return (
-    <div className="info-card">
-      <h3>Unit 1 Project - Snake</h3>
+    <motion.div
+      className="info-card-project"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <motion.h3
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+      >
+        Unit 1 Project - Snake
+      </motion.h3>
       <br />
       <br />
-      <div>
-        <img
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+        <motion.img
           src={SnakeImage}
-          alt="Snake"
+          alt="Snake Game"
           className="project-image"
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
         />
         <br />
         <br />
-        This project was my first ever, it was built as part of Unit One of
-        General Assembly's Software Engineering Bootcamp, we were given a choice
-        of games to build. As I had only been coding full-time for two weeks, I
-        decided to go for one of the simpler games, Snake, to allow me to ease
-        myself into my first-ever project and not overwhelm myself. We were
-        given seven days to complete the project including planning. Snake is a
-        single-player game, the player earns points by guiding the snake to eat
-        food that is randomly placed on the game board. The snake gets longer
-        and faster with every piece of food that it eats. The snake dies if it
-        collides with a wall or with itself.
+        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
+          This was my first-ever coding project, completed as part of Unit One of General Assembly's Software Engineering Bootcamp.
+          We were given a choice of games to build, and I chose Snake to challenge myself while keeping the scope manageable.
+        </motion.p>
         <br />
+        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>
+          The game is a single-player experience where the player earns points by guiding the snake to eat food placed randomly on the game board.
+          The snake grows longer and moves faster with each piece of food consumed, and the game ends if it collides with a wall or itself.
+        </motion.p>
         <br />
-        The game required that it should be built solely using JavaScript, that
-        it includes win/loss logic, that it be coded consistently, that
-        functions and variables be named sensibly, and that it be deployed
-        online using GitHub.
+        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
+          The game was built using only JavaScript, HTML, and CSS. It required implementing win/loss logic, consistent code structuring,
+          and deployment via GitHub Pages.
+        </motion.p>
         <br />
+        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}>
+          This project helped me solidify my understanding of JavaScript fundamentals, particularly event listeners, game loops,
+          and collision detection. I also added extra features, including a high score tracker, sound effects, and a custom-styled alert to start the game.
+        </motion.p>
         <br />
-        <br />
-        <br />
-        <a
+        <motion.a
           href="https://sdg877.github.io/Unit1_Project_Snake/"
           target="_blank"
           rel="noopener noreferrer"
+          className="custom-link"
+          whileHover={{ scale: 1.1 }}
         >
           Play Snake!
-        </a>
+        </motion.a>
         <br />
         <br />
-        <a
+        <motion.a
           href="https://github.com/sdg877/Unit1_Project_Snake"
           target="_blank"
           rel="noopener noreferrer"
+          className="custom-link"
+          whileHover={{ scale: 1.1 }}
         >
           GitHub Link
-        </a>
+        </motion.a>
         <br />
         <br />
-        <Link to="/projects/WeatherApp">
-          Next Project: Weather App
-        </Link>
-      </div>
-    </div>
+        <motion.div whileHover={{ scale: 1.05 }}>
+          <Link to="/projects/WeatherApp" className="custom-link-bottom">
+            Next Project: Weather App
+          </Link>
+        </motion.div>
+        <br />
+      </motion.div>
+    </motion.div>
   );
 };
 
