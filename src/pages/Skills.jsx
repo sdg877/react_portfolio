@@ -1,82 +1,146 @@
 import React from "react";
+import { motion } from "framer-motion";
 import "../Styles/Skills.css";
+
+const containerVariants = {
+  hidden: { opacity: 0, scale: 0.9, rotate: -2 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotate: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
+
+const skillGroupVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.6, ease: "easeOut" },
+  }),
+};
+
+const iconVariants = {
+  hover: {
+    scale: 1.2,
+    rotate: [0, -5, 5, -5, 0],
+    transition: { duration: 0.5 },
+  },
+};
+
+const pulseVariants = {
+  hidden: { scale: 1 },
+  visible: {
+    scale: [1, 1.05, 1],
+    transition: { duration: 1.5, repeat: Infinity, ease: "easeInOut" },
+  },
+};
+
+const skillSections = [
+  {
+    title: "Frontend Skills",
+    icons: [
+      "devicon-react-original-wordmark",
+      "devicon-vuejs-plain-wordmark",
+      "devicon-bootstrap-plain-wordmark",
+      "devicon-css3-plain-wordmark",
+      "devicon-html5-plain-wordmark",
+      "devicon-javascript-plain",
+      "devicon-axios-plain-wordmark",
+    ],
+  },
+  {
+    title: "Backend Skills",
+    icons: [
+      "devicon-nodejs-plain-wordmark",
+      "devicon-express-original-wordmark",
+      "devicon-django-plain-wordmark",
+      "devicon-djangorest-line-wordmark",
+      "devicon-mongodb-plain-wordmark",
+      "devicon-mongoose-original-wordmark",
+      "devicon-postgresql-plain-wordmark",
+      "devicon-python-plain-wordmark",
+      "devicon-oauth-plain",
+      "devicon-azuresqldatabase-plain",
+    ],
+  },
+  {
+    title: "Tools & General Skills",
+    icons: [
+      "devicon-amazonwebservices-plain-wordmark",
+      "devicon-git-plain-wordmark",
+      "devicon-github-original",
+      "devicon-postman-plain-wordmark",
+    ],
+  },
+];
 
 const Skills = () => {
   return (
-    <div className="info-card">
-      <div className="skill-group">
-        <strong className="skill-group-title">Frontend Skills</strong>
-        <div className="skill-icons">
-          <i className="devicon-react-original-wordmark" title="React"></i>
-          <i className="devicon-vuejs-plain-wordmark" title="Vue.js"></i>
-          <i className="devicon-bootstrap-plain-wordmark" title="Bootstrap"></i>
-          <i className="devicon-css3-plain-wordmark" title="CSS3"></i>
-          <i className="devicon-html5-plain-wordmark" title="HTML5"></i>
-          <i className="devicon-javascript-plain" title="JavaScript"></i>
-          <i className="devicon-axios-plain-wordmark" title="Axios"></i>
-        </div>
-      </div>
+    <motion.div
+      className="info-card"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      {skillSections.map((section, index) => (
+        <motion.div
+          key={index}
+          className="skill-group"
+          variants={skillGroupVariants}
+          initial="hidden"
+          animate="visible"
+          custom={index}
+        >
+          <strong className="skill-group-title">{section.title}</strong>
+          <div className="skill-icons">
+            {section.icons.map((icon, i) => (
+              <motion.i
+                key={i}
+                className={icon}
+                title={icon.replace("devicon-", "").replace("-wordmark", "")}
+                variants={iconVariants}
+                whileHover="hover"
+              />
+            ))}
+          </div>
+        </motion.div>
+      ))}
 
-      <br />
-
-      <div className="skill-group">
-        <strong className="skill-group-title">Backend Skills</strong>
-        <div className="skill-icons">
-          <i className="devicon-nodejs-plain-wordmark" title="Node.js"></i>
-          <i className="devicon-express-original-wordmark" title="Express"></i>
-          <i className="devicon-django-plain-wordmark" title="Django"></i>
-          <i
-            className="devicon-djangorest-line-wordmark"
-            title="Django REST Framework"
-          ></i>
-          <i className="devicon-mongodb-plain-wordmark" title="MongoDB"></i>
-          <i className="devicon-mongoose-original-wordmark" title="Mongoose"></i>
-          <i className="devicon-postgresql-plain-wordmark" title="PostgreSQL"></i>
-          <i className="devicon-python-plain-wordmark" title="Python"></i>
-          <i className="devicon-oauth-plain" title="OAuth"></i>
-          <i
-            className="devicon-azuresqldatabase-plain"
-            title="Azure SQL Database"
-          ></i>
-        </div>
-      </div>
-
-      <br />
-
-      <div className="skill-group">
-        <strong className="skill-group-title">Tools & General Skills</strong>
-        <div className="skill-icons">
-          <i
-            className="devicon-amazonwebservices-plain-wordmark"
-            title="AWS"
-          ></i>
-          <i className="devicon-git-plain-wordmark" title="Git"></i>
-          <i className="devicon-github-original" title="GitHub"></i>
-          <i className="devicon-postman-plain-wordmark" title="Postman"></i>
-        </div>
-      </div>
-
-      <br />
-
-      <div className="skill-group">
+      <motion.div
+        className="skill-group"
+        variants={skillGroupVariants}
+        initial="hidden"
+        animate="visible"
+        custom={skillSections.length}
+      >
         <strong className="skill-group-title">Currently Learning</strong>
-        <div className="skill-icons">
+        <motion.div
+          className="skill-icons"
+          variants={pulseVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <i className="devicon-csharp-plain-wordmark" title="C#"></i>
           <i className="devicon-java-plain-wordmark" title="Java"></i>
           <i className="devicon-typescript-plain" title="TypeScript"></i>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <br />
-
-      <div className="skill-group">
+      <motion.div
+        className="skill-group"
+        variants={skillGroupVariants}
+        initial="hidden"
+        animate="visible"
+        custom={skillSections.length + 1}
+      >
         <strong className="skill-group-title">Soft Skills</strong>
         <p className="soft-skills">
-          Organisation, Communication, Team Work, Team Management,
-          Problem-Solving, Project Management.
+          Organisation, Communication, Team Work, Team Management, Problem-Solving, Project Management.
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
