@@ -1,4 +1,29 @@
-/* Skill Icons */
+.info-card-skills {
+  color: #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-bottom: 50px;
+  padding-bottom: 30px;
+}
+
+.info-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.info-card p {
+  line-height: 1.6;
+}
+
+.info-card h5 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
 .skill-icons {
     display: flex;
     flex-wrap: wrap;
@@ -17,8 +42,7 @@
   .skill-icons i:hover {
     transform: scale(1.1);
   }
-  
-  /* Tooltip styling */
+
   .skill-icons i::after {
     content: attr(title);
     position: absolute;
@@ -36,17 +60,17 @@
     font-size: 0.85rem;
   }
   
-  /* Show tooltip on hover */
   .skill-icons i:hover::after {
     opacity: 1;
   }
   
   .skill-group-title {
+    display: block;
     font-size: 1.5rem;
-    margin: 20px 0;
+    margin: 50px 0 25px; 
     text-align: center;
     color: darkslategray;
-  }
+}
 
   .soft-skills {
     color: darkslategray;
