@@ -12,7 +12,12 @@ const ProjectOne = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <motion.div className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+      <motion.div
+        className="details"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
         <motion.h3
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -22,7 +27,11 @@ const ProjectOne = () => {
         </motion.h3>
         <br />
         <br />
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
           <motion.img
             src={ProjectOneImage}
             alt="Project One"
@@ -34,23 +43,35 @@ const ProjectOne = () => {
           <br />
           <br />
           <motion.p>
-            This MERN stack project was developed for a client with specialised workflow requirements. Due to the confidential nature of this project,
-            specific details about its users, data, and workflows cannot be disclosed. This project took 130 hours to complete, and I worked alone.
+            This MERN stack project was developed for a client with specialised
+            workflow requirements. Due to the confidential nature of this
+            project, specific details about its users, data, and workflows
+            cannot be disclosed. This project took 130 hours to complete, and I
+            worked alone.
           </motion.p>
           <br />
           <motion.p>
-            The application addresses highly sensitive and regulated tasks, designed to support complex organisational needs and compliance workflows.
-            It features 11 interconnected data models, ensuring seamless organisation, linking, and management of data across various modules.
+            The application addresses highly sensitive and regulated tasks,
+            designed to support complex organisational needs and compliance
+            workflows. It features 11 interconnected data models, ensuring
+            seamless organisation, linking, and management of data across
+            various modules.
           </motion.p>
           <br />
           <motion.p>
-            A central calendar system allows users to track tasks and monitor compliance. Automated scheduling triggers workflows based on user-inputted dates,
-            ensuring timely completion of critical activities. A traffic light system visually signals task progress and deadlines, enhancing prioritisation.
+            A central calendar system allows users to track tasks and monitor
+            compliance. Automated scheduling triggers workflows based on
+            user-inputted dates, ensuring timely completion of critical
+            activities. A traffic light system visually signals task progress
+            and deadlines, enhancing prioritisation.
           </motion.p>
           <br />
           <motion.p>
-            Key challenges included dynamically displaying attendee and contact data within a unified table, implementing a context-sensitive help system,
-            and integrating downloadable email templates for seamless communication. Each feature was carefully designed to support the client's workflow needs.
+            Key challenges included dynamically displaying attendee and contact
+            data within a unified table, implementing a context-sensitive help
+            system, and integrating downloadable email templates for seamless
+            communication. Each feature was carefully designed to support the
+            client's workflow needs.
           </motion.p>
           <br />
           <motion.div whileHover={{ scale: 1.05 }}>
