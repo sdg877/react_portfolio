@@ -89,9 +89,6 @@
   color: #778899;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   height: 50px;
-  position: relative;
-  width: 100%;
-  margin-top: auto;
 }
 
 .layout {
@@ -102,11 +99,26 @@
   flex: 1;
 }
 
-.layout-title {
-  font-size: 2rem;
-  margin: 10px 0;
+.layout-logo {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin-bottom: 5px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
 }
 
-.layout-sub {
+.layout-name .layout-sub {
   color: #666;
+}
+
+body.dark .layout-name,
+body.dark .layout-sub {
+  color: white;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
