@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "../Styles/Education.css";
+import "../Styles/EducationExperience.css";
 
 const Education = () => {
   return (
