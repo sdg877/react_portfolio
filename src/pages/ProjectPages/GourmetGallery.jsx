@@ -21,7 +21,11 @@ const GourmetGallery = () => {
       </motion.h3>
       <br />
       <br />
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
         <motion.img
           src={GourmetGalleryImage}
           alt="Gourmet Gallery"
@@ -31,24 +35,52 @@ const GourmetGallery = () => {
           transition={{ duration: 0.5 }}
         />
         <br /> <br />
-        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
-          Gourmet Gallery is a full-stack MERN application that allows users to search, filter, and save recipes. 
-          It integrates an external API for recipe sourcing and includes authentication so users can manage their saved recipes.
+        <motion.p
+          className="details"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          Gourmet Gallery is a full-stack MERN application that allows users to
+          search, filter, and save recipes. It integrates an external API for
+          recipe sourcing and includes authentication so users can manage their
+          saved recipes.
         </motion.p>
         <br />
-        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>
-          This was my first solo full-stack project built entirely without instructor assistance. I set up the backend using Express and MongoDB, 
-          developed authentication with JWT, and implemented frontend functionality using React.
+        <motion.p
+          className="details"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+        >
+          This was my first solo full-stack project built entirely without
+          instructor assistance. I set up the backend using Express and MongoDB,
+          developed authentication with JWT, and implemented frontend
+          functionality using React.
         </motion.p>
         <br />
-        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
-          Challenges included setting up API integration, managing authentication, and ensuring proper formatting of displayed recipes. 
-          To maintain layout consistency, I implemented a function that filters out recipes without images.
+        <motion.p
+          className="details"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+        >
+          Challenges included setting up API integration, managing
+          authentication, and ensuring proper formatting of displayed recipes.
+          To maintain layout consistency, I implemented a function that filters
+          out recipes without images.
         </motion.p>
         <br />
-        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}>
-          This project reinforced my ability to problem-solve independently. It was incredibly rewarding to build and deploy the site without external support, 
-          improving my confidence in full-stack development and API integration.
+        <motion.p
+          className="details"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9 }}
+        >
+          This project reinforced my ability to problem-solve independently. It
+          was incredibly rewarding to build and deploy the site without external
+          support, improving my confidence in full-stack development and API
+          integration.
         </motion.p>
         <br />
         <motion.a
