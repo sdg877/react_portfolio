@@ -79,7 +79,7 @@ const skillSections = [
 const Skills = () => {
   return (
     <motion.div
-      className="info-card"
+      className="info-card-skills"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
