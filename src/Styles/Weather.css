@@ -77,7 +77,6 @@ h3 {
   padding: 10px 20px;
   width: 100%;
   position: relative;
-  background-color: white;
 }
 
 
@@ -85,7 +84,7 @@ h3 {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: auto; /* Push it to the right */
+  margin-left: auto;
 }
 
 
