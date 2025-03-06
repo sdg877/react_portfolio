@@ -66,8 +66,9 @@ const Projects = () => {
         initial={{ opacity: 0, y: -20 }} 
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 1, ease: "easeOut" }}
+        className="project-description"
       >
-        Click on an image for more info.
+        Click on an image for more informarion.
       </motion.h5>
 
       <motion.div className="project-container">
