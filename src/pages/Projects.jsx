@@ -28,15 +28,15 @@ const containerVariants = {
   },
 };
 
-
 const getItemVariants = (index) => ({
-  hidden: { opacity: 0, x: index % 2 === 0 ? -120 : 120 }, 
+  hidden: { opacity: 0, x: index % 2 === 0 ? -120 : 120, scale: 0.9 }, 
   visible: { 
     opacity: 1, 
     x: 0, 
+    scale: 1,
     transition: { type: "spring", stiffness: 80, damping: 15, duration: 0.8 } 
   },
-  hover: { scale: 1.06, rotate: 1, transition: { type: "spring", stiffness: 200 } }
+  hover: { scale: 1.05, transition: { type: "spring", stiffness: 200 } }
 });
 
 const Projects = () => {
@@ -80,13 +80,12 @@ const Projects = () => {
             animate={controls}
             whileHover="hover"
           >
-            <h5>{project.name}</h5>
-            <Link to={project.link}>
-              <motion.img
+            <Link to={project.link} className="project-link">
+              <h5>{project.name}</h5>
+              <img
                 src={project.image}
                 alt={project.name}
                 className="project-image"
-                whileHover={{ scale: 1.1, rotate: 2 }}
               />
             </Link>
           </motion.div>
