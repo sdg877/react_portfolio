@@ -1,67 +1,67 @@
 import React from "react";
-import ProjectOneImage from "../../Images/ProjectOne.jpg";
 import { Link } from "react-router-dom";
-import "../../Styles/Projects.css"
+import { motion } from "framer-motion";
+import ProjectOneImage from "../../Images/ProjectOne.jpg";
+import "../../Styles/Projects.css";
 
 const ProjectOne = () => {
   return (
-    <div className="info-card">
-      <h3>Confidential MERN Stack Project</h3>
-      <br />
-      <br />
-      <div>
-        <img
-          src={ProjectOneImage}
-          alt="Project One"
-          className="project-image"
-        />
+    <motion.div
+      className="info-card-project"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <motion.div className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+        <motion.h3
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+        >
+          Confidential MERN Stack Project
+        </motion.h3>
         <br />
         <br />
-        This MERN stack project was developed for a client with specialised
-        workflow requirements and due to the confidential nature of this
-        project, specific details about its users, data, and workflows cannot be
-        disclosed. This project took 130 hours to complete and I worked alone.
-        The application addresses highly sensitive and regulated tasks, and its
-        design and functionality were tailored to meet the unique needs of a
-        specialised environment. Protecting the privacy of the users and the
-        nature of the workflows was a core priority throughout development, and
-        descriptions here focus on the technical scope and challenges rather
-        than specific implementation details.
-        <br />
-        <br />
-        The project is a comprehensive workflow management tool designed for
-        professionals to efficiently track and support complex organisational
-        needs and compliance workflows. With a robust architecture featuring 11
-        interconnected data models, this application seamlessly organizes,
-        links, and manages data across different modules and user needs.
-        <br />
-        <br />
-        A central calendar system provides task views, allowing users to track
-        and monitor compliance and support activities. A task list and activity
-        log enable real-time updates on task statuses, while an automated
-        scheduling system triggers specific workflows based on user-inputted
-        dates, ensuring timely completion of critical activities according to
-        precise legal or regulatory deadlines. The application includes a
-        traffic light system that visually signals task progress and deadlines,
-        enhancing ease of use and prioritization.
-        <br />
-        <br />
-        Several key challenges were met and overcome in this project. One
-        involved the dynamic display of attendee and contact data within a
-        unified table, where various data points from multiple database sources
-        needed to be accurately retrieved and displayed in a single, editable
-        view. Another was building a context-sensitive help system, which
-        automatically presents users with tailored guidance and tips depending
-        on the urgency of upcoming tasks. Additionally, the app provides users
-        with downloadable email templates, allowing for seamless, efficient
-        communication.
-        <br />
-        <br />
-        <Link to="/projects/GourmetGallery">
-        Next Project: Gourmet Gallery
-      </Link>
-      </div>
-    </div>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
+          <motion.img
+            src={ProjectOneImage}
+            alt="Project One"
+            className="project-image"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          />
+          <br />
+          <br />
+          <motion.p>
+            This MERN stack project was developed for a client with specialised workflow requirements. Due to the confidential nature of this project,
+            specific details about its users, data, and workflows cannot be disclosed. This project took 130 hours to complete, and I worked alone.
+          </motion.p>
+          <br />
+          <motion.p>
+            The application addresses highly sensitive and regulated tasks, designed to support complex organisational needs and compliance workflows.
+            It features 11 interconnected data models, ensuring seamless organisation, linking, and management of data across various modules.
+          </motion.p>
+          <br />
+          <motion.p>
+            A central calendar system allows users to track tasks and monitor compliance. Automated scheduling triggers workflows based on user-inputted dates,
+            ensuring timely completion of critical activities. A traffic light system visually signals task progress and deadlines, enhancing prioritisation.
+          </motion.p>
+          <br />
+          <motion.p>
+            Key challenges included dynamically displaying attendee and contact data within a unified table, implementing a context-sensitive help system,
+            and integrating downloadable email templates for seamless communication. Each feature was carefully designed to support the client's workflow needs.
+          </motion.p>
+          <br />
+          <motion.div whileHover={{ scale: 1.05 }}>
+            <Link to="/projects/GourmetGallery" className="custom-link-bottom">
+              Next Project: Gourmet Gallery
+            </Link>
+          </motion.div>
+          <br />
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 
