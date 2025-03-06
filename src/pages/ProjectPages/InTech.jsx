@@ -1,76 +1,98 @@
 import React from "react";
-import InTechImage from "../../Images/InTech.png";
 import { Link } from "react-router-dom";
-import "../../Styles/Projects.css"
+import { motion } from "framer-motion";
+import InTechImage from "../../Images/InTech.png";
+import "../../Styles/Projects.css";
 
 const InTech = () => {
   return (
-    <div className="info-card">
-      <h3>Unit 3 Project - inTech Jobs</h3>
+    <motion.div
+      className="info-card-project"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
+      <motion.h3
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+      >
+        inTech Jobs
+      </motion.h3>
       <br />
       <br />
-      <div>
-        <img
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+        <motion.img
           src={InTechImage}
-          alt="inTech"
+          alt="inTech Jobs"
           className="project-image"
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
         />
         <br />
         <br />
-        For Project 3, we were put into groups of three. We decided we wanted to
-        build a site that would be useful to our cohort once we finished the
-        course so we created a job board, we decided to use both an external API
-        and to make it fully CRUD.
+        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
+          inTech Jobs was a group project built using the MERN stack, developed by a team of three including myself. It is a job board designed to help Junior Developers search for jobs, 
+          save them to their profile, and track their application progress.
+        </motion.p>
         <br />
+        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>
+          The project required integration with an external API and full CRUD functionality. We used the Adzuna API to fetch job listings 
+          with "Junior" and "Developer" keywords and implemented a system for users to save and manage job applications.
+        </motion.p>
         <br />
-        The brief was to create a MERN stack website which should either be
-        fully CRUD or include an external API, we decided to use both as this
-        would fit our plan. We used the Adzuna API to pull jobs with the
-        keywords Junior and Developer. We then coded it to allow the user to log
-        in and save jobs, the user could also update the saved jobs section to
-        reflect where they were in the interview process.
+        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
+          My main contributions included setting up job data retrieval from the API, implementing Google Maps integration for job locations, 
+          and ensuring that unauthenticated users were redirected to the login page when trying to save jobs.
+        </motion.p>
         <br />
+        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}>
+          This project strengthened my teamwork and GitHub branching skills. Detailed planning, including Excalidraw and Trello boards, helped us 
+          stay organised and complete all our planned features within the timeframe.
+        </motion.p>
         <br />
-        I was responsible for pulling the data into the job cards from the
-        external API, linking the location via Google maps, redirecting to the
-        login page if the user tries to save a job and is not authenticated and
-        we worked as a team on authorization and linking the API.
-        <br />
-        <br />
-        <br />
-        <br />
-        <a
+        <motion.a
           href="https://intechjobs.netlify.app/"
           target="_blank"
           rel="noopener noreferrer"
+          className="custom-link"
+          whileHover={{ scale: 1.1 }}
         >
           Check out our site!
-        </a>
+        </motion.a>
         <br />
         <br />
-        <a
+        <motion.a
           href="https://github.com/sdg877/InTechFrontend"
           target="_blank"
           rel="noopener noreferrer"
+          className="custom-link"
+          whileHover={{ scale: 1.1 }}
         >
           Frontend GitHub Link
-        </a>
+        </motion.a>
         <br />
         <br />
-        <a
+        <motion.a
           href="https://github.com/sdg877/InTechBackend"
           target="_blank"
           rel="noopener noreferrer"
+          className="custom-link"
+          whileHover={{ scale: 1.1 }}
         >
           Backend GitHub Link
-        </a>
+        </motion.a>
         <br />
         <br />
-        <Link to="/projects/SpookSpotters">
-          Next Project: Spook Spotters
-        </Link>
-      </div>
-    </div>
+        <motion.div whileHover={{ scale: 1.05 }}>
+          <Link to="/projects/SpookSpotters" className="custom-link-bottom">
+            Next Project: Spook Spotters
+          </Link>
+        </motion.div>
+        <br />
+      </motion.div>
+    </motion.div>
   );
 };
 
