@@ -1,12 +1,12 @@
 .info-card {
   color: #e0e0e0;
   border-radius: 8px;
-  padding: 15px; 
+  padding: 15px;
   width: 90%;
-  max-width: 900px; 
+  max-width: 950px;
   margin: 20px auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  text-align: center;
+  text-align: center; 
   margin-bottom: 20px;
 }
 
@@ -29,62 +29,70 @@ body.dark .info-card {
 }
 
 .project-container {
-  display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-  gap: 10px; 
-  padding: 10px; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 10px;
+  justify-items: center;
 }
 
 .project-item {
   border-radius: 8px;
-  padding: 10px;
+  padding: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .project-item img {
   width: 100%;
-  height: 140px;
+  height: 180px;
   object-fit: cover;
   border-radius: 8px;
 }
 
 .project-image {
   width: 100%;
-  max-height: 300px; 
+  max-height: 300px;
   border-radius: 8px;
   object-fit: contain;
-  margin-top: 10px; 
+  margin-top: 10px;
+}
+
+.project-description {
+  color: #696969;
 }
 
 .project-container {
-  color:#2f4f4f;
+  color: #2f4f4f;
 }
 
 .project-link {
-  color:#2f4f4f;
+  color: #2f4f4f;
   text-decoration: none;
   margin-bottom: 15px;
 }
 
 .custom-link {
-  color: #20B2AA;
+  color: #20b2aa;
   text-decoration: none;
 }
 
 .custom-link-bottom {
-  color: #20B2AA;
+  color: #20b2aa;
   text-decoration: none;
-  margin-bottom: 30px; 
-  display: block; 
-  border: 1px solid transparent; 
+  margin-bottom: 30px;
+  display: block;
+  border: 1px solid transparent;
 }
 
 body.dark .custom-link-bottom .custom-link {
-  color: #F5F5DC;
+  color: #f5f5dc;
 }
 
 .custom-link:hover {
@@ -92,6 +100,31 @@ body.dark .custom-link-bottom .custom-link {
   color: darkslategray;
 }
 
-body.dark .project-name{
+body.dark .project-name {
   color: white;
+}
+
+@media (max-width: 768px) {
+  .project-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-item {
+    padding: 20px;
+    width: 90%;
+    max-width: none;
+  }
+
+  .project-item img {
+    height: 200px;
+  }
+
+  .info-card h3 {
+    font-size: 1.8rem;
+  }
+
+  .info-card h5 {
+    font-size: 1.3rem;
+  }
 }
