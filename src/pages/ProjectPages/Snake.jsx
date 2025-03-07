@@ -75,8 +75,8 @@ const Snake = () => {
         <br />
         <br />
         <motion.div whileHover={{ scale: 1.05 }}>
-          <Link to="/projects/WeatherApp" className="custom-link-bottom">
-            Next Project: Weather App
+          <Link to="/projects/HTJ" className="custom-link-bottom">
+            Next Project: Heather Treharne Jones site
           </Link>
         </motion.div>
         <br />
