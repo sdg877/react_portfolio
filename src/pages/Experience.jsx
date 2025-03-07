@@ -11,7 +11,7 @@ const Experience = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <h3>Experience</h3>
+      <h3 className="experience-title">Experience</h3>
       <motion.div
         className="details"
         initial="hidden"
