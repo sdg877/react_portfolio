@@ -1,4 +1,5 @@
 .info-card-skills {
+  background-color: #f2fdf2;
   color: #e0e0e0;
   border-radius: 8px;
   padding: 20px;
@@ -11,68 +12,106 @@
   padding-bottom: 30px;
 }
 
-.info-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-.info-card p {
-  line-height: 1.6;
-}
-
-.info-card h5 {
-  margin-bottom: 8px;
-  font-size: 1.2rem;
-}
-.skill-icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 15px 0;
+body.dark {
+  .info-card-skills {
+    background-color: #003333;
   }
-  
+
+  .skill-group-title,
+  .soft-skills,
   .skill-icons i {
+    color: white;
+  }
+}
+
+.info-card {
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  h5 {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+}
+
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 15px 0;
+
+  i {
     position: relative;
     font-size: 3rem;
     margin: 19px;
-    color: #2F4F4F;
+    color: #2f4f4f;
     transition: transform 0.3s;
-  }
-  
-  .skill-icons i:hover {
-    transform: scale(1.1);
-  }
 
-  .skill-icons i::after {
-    content: attr(title);
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #ffffff;
-    padding: 5px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s, bottom 0.3s;
-    pointer-events: none;
-    font-size: 0.85rem;
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &::after {
+      content: attr(title);
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #ffffff;
+      padding: 5px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s, bottom 0.3s;
+      pointer-events: none;
+      font-size: 0.85rem;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
   }
-  
-  .skill-icons i:hover::after {
-    opacity: 1;
-  }
-  
-  .skill-group-title {
-    display: block;
-    font-size: 1.5rem;
-    margin: 50px 0 25px; 
-    text-align: center;
-    color: darkslategray;
 }
 
-  .soft-skills {
-    color: darkslategray;
+.skill-group-title {
+  display: block;
+  font-size: 1.5rem;
+  margin: 50px 0 25px;
+  text-align: center;
+  color: darkslategray;
+}
+
+/* Soft Skills */
+.soft-skills {
+  color: darkslategray;
+}
+
+@media (max-width: 600px) {
+  .info-card-skills {
+    width: 80%;
   }
-  
+
+  .skill-group-title {
+    font-size: 1.2rem;
+  }
+
+  .skill-icons i {
+    font-size: 2rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .soft-skills {
+    font-size: 0.9rem;
+  }
+}
