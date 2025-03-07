@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "../Styles/Header.css";
 
 const Header = ({ showWeather, toggleTheme, theme }) => {
@@ -18,10 +18,6 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
           );
 
           const locationName =
-            locationResponse.data.address.neighbourhood ||
-            locationResponse.data.address.suburb ||
-            locationResponse.data.address.borough ||
-            locationResponse.data.address.city_district ||
             locationResponse.data.address.city ||
             locationResponse.data.address.town ||
             locationResponse.data.address.state ||
@@ -47,8 +43,8 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
           weatherResponse.data.hourly.weathercode[currentHour];
         setWeatherIcon(getWeatherIcon(weatherCode));
       } catch (error) {
-        console.error("Error fetching weather data for header:", error);
-        setLocation("Unable to fetch location");
+        console.error("Error fetching weather:", error);
+        setLocation("Unavailable");
         setTemperature("--");
         setRainChance("--");
         setWeatherIcon("❓");
@@ -59,11 +55,10 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
-            const { latitude, longitude } = position.coords;
-            fetchWeather(latitude, longitude);
+            fetchWeather(position.coords.latitude, position.coords.longitude);
           },
           () => {
-            fetchWeather(51.5074, -0.1278, true);
+            fetchWeather(51.5074, -0.1278, true); 
           }
         );
       } else {
@@ -93,36 +88,20 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
 
   return (
     <header className="header">
-      <div className="header-content">
-        <button className="hamburger">
-          <span className="line"></span>
-          <span className="line"></span>
-          <span className="line"></span>
-        </button>
-
-        <div className="right-section">
-          <div className="weather-toggle-container">
-            {showWeather && (
-              <Link
-                to="/weather"
-                className="weather-info"
-                title="Click to see detailed weather information"
-              >
-                <h2 className="location">{location}</h2>
-                <span className="weather-icon">{weatherIcon}</span>
-                <p className="temperature">{temperature}°C</p>
-                <p className="rain-chance">💧 {rainChance}%</p>
-              </Link>
-            )}
-            <label className="theme-switch">
-              <input
-                type="checkbox"
-                checked={theme === "dark"}
-                onChange={toggleTheme}
-              />
-              <span className="slider round"></span>
-            </label>
-          </div>
+      <div className="header-container">
+        <div className="weather-toggle-container">
+          {showWeather && (
+            <Link to="/weather" className="weather-info" title="Click for detailed weather">
+              <h2 className="location">{location}</h2>
+              <span className="weather-icon">{weatherIcon}</span>
+              <p className="temperature">{temperature}°C</p>
+              <p className="rain-chance">💧 {rainChance}%</p>
+            </Link>
+          )}
+          <label className="theme-switch">
+            <input type="checkbox" checked={theme === "dark"} onChange={toggleTheme} />
+            <span className="slider round"></span>
+          </label>
         </div>
       </div>
     </header>
