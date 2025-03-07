@@ -152,13 +152,4 @@ body.dark .layout-sub {
   .nav-link {
     margin: 0 10px;
   }
-
-  .skill-icons i {
-    font-size: 2rem;
-  }
-
-  .contact-links {
-    flex-direction: column;
-    align-items: center;
-  }
 }
