@@ -36,10 +36,8 @@ body.dark .project-item {
 }
 
 .project-item {
-  background-color: #f2fdf2
+  background-color: #f2fdf2;
 }
-
-
 
 .info-card-project h3 {
   font-size: 1.5rem;
@@ -75,6 +73,7 @@ body.dark .project-item {
   width: 90%;
   max-width: 400px;
   margin: 0 auto;
+  background-color: #94b2b2;
 }
 
 .project-item img {
@@ -85,7 +84,7 @@ body.dark .project-item {
 }
 
 .project-image {
-  max-width: 100%; 
+  max-width: 100%;
   height: auto; 
   object-fit: contain; 
   border-radius: 8px;
@@ -152,7 +151,6 @@ body.dark .project-name {
   .info-card-project {
     width: 80%;
   }
-
 
   .info-card-project h3 {
     font-size: 1.8rem;
