@@ -43,8 +43,8 @@ const App = () => {
           <Route path="/projects/InTechJobs" element={<><Layout /><InTech /></>} />
           <Route path="/projects/ProjectOne" element={<><Layout /><ProjectOne /></>} />
         </Routes>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };
