@@ -85,8 +85,8 @@ body.dark .project-item {
 
 .project-image {
   max-width: 100%;
-  height: auto; 
-  object-fit: contain; 
+  height: auto;
+  object-fit: contain;
   border-radius: 8px;
   margin-top: 10px;
 }
@@ -106,21 +106,26 @@ body.dark .project-item {
 }
 
 .custom-link {
-  color: #20b2aa;
+  color: #778899;
   text-decoration: none;
+  font-weight: 400;
 }
 
 .custom-link-bottom {
-  color: #20b2aa;
+  color: #778899;
   text-decoration: none;
   display: block;
   border: 1px solid transparent;
-  font-weight: bold;
   margin-bottom: 10px;
+  font-weight: 400;
 }
 
-body.dark .custom-link-bottom .custom-link {
-  color: #f5f5dc;
+body.dark .custom-link-bottom {
+  color: white;
+}
+
+body.dark .custom-link {
+  color: white;
 }
 
 .custom-link:hover {
