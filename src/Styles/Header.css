@@ -12,7 +12,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 96%;
+  width: 98%;
   padding: 15px;
   position: relative;
 }
@@ -44,7 +44,6 @@ html {
   align-items: center;
   padding: 10px 15px;
   width: 100%;
-  position: relative;
 }
 
 .navbar-container {
@@ -57,7 +56,7 @@ html {
   align-items: center;
   gap: 5px;
   background-color: #ffffff;
-  padding: 5px 10px;
+  padding: 5px 5px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-decoration: none;
@@ -67,6 +66,11 @@ html {
   margin-left: auto;
   flex-shrink: 1;
   white-space: nowrap;
+  height: 50px;
+}
+
+body.dark .weather-info {
+  background-color: #5c7a7a;
 }
 
 .weather-info:hover {
@@ -114,25 +118,26 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin-right: auto;
-  width: 25px;
-  height: 20px;
+  align-items: center;
+  width: 40px;
+  height: 40px;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 10px;
+  padding: 0;
+  margin: 0;
   z-index: 1001;
 }
 
 .hamburger .line {
-  width: 100%;
+  width: 70%;
   height: 4px;
   background-color: #2f4f4f;
   transition: all 0.3s ease;
 }
 
 body.dark .hamburger .line {
-  background-color: #3CB371;
+  background-color: #5c7a7a;
 }
 
 .nav-link {
@@ -150,17 +155,19 @@ body.dark .hamburger .line {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 0;
   background-color: white;
-  border: darkslategray;
+  border: none;
   text-decoration: none;
   text-align: left;
   font-size: 1rem;
   font-weight: bold;
   z-index: 1000;
-  width: auto;
+  width: 100%;
   padding: 20px 30px;
+  padding-left: 30px;
+  box-sizing: border-box;
 }
 
 .nav-link:hover {
@@ -229,7 +236,7 @@ body.dark .hamburger .line {
 }
 
 input:checked + .slider {
-  background-color: #8fbc8f;
+  background-color: #5c7a7a;
 }
 
 input:focus + .slider {
@@ -295,6 +302,10 @@ input:checked + .slider:before {
 
   .header .hamburger {
     margin-right: auto;
+  }
+
+  .header-container {
+    width: 96%;
   }
 
   .header-container.home-page {
