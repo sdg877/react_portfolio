@@ -7,7 +7,7 @@ html {
 }
 
 .weather-content-wrapper {
-  min-height: 600px; 
+  min-height: 600px;
 }
 
 .weather-container {
@@ -28,8 +28,6 @@ html {
   justify-content: center;
   margin-top: 20px;
 }
-
-
 
 .weather-card {
   background-color: #ffffff;
@@ -61,22 +59,12 @@ html {
   margin: 10px 0;
 }
 
-.header-container .home-page {
-  align-items: left;
-}
 
 h2,
 h3 {
   text-align: center;
   color: #333;
   margin-bottom: 10px;
-}
-
-.header {
-  align-items: right;
-  padding: 10px 20px;
-  width: 100%;
-  position: relative;
 }
 
 
@@ -87,98 +75,6 @@ h3 {
   margin-left: auto;
 }
 
-
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin-right: 30px;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-  width: 100%;
-  position: relative;
-}
-
-.navbar-container {
-  display: flex;
-  align-items: center;
-}
-
-.weather-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #ffffff;
-  padding: 5px 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
-  max-width: 250px;
-  margin-left: auto;
-}
-
-.weather-info:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  text-decoration: none;
-}
-
-body.dark .weather-info {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background-color: #5c7a7a;
-  padding: 5px 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
-  max-width: 250px;
-  margin-left: auto;
-}
-
-.weather-icon {
-  font-size: 2rem;
-  transition: transform 0.2s;
-}
-
-.location,
-.temperature,
-.rain-chance {
-  margin: 0;
-  color: #333;
-}
-
-.location {
-  font-size: 1.2rem;
-  color: #333;
-}
-
-.temperature {
-  font-weight: bold;
-}
-
-.rain-chance {
-  color: #555;
-}
-
-.temp {
-  font-size: 18px;
-}
-
-.weatherdetail {
-  font-size: 13px;
-}
 
 .loading {
   text-align: center;
@@ -228,40 +124,9 @@ body.dark .weather-info {
   .weather-week-card p {
     margin: 5px 10px;
   }
-  .header {
-    margin-right: 10px;
-  }
 
   .location {
     font-size: medium;
   }
 
-  .header-content {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .weather-info {
-    max-width: 100%;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-  }
-
-  .home-page .weather-info {
-    margin-top: 10px;
-    position: static;
-    margin: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-    max-width: 100%;
-    align-items: center;
-  }
-
-  .rain-chance {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    flex-shrink: 0;
-  }
 }
