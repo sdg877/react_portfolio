@@ -1,14 +1,30 @@
 body,
 html {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-.header-container .home-page {
-  align-items: left;
-}
+.header-container.home-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 98%;
+    padding: 15px;
+    position: relative;
+  }
+  
+  
+  .header-container .home-page .weather-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+  }
+  
 
 .header {
   align-items: right;
@@ -21,8 +37,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  margin-right: 30px;
+  margin-right: 0;
 }
 
 .header-container {
@@ -42,16 +57,18 @@ html {
 .weather-info {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   background-color: #ffffff;
-  padding: 5px 15px;
+  padding: 5px 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s, box-shadow 0.2s;
-  max-width: 250px;
+  max-width: fit-content;
   margin-left: auto;
+  flex-shrink: 1;
+  white-space: nowrap;
 }
 
 .weather-info:hover {
@@ -62,7 +79,7 @@ html {
 }
 
 .weather-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   transition: transform 0.2s;
 }
 
@@ -71,10 +88,11 @@ html {
 .rain-chance {
   margin: 0;
   color: #333;
+  font-size: 0.9rem;
 }
 
 .location {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #333;
 }
 
@@ -87,11 +105,11 @@ html {
 }
 
 .temp {
-  font-size: 18px;
+  font-size: 1rem;
 }
 
 .weatherdetail {
-  font-size: 13px;
+  font-size: 0.8rem;
 }
 
 .hamburger {
@@ -99,24 +117,24 @@ html {
   flex-direction: column;
   justify-content: space-around;
   margin-right: auto;
-  width: 30px;
-  height: 25px;
+  width: 25px;
+  height: 20px;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 25px;
+  padding: 10px;
   z-index: 1001;
 }
 
 .hamburger .line {
   width: 100%;
-  height: 3px;
+  height: 2px;
   background-color: #2f4f4f;
   transition: all 0.3s ease;
 }
 
 .nav-link {
-  margin: 10px 0;
+  margin: 8px 0;
   display: block;
   width: auto;
   text-decoration: none;
@@ -130,17 +148,17 @@ html {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 60px;
+  top: 50px;
   left: 0;
   background-color: white;
   border: darkslategray;
   text-decoration: none;
   text-align: left;
-  font-size: 20px;
+  font-size: 1rem;
   font-weight: bold;
   z-index: 1000;
   width: auto;
-  padding: 30px 50px;
+  padding: 20px 30px;
 }
 
 .nav-link:hover {
@@ -159,7 +177,7 @@ html {
 }
 
 .hamburger.active .line:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(6px) rotate(45deg);
 }
 
 .hamburger.active .line:nth-child(2) {
@@ -167,51 +185,15 @@ html {
 }
 
 .hamburger.active .line:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-6px) rotate(-45deg);
 }
-
-@media (max-width: 600px) {
-  .header {
-    margin-right: 10px;
-  }
-
-  .header-content {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .weather-info {
-    max-width: 100%;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-  }
-
-  .home-page .weather-info {
-    margin-top: 10px;
-    position: static;
-    margin: auto;
-    padding-right: 15px;
-    padding-left: 15px;
-    max-width: 100%;
-    align-items: center;
-  }
-
-  .rain-chance {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    flex-shrink: 0;
-  }
-}
-
 
 .theme-switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
-  margin-left: 10px; 
+  width: 40px;
+  height: 24px;
+  margin-left: 10px;
 }
 
 .theme-switch input {
@@ -235,8 +217,8 @@ html {
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 16px;
+  width: 16px;
   left: 4px;
   bottom: 4px;
   background-color: white;
@@ -245,20 +227,93 @@ html {
 }
 
 input:checked + .slider {
-  background-color: 	#8FBC8F;
+  background-color: #8FBC8F;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px	#8FBC8F;
+  box-shadow: 0 0 1px #8FBC8F;
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(20px);
 }
 
-
 .weather-toggle-container {
-  display: flex; 
-  align-items: center; 
-  margin-left: auto; 
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+@media (max-width: 600px) {
+  .header .header-content { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: nowrap; 
+  }
+
+  .header .weather-toggle-container { 
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+    margin-left: auto;
+  }
+
+  .header .weather-info { 
+    max-width: fit-content;
+    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 8px;
+  }
+
+  .header .weather-icon { 
+    font-size: 1.2rem;
+  }
+
+  .header .location,
+  .header .temperature,
+  .header .rain-chance { 
+    font-size: 0.8rem;
+  }
+
+  .header .rain-chance { 
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+  }
+
+  .header .theme-switch { 
+    margin-left: auto;
+  }
+
+  .header .hamburger { 
+    margin-right: auto;
+  }
+
+  .header-container.home-page {
+    width: 92%;
+  }
+}
+
+@media (min-width: 601px) {
+  .weather-info {
+    font-size: 1rem;
+    padding: 8px 15px;
+    gap: 10px;
+  }
+
+  .weather-icon {
+    font-size: 2rem;
+  }
+
+  .location,
+  .temperature,
+  .rain-chance {
+    font-size: 1.2rem;
+  }
 }
