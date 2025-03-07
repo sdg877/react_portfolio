@@ -64,3 +64,16 @@
 .about-title {
   padding: 20px;
 }
+
+body.dark .info-card {
+  background-color: #5c7a7a;
+}
+
+body.dark .about-p {
+  color:white;
+
+}
+
+body.dark .about-title {
+  color:white;
+}
