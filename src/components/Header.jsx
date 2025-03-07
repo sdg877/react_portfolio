@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "../Styles/Weather.css";
+import "../Styles/Header.css";
 
 const Header = ({ showWeather, toggleTheme, theme }) => {
   const [location, setLocation] = useState("Loading...");
@@ -24,7 +24,6 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
             locationResponse.data.address.city_district ||
             locationResponse.data.address.city ||
             locationResponse.data.address.town ||
-            locationResponse.data.address.village ||
             locationResponse.data.address.state ||
             "Your Area";
           setLocation(locationName);
@@ -102,21 +101,28 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
         </button>
 
         <div className="right-section">
-          {showWeather && (
-            <Link
-              to="/weather"
-              className="weather-info"
-              title="Click to see detailed weather information"
-            >
-              <h2 className="location">{location}</h2>
-              <span className="weather-icon">{weatherIcon}</span>
-              <p className="temperature">{temperature}°C</p>
-              <p className="rain-chance">💧 {rainChance}%</p>
-            </Link>
-          )}
-          <button onClick={toggleTheme} className="theme-toggle">
-            {theme === "light" ? "Dark Mode" : "Light Mode"}
-          </button>
+          <div className="weather-toggle-container">
+            {showWeather && (
+              <Link
+                to="/weather"
+                className="weather-info"
+                title="Click to see detailed weather information"
+              >
+                <h2 className="location">{location}</h2>
+                <span className="weather-icon">{weatherIcon}</span>
+                <p className="temperature">{temperature}°C</p>
+                <p className="rain-chance">💧 {rainChance}%</p>
+              </Link>
+            )}
+            <label className="theme-switch">
+              <input
+                type="checkbox"
+                checked={theme === "dark"}
+                onChange={toggleTheme}
+              />
+              <span className="slider round"></span>
+            </label>
+          </div>
         </div>
       </div>
     </header>
