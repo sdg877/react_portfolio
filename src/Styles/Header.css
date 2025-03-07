@@ -1,0 +1,264 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header-container .home-page {
+  align-items: left;
+}
+
+.header {
+  align-items: right;
+  padding: 10px 20px;
+  width: 100%;
+  position: relative;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-right: 30px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  width: 100%;
+  position: relative;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+}
+
+.weather-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 5px 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 250px;
+  margin-left: auto;
+}
+
+.weather-info:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.weather-icon {
+  font-size: 2rem;
+  transition: transform 0.2s;
+}
+
+.location,
+.temperature,
+.rain-chance {
+  margin: 0;
+  color: #333;
+}
+
+.location {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.temperature {
+  font-weight: bold;
+}
+
+.rain-chance {
+  color: #555;
+}
+
+.temp {
+  font-size: 18px;
+}
+
+.weatherdetail {
+  font-size: 13px;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-right: auto;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 25px;
+  z-index: 1001;
+}
+
+.hamburger .line {
+  width: 100%;
+  height: 3px;
+  background-color: #2f4f4f;
+  transition: all 0.3s ease;
+}
+
+.nav-link {
+  margin: 10px 0;
+  display: block;
+  width: auto;
+  text-decoration: none;
+  color: #2f4f4f;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: white;
+  border: darkslategray;
+  text-decoration: none;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 1000;
+  width: auto;
+  padding: 30px 50px;
+}
+
+.nav-link:hover {
+  color: white;
+  background-color: #006666;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.hamburger.active .line {
+  background-color: white;
+}
+
+.hamburger.active .line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 600px) {
+  .header {
+    margin-right: 10px;
+  }
+
+  .header-content {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .weather-info {
+    max-width: 100%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .home-page .weather-info {
+    margin-top: 10px;
+    position: static;
+    margin: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .rain-chance {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    flex-shrink: 0;
+  }
+}
+
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 10px; 
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: 	#8FBC8F;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px	#8FBC8F;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+
+.weather-toggle-container {
+  display: flex; 
+  align-items: center; 
+  margin-left: auto; 
+}
