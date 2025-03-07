@@ -9,22 +9,20 @@ html {
 }
 
 .header-container.home-page {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 98%;
-    padding: 15px;
-    position: relative;
-  }
-  
-  
-  .header-container .home-page .weather-toggle-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: auto;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98%;
+  padding: 15px;
+  position: relative;
+}
+
+.header-container .home-page .weather-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
 
 .header {
   align-items: right;
@@ -210,7 +208,7 @@ html {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 34px;
 }
 
@@ -222,16 +220,16 @@ html {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #8FBC8F;
+  background-color: #8fbc8f;
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #8FBC8F;
+  box-shadow: 0 0 1px #8fbc8f;
 }
 
 input:checked + .slider:before {
@@ -245,15 +243,15 @@ input:checked + .slider:before {
 }
 
 @media (max-width: 600px) {
-  .header .header-content { 
+  .header .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
   }
 
-  .header .weather-toggle-container { 
+  .header .weather-toggle-container {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -261,7 +259,7 @@ input:checked + .slider:before {
     margin-left: auto;
   }
 
-  .header .weather-info { 
+  .header .weather-info {
     max-width: fit-content;
     flex-wrap: nowrap;
     display: flex;
@@ -270,28 +268,28 @@ input:checked + .slider:before {
     padding: 3px 8px;
   }
 
-  .header .weather-icon { 
+  .header .weather-icon {
     font-size: 1.2rem;
   }
 
   .header .location,
   .header .temperature,
-  .header .rain-chance { 
+  .header .rain-chance {
     font-size: 0.8rem;
   }
 
-  .header .rain-chance { 
+  .header .rain-chance {
     display: flex;
     align-items: center;
     gap: 3px;
     flex-shrink: 0;
   }
 
-  .header .theme-switch { 
+  .header .theme-switch {
     margin-left: auto;
   }
 
-  .header .hamburger { 
+  .header .hamburger {
     margin-right: auto;
   }
 
