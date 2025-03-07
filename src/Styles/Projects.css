@@ -1,29 +1,57 @@
 .info-card {
+  background-color: #f2fdf2;
+  color: #e0e0e0;
+  border-radius: 8px;
+  padding: 15px;
+  max-width: 950px;
+  margin: 10px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.info-card-project {
+  background-color: #f2fdf2;
   color: #e0e0e0;
   border-radius: 8px;
   padding: 15px;
   width: 90%;
   max-width: 950px;
-  margin: 20px auto;
+  margin: 10px auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  text-align: center; 
+  text-align: center;
   margin-bottom: 20px;
 }
 
-body.dark .info-card {
+body.dark .info-card-project {
   background-color: #5c7a7a;
 }
 
-.info-card h3 {
+body.dark .info-card {
+  background-color: #94b2b2;
+}
+
+body.dark .project-item {
+  background-color: #5c7a7a;
+}
+
+.project-item {
+  background-color: #f2fdf2
+}
+
+
+
+.info-card-project h3 {
   font-size: 1.5rem;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
-.info-card p {
-  line-height: 1.6;
+.info-card-project p {
+  line-height: 1.8;
+  font-size: 1rem;
 }
 
-.info-card h5 {
+.info-card-project h5 {
   margin-bottom: 8px;
   font-size: 1.2rem;
 }
@@ -57,10 +85,10 @@ body.dark .info-card {
 }
 
 .project-image {
-  width: 100%;
-  max-height: 300px;
+  max-width: 100%; 
+  height: auto; 
+  object-fit: contain; 
   border-radius: 8px;
-  object-fit: contain;
   margin-top: 10px;
 }
 
@@ -86,9 +114,10 @@ body.dark .info-card {
 .custom-link-bottom {
   color: #20b2aa;
   text-decoration: none;
-  margin-bottom: 30px;
   display: block;
   border: 1px solid transparent;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 body.dark .custom-link-bottom .custom-link {
@@ -112,7 +141,7 @@ body.dark .project-name {
 
   .project-item {
     padding: 20px;
-    width: 90%;
+    width: 80%;
     max-width: none;
   }
 
@@ -120,11 +149,16 @@ body.dark .project-name {
     height: 200px;
   }
 
-  .info-card h3 {
+  .info-card-project {
+    width: 80%;
+  }
+
+
+  .info-card-project h3 {
     font-size: 1.8rem;
   }
 
-  .info-card h5 {
+  .info-card-project h5 {
     font-size: 1.3rem;
   }
 }
