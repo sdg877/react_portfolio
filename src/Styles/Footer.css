@@ -13,4 +13,9 @@ body.dark .footer {
   background-color: #284444;
 }
 
-
+@media (max-width: 600px) {
+  .footer {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}
