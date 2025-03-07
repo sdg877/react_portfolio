@@ -1,5 +1,6 @@
 .contact-form-container {
   max-width: 550px;
+  background-color: white;
   margin: 0 auto;
   padding: 20px;
   border-radius: 8px;
@@ -20,17 +21,17 @@
 .contact-email {
   text-align: center;
   font-size: 14px;
-  margin-top: 15px;
-}
+  margin-top: 25px;
 
-.contact-email a {
-  color: rgb(19, 128, 157);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+  a {
+    color: rgb(19, 128, 157);
+    text-decoration: none;
+    transition: color 0.3s ease;
 
-.contact-email a:hover {
-  color: rgb(12, 88, 105);
+    &:hover {
+      color: rgb(12, 88, 105);
+    }
+  }
 }
 
 .contact-form {
@@ -40,13 +41,13 @@
   gap: 15px;
   width: 90%;
   max-width: 500px;
-  margin: 0 auto;
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  padding-left: 15px;
+  padding-right: 30px;
   width: 100%;
 }
 
@@ -65,12 +66,11 @@
   border: 1px solid #ccc;
   font-size: 16px;
   transition: border-color 0.3s ease;
-}
 
-.form-input:focus,
-.form-textarea:focus {
-  border-color: rgb(12, 88, 105);
-  outline: none;
+  &:focus {
+    border-color: rgb(12, 88, 105);
+    outline: none;
+  }
 }
 
 .form-textarea {
@@ -96,24 +96,39 @@
   text-align: center;
   max-width: 100px;
   width: 100%;
+
+  &:hover {
+    background-color: #243c3c;
+  }
+
+  &:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
 }
 
-.form-button:hover {
-  background-color: #243c3c;
+body.dark {
+  .contact-form-container {
+    background-color: #003333;
+  }
+
+  .form-label {
+    color: white;
+  }
+
+  .form-input,
+  .form-textarea {
+    background-color: #2f4f4f;
+  }
 }
 
-.form-button:disabled {
-  background-color: #ddd;
-  cursor: not-allowed;
-}
-
+/* Responsive Styles */
 @media (max-width: 768px) {
   .contact-form-container {
-    width: 90%;
-    max-width: 90%;
+    width: 80%;
+    max-width: 85%;
     margin: 0 auto;
-    text-align: center;
-    align-items: center;
+    margin-bottom: 25px;
   }
 
   .contact-title {
