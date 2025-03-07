@@ -126,9 +126,13 @@ html {
 
 .hamburger .line {
   width: 100%;
-  height: 2px;
+  height: 4px;
   background-color: #2f4f4f;
   transition: all 0.3s ease;
+}
+
+body.dark .hamburger .line {
+  background-color: #3CB371;
 }
 
 .nav-link {
