@@ -12,31 +12,43 @@ import "../Styles/Projects.css";
 
 const projectData = [
   { name: "Heather Treharne Jones", link: "/projects/HTJ", image: HTJImage },
-  { name: "Confidential Project", link: "/projects/ProjectOne", image: ProjectOneImage },
-  { name: "Gourmet Gallery", link: "/projects/GourmetGallery", image: GourmetGalleryImage },
+  {
+    name: "Confidential Project",
+    link: "/projects/ProjectOne",
+    image: ProjectOneImage,
+  },
+  {
+    name: "Gourmet Gallery",
+    link: "/projects/GourmetGallery",
+    image: GourmetGalleryImage,
+  },
   { name: "Sustainable Swap Shop", link: "/projects/SSS", image: SSSImage },
   { name: "inTech Jobs", link: "/projects/InTechJobs", image: InTechImage },
-  { name: "Spook Spotters", link: "/projects/SpookSpotters", image: SpookSpottersImage },
+  {
+    name: "Spook Spotters",
+    link: "/projects/SpookSpotters",
+    image: SpookSpottersImage,
+  },
   { name: "Snake", link: "/projects/Snake", image: SnakeImage },
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
-  visible: { 
-    opacity: 1, 
-    transition: { staggerChildren: 0.3, delayChildren: 0.5 } 
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.3, delayChildren: 0.5 },
   },
 };
 
 const getItemVariants = (index) => ({
-  hidden: { opacity: 0, x: index % 2 === 0 ? -120 : 120, scale: 0.9 }, 
-  visible: { 
-    opacity: 1, 
-    x: 0, 
+  hidden: { opacity: 0, x: index % 2 === 0 ? -120 : 120, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    x: 0,
     scale: 1,
-    transition: { type: "spring", stiffness: 80, damping: 15, duration: 0.8 } 
+    transition: { type: "spring", stiffness: 80, damping: 15, duration: 0.8 },
   },
-  hover: { scale: 1.05, transition: { type: "spring", stiffness: 200 } }
+  hover: { scale: 1.05, transition: { type: "spring", stiffness: 200 } },
 });
 
 const Projects = () => {
@@ -48,27 +60,27 @@ const Projects = () => {
 
   return (
     <motion.div
-      key="projects-container"
+      key="project-container"
       className="info-card"
       variants={containerVariants}
       initial="hidden"
       animate={controls}
     >
-      <motion.h3 
-        initial={{ opacity: 0, y: -30 }} 
-        animate={{ opacity: 1, y: 0 }} 
+      <motion.h3
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         Projects
       </motion.h3>
-      
-      <motion.h5 
-        initial={{ opacity: 0, y: -20 }} 
-        animate={{ opacity: 1, y: 0 }} 
+
+      <motion.h5
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
         className="project-description"
       >
-        Click on an image for more informarion.
+        Click on an image for more information.
       </motion.h5>
 
       <motion.div className="project-container">
@@ -93,12 +105,17 @@ const Projects = () => {
         ))}
       </motion.div>
 
-      <motion.p 
-        initial={{ opacity: 0 }} 
-        animate={{ opacity: 1 }} 
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
-        <a href="https://github.com/sdg877" target="_blank" rel="noopener noreferrer" className="custom-link">
+        <a
+          href="https://github.com/sdg877"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="custom-link"
+        >
           For all projects, please see my GitHub Page
         </a>
       </motion.p>
