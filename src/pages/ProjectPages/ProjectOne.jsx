@@ -83,6 +83,7 @@ const ProjectOne = () => {
         </motion.div>
       </motion.div>
     </motion.div>
+
   );
 };
 
