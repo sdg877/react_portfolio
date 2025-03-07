@@ -29,7 +29,7 @@
   }
 
   .custom-link {
-    color: #20B2AA;
+    color: lightgrey;
     text-decoration: none;
     font-weight: bold;
   }
@@ -66,4 +66,11 @@
       }
 }
 
+body.dark .details{
+ color: white;
+}
+
+body.dark .experience-title {
+  color: white;
+}
 
