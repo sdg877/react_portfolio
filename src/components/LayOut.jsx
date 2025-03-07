@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header.jsx";
 import NavBar from "./Navbar.jsx";
-import "../Styles/ComponentStyles.css";
+import "../App.css";
 import { useLocation } from "react-router-dom";
 import lightLogo from "../Images/sdg-dark.png";
 import darkLogo from "../Images/sdg-light.png";
