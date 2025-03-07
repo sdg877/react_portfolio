@@ -91,7 +91,7 @@ const Contact = () => {
           <input
             type="email"
             name="email"
-            id="email" 
+            id="email"
             value={formData.email}
             onChange={handleChange}
             required
@@ -106,7 +106,7 @@ const Contact = () => {
           <input
             type="text"
             name="subject"
-            id="subject" // Added id to match htmlFor
+            id="subject"
             value={formData.subject}
             onChange={handleChange}
             required
@@ -120,7 +120,7 @@ const Contact = () => {
           </label>
           <textarea
             name="message"
-            id="message" // Added id to match htmlFor
+            id="message"
             value={formData.message}
             onChange={handleChange}
             required
