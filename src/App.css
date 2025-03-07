@@ -1,10 +1,10 @@
-html,
-body {
+html, body {
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  width: 100%;
-height: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -21,7 +21,7 @@ body.light {
 }
 
 body.dark {
-  background-color: 	#696969;
+  background-color: 	#2f4f4f;
   color: white;
 }
 
@@ -44,23 +44,15 @@ body.dark .theme-toggle:hover {
   background-color: #666;
 }
 
-/* Align header elements horizontally */
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
+body.dark .h3 .h4 .h5 .p{
+  color: white;
 }
-
-.weather-info {
-  margin-right: 10px;
-}
-
 
 .main-container {
-  flex: 1; /* Allow content to grow and take up available space */
+  flex: 1;
   display: flex; 
   flex-direction: column; 
+  overflow-y: hidden; /* Prevent vertical overflow */
 }
 
 .App {
@@ -69,6 +61,38 @@ body.dark .theme-toggle:hover {
 
 .content {
   flex: 1
+}
+
+.layout {
+  text-align: center;
+  margin: 0;
+  padding-top: 0;
+  position: relative;
+  flex: 1;
+}
+
+.layout-logo {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin-bottom: 5px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+}
+
+.layout-name .layout-sub {
+  color: #666;
+}
+
+body.dark .layout-name,
+body.dark .layout-sub {
+  color: white;
+}
+
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 @media (max-width: 768px) {
@@ -86,15 +110,27 @@ body.dark .theme-toggle:hover {
     padding: 15px;
   }
 
-  .project-container {
-    flex-direction: column;
-    align-items: center;
-  }
+  .header-content {
+    flex-direction: column; /* Stack header items */
+    align-items: flex-start; /* Align items to the start */
+}
 
-  .project-item {
+.weather-toggle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width:100%;
+}
+
+.theme-toggle {
+    margin-left: 0; /* Remove left margin */
+    margin-top: 10px; /* Add top margin for spacing */
     width: 100%;
-    margin: 10px 0;
-  }
+}
+
+.weather-info{
+    width: 100%;
+}
 
   .nav-link {
     margin: 0 10px;
