@@ -11,7 +11,7 @@ const Education = () => {
       transition={{ duration: 0.8, ease: "easeOut" }} 
       whileHover={{ scale: 1.05 }} 
     >
-      <h3>Education</h3>
+      <h3 className="experience-title">Education</h3>
       <p className="details">
         <strong>11/2023 - 03/2024
         <br />General Assembly</strong>
