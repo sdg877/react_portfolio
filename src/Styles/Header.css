@@ -12,8 +12,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 98%;
-  padding: 15px;
+  width: 94%;
   position: relative;
 }
 
@@ -26,8 +25,8 @@ html {
 
 .header {
   align-items: right;
-  padding: 10px 20px;
-  width: 100%;
+  padding: 10px 50px;
+  width: 98%;
   position: relative;
 }
 
@@ -43,7 +42,8 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
-  width: 100%;
+  width: 99%;
+  padding-left: 30px;
 }
 
 .navbar-container {
@@ -131,13 +131,13 @@ body.dark .weather-info {
 
 .hamburger .line {
   width: 70%;
-  height: 4px;
+  height: 5px;
   background-color: #2f4f4f;
   transition: all 0.3s ease;
 }
 
 body.dark .hamburger .line {
-  background-color: #5c7a7a;
+  background-color: whitesmoke;
 }
 
 .nav-link {
@@ -309,7 +309,7 @@ input:checked + .slider:before {
   }
 
   .header-container.home-page {
-    width: 92%;
+    width: 85%;
   }
 }
 
