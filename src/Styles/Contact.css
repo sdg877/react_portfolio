@@ -1,5 +1,6 @@
 .contact-form-container {
-  max-width: 550px;
+  width: 75%;
+  max-width: 75%;
   background-color: white;
   margin: 0 auto;
   padding: 20px;
@@ -39,8 +40,7 @@
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  width: 90%;
-  max-width: 500px;
+  width: 75%;
 }
 
 .form-field {
@@ -122,7 +122,7 @@ body.dark {
   }
 }
 
-/* Responsive Styles */
+
 @media (max-width: 768px) {
   .contact-form-container {
     width: 80%;
