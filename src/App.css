@@ -92,6 +92,14 @@ body.dark .layout-sub {
   margin-bottom: 5px;
 }
 
+.layout-name {
+  font-size: 36px;
+}
+
+.layout-sub {
+  font-size: 22px;
+}
+
 .theme-toggle {
   padding: 8px 12px;
   cursor: pointer;
