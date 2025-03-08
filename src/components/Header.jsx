@@ -17,11 +17,26 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
             `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
           );
 
-          const locationName =
-            locationResponse.data.address.city ||
-            locationResponse.data.address.town ||
-            locationResponse.data.address.state ||
-            "Your Area";
+          let locationName = "";
+
+          if (locationResponse.data.address.neighbourhood) {
+            locationName = locationResponse.data.address.neighbourhood;
+          } else if (locationResponse.data.address.suburb) {
+            locationName = locationResponse.data.address.suburb;
+          } else if (locationResponse.data.address.village) {
+            locationName = locationResponse.data.address.village;
+          } else if (locationResponse.data.address.town) {
+            locationName = locationResponse.data.address.town;
+          } else if (locationResponse.data.address.city) {
+            locationName = locationResponse.data.address.city;
+          } else if (locationResponse.data.address.county){
+              locationName = locationResponse.data.address.county;
+          } else if (locationResponse.data.address.state){
+              locationName = locationResponse.data.address.state;
+          } else {
+            locationName = "Your Area"; // Fallback
+          }
+
           setLocation(locationName);
         } else {
           setLocation("London (Default)");
@@ -58,7 +73,7 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
             fetchWeather(position.coords.latitude, position.coords.longitude);
           },
           () => {
-            fetchWeather(51.5074, -0.1278, true); 
+            fetchWeather(51.5074, -0.1278, true);
           }
         );
       } else {
@@ -75,7 +90,7 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
         45: "🌫️",
         48: "🌫️",
         51: "🌦️",
-        61: "🌧️",
+        61: "🌧️", 
         71: "❄️",
         80: "🌧️",
         95: "⛈️",
