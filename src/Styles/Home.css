@@ -1,12 +1,12 @@
-/* .home-page {
+.home-page {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  color: #2E8B57;
   text-align: center;
   overflow: hidden;
-} */
+  height: auto;
+}
 
 .home-container {
   display: flex;
@@ -19,17 +19,25 @@
   padding: 20px;
 }
 
-.home-title {
-  font-size: 3rem;
-  margin: 0 0 20px;
-  color: #3CB371;
-}
-
 .home-description {
   font-size: 1.2rem;
   margin-bottom: 40px;
   color: #666;
   text-align: center;
+}
+
+body.dark .home-description {
+  color: white;
+}
+
+body.dark .home-nav-button {
+  background-color: #29443C; 
+  border-color: rgba(200, 200, 200, 0.5);
+}
+
+body.dark .home-nav-button:hover {
+  background-color: #5c7a7a; 
+  border-color: rgba(200, 200, 200, 0.7);
 }
 
 .home-nav {
@@ -53,30 +61,32 @@
   padding: 10px;
   color: white;
   font-weight: bold;
-  border-radius: 20px; /* For softer, rounded edges */
+  border-radius: 0; 
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-  background-color: rgba(102, 205, 170, 0.7); /* Semi-transparent background */
+  background-color: rgba(102, 205, 170, 0.7); 
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow to blend edges */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
   text-decoration: none;
   line-height: 1.2;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.5); 
 }
 
 .home-nav-button:hover {
-  background-color: rgba(60, 179, 113, 0.7); /* Semi-transparent hover effect */
+  background-color: rgba(60, 179, 113, 0.7); 
   color: white;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Slightly more pronounced shadow on hover */
-  border-radius: 20px; /* Keep the same rounded corners on hover */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.7); 
 }
 
+
 .home-nav-button:focus {
-  outline: none; /* Optional: removes default focus outline */
+  outline: none; 
 }
 
 .home-button-wrapper a {
@@ -115,9 +125,17 @@
     font-size: 0.9rem;
   }
 
+  .home-nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    justify-items: center; 
+  }
+
   .home-nav-button {
-    width: 80px;
+    width: 90%; 
+    max-width: 150px; 
     height: 80px;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 }
