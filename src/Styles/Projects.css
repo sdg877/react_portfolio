@@ -28,11 +28,15 @@ body.dark .info-card-project {
 }
 
 body.dark .info-card {
-  background-color: #94b2b2;
+  background-color: #003333;
 }
 
 body.dark .project-item {
   background-color: #5c7a7a;
+}
+
+body.dark .title-project {
+  color: white;
 }
 
 .project-item {
