@@ -1,5 +1,5 @@
 .info-card {
-  background-color: white; 
+  background-color: white;
   color: #e0e0e0;
   border-radius: 8px;
   padding: 20px;
@@ -11,67 +11,68 @@
 }
 
 .details {
-    color: #2f4f4f;
+  color: #2f4f4f;
 }
 
-  
 .info-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.info-card p {
+  line-height: 1.6;
+}
+
+.info-card h5 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.custom-link {
+  color: lightgrey;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.custom-link:hover {
+  text-decoration: underline;
+  color: darkslategray;
+}
+
+@media (max-width: 768px) {
+  .info-card {
+    max-width: 100%;
   }
-  
-  .info-card p {
-    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .info-card {
+    max-width: 80%;
+    margin: 10px auto;
+    padding: 15px;
   }
-  
-  .info-card h5 {
-    margin-bottom: 8px;
+
+  .info-card h3 {
     font-size: 1.2rem;
   }
 
-  .custom-link {
-    color: lightgrey;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .custom-link:hover {
-    text-decoration: underline;
-    color: darkslategray;
+  .info-card p {
+    font-size: 0.9rem;
   }
 
-
-@media (max-width: 768px) {
-    .info-card {
-      max-width: 100%;
-    }
+  .info-card h5 {
+    font-size: 1rem;
   }
-
-@media (max-width: 600px) {
-    .info-card {
-      max-width: 80%;
-      margin: 10px auto;
-      padding: 15px;
-    }
-
-    .info-card h3 {
-        font-size: 1.2rem;
-      }
-    
-      .info-card p {
-        font-size: 0.9rem;
-      }
-    
-      .info-card h5 {
-        font-size: 1rem;
-      }
 }
 
-body.dark .details{
- color: white;
+body.dark .info-card {
+  background-color: #003333;
+}
+
+body.dark .details {
+  color: white;
 }
 
 body.dark .experience-title {
   color: white;
 }
-
