@@ -58,8 +58,8 @@ body.dark .home-nav-button:hover {
 }
 
 .home-nav-button {
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   font-size: 1.4rem;
   padding: 10px;
   color: black;
@@ -135,8 +135,8 @@ body.dark .home-nav-button:hover {
   }
 
   .home-nav-button {
-    width: 90%; 
-    max-width: 150px; 
+    width: 100%; 
+    max-width: 200px; 
     height: 80px;
     font-size: 0.7rem;
   }
