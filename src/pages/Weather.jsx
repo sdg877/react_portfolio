@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../Styles/Weather.css";
+import "../Styles/Header.css";
 
 const Weather = () => {
   const [hourlyWeather, setHourlyWeather] = useState();
@@ -17,22 +18,23 @@ const Weather = () => {
             `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
           );
 
-          const town = 
+          const town =
             locationResponse.data.address.town ||
             locationResponse.data.address.village ||
             locationResponse.data.address.suburb ||
             locationResponse.data.address.neighbourhood ||
             null;
-            
-          const city = 
+
+          const city =
             locationResponse.data.address.city ||
             locationResponse.data.address.state ||
             null;
 
           // Avoid showing "London, London" or any repeated location
-          const locationName = town && city && town !== city 
-            ? `${town}, ${city}` 
-            : town || city || "Your Area";
+          const locationName =
+            town && city && town !== city
+              ? `${town}, ${city}`
+              : town || city || "Your Area";
 
           setLocation(locationName);
         } else {
@@ -57,8 +59,7 @@ const Weather = () => {
               weatherResponse.data.hourly.precipitation_probability[
                 currentHour + index
               ],
-            uvIndex:
-              weatherResponse.data.hourly.uv_index[currentHour + index],
+            uvIndex: weatherResponse.data.hourly.uv_index[currentHour + index],
             feelsLike:
               weatherResponse.data.hourly.apparent_temperature[
                 currentHour + index
@@ -110,7 +111,7 @@ const Weather = () => {
     };
 
     getUserLocation();
-  },);
+  });
 
   const getWeatherIcon = (weatherCode) => {
     const weatherIcons = {
@@ -150,7 +151,7 @@ const Weather = () => {
 
   return (
     <div className="weather-container">
-      <div className="weather-content-wrapper"> {/* Add this wrapper */}
+      <div className="weather-content-wrapper">
         {loading ? (
           <p className="loading">Loading weather...</p>
         ) : error ? (
@@ -164,7 +165,9 @@ const Weather = () => {
               {hourlyWeather.map((hour, index) => (
                 <div key={index} className="weather-card">
                   <p>{formatTime(hour.time)}</p>
-                  <p className="weather-icon">{getWeatherIcon(hour.weatherCode)}</p>
+                  <p className="weather-icon">
+                    {getWeatherIcon(hour.weatherCode)}
+                  </p>
                   <p className="temp">{Math.round(hour.temperature)}°C</p>
                   <p className="weatherdetail">
                     Feels like: {Math.round(hour.feelsLike)}°C
@@ -180,7 +183,9 @@ const Weather = () => {
               {dailyWeather.map((day, index) => (
                 <div key={index} className="weather-week-card">
                   <p>{formatDate(day.date)}</p>
-                  <p className="weather-icon">{getWeatherIcon(day.weatherCode)}</p>
+                  <p className="weather-icon">
+                    {getWeatherIcon(day.weatherCode)}
+                  </p>
                   <p>
                     {Math.round(day.tempMin)}°C - {Math.round(day.tempMax)}°C
                   </p>
@@ -191,7 +196,7 @@ const Weather = () => {
             </div>
           </>
         )}
-      </div> 
+      </div>
     </div>
   );
 };
