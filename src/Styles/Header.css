@@ -101,7 +101,6 @@ body.dark .weather-info {
 
 .temperature {
   font-weight: 400;
-
 }
 
 .temp {
@@ -355,6 +354,30 @@ input:checked + .slider:before {
 
   .header-container.home-page {
     width: 90%;
+  }
+
+  .header-container.weather-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .weather-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .weather-page-header .theme-switch {
+    margin-left: 30px;
+  }
+
+  .weather-toggle-container .weather-info {
+    flex-grow: 1;
+    text-align: left;
   }
 }
 
