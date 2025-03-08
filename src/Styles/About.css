@@ -1,4 +1,3 @@
-/* Profile Image */
 .profile-image {
   width: 180px;
   height: 180px;
@@ -7,7 +6,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Flags Style */
+
 .flags {
   display: flex;
   flex-wrap: wrap;
@@ -46,7 +45,6 @@
   opacity: 1;
 }
 
-/* Contact Links */
 .contact-links {
   margin-top: 20px;
 }
@@ -66,7 +64,7 @@
 }
 
 body.dark .info-card {
-  background-color: #5c7a7a;
+  background-color: #003333
 }
 
 body.dark .about-p {
