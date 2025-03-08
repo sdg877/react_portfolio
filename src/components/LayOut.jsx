@@ -37,7 +37,7 @@ const Layout = () => {
           className="layout-logo"
         />
         <h2 className="layout-name">Sylvia Drake-Gill</h2>
-        <h3 className="layout-sub">London-based Software Engineer</h3>
+        <h3 className="layout-sub">Software Engineer</h3>
       </div>
     </div>
   );
