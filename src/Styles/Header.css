@@ -91,6 +91,7 @@ body.dark .weather-info {
   margin: 0;
   color: #333;
   font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .location {
@@ -99,11 +100,8 @@ body.dark .weather-info {
 }
 
 .temperature {
-  font-weight: bold;
-}
+  font-weight: 400;
 
-.rain-chance {
-  color: #555;
 }
 
 .temp {
@@ -338,6 +336,7 @@ input:checked + .slider:before {
     align-items: center;
     gap: 3px;
     flex-shrink: 0;
+    color: darkslategray;
   }
 
   .header .theme-switch {
