@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header.jsx";
 import NavBar from "./Navbar.jsx";
 import "../App.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, Routes, Route } from "react-router-dom";
 import lightLogo from "../Images/sdg-dark.png";
 import darkLogo from "../Images/sdg-light.png";
+import Weather from "../pages/Weather.jsx";
 
 const Layout = () => {
   const location = useLocation();
@@ -23,22 +24,25 @@ const Layout = () => {
 
   return (
     <div className={`layout ${theme}`}>
-      <div className={`header-container ${isHomePage ? "home-page" : ""}`}>
+      <div className={`header-container ${isHomePage ? "home-page" : ""} ${location.pathname === "/weather" ? "weather-page-header" : ""}`}>
         {!isHomePage && <NavBar />}
-        {(isHomePage || location.pathname !== "/weather") && (
-          <Header showWeather={true} toggleTheme={toggleTheme} theme={theme} />
-        )}
+        <Header toggleTheme={toggleTheme} theme={theme} showWeather={location.pathname !== "/weather"}/>
       </div>
 
-      <div className="home-content">
-        <img
-          src={theme === "light" ? lightLogo : darkLogo}
-          alt="Logo"
-          className="layout-logo"
-        />
-        <h2 className="layout-name">Sylvia Drake-Gill</h2>
-        <h3 className="layout-sub">Software Engineer</h3>
-      </div>
+      <Routes>
+        <Route path="/" element={
+          <div className="home-content">
+            <img
+              src={theme === "light" ? lightLogo : darkLogo}
+              alt="Logo"
+              className="layout-logo"
+            />
+            <h2 className="layout-name">Sylvia Drake-Gill</h2>
+            <h3 className="layout-sub">Software Engineer</h3>
+          </div>
+        }/>
+        <Route path="/weather" element={<Weather toggleTheme={toggleTheme} theme={theme} />} />
+      </Routes>
     </div>
   );
 };
