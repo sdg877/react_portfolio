@@ -39,7 +39,7 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
 
           setLocation(locationName);
         } else {
-          setLocation("London (Default)");
+          setLocation("London");
         }
 
         const weatherResponse = await axios.get(
