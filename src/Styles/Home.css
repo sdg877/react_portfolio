@@ -8,17 +8,10 @@
   height: auto;
 }
 
-.home-container {
-  display: flex;
-  flex-direction: column;
-  height: auto;
-}
-
 .home-content {
   flex: 1;
   padding: 20px;
 }
-
 
 
 .home-description {
@@ -97,6 +90,22 @@ body.dark .home-nav-button:hover {
 }
 
 @media (max-width: 768px) {
+  .home-container {
+    max-height: 100vh;
+  }
+
+  .home-content {
+    flex-grow: 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0; 
+    margin: 0 auto; 
+    margin-bottom: 25px;
+  }
+
   .home-title {
     font-size: 2.5rem;
   }
