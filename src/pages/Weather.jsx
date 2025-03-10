@@ -37,7 +37,7 @@ const Weather = () => {
 
           setLocation(locationName);
         } else {
-          setLocation("London (Default)");
+          setLocation("London");
         }
 
         const weatherResponse = await axios.get(
