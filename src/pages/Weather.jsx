@@ -30,7 +30,6 @@ const Weather = () => {
             locationResponse.data.address.state ||
             null;
 
-          // Avoid showing "London, London" or any repeated location
           const locationName =
             town && city && town !== city
               ? `${town}, ${city}`
@@ -66,23 +65,24 @@ const Weather = () => {
               ],
           }));
 
-        const dailyData = weatherResponse.data.daily.time.map(
-          (date, index) => ({
+        const dailyData = weatherResponse.data.daily.time
+          .slice(1)
+          .map((date, index) => ({
             date,
-            tempMin: weatherResponse.data.daily.temperature_2m_min[index],
-            tempMax: weatherResponse.data.daily.temperature_2m_max[index],
-            weatherCode: weatherResponse.data.daily.weathercode[index],
+            tempMin: weatherResponse.data.daily.temperature_2m_min[index + 1],
+            tempMax: weatherResponse.data.daily.temperature_2m_max[index + 1],
+            weatherCode: weatherResponse.data.daily.weathercode[index + 1],
             rainChance:
-              weatherResponse.data.daily.precipitation_probability_mean[index],
-            uvIndex: weatherResponse.data.daily.uv_index_max[index],
-          })
-        );
+              weatherResponse.data.daily.precipitation_probability_mean[
+                index + 1
+              ],
+            uvIndex: weatherResponse.data.daily.uv_index_max[index + 1],
+          }));
 
         setHourlyWeather(hourlyData);
         setDailyWeather(dailyData);
         setLoading(false);
       } catch (error) {
-        console.error("Error fetching weather data:", error);
         setError("Unable to fetch weather data.");
         setLoading(false);
       }
@@ -96,22 +96,16 @@ const Weather = () => {
             fetchWeather(latitude, longitude);
           },
           () => {
-            console.warn(
-              "Location access denied. Using default location (London)."
-            );
             fetchWeather(51.5074, -0.1278, true);
           }
         );
       } else {
-        console.warn(
-          "Geolocation is not supported. Using default location (London)."
-        );
         fetchWeather(51.5074, -0.1278, true);
       }
     };
 
     getUserLocation();
-  });
+  }, []);
 
   const getWeatherIcon = (weatherCode) => {
     const weatherIcons = {
