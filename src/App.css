@@ -100,15 +100,7 @@ body.dark .layout-sub {
   font-size: 22px;
 }
 
-.theme-toggle {
-  padding: 8px 12px;
-  cursor: pointer;
-  border: none;
-  background-color: black;
-  color: white;
-  border-radius: 4px;
-  margin-left: 10px;
-}
+
 
 @media (max-width: 768px) {
   .project-item {
@@ -134,23 +126,6 @@ body.dark .layout-sub {
     font-size: 1rem;
   }
 
-  .header-content {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .weather-toggle-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .theme-toggle {
-    margin-left: 0;
-    margin-top: 10px;
-    width: 100%;
-  }
 
   .nav-link {
     margin: 0 10px;
