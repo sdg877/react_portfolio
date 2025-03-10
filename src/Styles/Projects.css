@@ -11,7 +11,7 @@
 }
 
 .info-card-project {
-  background-color: #f2fdf2;
+  background-color: #90a6a6;
   color: #e0e0e0;
   border-radius: 8px;
   padding: 15px;
@@ -110,13 +110,13 @@ body.dark .title-project {
 }
 
 .custom-link {
-  color: #778899;
+  color: #673147;
   text-decoration: none;
   font-weight: 400;
 }
 
 .custom-link-bottom {
-  color: #778899;
+  color: #673147;
   text-decoration: none;
   display: block;
   border: 1px solid transparent;
@@ -125,11 +125,11 @@ body.dark .title-project {
 }
 
 body.dark .custom-link-bottom {
-  color: white;
+  color: #673147;
 }
 
 body.dark .custom-link {
-  color: white;
+  color: #673147;
 }
 
 .custom-link:hover {
