@@ -10,10 +10,11 @@ html {
 
 .header-container.home-page {
   display: flex;
-  align-items: center;
+  align-items: flex-end; 
   justify-content: space-between;
   width: 94%;
   position: relative;
+  margin-left: 25px;
 }
 
 .header-container .home-page .weather-toggle-container {
@@ -42,8 +43,8 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 10px 15px;
-  width: 99%;
-  padding-left: 30px;
+  width: 95%;
+
 }
 
 .navbar-container {
@@ -58,12 +59,13 @@ html {
   background-color: #ffffff;
   padding: 5px 5px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s, box-shadow 0.2s;
   max-width: fit-content;
   margin-left: auto;
+  margin-right: 15px;
   flex-shrink: 1;
   white-space: nowrap;
   height: 50px;
@@ -127,7 +129,7 @@ body.dark .weather-info {
 }
 
 .hamburger .line {
-  width: 70%;
+  width: 100%;
   height: 5px;
   background-color: #2f4f4f;
   transition: all 0.3s ease;
@@ -227,8 +229,8 @@ body.dark .nav-link:hover {
   transition: transform 0.2s, box-shadow 0.2s;
   background-color: #ffffff;
   color: #2f4f4f;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-left: 15px;
+  box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 15px;
 }
 
 .theme-switch:hover {
@@ -252,21 +254,54 @@ body.dark .theme-switch {
 }
 
 @media (max-width: 600px) {
+  .header-container.home-page {
+    display: flex;
+    align-items: flex-end; 
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    margin-right: 15px;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; 
+    width: 90%;
+    padding: 0 12px;
+    box-sizing: border-box;
+    margin-top: 1px;
+  }
+
+  .hamburger {
+    flex-shrink: 0;
+    margin-left: 13px;
+    margin-top: 15px;
+  }
+
   .weather-toggle-container {
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 10px;
-    width: auto;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-grow: 1;
+    min-width: 0;
+    overflow: visible;
   }
 
   .weather-info {
     font-size: 0.85rem;
-    padding: 6px 10px;
+    padding: 6px 8px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 4px;
     white-space: nowrap;
+    flex-shrink: 1;
+    min-width: 0;
+    height: 40px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+    margin-top: 5px;
   }
 
   .theme-switch {
@@ -276,15 +311,15 @@ body.dark .theme-switch {
     border-radius: 6px;
     border: none;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
     background-color: #ffffff;
     color: #2f4f4f;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    min-width: 75px;
+    margin-right: 30px; 
   }
 
   body.dark .theme-switch {
@@ -301,88 +336,12 @@ body.dark .theme-switch {
     transform: scale(0.98);
   }
 
-  .header-container {
-    width: 82%;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .header-container.home-page {
-    width: 90%;
-  }
-
   .header-container.weather-page-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: right;
     width: 100%;
     padding: 0 15px;
-  }
-
-  .header .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: nowrap;
-  }
-
-  .header .weather-toggle-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-direction: row;
-    margin-left: auto;
-  }
-
-  .header .weather-info {
-    max-width: fit-content;
-    flex-wrap: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    padding: 3px 8px;
-  }
-
-  .header .weather-icon {
-    font-size: 1.2rem;
-  }
-
-  .header .location,
-  .header .temperature,
-  .header .rain-chance {
-    font-size: 0.8rem;
-  }
-
-  .header .rain-chance {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    flex-shrink: 0;
-  }
-
-  .header .theme-switch {
-    margin-left: auto;
-  }
-
-  .header .hamburger {
-    margin-right: auto;
-  }
-
-  .weather-toggle-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-  }
-
-  .weather-page-header .theme-switch {
-    margin-left: 30px;
-  }
-
-  .weather-toggle-container .weather-info {
-    flex-grow: 1;
-    text-align: left;
   }
 }
 
