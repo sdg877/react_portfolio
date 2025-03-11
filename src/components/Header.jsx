@@ -29,10 +29,10 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
             locationName = locationResponse.data.address.town;
           } else if (locationResponse.data.address.city) {
             locationName = locationResponse.data.address.city;
-          } else if (locationResponse.data.address.county){
-              locationName = locationResponse.data.address.county;
-          } else if (locationResponse.data.address.state){
-              locationName = locationResponse.data.address.state;
+          } else if (locationResponse.data.address.county) {
+            locationName = locationResponse.data.address.county;
+          } else if (locationResponse.data.address.state) {
+            locationName = locationResponse.data.address.state;
           } else {
             locationName = "Your Area"; // Fallback
           }
@@ -90,7 +90,7 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
         45: "🌫️",
         48: "🌫️",
         51: "🌦️",
-        61: "🌧️", 
+        61: "🌧️",
         71: "❄️",
         80: "🌧️",
         95: "⛈️",
@@ -99,22 +99,28 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
     };
 
     getUserLocation();
-  },);
+  });
 
   return (
     <header className="header">
       <div className="header-container">
         <div className="weather-toggle-container">
           {showWeather && (
-            <Link to="/weather" className="weather-info" title="Click for detailed weather">
+            <Link
+              to="/weather"
+              className="weather-info"
+              title="Click for detailed weather"
+            >
               <h2 className="location">{location}</h2>
               <span className="weather-icon">{weatherIcon}</span>
               <p className="temperature">{temperature}°C</p>
               <p className="rain-chance">💧 {rainChance}%</p>
             </Link>
           )}
-          <button className="theme-switch" onClick={toggleTheme}> 
-            <span className="theme-icon">{theme === "dark" ? "Dark" : "Light"}</span>
+          <button className="theme-switch" onClick={toggleTheme}>
+            <span className="theme-icon">
+              {theme === "dark" ? "Light" : "Dark"}
+            </span>
           </button>
         </div>
       </div>
