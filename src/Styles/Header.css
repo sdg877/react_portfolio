@@ -10,12 +10,12 @@ html {
 
 .header-container.home-page {
   display: flex;
-  justify-content: flex-end; 
-  align-items: flex-end; 
+  justify-content: flex-end;
+  align-items: flex-end;
   padding: 10px 15px;
-  width: 93%;
+  width: 95%;
   position: relative;
-  overflow: visible; 
+  overflow: visible;
 }
 
 .header {
@@ -243,8 +243,6 @@ body.dark .theme-switch {
   transform: scale(0.98);
 }
 
-
-
 .weather-toggle-container {
   display: flex;
   flex-direction: column;
@@ -256,10 +254,6 @@ body.dark .theme-switch {
 }
 
 @media (min-width: 601px) {
-  .header-container.home-page {
-    margin-left: 25px;
-  }
-
   .weather-info {
     font-size: 1rem;
     padding: 8px 15px;
@@ -277,13 +271,19 @@ body.dark .theme-switch {
   }
 }
 
-
 @media (max-width: 600px) {
+  .header-container.home-page .weather-info,
+  .header-container.home-page .theme-switch {
+    margin-right: -13px;
+    margin-top: 0px;
+  }
+
+
   .header-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 90%;
+    width: 85%;
     padding: 0 12px;
     box-sizing: border-box;
     margin-top: 10px;
