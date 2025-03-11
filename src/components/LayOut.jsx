@@ -14,8 +14,27 @@ const Layout = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
+    const prefersDarkMode =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (!localStorage.getItem("theme")) {
+      setTheme(prefersDarkMode ? "dark" : "light");
+    }
+
     document.body.className = theme;
     localStorage.setItem("theme", theme);
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (event) => {
+      setTheme(event.matches ? "dark" : "light");
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
   }, [theme]);
 
   const toggleTheme = () => {
@@ -24,30 +43,44 @@ const Layout = () => {
 
   return (
     <div className={`layout ${theme}`}>
-      <div className={`header-container ${isHomePage ? "home-page" : ""} ${location.pathname === "/weather" ? "weather-page-header" : ""}`}>
+      <div
+        className={`header-container ${isHomePage ? "home-page" : ""} ${
+          location.pathname === "/weather" ? "weather-page-header" : ""
+        }`}
+      >
         {!isHomePage && (
           <div className="navbar-container">
             <NavBar />
           </div>
         )}
-        <div className="weather-toggle-wrapper"> {/* New wrapper */}
-          <Header toggleTheme={toggleTheme} theme={theme} showWeather={location.pathname !== "/weather"}/>
+        <div className="weather-toggle-wrapper">
+          <Header
+            toggleTheme={toggleTheme}
+            theme={theme}
+            showWeather={location.pathname !== "/weather"}
+          />
         </div>
       </div>
 
       <Routes>
-        <Route path="/" element={
-          <div className="home-content">
-            <img
-              src={theme === "light" ? lightLogo : darkLogo}
-              alt="Logo"
-              className="layout-logo"
-            />
-            <h2 className="layout-name">Sylvia Drake-Gill</h2>
-            <h3 className="layout-sub">Software Engineer</h3>
-          </div>
-        }/>
-        <Route path="/weather" element={<Weather toggleTheme={toggleTheme} theme={theme} />} />
+        <Route
+          path="/"
+          element={
+            <div className="home-content">
+              <img
+                src={theme === "light" ? lightLogo : darkLogo}
+                alt="Logo"
+                className="layout-logo"
+              />
+              <h2 className="layout-name">Sylvia Drake-Gill</h2>
+              <h3 className="layout-sub">Software Engineer</h3>
+            </div>
+          }
+        />
+        <Route
+          path="/weather"
+          element={<Weather toggleTheme={toggleTheme} theme={theme} />}
+        />
       </Routes>
     </div>
   );
