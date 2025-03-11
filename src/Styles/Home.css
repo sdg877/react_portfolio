@@ -13,7 +13,6 @@
   padding: 20px;
 }
 
-
 .home-description {
   font-size: 1.2rem;
   margin-bottom: 40px;
@@ -26,13 +25,13 @@ body.dark .home-description {
 }
 
 body.dark .home-nav-button {
-  background-color: #29443C; 
+  background-color: #29443c;
   border-color: rgba(200, 200, 200, 0.5);
   color: white;
 }
 
 body.dark .home-nav-button:hover {
-  background-color: #5c7a7a; 
+  background-color: #5c7a7a;
   border-color: rgba(200, 200, 200, 0.7);
 }
 
@@ -56,32 +55,31 @@ body.dark .home-nav-button:hover {
   font-size: 1.4rem;
   padding: 10px;
   color: black;
-  border-radius: 50%; 
+  border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
-  background-color: #708a8a; 
+  background-color: #708a8a;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   line-height: 1.2;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.5); 
+  border: 3px solid rgba(255, 255, 255, 0.5);
 }
 
 .home-nav-button:hover {
-  background-color: rgba(60, 179, 113, 0.7); 
+  background-color: rgba(60, 179, 113, 0.7);
   color: white;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  border: 3px solid rgba(255, 255, 255, 0.7); 
+  border: 3px solid rgba(255, 255, 255, 0.7);
 }
 
-
 .home-nav-button:focus {
-  outline: none; 
+  outline: none;
 }
 
 .home-button-wrapper a {
@@ -95,14 +93,14 @@ body.dark .home-nav-button:hover {
   }
 
   .home-content {
-    flex-grow: 0; 
+    flex-grow: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0; 
-    margin: 0 auto; 
+    padding: 0;
+    margin: 0 auto;
     margin-bottom: 25px;
   }
 
@@ -138,14 +136,14 @@ body.dark .home-nav-button:hover {
 
   .home-nav {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 20px;
-    justify-items: center; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
   }
 
   .home-nav-button {
-    width: 100%; 
-    max-width: 200px; 
+    width: 100%;
+    max-width: 200px;
     height: 80px;
     font-size: 0.7rem;
   }
