@@ -25,8 +25,14 @@ const Layout = () => {
   return (
     <div className={`layout ${theme}`}>
       <div className={`header-container ${isHomePage ? "home-page" : ""} ${location.pathname === "/weather" ? "weather-page-header" : ""}`}>
-        {!isHomePage && <NavBar />}
-        <Header toggleTheme={toggleTheme} theme={theme} showWeather={location.pathname !== "/weather"}/>
+        {!isHomePage && (
+          <div className="navbar-container">
+            <NavBar />
+          </div>
+        )}
+        <div className="weather-toggle-wrapper"> {/* New wrapper */}
+          <Header toggleTheme={toggleTheme} theme={theme} showWeather={location.pathname !== "/weather"}/>
+        </div>
       </div>
 
       <Routes>
