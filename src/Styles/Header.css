@@ -10,18 +10,12 @@ html {
 
 .header-container.home-page {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  width: 94%;
+  justify-content: flex-end; 
+  align-items: flex-end; 
+  padding: 10px 15px;
+  width: 93%;
   position: relative;
-  margin-left: 25px;
-}
-
-.header-container .home-page .weather-toggle-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-left: auto;
+  overflow: visible; 
 }
 
 .header {
@@ -41,7 +35,7 @@ html {
 .header-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 10px 15px;
   width: 95%;
 }
@@ -67,7 +61,8 @@ html {
   margin-right: 15px;
   flex-shrink: 1;
   white-space: nowrap;
-  height: 50px;
+  height: 36px;
+  margin-top: 5px;
 }
 
 body.dark .weather-info {
@@ -125,6 +120,8 @@ body.dark .weather-info {
   padding: 0;
   margin: 0;
   z-index: 1001;
+  margin-left: 25px;
+  margin-top: 25px;
 }
 
 .hamburger .line {
@@ -246,22 +243,42 @@ body.dark .theme-switch {
   transform: scale(0.98);
 }
 
+
+
 .weather-toggle-container {
   display: flex;
-  align-items: center;
-  margin-left: auto;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  flex-grow: 1;
+  min-width: 0;
+  overflow: visible;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 601px) {
   .header-container.home-page {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    width: 100%;
-    margin-right: 15px;
-    margin-top: 1px;
+    margin-left: 25px;
   }
 
+  .weather-info {
+    font-size: 1rem;
+    padding: 8px 15px;
+    gap: 10px;
+  }
+
+  .weather-icon {
+    font-size: 2rem;
+  }
+
+  .location,
+  .temperature,
+  .rain-chance {
+    font-size: 1.2rem;
+  }
+}
+
+
+@media (max-width: 600px) {
   .header-container {
     display: flex;
     justify-content: space-between;
@@ -269,12 +286,12 @@ body.dark .theme-switch {
     width: 90%;
     padding: 0 12px;
     box-sizing: border-box;
-    margin-top: 15px;
+    margin-top: 10px;
   }
 
   .hamburger {
     flex-shrink: 0;
-    margin-left: 13px;
+    margin-left: 15px;
     margin-top: 30px;
   }
 
@@ -341,23 +358,5 @@ body.dark .theme-switch {
     align-items: right;
     width: 100%;
     padding: 0 15px;
-  }
-}
-
-@media (min-width: 601px) {
-  .weather-info {
-    font-size: 1rem;
-    padding: 8px 15px;
-    gap: 10px;
-  }
-
-  .weather-icon {
-    font-size: 2rem;
-  }
-
-  .location,
-  .temperature,
-  .rain-chance {
-    font-size: 1.2rem;
   }
 }
