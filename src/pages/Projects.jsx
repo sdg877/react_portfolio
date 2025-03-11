@@ -48,7 +48,7 @@ const getItemVariants = (index) => ({
     scale: 1,
     transition: { type: "spring", stiffness: 80, damping: 15, duration: 0.8 },
   },
-  hover: { transition: { type: "spring", stiffness: 200 } }, // Removed scale: 1.05
+  hover: { transition: { type: "spring", stiffness: 200 } },
 });
 
 const Projects = () => {
