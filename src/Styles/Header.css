@@ -10,7 +10,7 @@ html {
 
 .header-container.home-page {
   display: flex;
-  align-items: flex-end; 
+  align-items: flex-end;
   justify-content: space-between;
   width: 94%;
   position: relative;
@@ -44,7 +44,6 @@ html {
   align-items: center;
   padding: 10px 15px;
   width: 95%;
-
 }
 
 .navbar-container {
@@ -256,27 +255,27 @@ body.dark .theme-switch {
 @media (max-width: 600px) {
   .header-container.home-page {
     display: flex;
-    align-items: flex-end; 
+    align-items: flex-end;
     justify-content: space-between;
     width: 100%;
-    position: relative;
     margin-right: 15px;
+    margin-top: 1px;
   }
 
   .header-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; 
+    align-items: flex-start;
     width: 90%;
     padding: 0 12px;
     box-sizing: border-box;
-    margin-top: 1px;
+    margin-top: 15px;
   }
 
   .hamburger {
     flex-shrink: 0;
     margin-left: 13px;
-    margin-top: 15px;
+    margin-top: 30px;
   }
 
   .weather-toggle-container {
@@ -319,7 +318,7 @@ body.dark .theme-switch {
     justify-content: center;
     flex-shrink: 0;
     min-width: 75px;
-    margin-right: 30px; 
+    margin-right: 30px;
   }
 
   body.dark .theme-switch {
