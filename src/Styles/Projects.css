@@ -44,7 +44,7 @@ body.dark .title-project {
 }
 
 .info-card-project h3 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   margin-bottom: 10px;
 }
 
@@ -55,7 +55,7 @@ body.dark .title-project {
 
 .info-card-project h5 {
   margin-bottom: 8px;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
 }
 
 .project-container {
@@ -109,11 +109,17 @@ body.dark .title-project {
   margin-bottom: 15px;
 }
 
+.details {
+  font-size: 1.3rem !important;
+}
+
 .custom-link {
   color: #673147;
   text-decoration: none;
   font-weight: 400;
+  font-size: 1.2rem;
 }
+
 
 .custom-link-bottom {
   color: #673147;
@@ -122,6 +128,7 @@ body.dark .title-project {
   border: 1px solid transparent;
   margin-bottom: 10px;
   font-weight: 400;
+  font-size: 1.2rem;
 }
 
 body.dark .custom-link-bottom {
@@ -167,5 +174,9 @@ body.dark .project-name {
 
   .info-card-project h5 {
     font-size: 1.3rem;
+  }
+
+  .details {
+    font-size: 16px !important;
   }
 }
