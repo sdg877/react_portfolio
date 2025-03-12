@@ -35,7 +35,7 @@ const Experience = () => {
             <br />
             Jan - Feb 2024
           </strong>
-          <br />
+          <br /> <br />
           Designed and developed a fully responsive artist portfolio website for a client, featuring a custom CMS, high-resolution image galleries, and a modern, user-friendly interface. Delivered the project to specification within the agreed timeline and budget.
           <br />
           <br />
