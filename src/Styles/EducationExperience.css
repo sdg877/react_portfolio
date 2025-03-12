@@ -63,6 +63,10 @@
   .info-card h5 {
     font-size: 1rem;
   }
+
+  .details {
+    font-size: 16px !important;
+  }
 }
 
 body.dark .info-card {
