@@ -80,7 +80,7 @@ body.dark .layout-sub {
 }
 
 .layout-logo {
-  width: 180px;
+  width: 200px;
   height: auto;
   display: block;
   margin: 0 auto 10px;
@@ -98,6 +98,13 @@ body.dark .layout-sub {
 
 .layout-sub {
   font-size: 22px;
+}
+
+.layout > .layout-content {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 
