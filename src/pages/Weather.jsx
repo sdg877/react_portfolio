@@ -155,7 +155,6 @@ const Weather = () => {
             <h2 className="location-title">Weather in {location}</h2>
 
             <h3 className="weather-title">Next 12 Hours</h3>
-            <div className="weather-content-wrapper">
               <div className="weather-card-container">
                 {hourlyWeather.map((hour, index) => (
                   <div key={index} className="weather-card">
@@ -172,9 +171,8 @@ const Weather = () => {
                   </div>
                 ))}
               </div>
-            </div>
 
-            <h3 className="weather-title">Next 7 Days</h3>
+            <h3 className="weather-title">The Coming Week</h3>
             <div className="weather-card-container">
               {dailyWeather.map((day, index) => (
                 <div key={index} className="weather-week-card">
