@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header.jsx";
 import NavBar from "./Navbar.jsx";
 import "../App.css";
-import "../Styles/Header.css"
+import "../Styles/Header.css";
 import { useLocation, Routes, Route } from "react-router-dom";
 import lightLogo from "../Images/sdg-dark.png";
 import darkLogo from "../Images/sdg-light.png";
@@ -46,7 +46,7 @@ const Layout = () => {
     <div className={`layout ${theme}`}>
       <div
         className={`header-container ${isHomePage ? "home-page" : ""} ${
-          location.pathname === "/weather" ? "weather-page-header" : ""
+          location.pathname === "/weather" ? "weather-page" : ""
         }`}
       >
         {!isHomePage && (
