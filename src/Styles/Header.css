@@ -40,7 +40,6 @@ html {
   margin-right: 0;
 }
 
-
 .navbar-container {
   display: flex;
   align-items: center;
@@ -270,7 +269,6 @@ body.dark .theme-switch {
   .rain-chance {
     font-size: 1.2rem;
   }
-
 }
 
 @media (max-width: 600px) {
@@ -279,7 +277,6 @@ body.dark .theme-switch {
     margin-right: -13px;
     margin-top: 0px;
   }
-
 
   .header-container {
     display: flex;
