@@ -67,7 +67,7 @@ const Layout = () => {
         <Route
           path="/"
           element={
-            <div className="home-content">
+            <div className="layout-content">
               <img
                 src={theme === "light" ? lightLogo : darkLogo}
                 alt="Logo"
