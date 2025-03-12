@@ -1,12 +1,22 @@
 Personal Portfolio - Completed March 2025
+
+
 Description
 This personal portfolio was built using React to showcase my projects, skills, and experience as a software developer. The goal of this portfolio is to provide potential employers with a clear understanding of my technical capabilities, design skills, and ability to create functional, user-friendly web applications.
+
+
 Deployment Link
 https://www.sylviadrakegill.com/ 
+
+
 Code Installation
 The code for my portfolio can be found here: GitHub Repository
+
+
 Timeframe
 This project was developed over several weeks with continuous improvements and refinements. The goal was to create a fully functional, interactive, and visually appealing portfolio that showcases my development skills.
+
+
 Technologies Used
 React – Main framework for building the portfolio.
 JavaScript – Core programming language.
@@ -20,6 +30,8 @@ OpenStreetMap – Retrieves user location (if permission granted).
 Open-Meteo – Fetches and displays real-time weather data.
 React Testing Library – Used for testing components.
 Web Vitals – Monitors performance and optimizes user experience.
+
+
 Brief
 This portfolio was designed to be fully responsive and engaging, incorporating:
 A homepage with navigation buttons to access different sections.
@@ -34,6 +46,8 @@ Displays a brief summary of the current weather.
 Provides a detailed 12-hour and 7-day forecast when clicked.
 Animations throughout the portfolio to create an engaging experience.
 Toast Notifications for instant feedback when submitting the contact form.
+
+
 Code Process
 Set up the React project and installed necessary dependencies.
 Created the homepage with navigation buttons.
@@ -45,19 +59,27 @@ Developed the weather feature, integrating OpenStreetMap for location detection 
 Added animations using Motion to improve UI experience.
 Tested components using React Testing Library.
 Deployed the project and made final optimizations.
+
+
 Challenges
 Weather API Integration – Ensuring accurate location detection and data retrieval while handling user permissions.
 Animations – Adjusting the motion effects to be smooth and visually appealing without impacting performance.
+
+
 Wins
 Successfully integrated real-time weather updates with location tracking.
 Created a highly responsive and accessible design for different devices.
 Implemented smooth animations and transitions to enhance the UI.
 Built a fully functional contact form with real-time feedback.
+
+
 Key Learnings
 Improved knowledge of API integration and state management in React.
 Learned best practices for implementing light/dark mode efficiently.
 Gained experience working with animations and UI enhancements.
 Understood the importance of testing and performance optimisation in React applications.
+
+
 Future Improvements
 Expand the portfolio with blog posts about my development journey.
 Implement a more advanced weather forecasting system with additional data visualization.
