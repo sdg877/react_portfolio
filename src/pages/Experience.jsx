@@ -34,16 +34,37 @@ const Experience = () => {
           <strong>
             Heather Treharne Jones – Artist Portfolio Website
             <br />
-            Jan - Feb 2024
+            Jan - Feb 2025
           </strong>
-          <br /> <br />
-          Designed and developed a fully responsive artist portfolio website for
-          a client, featuring a custom CMS, high-resolution image galleries, and
-          a modern, user-friendly interface. Delivered the project to
-          specification within the agreed timeline and budget.
+          <br />
+          Designed and developed a responsive portfolio site with a custom CMS
+          and image galleries, delivered on time and within budget.
           <br />
           <br />
           <Link to="/projects/HTJ" className="custom-link">
+            View Project
+          </Link>
+        </motion.p>
+        <motion.p
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          className="details"
+        >
+          <strong>
+            Confidential MERN Stack Project
+            <br />
+            Sept - Nov 2024
+          </strong>
+          <br />
+          Built a MERN stack application with 11 interconnected models, a task
+          scheduling system, and a compliance-focused workflow. Designed a
+          dynamic calendar and implemented automated workflows to streamline
+          operations.
+          <br />
+          <br />
+          <Link to="/projects/ProjectOne" className="custom-link">
             View Project
           </Link>
         </motion.p>
@@ -61,11 +82,8 @@ const Experience = () => {
             Remote 27/11/23 - 03/01/24
           </strong>
           <br />
-          <br />
-          An intensive twelve-week course of live coding instruction, one-on-one
-          coaching, and projects designed to transform students into full-stack
-          software engineers. The course is broken up into four units which
-          involve two weeks of intensive learning followed by a project week.
+          Intensive full-stack software engineering training covering React,
+          Node.js, MongoDB, and Express through hands-on projects.
           <br />
           <br />
           <Link to="/projects" className="custom-link">
@@ -80,39 +98,27 @@ const Experience = () => {
           }}
           className="details"
         >
-          Since completing my bootcamp, I have continued to build on my skills
-          by coding a range of projects, learning new languages, and refining my
-          expertise in full-stack development. I completed my first paid project
-          in early 2024 and remain committed to expanding my technical knowledge
-          through hands-on experience and real-world applications.
+          Since my bootcamp, I’ve continued developing full-stack projects,
+          learning new technologies, and refining my skills through real-world
+          applications.
         </motion.p>
-
+        <br />
+        <br />
         <motion.p
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0 },
           }}
+          className="details"
         >
           <strong>
             Frontiers Media Ltd, Office Manager - UK Office
             <br />
             Jun 21 – Sept 23
           </strong>
-        </motion.p>
-        <motion.p
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          className="details"
-        >
-          I was responsible for managing a team of three assistants, running the
-          UK office, and supporting up to one hundred employees at the office
-          and one thousand remote employees based across the UK. The main
-          aspects of my role were: health & safety, logistics & facilities
-          management, team supervision and development, and financial
-          management. I also project-managed an office move from start to
-          finish.
+          <br />
+          Managed a team, oversaw office operations, and led an office move for
+          a company supporting over 1,000 remote employees.
         </motion.p>
 
         <motion.p
@@ -122,25 +128,16 @@ const Experience = () => {
           }}
           className="details"
         >
+          <br />
+          <br />
           <strong>
             The Maverick Group, Office Manager
             <br />
             Sept 17 – Nov 19
           </strong>
-        </motion.p>
-        <motion.p
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          className="details"
-        >
-          I had one direct report and together we supported 120 people providing
-          administration support and ensuring every aspect of the agency ran
-          smoothly. My duties varied daily but included event planning,
-          compliance, building security, health & safety, the project management
-          of an office expansion and office refurbishment, resource and stock
-          management, and heading up the Corporate Social Responsibility team.
+          <br />
+          Provided office and administrative support for a 120-person agency,
+          overseeing events, compliance, and an office expansion project.
         </motion.p>
 
         <motion.p
@@ -150,30 +147,19 @@ const Experience = () => {
           }}
           className="details"
         >
+          <br />
+          <br />
           <strong>
             British Broadcasting Corporation, Various Team Assistant Positions
             <br />
             Jan 10 - Jun 14
           </strong>
+          <br />
+          Provided admin and PA support across BBC teams, managed diaries, and
+          coordinated press events for major productions.
         </motion.p>
-        <motion.p
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0 },
-          }}
-          className="details"
-        >
-          I worked across various Creative Marketing and Publicity teams
-          providing admin support and as a Personal Assistant to several Senior
-          Directors. I provided comprehensive diary management, took meeting
-          minutes, and prepared documents as required. I was also responsible
-          for administrating the BBC Pictures site, which provided images of BBC
-          productions for use in the press, and was responsible for the booking
-          of the photographic studio at Television Centre. I provided event
-          management support, including a press event for David Attenborough’s
-          Frozen Planet and Radio 1’s Big Weekend among others.
-        </motion.p>
-
+        <br />
+        <br />
         <motion.p
           variants={{
             hidden: { opacity: 0, y: 20 },
