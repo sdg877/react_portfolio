@@ -75,3 +75,10 @@ body.dark .about-p {
 body.dark .about-title {
   color:white;
 }
+
+
+@media (max-width: 480px) {
+.about-p {
+  font-size: 16px !important;
+}
+}
