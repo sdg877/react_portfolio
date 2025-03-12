@@ -253,6 +253,20 @@ body.dark .theme-switch {
   overflow: visible;
 }
 
+@media (max-width: 768px) {
+  .header-container.weather-page .weather-toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: right;
+  }
+
+  .header-container.weather-page .theme-switch {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: -30px;
+  }
+}
+
 @media (min-width: 601px) {
   .weather-info {
     font-size: 1rem;
@@ -274,8 +288,12 @@ body.dark .theme-switch {
 @media (max-width: 600px) {
   .header-container.home-page .weather-info,
   .header-container.home-page .theme-switch {
-    margin-right: -13px;
-    margin-top: 0px;
+    margin-right: -14px;
+    margin-top: 1px;
+  }
+
+  .header-container.weather-page.theme-switch {
+    margin: 0px !important;
   }
 
   .header-container {
@@ -283,7 +301,7 @@ body.dark .theme-switch {
     justify-content: space-between;
     align-items: flex-start;
     width: 85%;
-    padding: 0 11px;
+    padding: 0 13px;
     box-sizing: border-box;
     margin-top: 14px;
   }
