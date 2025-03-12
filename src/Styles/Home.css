@@ -14,10 +14,11 @@
 }
 
 .home-description {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
+  font-size: 1.4rem;
+  margin-bottom: 0;
   color: #666;
   text-align: center;
+  margin-bottom: 60px;
 }
 
 body.dark .home-description {
@@ -41,7 +42,7 @@ body.dark .home-nav-button:hover {
   gap: 30px;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 0;
   width: 100%;
 }
 
@@ -92,25 +93,14 @@ body.dark .home-nav-button:hover {
     max-height: 100vh;
   }
 
-  .home-content {
-    flex-grow: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0;
-    margin: 0 auto;
-    margin-bottom: 25px;
-  }
-
   .home-title {
     font-size: 2.5rem;
   }
 
   .home-description {
     font-size: 1rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 5px;
   }
 
   .home-nav {
@@ -119,9 +109,40 @@ body.dark .home-nav-button:hover {
   }
 
   .home-nav-button {
-    width: 90px;
-    height: 90px;
+    width: 150px;
+    height: 150px;
     font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px),
+  (min-width: 1024px) and (max-width: 1366px) {
+  .home-description {
+    font-size: 1.6rem;
+    margin-bottom: 80px;
+  }
+
+  .home-nav-button {
+    width: 180px;
+    height: 180px;
+    font-size: 1.7rem;
+  }
+
+  .home-nav {
+    gap: 40px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
+  .home-nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  .home-nav {
+    justify-content: center;
   }
 }
 
@@ -131,7 +152,9 @@ body.dark .home-nav-button:hover {
   }
 
   .home-description {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    margin-top: 0px;
   }
 
   .home-nav {
@@ -143,8 +166,8 @@ body.dark .home-nav-button:hover {
 
   .home-nav-button {
     width: 100%;
-    max-width: 200px;
-    height: 80px;
-    font-size: 0.7rem;
+    max-width: 250px;
+    height: 100px;
+    font-size: 1rem;
   }
 }
