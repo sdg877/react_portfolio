@@ -12,16 +12,24 @@ html {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  padding: 10px 35px;
-  width: 100%;
+  padding: 6px 8px;
+  width: 96%;
   position: relative;
   overflow: visible;
 }
 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 16px;
+  width: 96%;
+}
+
 .header {
   align-items: right;
-  padding: 10px 55px;
-  width: 100%;
+  padding: 10px 45px;
+  width: 95%;
   position: relative;
 }
 
@@ -32,15 +40,6 @@ html {
   margin-right: 0;
 }
 
-.header-container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: 10px 55px;
-  width: 100%;
-  position: relative;
-  overflow: visible;
-}
 
 .navbar-container {
   display: flex;
@@ -271,6 +270,7 @@ body.dark .theme-switch {
   .rain-chance {
     font-size: 1.2rem;
   }
+
 }
 
 @media (max-width: 600px) {
@@ -286,9 +286,9 @@ body.dark .theme-switch {
     justify-content: space-between;
     align-items: flex-start;
     width: 85%;
-    padding: 0 12px;
+    padding: 0 11px;
     box-sizing: border-box;
-    margin-top: 10px;
+    margin-top: 14px;
   }
 
   .hamburger {
