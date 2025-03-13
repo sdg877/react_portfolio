@@ -17,7 +17,7 @@ html {
 }
 
 .weather-content-wrapper {
-  min-height: 600px;
+  min-height: unset;
   min-width: 100%;
 }
 
@@ -55,6 +55,8 @@ html {
   flex-direction: column; 
   justify-content: center;
   align-items: center; 
+  background-color: #ffffff;
+  border: 1px solid #ccc;
 }
 
 
@@ -151,8 +153,8 @@ body.dark .weather-title {
     justify-content: space-between;
     min-width: 90vw;
     max-width: 90vw;
-    height: auto;
-    padding: 10px 20px;
+    height: 100px !important;
+    min-height: unset !important; 
     text-align: left;
   }
 
