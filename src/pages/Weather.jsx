@@ -107,21 +107,42 @@ const Weather = () => {
     getUserLocation();
   }, []);
 
-  const getWeatherIcon = (weatherCode) => {
+  const getWeatherIcon = (weatherCode, timeString) => {
+    const hour = new Date(timeString).getHours();
+    const isDayTime = hour >= 6 && hour < 20;
+  
     const weatherIcons = {
-      0: "☀️",
-      1: "🌤️",
+      0: isDayTime ? "☀️" : "🌙",
+      1: isDayTime ? "🌤️" : "🌙",
       2: "⛅",
       3: "☁️",
       45: "🌫️",
       48: "🌫️",
       51: "🌦️",
+      53: "🌦️",
+      55: "🌧️",
+      56: "🌧️",
+      57: "🌧️",
       61: "🌧️",
+      63: "🌧️",
+      65: "🌧️",
+      66: "🌧️",
+      67: "🌧️",
       71: "❄️",
+      73: "❄️",
+      75: "❄️",
+      77: "🌨️",
       80: "🌧️",
+      81: "🌧️",
+      82: "🌧️",
+      85: "❄️",
+      86: "❄️",
       95: "⛈️",
+      96: "⛈️",
+      99: "⛈️",
     };
-    return weatherIcons[weatherCode] || "🌈";
+
+    return weatherIcons[weatherCode] || "☁️";
   };
 
   const formatTime = (timeString) => {
