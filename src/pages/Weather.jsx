@@ -132,7 +132,6 @@ const Weather = () => {
       99: "⛈️",
     };
 
-    // If rain chance is 0%, show clouds instead of rain
     if (rainChance === 0 && weatherCode >= 51 && weatherCode <= 82) {
       return "☁️";
     }
