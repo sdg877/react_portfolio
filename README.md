@@ -156,6 +156,7 @@ Detailed Weather:
 Mobile View
 
 Home:
+
 ![mf home](https://github.com/user-attachments/assets/4a9e486f-6c58-4d99-85ea-c13fb901e323)
 
 
