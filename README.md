@@ -148,7 +148,7 @@ Skills page:
 ![skills pt2](https://github.com/user-attachments/assets/f31f25d4-6d35-4c84-93b4-cf9083479fdf)
 
 
-Detailed Weather
+Detailed Weather:
 ![detailed weather pt1](https://github.com/user-attachments/assets/8cf03ba7-8953-4701-86a9-6ab598bc0548)
 ![detailed weather pt 2](https://github.com/user-attachments/assets/a39ba465-4e6a-43f3-8468-d75836d88713)
 
@@ -160,19 +160,27 @@ Home:
 
 
 About:
+
 ![mf about pt1](https://github.com/user-attachments/assets/04e39479-9e4f-4bab-9f6b-51e1aa1ccc36)
+
 ![mf about pt2](https://github.com/user-attachments/assets/cb3f7614-457b-4623-a1d3-2634b40b9455)
+
 ![mf about pt 3](https://github.com/user-attachments/assets/7e28dec6-e4d7-49fb-bd6e-bde3015c0b2b)
 
 
 Contact:
+
 ![mf contact form pt1](https://github.com/user-attachments/assets/676f2016-bce9-4ee2-ac56-b2c6a8bf96be)
+
 ![mf contact form pt2](https://github.com/user-attachments/assets/77a20055-1079-4cd6-b300-807efa50c001)
 
 
 Detailed Weather:
+
 ![mf detailed weather pt 1](https://github.com/user-attachments/assets/93e886d9-eb2a-46ef-8dd3-71b821935cc7)
+
 ![mf detailed weather pt 2](https://github.com/user-attachments/assets/a9b39bde-4377-4859-9651-eb2b0788922a)
+
 
 
 
