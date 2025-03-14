@@ -41,16 +41,13 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
         );
 
         const currentHour = new Date().getHours();
-        setTemperature(
-          Math.round(weatherResponse.data.hourly.temperature_2m[currentHour])
-        );
-        setRainChance(
-          weatherResponse.data.hourly.precipitation_probability[currentHour]
-        );
+        const temp = Math.round(weatherResponse.data.hourly.temperature_2m[currentHour]);
+        const rainProb = weatherResponse.data.hourly.precipitation_probability[currentHour];
+        const weatherCode = weatherResponse.data.hourly.weathercode[currentHour];
 
-        const weatherCode =
-          weatherResponse.data.hourly.weathercode[currentHour];
-        setWeatherIcon(getWeatherIcon(weatherCode, currentHour));
+        setTemperature(temp);
+        setRainChance(rainProb);
+        setWeatherIcon(getWeatherIcon(weatherCode, rainProb, new Date().toISOString()));
       } catch (error) {
         console.error("Error fetching weather:", error);
         setLocation("Unavailable");
@@ -76,15 +73,16 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
     };
 
     getUserLocation();
-  }, []); // Empty dependency array to ensure it runs only once
+  }, []);
 
-  const getWeatherIcon = (weatherCode, hour) => {
+  const getWeatherIcon = (weatherCode, rainChance, timeString) => {
+    const hour = new Date(timeString).getHours();
     const isDayTime = hour >= 6 && hour < 20;
 
     const weatherIcons = {
       0: isDayTime ? "☀️" : "🌙",
       1: isDayTime ? "🌤️" : "🌙",
-      2: isDayTime ? "⛅" : "☁️",
+      2: "⛅",
       3: "☁️",
       45: "🌫️",
       48: "🌫️",
@@ -101,7 +99,7 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
       71: "❄️",
       73: "❄️",
       75: "❄️",
-      77: "❄️",
+      77: "🌨️",
       80: "🌧️",
       81: "🌧️",
       82: "🌧️",
@@ -112,6 +110,10 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
       99: "⛈️",
     };
 
+    if (rainChance === 0 && weatherCode >= 51 && weatherCode <= 82) {
+      return "☁️"; // Cloud instead of rain if no precipitation expected
+    }
+
     return weatherIcons[weatherCode] || "☁️";
   };
 
@@ -120,11 +122,7 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
       <div className="header-container">
         <div className="weather-toggle-container">
           {showWeather && (
-            <Link
-              to="/weather"
-              className="weather-info"
-              title="Click for detailed weather"
-            >
+            <Link to="/weather" className="weather-info" title="Click for detailed weather">
               <h2 className="location">{location}</h2>
               <span className="weather-icon">{weatherIcon}</span>
               <p className="temperature">{temperature}°C</p>
@@ -132,9 +130,7 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
             </Link>
           )}
           <button className="theme-switch" onClick={toggleTheme}>
-            <span className="theme-icon">
-              {theme === "dark" ? "Light" : "Dark"}
-            </span>
+            <span className="theme-icon">{theme === "dark" ? "Light" : "Dark"}</span>
           </button>
         </div>
       </div>
