@@ -61,6 +61,15 @@
 
 .about-title {
   padding: 20px;
+  color: #2f4f4f;
+}
+
+.info-card h2 {
+  color: #2f4f4f;
+}
+
+.info-card p {
+  color: #2f4f4f;
 }
 
 body.dark .info-card {
