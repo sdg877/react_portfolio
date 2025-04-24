@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import AIChatBot from "../../Images/AIChatBot.png";
+import chatBotImage from "../../Images/AIChatBot.png";
 import "../../Styles/Projects.css";
 
 const AIChatBot = () => {
@@ -27,7 +27,7 @@ const AIChatBot = () => {
         transition={{ delay: 0.5 }}
       >
         <motion.img
-          src={AIChatBot}
+          src={chatBotImage}
           alt="AI Chat Bot"
           className="project-image"
           initial={{ scale: 0.9, opacity: 0 }}
