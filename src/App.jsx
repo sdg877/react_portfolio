@@ -20,6 +20,7 @@ import AIChatBot from "./pages/ProjectPages/AIChatBot.jsx";
 import Contact from "./pages/Contact.jsx";
 import Weather from "./pages/Weather.jsx";
 import Home from "./pages/Home.jsx";
+import Pricing from "./pages/Pricing.jsx";
 import Layout from "./components/Layout.jsx";
 import Footer from "./components/Footer.jsx";
 
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/education" element={<><Layout /><Education /></>} />
           <Route path="/skills" element={<><Layout /><Skills /></>} />
           <Route path="/projects" element={<><Layout /><Projects /></>} />
+          <Route path="/pricing" element={<><Layout /><Projects /></>} />
           <Route path="/projects/GourmetGallery" element={<><Layout /><GourmetGallery /></>} />
           <Route path="/projects/Snake" element={<><Layout /><Snake /></>} />
           <Route path="/projects/SpookSpotters" element={<><Layout /><SpookSpotters /></>} />
