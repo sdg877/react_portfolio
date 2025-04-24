@@ -16,6 +16,7 @@ import HTreharneJones from "./pages/ProjectPages/HTreharneJones.jsx";
 import GourmetGallery from "./pages/ProjectPages/GourmetGallery.jsx";
 import Snake from "./pages/ProjectPages/Snake.jsx";
 import SpookSpotters from "./pages/ProjectPages/SpookSpotters.jsx";
+import AIChatBot from "./pages/ProjectPages/AIChatBot.jsx";
 import Contact from "./pages/Contact.jsx";
 import Weather from "./pages/Weather.jsx";
 import Home from "./pages/Home.jsx";
@@ -42,6 +43,7 @@ const App = () => {
           <Route path="/projects/HTJ" element={<><Layout /><HTreharneJones /></>} />
           <Route path="/projects/InTechJobs" element={<><Layout /><InTech /></>} />
           <Route path="/projects/ProjectOne" element={<><Layout /><ProjectOne /></>} />
+          <Route path="/projects/AIChatBot" element={<><Layout /><AIChatBot /></>} />
         </Routes>
         <Footer />
       </div>
