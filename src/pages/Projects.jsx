@@ -8,9 +8,11 @@ import InTechImage from "../Images/InTech.png";
 import GourmetGalleryImage from "../Images/GourmetGallery.png";
 import SpookSpottersImage from "../Images/SpookSpotters.png";
 import HTJImage from "../Images/HTJ.png";
+import AIChatBotImage from "../Images/AIChatBot.png";
 import "../Styles/Projects.css";
 
 const projectData = [
+  { name: "AI Chat Bot", link: "/projects/AIChatBot", image: AIChatBotImage },
   { name: "Heather Treharne Jones", link: "/projects/HTJ", image: HTJImage },
   {
     name: "Confidential Project",
