@@ -72,6 +72,17 @@
   color: #2f4f4f;
 }
 
+.custom-link-packages {
+  color: #673147;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+body.dark .custom-link-packages {
+  color: 	#FFB6C1;
+}
+
 body.dark .info-card {
   background-color: #003333
 }
