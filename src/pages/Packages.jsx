@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import "../Styles/AboutPackages.css";
 
 const Packages = () => {
@@ -13,8 +13,9 @@ const Packages = () => {
     >
       <h1 className="about-title">Packages</h1>
       <p className="about-p">
-        I offer web development services for individuals, creatives, and small businesses.
-        Every project is different, but here are some typical packages to give you an idea of pricing.
+        I offer web development services for individuals, creatives, and small
+        businesses. Every project is different, but here are some typical
+        packages to give you an idea of pricing.
       </p>
 
       <div>
@@ -27,7 +28,9 @@ const Packages = () => {
             <div>Responsive layout</div>
             <div>Basic SEO setup</div>
           </div>
-          <p><strong>From £350</strong></p>
+          <p>
+            <strong>From £350</strong>
+          </p>
         </div>
 
         <div className="info-card">
@@ -39,7 +42,9 @@ const Packages = () => {
             <div>Mobile & tablet optimisation</div>
             <div>Google Maps integration</div>
           </div>
-          <p><strong>From £700</strong></p>
+          <p>
+            <strong>From £700</strong>
+          </p>
         </div>
 
         <div className="info-card">
@@ -51,12 +56,22 @@ const Packages = () => {
             <div>API or chatbot features</div>
             <div>Admin panel included</div>
           </div>
-          <p><strong>From £1500</strong></p>
+          <p>
+            <strong>From £1500</strong>
+          </p>
         </div>
       </div>
 
-      <p className="about-p" style={{ marginTop: '30px' }}>
-        Not sure what you need? Have a look at my <Link to="/projects" className='custom-link'>project examples</Link> or <Link to="/contact" className='custom-link'>get in touch</Link> for a free quote.
+      <p className="about-p" style={{ marginTop: "30px" }}>
+        Not sure what you need? Have a look at my{" "}
+        <Link to="/projects" className="custom-link-packages">
+          project examples
+        </Link>{" "}
+        or{" "}
+        <Link to="/contact" className="custom-link-packages">
+          get in touch
+        </Link>{" "}
+        for a free quote.
       </p>
     </motion.div>
   );
