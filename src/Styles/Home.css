@@ -11,14 +11,14 @@
 .home-content {
   flex: 1;
   padding: 20px;
+  padding-bottom: 50px;
 }
 
 .home-description {
   font-size: 1.4rem;
-  margin-bottom: 0;
   color: #666;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 body.dark .home-description {
@@ -99,7 +99,6 @@ body.dark .home-nav-button:hover {
 
   .home-description {
     font-size: 1rem;
-    margin-bottom: 30px;
     margin-top: 5px;
   }
 
