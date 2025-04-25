@@ -91,7 +91,7 @@ const AIChatBot = () => {
           className="custom-link"
           whileHover={{ scale: 1.1 }}
         >
-          Frontend GitHub Link
+          GitHub Link
         </motion.a>
         <br />
         <br />
