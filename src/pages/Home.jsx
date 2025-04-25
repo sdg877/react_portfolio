@@ -30,14 +30,15 @@ const Home = () => {
     },
   };
 
-  const directions = ["left", "right", "top", "bottom", "left", "right"];
+  const directions = ["left", "right", "top", "bottom", "left", "right", "bottom"];
   const buttonLabels = [
     "About",
+    "Contact",
     "Education",
     "Experience",
+    "Packages",
     "Projects",
-    "Skills",
-    "Contact",
+    "Skills"
   ];
 
   return (
