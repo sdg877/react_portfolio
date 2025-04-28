@@ -87,13 +87,19 @@ body.dark .info-card {
   background-color: #003333
 }
 
-body.dark .about-p {
-  color:white;
-
+body.dark .about-p,
+body.dark .about-title,
+body.dark .info-card h2,
+body.dark .info-card p {
+  color: white;
 }
 
-body.dark .about-title {
-  color:white;
+body.dark .custom-link-packages {
+  color: #FFB6C1;
+}
+
+body.dark .info-card {
+  background-color: #003333;
 }
 
 
