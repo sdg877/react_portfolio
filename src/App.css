@@ -136,7 +136,6 @@ body.dark .layout-sub {
   }
 }
 
-
 @media (max-width: 480px) {
   .layout-logo {
     width: 120px;
@@ -149,6 +148,6 @@ body.dark .layout-sub {
 
   .layout-sub {
     font-size: 0.8rem;
+    padding-bottom: 5px;
   }
-
 }
