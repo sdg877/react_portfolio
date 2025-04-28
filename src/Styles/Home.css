@@ -62,7 +62,7 @@ body.dark .home-nav-button:hover {
 }
 
 .home-nav-button:hover {
-  background-color: rgba(60, 179, 113, 0.7);
+  background-color: #20B2AA;
   color: white;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   border: 3px solid rgba(255, 255, 255, 0.7);
@@ -141,6 +141,7 @@ body.dark .home-nav-button:hover {
     max-width: 80px;
     margin-bottom: 3px; 
     margin-top: 0;
+    margin-right: -18px;
   }
 
   .home-nav-button {
