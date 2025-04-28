@@ -107,8 +107,6 @@ body.dark .layout-sub {
   padding-bottom: 0 !important;
 }
 
-
-
 @media (max-width: 768px) {
   .project-item {
     width: 180px;
@@ -152,4 +150,5 @@ body.dark .layout-sub {
   .layout-sub {
     font-size: 0.8rem;
   }
+
 }
