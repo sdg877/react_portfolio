@@ -141,11 +141,10 @@ body.dark .home-nav-button:hover {
     max-width: 80px;
     margin-bottom: 3px; 
     margin-top: 0;
-    margin-right: -18px;
   }
 
   .home-nav-button {
-    width: 80%;
+    width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
     font-size: 0.6rem; 
@@ -161,10 +160,10 @@ body.dark .home-nav-button:hover {
   .home-nav {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 5px;
+    gap: 20px;
     justify-items: center; 
     align-items: center;
-    margin-top: 0;
+    margin-top: -200px;
     width: 100%;
   }
 
