@@ -133,8 +133,23 @@ body.dark .layout-sub {
     font-size: 1rem;
   }
 
-
   .nav-link {
     margin: 0 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .layout-logo {
+    width: 120px;
+    height: auto;
+  }
+
+  .layout-name {
+    font-size: 1rem;
+  }
+
+  .layout-sub {
+    font-size: 0.8rem;
   }
 }
