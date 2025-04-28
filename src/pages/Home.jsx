@@ -50,16 +50,6 @@ const Home = () => {
           transition={{ duration: 0.6 }}
           className="home-title"
         ></motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="home-description"
-        >
-          Explore my projects and learn more about me.
-        </motion.p>
-
         <nav className="home-nav">
           {buttonLabels.map((text, index) => (
             <motion.div
