@@ -120,10 +120,6 @@ body.dark .contact-email a {
   color: rgb(120, 200, 220);
 }
 
-body.dark .contact-email a:hover {
-  color: rgb(180, 230, 240);
-}
-
 body.dark .contact-form-container {
   background-color: #003333;
 }
@@ -163,4 +159,23 @@ body.dark .form-textarea {
   .form-button {
     font-size: 14px;
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus {
+  background-color: #2f4f4f !important;
+  color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #2f4f4f inset !important;
+  transition: background-color 0s ease-in-out 0s;
+}
+
+body.dark input:-webkit-autofill,
+body.dark input:-webkit-autofill:focus,
+body.dark textarea:-webkit-autofill,
+body.dark textarea:-webkit-autofill:focus {
+  background-color: #2f4f4f !important;
+  color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #2f4f4f inset !important;
 }
