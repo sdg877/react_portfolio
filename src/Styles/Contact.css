@@ -60,6 +60,7 @@
 
 .form-input,
 .form-textarea {
+  font-family: "Ubuntu", sans-serif;
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -108,19 +109,32 @@
   }
 }
 
-body.dark {
-  .contact-form-container {
-    background-color: #003333;
-  }
+body.dark .contact-title,
+body.dark .contact-email,
+body.dark .form-input,
+body.dark .form-textarea {
+  color: white;
+}
 
-  .form-label {
-    color: white;
-  }
+body.dark .contact-email a {
+  color: rgb(120, 200, 220);
+}
 
-  .form-input,
-  .form-textarea {
-    background-color: #2f4f4f;
-  }
+body.dark .contact-email a:hover {
+  color: rgb(180, 230, 240);
+}
+
+body.dark .contact-form-container {
+  background-color: #003333;
+}
+
+body.dark .form-label {
+  color: white;
+}
+
+body.dark .form-input,
+body.dark .form-textarea {
+  background-color: #2f4f4f;
 }
 
 
