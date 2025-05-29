@@ -17,6 +17,7 @@ import GourmetGallery from "./pages/ProjectPages/GourmetGallery.jsx";
 import Snake from "./pages/ProjectPages/Snake.jsx";
 import SpookSpotters from "./pages/ProjectPages/SpookSpotters.jsx";
 import AIChatBot from "./pages/ProjectPages/AIChatBot.jsx";
+// import GreenSpaces from "./pages/ProjectPages/GreenSpaces.jsx";
 import Contact from "./pages/Contact.jsx";
 import Weather from "./pages/Weather.jsx";
 import Home from "./pages/Home.jsx";
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/projects/InTechJobs" element={<><Layout /><InTech /></>} />
           <Route path="/projects/ProjectOne" element={<><Layout /><ProjectOne /></>} />
           <Route path="/projects/AIChatBot" element={<><Layout /><AIChatBot /></>} />
+          {/* <Route path="/projects/GreenSpaces" element={<><Layout /><GreenSpaces /></>} /> */}
         </Routes>
         <Footer />
       </div>
