@@ -120,7 +120,6 @@ body.dark .title-project {
   font-size: 1.2rem;
 }
 
-
 .custom-link-bottom {
   color: #673147;
   text-decoration: none;
@@ -129,6 +128,12 @@ body.dark .title-project {
   margin-bottom: 10px;
   font-weight: 400;
   font-size: 1.2rem;
+}
+
+.details p {
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.5; 
 }
 
 body.dark .custom-link-bottom {
