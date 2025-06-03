@@ -21,7 +21,11 @@ const Snake = () => {
       </motion.h3>
       <br />
       <br />
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
         <motion.img
           src={SnakeImage}
           alt="Snake Game"
@@ -32,26 +36,43 @@ const Snake = () => {
         />
         <br />
         <br />
-        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>
-          This was my first-ever coding project, completed as part of Unit One of General Assembly's Software Engineering Bootcamp.
-          We were given a choice of games to build, and I chose Snake to challenge myself while keeping the scope manageable.
+        <motion.p
+          className="details"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          This was my first coding project during General Assembly’s Software
+          Engineering Bootcamp. I chose to build the classic Snake game using
+          JavaScript, HTML, and CSS.
         </motion.p>
-        <br />
-        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>
-          The game is a single-player experience where the player earns points by guiding the snake to eat food placed randomly on the game board.
-          The snake grows longer and moves faster with each piece of food consumed, and the game ends if it collides with a wall or itself.
+        <motion.p
+          className="details"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+        >
+          The game challenges players to guide the snake to eat food, growing
+          longer and faster, while avoiding collisions with walls or itself.
         </motion.p>
-        <br />
-        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }}>
-          The game was built using only JavaScript, HTML, and CSS. It required implementing win/loss logic, consistent code structuring,
-          and deployment via GitHub Pages.
+        <motion.p
+          className="details"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+        >
+          This project strengthened my understanding of JavaScript fundamentals
+          including event listeners, game loops, and collision detection.
         </motion.p>
-        <br />
-        <motion.p className="details" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.9 }}>
-          This project helped me solidify my understanding of JavaScript fundamentals, particularly event listeners, game loops,
-          and collision detection. I also added extra features, including a high score tracker, sound effects, and a custom-styled alert to start the game.
+        <motion.p
+          className="details"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9 }}
+        >
+          Additional features I added were a high score tracker, sound effects,
+          and a custom alert to start the game.
         </motion.p>
-        <br />
         <motion.a
           href="https://sdg877.github.io/Unit1_Project_Snake/"
           target="_blank"
@@ -75,8 +96,8 @@ const Snake = () => {
         <br />
         <br />
         <motion.div whileHover={{ scale: 1.05 }}>
-          <Link to="/projects/HTJ" className="custom-link-bottom">
-            Next Project: Heather Treharne Jones site
+          <Link to="/projects/AIChatBot" className="custom-link-bottom">
+            Next Project: AI Chatbot
           </Link>
         </motion.div>
         <br />
