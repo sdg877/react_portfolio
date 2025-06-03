@@ -19,8 +19,7 @@ const SpookSpotters = () => {
       >
         UK Spook Spotters
       </motion.h3>
-      <br />
-      <br />
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -34,66 +33,62 @@ const SpookSpotters = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
         />
-        <br />
-        <br />
+
         <motion.p
           className="details"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          UK Spook Spotters was my Unit 2 project from my bootcamp. It is a
-          full-stack application built with Node.js, Express, and MongoDB,
-          allowing users to log paranormal sightings across the UK.
+          UK Spook Spotters was my Unit 2 bootcamp project: a full-stack app
+          built with Node.js, Express, and MongoDB, where users can log
+          paranormal sightings across the UK.
         </motion.p>
-        <br />
+
         <motion.p
           className="details"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
         >
-          The client requirements included a fully CRUD application,
-          authentication via Google OAuth, and restricted access for
-          non-logged-in users. The app allows users to record sightings, search
-          by location, and view detailed entries.
+          Features include full CRUD functionality, Google OAuth for
+          authentication, and restricted access for non-logged-in users. Users
+          can record, search, and view detailed sightings.
         </motion.p>
-        <br />
+
         <motion.p
           className="details"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          The backend was developed using Express and MongoDB, with Mongoose
-          schemas for users, sightings, and locations. The frontend was built
-          with Vue.js, featuring a clean and user-friendly UI.
+          The backend uses Mongoose schemas for users, sightings, and locations.
+          The frontend is built with Vue.js, designed for a clean, intuitive
+          experience.
         </motion.p>
-        <br />
+
         <motion.p
           className="details"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
         >
-          A major challenge was implementing user permissions for editing and
-          deleting posts. I also faced personal challenges, as I fractured my
-          dominant elbow two weeks before the project deadline. Despite this, I
-          successfully delivered a functional app within the timeframe.
+          A key challenge was implementing user permissions. I also fractured my
+          dominant elbow two weeks before the deadline but still delivered the
+          project on time.
         </motion.p>
-        <br />
+
         <motion.p
           className="details"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.0 }}
         >
-          Key learnings included debugging small syntax errors and refining my
-          problem-solving approach. Moving forward, I would like to add a map
-          feature to display sightings visually and expand the site for
-          international use.
+          I gained confidence in debugging and strengthened my problem-solving
+          skills. In future, I’d like to add a map feature and support for
+          international sightings.
         </motion.p>
-        <br />
+
         <motion.a
           href="https://unique-salmiakki-662491.netlify.app/"
           target="_blank"
@@ -103,8 +98,10 @@ const SpookSpotters = () => {
         >
           Check out my site!
         </motion.a>
+
         <br />
         <br />
+
         <motion.a
           href="https://github.com/sdg877/Project2Frontend"
           target="_blank"
@@ -114,8 +111,10 @@ const SpookSpotters = () => {
         >
           Frontend GitHub Link
         </motion.a>
+
         <br />
         <br />
+
         <motion.a
           href="https://github.com/sdg877/Project2Backend"
           target="_blank"
@@ -125,8 +124,10 @@ const SpookSpotters = () => {
         >
           Backend GitHub Link
         </motion.a>
+
         <br />
         <br />
+
         <motion.div whileHover={{ scale: 1.05 }}>
           <Link to="/projects/Snake" className="custom-link-bottom">
             Next Project: Snake
