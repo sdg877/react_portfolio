@@ -19,8 +19,7 @@ const GourmetGallery = () => {
       >
         Gourmet Gallery
       </motion.h3>
-      <br />
-      <br />
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -34,55 +33,43 @@ const GourmetGallery = () => {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.5 }}
         />
-        <br /> <br />
+
         <motion.p
           className="details"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6 }}
         >
-          Gourmet Gallery is a full-stack MERN application that allows users to
-          search, filter, and save recipes. It integrates an external API for
-          recipe sourcing and includes authentication so users can manage their
-          saved recipes.
+          Gourmet Gallery is a full-stack MERN app where users can search, filter, and save recipes. It pulls data from an external recipe API and includes authentication for managing saved items.
         </motion.p>
-        <br />
+
         <motion.p
           className="details"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
         >
-          This was my first solo full-stack project built entirely without
-          instructor assistance. I set up the backend using Express and MongoDB,
-          developed authentication with JWT, and implemented frontend
-          functionality using React.
+          This was my first fully independent full-stack project. I built the backend with Express and MongoDB, added JWT-based authentication, and handled the frontend with React.
         </motion.p>
-        <br />
+
         <motion.p
           className="details"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-          Challenges included setting up API integration, managing
-          authentication, and ensuring proper formatting of displayed recipes.
-          To maintain layout consistency, I implemented a function that filters
-          out recipes without images.
+          Key challenges included integrating the API, managing auth flows, and handling inconsistent data. To improve layout consistency, I filtered out recipes lacking images.
         </motion.p>
-        <br />
+
         <motion.p
           className="details"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9 }}
         >
-          This project reinforced my ability to problem-solve independently. It
-          was incredibly rewarding to build and deploy the site without external
-          support, improving my confidence in full-stack development and API
-          integration.
+          This project strengthened my problem-solving skills and boosted my confidence in full-stack development, API handling, and solo deployment.
         </motion.p>
-        <br />
+
         <motion.a
           href="https://gourmetgallery.netlify.app/"
           target="_blank"
@@ -92,8 +79,10 @@ const GourmetGallery = () => {
         >
           Check out my site!
         </motion.a>
+
         <br />
         <br />
+
         <motion.a
           href="https://github.com/sdg877/recipe_site_fe"
           target="_blank"
@@ -103,8 +92,10 @@ const GourmetGallery = () => {
         >
           Frontend GitHub Link
         </motion.a>
+
         <br />
         <br />
+
         <motion.a
           href="https://github.com/sdg877/recipe_site_be"
           target="_blank"
@@ -114,8 +105,10 @@ const GourmetGallery = () => {
         >
           Backend GitHub Link
         </motion.a>
+
         <br />
         <br />
+
         <motion.div whileHover={{ scale: 1.05 }}>
           <Link to="/projects/SSS" className="custom-link-bottom">
             Next Project: Sustainable Swap Shop
