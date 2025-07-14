@@ -21,7 +21,7 @@ const query = gql`
   }
 `;
 
-const GitHubContributions = () => {
+const GithubContributions = () => {
   const [weeks, setWeeks] = useState([]);
 
   useEffect(() => {
@@ -77,4 +77,4 @@ const GitHubContributions = () => {
   );
 };
 
-export default GitHubContributions;
+export default GithubContributions;
