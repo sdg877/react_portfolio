@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { request, gql } from 'graphql-request';
-import '../styles/pages.css';
+import '../../Styles/Projects.css';
 
 const token = process.env.REACT_APP_GITHUB_TOKEN;
 
