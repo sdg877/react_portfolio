@@ -9,15 +9,6 @@ import Education from "./pages/Education.jsx";
 import Experience from "./pages/Experience.jsx";
 import Projects from "./pages/Projects.jsx";
 import Skills from "./pages/Skills.jsx";
-import ProjectOne from "./pages/ProjectPages/ProjectOne.jsx";
-import InTech from "./pages/ProjectPages/InTech.jsx";
-import SSS from "./pages/ProjectPages/SSS.jsx";
-import HTreharneJones from "./pages/ProjectPages/HTreharneJones.jsx";
-import GourmetGallery from "./pages/ProjectPages/GourmetGallery.jsx";
-import Snake from "./pages/ProjectPages/Snake.jsx";
-import SpookSpotters from "./pages/ProjectPages/SpookSpotters.jsx";
-import AIChatBot from "./pages/ProjectPages/AIChatBot.jsx";
-// import GreenSpaces from "./pages/ProjectPages/GreenSpaces.jsx";
 import GithubContributions from './pages/ProjectPages/GithubContributions.jsx';
 import Contact from "./pages/Contact.jsx";
 import Weather from "./pages/Weather.jsx";
@@ -25,6 +16,7 @@ import Home from "./pages/Home.jsx";
 import Packages from "./pages/Packages.jsx";
 import Layout from "./components/Layout.jsx";
 import Footer from "./components/Footer.jsx";
+import ProjectComponent from "./pages/ProjectPages/ProjectComponent";
 
 const App = () => {
   return (
@@ -39,17 +31,9 @@ const App = () => {
           <Route path="/education" element={<><Layout /><Education /></>} />
           <Route path="/skills" element={<><Layout /><Skills /></>} />
           <Route path="/projects" element={<><Layout /><Projects /></>} />
+          <Route path="/projects/:id" element={<><Layout /><ProjectComponent /></>} />
           <Route path="/packages" element={<><Layout /><Packages /></>} />
-          <Route path="/projects/GourmetGallery" element={<><Layout /><GourmetGallery /></>} />
-          <Route path="/projects/Snake" element={<><Layout /><Snake /></>} />
-          <Route path="/projects/SpookSpotters" element={<><Layout /><SpookSpotters /></>} />
-          <Route path="/projects/SSS" element={<><Layout /><SSS /></>} />
-          <Route path="/projects/HTJ" element={<><Layout /><HTreharneJones /></>} />
-          <Route path="/projects/InTechJobs" element={<><Layout /><InTech /></>} />
-          <Route path="/projects/ProjectOne" element={<><Layout /><ProjectOne /></>} />
-          <Route path="/projects/AIChatBot" element={<><Layout /><AIChatBot /></>} />
           <Route path="/contributions" element={<GithubContributions />} />
-          {/* <Route path="/projects/GreenSpaces" element={<><Layout /><GreenSpaces /></>} /> */}
         </Routes>
         <Footer />
       </div>
