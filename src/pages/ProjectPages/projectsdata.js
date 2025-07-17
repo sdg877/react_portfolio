@@ -22,7 +22,7 @@ const projects = [
     githubBackendUrl: "",
   },
   {
-    id: "HTreharneJones",
+    id: "HTJ",
     title: "Heather Treharne Jones Project",
     image: HTreharneJonesImg,
     description: [
