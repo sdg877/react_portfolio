@@ -31,9 +31,9 @@ const projects = [
       "Key challenges included integrating the API, managing auth flows, and handling inconsistent data. To improve layout consistency, I filtered out recipes lacking images.",
       "This project strengthened my problem-solving skills and boosted my confidence in full-stack development, API handling, and solo deployment.",
     ],
-    siteUrl: "https://gourmetgallery.example.com",
-    githubFrontendUrl: "https://github.com/sdg877/GourmetGalleryFrontend",
-    githubBackendUrl: "",
+    siteUrl: "https://gourmetgallery.netlify.app/",
+    githubFrontendUrl: "https://github.com/sdg877/recipe_site_fe",
+    githubBackendUrl: "https://github.com/sdg877/recipe_site_be",
   },
   {
     id: "HTreharneJones",
