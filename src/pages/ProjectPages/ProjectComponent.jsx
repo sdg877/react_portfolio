@@ -1,15 +1,19 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import projects from "./projectsdata";
 import ProjectPage from "./ProjectPage";
 
 const ProjectComponent = () => {
   const { id } = useParams();
-  const project = projects.find((proj) => proj.id === id);
+  const projectIndex = projects.findIndex((proj) => proj.id === id);
+  const project = projects[projectIndex];
 
   if (!project) {
     return <p>Project not found.</p>;
   }
+
+  const nextProjectIndex = (projectIndex + 1) % projects.length;
+  const nextProject = projects[nextProjectIndex];
 
   const githubLinks = [];
   if (project.githubFrontendUrl) {
@@ -22,11 +26,14 @@ const ProjectComponent = () => {
   return (
     <ProjectPage
       title={project.title}
-      image='../../images/${project.image}'
+      image={project.image}
       altText={project.title}
       descriptionParagraphs={project.description}
       siteLink={project.siteUrl}
       githubLinks={githubLinks}
+      // Pass the next project details here
+      nextProjectPath={`/projects/${nextProject.id}`}
+      nextProjectLabel={nextProject.title}
     />
   );
 };
