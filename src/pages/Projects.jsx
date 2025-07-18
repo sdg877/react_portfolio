@@ -9,6 +9,7 @@ import GourmetGalleryImage from "../Images/GourmetGallery.png";
 import SpookSpottersImage from "../Images/SpookSpotters.png";
 import HTJImage from "../Images/HTJ.png";
 import AIChatBotImage from "../Images/AIChatBot.png";
+import GithubContributions from './ProjectPages/GithubContributions'; 
 import "../Styles/Projects.css";
 
 const projectData = [
@@ -107,6 +108,8 @@ const Projects = () => {
           </motion.div>
         ))}
       </motion.div>
+
+      <GithubContributions />
 
       <motion.p
         initial={{ opacity: 0 }}
