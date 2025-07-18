@@ -9,7 +9,6 @@ import Education from "./pages/Education.jsx";
 import Experience from "./pages/Experience.jsx";
 import Projects from "./pages/Projects.jsx";
 import Skills from "./pages/Skills.jsx";
-import GithubContributions from './pages/ProjectPages/GithubContributions.jsx';
 import Contact from "./pages/Contact.jsx";
 import Weather from "./pages/Weather.jsx";
 import Home from "./pages/Home.jsx";
@@ -33,7 +32,6 @@ const App = () => {
           <Route path="/projects" element={<><Layout /><Projects /></>} />
           <Route path="/projects/:id" element={<><Layout /><ProjectComponent /></>} />
           <Route path="/packages" element={<><Layout /><Packages /></>} />
-          <Route path="/contributions" element={<GithubContributions />} />
         </Routes>
         <Footer />
       </div>
