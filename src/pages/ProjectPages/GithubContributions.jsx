@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { request, gql } from 'graphql-request';
-import '../../Styles/Projects.css';
 
 const token = process.env.REACT_APP_GITHUB_TOKEN;
 
@@ -40,25 +39,9 @@ const GithubContributions = () => {
     fetchData();
   }, []);
 
-  const colorScale = [
-    '#f0f0ff',
-    '#d0c4ff',
-    '#a58bff',
-    '#7c51ff',
-    '#521fdc',
-  ];
-
-  const getColor = (count) => {
-    if (count === 0) return colorScale[0];
-    if (count < 5) return colorScale[1];
-    if (count < 10) return colorScale[2];
-    if (count < 20) return colorScale[3];
-    return colorScale[4];
-  };
-
   return (
-    <div>
-      <h2>My Contributions</h2>
+    <div className="github-contributions-section">
+      <h3 className="github-title">My Contributions</h3>
       <div className="contribution-calendar">
         {weeks.map((week, i) => (
           <div key={i} className="week-column">
@@ -66,7 +49,7 @@ const GithubContributions = () => {
               <div
                 key={j}
                 className="contribution-day"
-                style={{ backgroundColor: getColor(day.contributionCount) }}
+                data-count={day.contributionCount}
                 title={`${day.date}: ${day.contributionCount} contributions`}
               />
             ))}
