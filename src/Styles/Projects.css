@@ -202,3 +202,46 @@ body.dark .project-name {
     font-size: 16px !important;
   }
 }
+
+
+/* GitHub Contribution Day Levels */
+.contribution-day.level-0 {
+  background-color: #ebedf0;
+}
+
+.contribution-day.level-1 {
+  background-color: #c6e48b;
+}
+
+.contribution-day.level-2 {
+  background-color: #7bc96f;
+}
+
+.contribution-day.level-3 {
+  background-color: #239a3b;
+}
+
+.contribution-day.level-4 {
+  background-color: #196127;
+}
+
+
+body.dark .contribution-day.level-0 {
+  background-color: #2d333b;
+}
+
+body.dark .contribution-day.level-1 {
+  background-color: #45862b;
+}
+
+body.dark .contribution-day.level-2 {
+  background-color: #6aa84f;
+}
+
+body.dark .contribution-day.level-3 {
+  background-color: #89c079;
+}
+
+body.dark .contribution-day.level-4 {
+  background-color: #a7e3a1;
+}
