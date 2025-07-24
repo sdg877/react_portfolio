@@ -205,43 +205,43 @@ body.dark .project-name {
 
 
 .contribution-day.level-0 {
-  background-color: #ebedf0;  /* very light grey */
+  background-color: #ebedf0;  
 }
 
 .contribution-day.level-1 {
-  background-color: #a3bffa;  /* soft light blue */
+  background-color: #a3bffa;  
 }
 
 .contribution-day.level-2 {
-  background-color: #627eee;  /* medium blue */
+  background-color: #627eee;  
 }
 
 .contribution-day.level-3 {
-  background-color: #3b51cc;  /* deep blue */
+  background-color: #3b51cc;  
 }
 
 .contribution-day.level-4 {
-  background-color: #2a327d;  /* dark indigo */
+  background-color: #2a327d; 
 }
 
 /* Dark mode */
 body.dark .contribution-day.level-0 {
-  background-color: #2d333b; /* dark grey */
+  background-color: #2d333b;
 }
 
 body.dark .contribution-day.level-1 {
-  background-color: #4b5cc4; /* medium blue */
+  background-color: #4b5cc4; 
 }
 
 body.dark .contribution-day.level-2 {
-  background-color: #576bd9; /* slightly lighter blue */
+  background-color: #576bd9; 
 }
 
 body.dark .contribution-day.level-3 {
-  background-color: #7988e8; /* light blue */
+  background-color: #7988e8; 
 }
 
 body.dark .contribution-day.level-4 {
-  background-color: #a2aefc; /* pale blue */
+  background-color: #a2aefc; 
 }
 
