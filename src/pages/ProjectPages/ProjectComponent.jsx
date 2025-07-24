@@ -17,10 +17,16 @@ const ProjectComponent = () => {
 
   const githubLinks = [];
   if (project.githubFrontendUrl) {
-    githubLinks.push({ label: "GitHub Frontend", url: project.githubFrontendUrl });
+    githubLinks.push({
+      label: "GitHub Frontend",
+      url: project.githubFrontendUrl,
+    });
   }
   if (project.githubBackendUrl) {
-    githubLinks.push({ label: "GitHub Backend", url: project.githubBackendUrl });
+    githubLinks.push({
+      label: "GitHub Backend",
+      url: project.githubBackendUrl,
+    });
   }
 
   return (
