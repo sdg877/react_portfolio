@@ -203,45 +203,42 @@ body.dark .project-name {
   }
 }
 
-
 .contribution-day.level-0 {
-  background-color: #ebedf0;  
+  background-color: #e6f0f0;
 }
 
 .contribution-day.level-1 {
-  background-color: #a3bffa;  
+  background-color: #c2d8d8;
 }
 
 .contribution-day.level-2 {
-  background-color: #627eee;  
+  background-color: #a6c2c2;
 }
 
 .contribution-day.level-3 {
-  background-color: #3b51cc;  
+  background-color: #89acac;
 }
 
 .contribution-day.level-4 {
-  background-color: #2a327d; 
+  background-color: #6e9999;
 }
 
-/* Dark mode */
 body.dark .contribution-day.level-0 {
-  background-color: #2d333b;
+  background-color: #1e2b2b;
 }
 
 body.dark .contribution-day.level-1 {
-  background-color: #4b5cc4; 
+  background-color: #375050;
 }
 
 body.dark .contribution-day.level-2 {
-  background-color: #576bd9; 
+  background-color: #4e6c6c;
 }
 
 body.dark .contribution-day.level-3 {
-  background-color: #7988e8; 
+  background-color: #6a8b8b;
 }
 
 body.dark .contribution-day.level-4 {
-  background-color: #a2aefc; 
+  background-color: #8db3b3;
 }
-
