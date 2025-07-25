@@ -57,7 +57,7 @@ const GithubContributions = () => {
   return (
     <div className="info-card-project">
       <h3 className="github-title">My Contributions</h3>
-      <h9>I regularly commit to projects on GitHub, here’s my contribution history.</h9>
+      <h9 className="github-desc">I regularly commit to projects on GitHub, here’s my contribution history.</h9>
       <div className="contribution-calendar">
         {weeks.map((week, i) => (
           <div key={i} className="week-column">
