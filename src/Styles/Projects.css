@@ -204,41 +204,41 @@ body.dark .project-name {
 }
 
 .contribution-day.level-0 {
-  background-color: #f5f5f5; /* lightest */
+  background-color: #f9f9f9; /* very light */
 }
 
 .contribution-day.level-1 {
-  background-color: #d9d9d9;
+  background-color: #bfbfbf; /* medium grey — clearly visible */
 }
 
 .contribution-day.level-2 {
-  background-color: #bfbfbf;
+  background-color: #999999;
 }
 
 .contribution-day.level-3 {
-  background-color: #a6a6a6;
-}
-
-.contribution-day.level-4 {
-  background-color: #8c8c8c; /* darkest */
-}
-
-body.dark .contribution-day.level-0 {
-  background-color: #1a1a1a; /* darkest background */
-}
-
-body.dark .contribution-day.level-1 {
-  background-color: #333333;
-}
-
-body.dark .contribution-day.level-2 {
-  background-color: #4d4d4d;
-}
-
-body.dark .contribution-day.level-3 {
   background-color: #666666;
 }
 
+.contribution-day.level-4 {
+  background-color: #444444; /* darkest */
+}
+
+body.dark .contribution-day.level-0 {
+  background-color: #1e1e1e; /* very dark */
+}
+
+body.dark .contribution-day.level-1 {
+  background-color: #555555; /* medium grey */
+}
+
+body.dark .contribution-day.level-2 {
+  background-color: #777777;
+}
+
+body.dark .contribution-day.level-3 {
+  background-color: #999999;
+}
+
 body.dark .contribution-day.level-4 {
-  background-color: #808080; /* lightest grey in dark mode */
+  background-color: #bbbbbb; /* lightest grey */
 }
