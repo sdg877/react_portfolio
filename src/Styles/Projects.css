@@ -204,11 +204,11 @@ body.dark .project-name {
 }
 
 .contribution-day.level-0 {
-  background-color: #f9f9f9; /* very light */
+  background-color: #f9f9f9; 
 }
 
 .contribution-day.level-1 {
-  background-color: #bfbfbf; /* medium grey — clearly visible */
+  background-color: #bfbfbf; 
 }
 
 .contribution-day.level-2 {
@@ -220,15 +220,15 @@ body.dark .project-name {
 }
 
 .contribution-day.level-4 {
-  background-color: #444444; /* darkest */
+  background-color: #444444; 
 }
 
 body.dark .contribution-day.level-0 {
-  background-color: #1e1e1e; /* very dark */
+  background-color: #1e1e1e;
 }
 
 body.dark .contribution-day.level-1 {
-  background-color: #555555; /* medium grey */
+  background-color: #555555; 
 }
 
 body.dark .contribution-day.level-2 {
@@ -240,5 +240,5 @@ body.dark .contribution-day.level-3 {
 }
 
 body.dark .contribution-day.level-4 {
-  background-color: #bbbbbb; /* lightest grey */
+  background-color: #bbbbbb;
 }
