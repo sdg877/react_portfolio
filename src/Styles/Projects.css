@@ -25,11 +25,15 @@
 
 .contribution-calendar {
   display: flex;
+  justify-content: center; 
+  margin: 20px auto;
 }
 
 .week-column {
   display: flex;
   flex-direction: column;
+  align-items: flex-start; 
+  justify-content: flex-start; 
 }
 
 .contribution-day {
