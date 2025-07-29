@@ -22,6 +22,7 @@ const query = gql`
 
 const GithubContributions = () => {
   const [weeks, setWeeks] = useState([]);
+  const [hoveredDay, setHoveredDay] = useState(null); // Track hovered day info
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,9 +36,7 @@ const GithubContributions = () => {
           {},
           headers
         );
-        setWeeks(
-          data.viewer.contributionsCollection.contributionCalendar.weeks
-        );
+        setWeeks(data.viewer.contributionsCollection.contributionCalendar.weeks);
       } catch (error) {
         console.error("Error fetching GitHub data:", error);
       }
@@ -54,25 +53,60 @@ const GithubContributions = () => {
     return "level-4";
   };
 
+  const formatDate = (isoDate) => {
+    const [year, month, day] = isoDate.split("-");
+    return `${day}/${month}/${year}`;
+  };
+
   return (
-    <div className="info-card-project">
+    <div className="info-card-project" style={{ position: "relative" }}>
       <h3 className="github-title">My Contributions</h3>
-      <h9 className="github-desc">I regularly commit to projects on GitHub, here’s my contribution history.</h9>
+      <h9 className="github-desc">
+        I regularly commit to projects on GitHub, here’s my contribution history.
+      </h9>
+
       <div className="contribution-calendar">
         {weeks.map((week, i) => (
           <div key={i} className="week-column">
             {week.contributionDays.map((day, j) => (
               <div
                 key={j}
-                className={`contribution-day ${getContributionLevel(
-                  day.contributionCount
-                )}`}
-                title={`${day.date}: ${day.contributionCount} contributions`}
+                className={`contribution-day ${getContributionLevel(day.contributionCount)}`}
+                onMouseEnter={(e) =>
+                  setHoveredDay({
+                    date: day.date,
+                    commits: day.contributionCount,
+                    position: { x: e.clientX, y: e.clientY },
+                  })
+                }
+                onMouseLeave={() => setHoveredDay(null)}
               />
             ))}
           </div>
         ))}
       </div>
+
+      {hoveredDay && (
+        <div
+          className="tooltip"
+          style={{
+            position: "fixed",
+            top: hoveredDay.position.y + 10,
+            left: hoveredDay.position.x + 10,
+            pointerEvents: "none", // so tooltip doesn’t block mouse events
+            backgroundColor: "#222",
+            color: "#fff",
+            padding: "6px 10px",
+            borderRadius: "4px",
+            fontSize: "0.9rem",
+            zIndex: 1000,
+            whiteSpace: "nowrap",
+          }}
+        >
+          <div>{formatDate(hoveredDay.date)}</div>
+          <div>{hoveredDay.commits} commits</div>
+        </div>
+      )}
     </div>
   );
 };
