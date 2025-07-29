@@ -246,3 +246,15 @@ body.dark .contribution-day.level-3 {
 body.dark .contribution-day.level-4 {
   background-color: #bbbbbb;
 }
+
+.tooltip {
+  position: fixed;
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  pointer-events: none;
+  z-index: 1000;
+  white-space: nowrap;
+}
