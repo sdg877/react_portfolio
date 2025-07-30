@@ -22,7 +22,7 @@ const query = gql`
 
 const GithubContributions = () => {
   const [weeks, setWeeks] = useState([]);
-  const [hoveredDay, setHoveredDay] = useState(null); // Track hovered day info
+  const [hoveredDay, setHoveredDay] = useState(null); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -93,7 +93,7 @@ const GithubContributions = () => {
             position: "fixed",
             top: hoveredDay.position.y + 10,
             left: hoveredDay.position.x + 10,
-            pointerEvents: "none", // so tooltip doesn’t block mouse events
+            pointerEvents: "none", 
             backgroundColor: "#222",
             color: "#fff",
             padding: "6px 10px",
