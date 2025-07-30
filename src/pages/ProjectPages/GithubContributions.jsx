@@ -59,8 +59,8 @@ const GithubContributions = () => {
   };
 
   return (
-    <div className="info-card-project" style={{ position: "relative" }}>
-      <h3 className="github-title">My Contributions</h3>
+    <div className="info-card-project contributions-card" style={{ position: "relative" }}>
+      <h3 className="title-project">My Contributions</h3>
       <h9 className="github-desc">
         I regularly commit to projects on GitHub, here’s my contribution history.
       </h9>
