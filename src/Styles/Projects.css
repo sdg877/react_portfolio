@@ -258,3 +258,7 @@ body.dark .contribution-day.level-4 {
   z-index: 1000;
   white-space: nowrap;
 }
+
+body.dark .contributions-card {
+  background-color: #5c7a7a;
+}
