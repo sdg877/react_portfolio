@@ -117,7 +117,7 @@ const Projects = () => {
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <a
-          href="https://github.com/sdg877/your-portfolio-repo"
+          href="https://github.com/sdg877/react_portfolio"
           target="_blank"
           rel="noopener noreferrer"
           className="custom-link"
