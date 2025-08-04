@@ -28,7 +28,11 @@ const ProjectPage = ({
         {title}
       </motion.h3>
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
         <motion.img
           src={image}
           alt={altText}
