@@ -6,7 +6,6 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
 .flags {
   display: flex;
   flex-wrap: wrap;
@@ -83,11 +82,11 @@
 }
 
 body.dark .custom-link-packages {
-  color: 	#FFB6C1;
+  color: #ffb6c1;
 }
 
 body.dark .info-card {
-  background-color: #003333
+  background-color: #003333;
 }
 
 body.dark .about-p,
@@ -98,19 +97,18 @@ body.dark .info-card p {
 }
 
 body.dark .custom-link-packages {
-  color: #FFB6C1;
+  color: #ffb6c1;
 }
 
 body.dark .info-card {
   background-color: #003333;
 }
 
-
 @media (max-width: 480px) {
-.about-p {
-  font-size: 16px !important;
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: 15px;
-}
+  .about-p {
+    font-size: 16px !important;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
 }
