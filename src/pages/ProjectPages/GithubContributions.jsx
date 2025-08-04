@@ -22,7 +22,7 @@ const query = gql`
 
 const GithubContributions = () => {
   const [weeks, setWeeks] = useState([]);
-  const [hoveredDay, setHoveredDay] = useState(null); 
+  const [hoveredDay, setHoveredDay] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,7 +36,9 @@ const GithubContributions = () => {
           {},
           headers
         );
-        setWeeks(data.viewer.contributionsCollection.contributionCalendar.weeks);
+        setWeeks(
+          data.viewer.contributionsCollection.contributionCalendar.weeks
+        );
       } catch (error) {
         console.error("Error fetching GitHub data:", error);
       }
@@ -59,10 +61,14 @@ const GithubContributions = () => {
   };
 
   return (
-    <div className="info-card-project contributions-card" style={{ position: "relative" }}>
+    <div
+      className="info-card-project contributions-card"
+      style={{ position: "relative" }}
+    >
       <h3 className="title-project">My Contributions</h3>
       <h9 className="github-desc">
-        I regularly commit to projects on GitHub, here’s my contribution history.
+        I regularly commit to projects on GitHub, here’s my contribution
+        history.
       </h9>
 
       <div className="contribution-calendar">
@@ -71,7 +77,9 @@ const GithubContributions = () => {
             {week.contributionDays.map((day, j) => (
               <div
                 key={j}
-                className={`contribution-day ${getContributionLevel(day.contributionCount)}`}
+                className={`contribution-day ${getContributionLevel(
+                  day.contributionCount
+                )}`}
                 onMouseEnter={(e) =>
                   setHoveredDay({
                     date: day.date,
@@ -93,7 +101,7 @@ const GithubContributions = () => {
             position: "fixed",
             top: hoveredDay.position.y + 10,
             left: hoveredDay.position.x + 10,
-            pointerEvents: "none", 
+            pointerEvents: "none",
             backgroundColor: "#222",
             color: "#fff",
             padding: "6px 10px",
