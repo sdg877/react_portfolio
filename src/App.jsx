@@ -1,9 +1,5 @@
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AboutMe from "./pages/AboutMe.jsx";
 import Education from "./pages/Education.jsx";
 import Experience from "./pages/Experience.jsx";
@@ -22,16 +18,96 @@ const App = () => {
     <div className="layout-wrapper">
       <div className="content">
         <Routes>
-          <Route path="/" element={<><Layout /><Home /></>} />
-          <Route path="/weather" element={<><Layout /><Weather /></>} />
-          <Route path="/about" element={<><Layout /><AboutMe /></>} />
-          <Route path="/contact" element={<><Layout /><Contact /></>} />
-          <Route path="/experience" element={<><Layout /><Experience /></>} />
-          <Route path="/education" element={<><Layout /><Education /></>} />
-          <Route path="/skills" element={<><Layout /><Skills /></>} />
-          <Route path="/projects" element={<><Layout /><Projects /></>} />
-          <Route path="/projects/:id" element={<><Layout /><ProjectComponent /></>} />
-          <Route path="/packages" element={<><Layout /><Packages /></>} />
+          <Route
+            path="/"
+            element={
+              <>
+                <Layout />
+                <Home />
+              </>
+            }
+          />
+          <Route
+            path="/weather"
+            element={
+              <>
+                <Layout />
+                <Weather />
+              </>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <>
+                <Layout />
+                <AboutMe />
+              </>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <>
+                <Layout />
+                <Contact />
+              </>
+            }
+          />
+          <Route
+            path="/experience"
+            element={
+              <>
+                <Layout />
+                <Experience />
+              </>
+            }
+          />
+          <Route
+            path="/education"
+            element={
+              <>
+                <Layout />
+                <Education />
+              </>
+            }
+          />
+          <Route
+            path="/skills"
+            element={
+              <>
+                <Layout />
+                <Skills />
+              </>
+            }
+          />
+          <Route
+            path="/projects"
+            element={
+              <>
+                <Layout />
+                <Projects />
+              </>
+            }
+          />
+          <Route
+            path="/projects/:id"
+            element={
+              <>
+                <Layout />
+                <ProjectComponent />
+              </>
+            }
+          />
+          <Route
+            path="/packages"
+            element={
+              <>
+                <Layout />
+                <Packages />
+              </>
+            }
+          />
         </Routes>
         <Footer />
       </div>
