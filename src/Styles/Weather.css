@@ -36,7 +36,7 @@ html {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  max-width: 1200px; 
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 }
@@ -52,15 +52,14 @@ html {
   text-align: center;
   border-radius: 10px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   background-color: #ffffff;
   border: 1px solid #ccc;
 }
 
-
-.weather-card p, 
+.weather-card p,
 .weather-week-card p {
   font-size: 1rem;
   margin: 2px;
@@ -69,7 +68,6 @@ html {
 .weather-week-card {
   min-width: 100px;
 }
-
 
 .weather-card:hover {
   transform: translateY(-5px);
@@ -91,7 +89,6 @@ body.dark .weather-title {
   margin: 10px 0;
 }
 
-
 .right-section {
   display: flex;
   align-items: center;
@@ -104,7 +101,6 @@ body.dark .weather-title {
   font-size: 20px;
 }
 
-
 @media (max-width: 1200px) {
   .weather-card,
   .weather-week-card {
@@ -116,7 +112,7 @@ body.dark .weather-title {
 @media (max-width: 1024px) {
   .weather-card,
   .weather-week-card {
-    flex: 1 1 calc(33.33% - 10px); 
+    flex: 1 1 calc(33.33% - 10px);
     max-width: calc(33.33% - 10px);
   }
 }
@@ -154,7 +150,7 @@ body.dark .weather-title {
     min-width: 90vw;
     max-width: 90vw;
     height: 100px !important;
-    min-height: unset !important; 
+    min-height: unset !important;
     text-align: left;
   }
 
