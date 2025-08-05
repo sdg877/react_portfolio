@@ -62,7 +62,7 @@ body.dark .home-nav-button:hover {
 }
 
 .home-nav-button:hover {
-  background-color: #20B2AA;
+  background-color: #20b2aa;
   color: white;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
   border: 3px solid rgba(255, 255, 255, 0.7);
@@ -126,20 +126,20 @@ body.dark .home-nav-button:hover {
 @media (max-width: 480px) {
   .home-container {
     margin-top: 0;
-    display: flex; 
-    justify-content: center; 
+    display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
   }
 
   .home-title {
-    font-size: 1.4rem; 
+    font-size: 1.4rem;
   }
 
   .home-button-wrapper {
     width: 100%;
     max-width: 80px;
-    margin-bottom: 3px; 
+    margin-bottom: 3px;
     margin-top: 0;
   }
 
@@ -147,8 +147,8 @@ body.dark .home-nav-button:hover {
     width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
-    font-size: 0.6rem; 
-    padding: 2px; 
+    font-size: 0.6rem;
+    padding: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -161,7 +161,7 @@ body.dark .home-nav-button:hover {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    justify-items: center; 
+    justify-items: center;
     align-items: center;
     margin-top: -200px;
     width: 100%;
@@ -192,12 +192,12 @@ body.dark .home-nav-button:hover {
   }
 
   .home-nav > *:nth-child(7) {
-    grid-column: 1 / 4; 
+    grid-column: 1 / 4;
   }
 
   .home-content {
-    padding-bottom: 10px; 
+    padding-bottom: 10px;
     padding-top: 0;
-    width: fit-content; 
+    width: fit-content;
   }
 }
