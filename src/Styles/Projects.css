@@ -25,15 +25,15 @@
 
 .contribution-calendar {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   margin: 20px auto;
 }
 
 .week-column {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  justify-content: flex-start; 
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .contribution-day {
@@ -42,7 +42,6 @@
   margin: 1px;
   border-radius: 2px;
 }
-
 
 body.dark .info-card-project {
   background-color: #5c7a7a;
@@ -154,15 +153,15 @@ body.dark .title-project {
 .details p {
   margin-top: 0.4rem;
   margin-bottom: 0.4rem;
-  line-height: 1.5; 
+  line-height: 1.5;
 }
 
 body.dark .custom-link-bottom {
-  color:	#FFB6C1;
+  color: #ffb6c1;
 }
 
 body.dark .custom-link {
-  color: 	#FFB6C1;
+  color: #ffb6c1;
 }
 
 .custom-link:hover {
@@ -208,11 +207,11 @@ body.dark .project-name {
 }
 
 .contribution-day.level-0 {
-  background-color: #f9f9f9; 
+  background-color: #f9f9f9;
 }
 
 .contribution-day.level-1 {
-  background-color: #bfbfbf; 
+  background-color: #bfbfbf;
 }
 
 .contribution-day.level-2 {
@@ -224,7 +223,7 @@ body.dark .project-name {
 }
 
 .contribution-day.level-4 {
-  background-color: #444444; 
+  background-color: #444444;
 }
 
 body.dark .contribution-day.level-0 {
@@ -232,7 +231,7 @@ body.dark .contribution-day.level-0 {
 }
 
 body.dark .contribution-day.level-1 {
-  background-color: #555555; 
+  background-color: #555555;
 }
 
 body.dark .contribution-day.level-2 {
