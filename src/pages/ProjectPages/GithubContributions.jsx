@@ -47,12 +47,15 @@ const GithubContributions = () => {
     fetchData();
   }, []);
 
-  const getContributionLevel = (count) => {
-    if (count === 0) return "level-0";
-    if (count < 3) return "level-1";
-    if (count < 6) return "level-2";
-    if (count < 10) return "level-3";
-    return "level-4";
+const getContributionLevel = (count) => {
+    if (count === 0) return "level-0";   // 0 commits
+    if (count < 3) return "level-1";    // 1-2 commits
+    if (count < 5) return "level-2";    // 3-4 commits
+    if (count < 7) return "level-3";    // 5-6 commits
+    if (count < 9) return "level-4";    // 7-8 commits
+    if (count < 11) return "level-5";   // 9-10 commits
+    if (count < 15) return "level-6";   // 11-14 commits
+    return "level-7";                  // 15+ commits
   };
 
   const formatDate = (isoDate) => {
