@@ -48,7 +48,7 @@ const GithubContributions = () => {
   }, []);
 
 const getContributionLevel = (count) => {
-    if (count === 0) return "level-0";   // 0 commits
+    if (count === 0) return "level-0";  
     if (count < 3) return "level-1";    // 1-2 commits
     if (count < 5) return "level-2";    // 3-4 commits
     if (count < 7) return "level-3";    // 5-6 commits
