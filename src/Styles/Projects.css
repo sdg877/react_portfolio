@@ -223,68 +223,66 @@ body.dark .contributions-card {
   background-color: #5c7a7a;
 }
 
-/* Light Mode - Orange/Rust Palette */
 .contribution-day.level-0 {
-  background-color: #FDFBF8; /* Off-White/Pale Beige */
+  background-color: #FDFBF8; 
 }
 
 .contribution-day.level-1 {
-  background-color: #F7E0C8; /* Pale Peach/Tan (1-2 commits) */
+  background-color: #F7E0C8; 
 }
 
 .contribution-day.level-2 {
-  background-color: #E7B383; /* Light Terracotta (3-4 commits) */
+  background-color: #E7B383; 
 }
 
 .contribution-day.level-3 {
-  background-color: #D5854C; /* Muted Rust/Sienna (5-6 commits) */
+  background-color: #D5854C; 
 }
 
 .contribution-day.level-4 {
-  background-color: #C25E1A; /* Deep Rust Orange (7-8 commits) */
+  background-color: #C25E1A;
 }
 
 .contribution-day.level-5 {
-  background-color: #A8480F; /* Burnt Orange (9-10 commits) */
+  background-color: #A8480F; 
 }
 
 .contribution-day.level-6 {
-  background-color: #8B3A0A; /* Dark Terracotta (11-14 commits) */
+  background-color: #8B3A0A;
 }
 
 .contribution-day.level-7 {
-  background-color: #6B2907; /* Deep Mahogany (15+ commits) */
+  background-color: #6B2907;
 }
 
-/* Dark Mode - Pink Palette to match links */
 body.dark .contribution-day.level-0 {
-  background-color: #222222; /* Very dark background */
+  background-color: #222222; 
 }
 
 body.dark .contribution-day.level-1 {
-  background-color: #6A3258; /* Deep Plum/Mauve (1-2 commits) */
+  background-color: #6A3258; 
 }
 
 body.dark .contribution-day.level-2 {
-  background-color: #9B497D; /* Dusty Rose (3-4 commits) */
+  background-color: #9B497D; 
 }
 
 body.dark .contribution-day.level-3 {
-  background-color: #C0619C; /* Medium Pink (5-6 commits) */
+  background-color: #C0619C;
 }
 
 body.dark .contribution-day.level-4 {
-  background-color: #E77ABF; /* Bright Pink (7-8 commits) */
+  background-color: #E77ABF;
 }
 
 body.dark .contribution-day.level-5 {
-  background-color: #FFB6C1; /* Light Rose - Matches Links (9-10 commits) */
+  background-color: #FFB6C1;
 }
 
 body.dark .contribution-day.level-6 {
-  background-color: #FFD2DD; /* Pale Pink/White (11-14 commits) */
+  background-color: #FFD2DD;
 }
 
 body.dark .contribution-day.level-7 {
-  background-color: #FFFFFF; /* Pure White (15+ commits) */
+  background-color: #FFFFFF;
 }
