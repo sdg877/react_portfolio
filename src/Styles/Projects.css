@@ -206,70 +206,6 @@ body.dark .project-name {
   }
 }
 
-.contribution-day.level-0 {
-  background-color: #f0fdf4; /* Near-white / Very light green-grey */
-}
-
-.contribution-day.level-1 {
-  background-color: #d0f8d8; /* Pale mint green (1-2 commits) */
-}
-
-.contribution-day.level-2 {
-  background-color: #a4e6b5; /* Soft, light spring green (3-4 commits) */
-}
-
-.contribution-day.level-3 {
-  background-color: #72cf8c; /* Medium, clear green (5-6 commits) */
-}
-
-.contribution-day.level-4 {
-  background-color: #4db76c; /* Standard GitHub Green shade (7-8 commits) */
-}
-
-.contribution-day.level-5 {
-  background-color: #2e9b4d; /* Darker, rich green (9-10 commits) */
-}
-
-.contribution-day.level-6 {
-  background-color: #1a7434; /* Deep forest green (11-14 commits) */
-}
-
-.contribution-day.level-7 {
-  background-color: #0c4d1b; /* Darkest hunter green (15+ commits) */
-}
-
-body.dark .contribution-day.level-0 {
-  background-color: #1e1e1e;
-}
-
-body.dark .contribution-day.level-1 {
-  background-color: #555555;
-}
-
-body.dark .contribution-day.level-2 {
-  background-color: #777777;
-}
-
-body.dark .contribution-day.level-3 {
-  background-color: #999999;
-}
-
-body.dark .contribution-day.level-4 {
-  background-color: #999999;
-}
-
-body.dark .contribution-day.level-5 {
-  background-color: #999999;
-}
-
-body.dark .contribution-day.level-6 {
-  background-color: #999999;
-}
-
-body.dark .contribution-day.level-7 {
-  background-color: #999999;
-}
-
 
 .tooltip {
   position: fixed;
@@ -285,4 +221,70 @@ body.dark .contribution-day.level-7 {
 
 body.dark .contributions-card {
   background-color: #5c7a7a;
+}
+
+/* Light Mode - Orange/Rust Palette */
+.contribution-day.level-0 {
+  background-color: #FDFBF8; /* Off-White/Pale Beige */
+}
+
+.contribution-day.level-1 {
+  background-color: #F7E0C8; /* Pale Peach/Tan (1-2 commits) */
+}
+
+.contribution-day.level-2 {
+  background-color: #E7B383; /* Light Terracotta (3-4 commits) */
+}
+
+.contribution-day.level-3 {
+  background-color: #D5854C; /* Muted Rust/Sienna (5-6 commits) */
+}
+
+.contribution-day.level-4 {
+  background-color: #C25E1A; /* Deep Rust Orange (7-8 commits) */
+}
+
+.contribution-day.level-5 {
+  background-color: #A8480F; /* Burnt Orange (9-10 commits) */
+}
+
+.contribution-day.level-6 {
+  background-color: #8B3A0A; /* Dark Terracotta (11-14 commits) */
+}
+
+.contribution-day.level-7 {
+  background-color: #6B2907; /* Deep Mahogany (15+ commits) */
+}
+
+/* Dark Mode - Pink Palette to match links */
+body.dark .contribution-day.level-0 {
+  background-color: #222222; /* Very dark background */
+}
+
+body.dark .contribution-day.level-1 {
+  background-color: #6A3258; /* Deep Plum/Mauve (1-2 commits) */
+}
+
+body.dark .contribution-day.level-2 {
+  background-color: #9B497D; /* Dusty Rose (3-4 commits) */
+}
+
+body.dark .contribution-day.level-3 {
+  background-color: #C0619C; /* Medium Pink (5-6 commits) */
+}
+
+body.dark .contribution-day.level-4 {
+  background-color: #E77ABF; /* Bright Pink (7-8 commits) */
+}
+
+body.dark .contribution-day.level-5 {
+  background-color: #FFB6C1; /* Light Rose - Matches Links (9-10 commits) */
+}
+
+body.dark .contribution-day.level-6 {
+  background-color: #FFD2DD; /* Pale Pink/White (11-14 commits) */
+}
+
+body.dark .contribution-day.level-7 {
+  background-color: #FFFFFF; /* Pure White (15+ commits) */
 }
