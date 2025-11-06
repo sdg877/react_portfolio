@@ -25,23 +25,44 @@
 
 .contribution-calendar {
   display: flex;
-  justify-content: center;
-  margin: 20px auto;
+  overflow-x: auto; 
+  padding-bottom: 10px;
+  margin-top: 20px;
 }
+
+
 
 .week-column {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  margin-right: 2px;
 }
 
 .contribution-day {
-  width: 12px;
-  height: 12px;
-  margin: 1px;
-  border-radius: 2px;
+  width: 16px;  
+  height: 16px;
+  margin: 2px; 
+  border-radius: 3px;
 }
+
+
+@media (max-width: 768px) {
+  .contribution-day {
+    width: 10px;
+    height: 10px;
+    margin: 0.5px;
+  }
+
+  .contribution-calendar {
+    justify-content: flex-start;
+  }
+
+  .tooltip {
+    font-size: 0.8rem; 
+    padding: 4px 8px;
+  }
+}
+
 
 body.dark .info-card-project {
   background-color: #5c7a7a;
