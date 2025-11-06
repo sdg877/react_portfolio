@@ -12,6 +12,8 @@ const Experience = () => {
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
       <h3 className="experience-title">Experience</h3>
+      <br />
+      <br />
       <motion.div
         className="details"
         initial="hidden"
@@ -46,7 +48,7 @@ const Experience = () => {
           <br />I have also collaborated on a potential commission project and
           maintained part-time employment in retail alongside my software
           development practice.
-                    <br />
+          <br />
           <br />
         </motion.p>
 
@@ -63,14 +65,15 @@ const Experience = () => {
             Jan - Feb 2025
           </strong>
           <br />
-          Designed and developed a responsive portfolio site with a custom content management system
-          and image galleries, delivered on time and within budget.
+          Designed and developed a responsive portfolio site with a custom
+          content management system and image galleries, delivered on time and
+          within budget.
           <br />
           <br />
           <Link to="/projects/HTJ" className="custom-link">
             View Project
           </Link>
-                    <br />
+          <br />
           <br />
         </motion.p>
         <motion.p
@@ -95,7 +98,7 @@ const Experience = () => {
           <Link to="/projects/ProjectOne" className="custom-link">
             View Project
           </Link>
-                    <br />
+          <br />
           <br />
         </motion.p>
 
@@ -119,7 +122,7 @@ const Experience = () => {
           <Link to="/projects" className="custom-link">
             View Projects
           </Link>
-                    <br />
+          <br />
           <br />
         </motion.p>
 
