@@ -70,8 +70,9 @@ const getContributionLevel = (count) => {
     >
       <h3 className="title-project">My Contributions</h3>
       <h9 className="github-desc">
-        I regularly commit to projects on GitHub, here’s my contribution
-        history.
+        I’ve made 1000+ GitHub contributions over the past year, demonstrating
+        consistent engagement with code and project work. The graph below shows
+        my ongoing development activity.
       </h9>
 
       <div className="contribution-calendar">
