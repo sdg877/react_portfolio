@@ -32,18 +32,46 @@ const Experience = () => {
           className="details"
         >
           <strong>
+            {" "}
+            Independent Software Development & Freelance Work <br /> Feb 2025 –
+            Present{" "}
+          </strong>
+          <br />
+          Continuing to enhance my portfolio through self-initiated and
+          client-focused projects. Recent work includes developing an
+          interactive chatbot using React and OpenAI API, designing a personal
+          developer portfolio, and building a carbon footprint calculator to
+          explore environmental data visualisation and sustainability metrics.
+          <br />
+          <br />I have also collaborated on a potential commission project and
+          maintained part-time employment in retail alongside my software
+          development practice.
+                    <br />
+          <br />
+        </motion.p>
+
+        <motion.p
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          className="details"
+        >
+          <strong>
             Heather Treharne Jones – Artist Portfolio Website
             <br />
             Jan - Feb 2025
           </strong>
           <br />
-          Designed and developed a responsive portfolio site with a custom CMS
+          Designed and developed a responsive portfolio site with a custom content management system
           and image galleries, delivered on time and within budget.
           <br />
           <br />
           <Link to="/projects/HTJ" className="custom-link">
             View Project
           </Link>
+                    <br />
+          <br />
         </motion.p>
         <motion.p
           variants={{
@@ -67,6 +95,8 @@ const Experience = () => {
           <Link to="/projects/ProjectOne" className="custom-link">
             View Project
           </Link>
+                    <br />
+          <br />
         </motion.p>
 
         <motion.p
@@ -89,6 +119,8 @@ const Experience = () => {
           <Link to="/projects" className="custom-link">
             View Projects
           </Link>
+                    <br />
+          <br />
         </motion.p>
 
         <motion.p
@@ -150,7 +182,7 @@ const Experience = () => {
           <br />
           <br />
           <strong>
-            British Broadcasting Corporation, Various Team Assistant Positions
+            BBC, Various Team Assistant Positions
             <br />
             Jan 10 - Jun 14
           </strong>
