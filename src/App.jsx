@@ -12,6 +12,8 @@ import Packages from "./pages/Packages.jsx";
 import Layout from "./components/Layout.jsx";
 import Footer from "./components/Footer.jsx";
 import ProjectComponent from "./pages/ProjectPages/ProjectComponent";
+import ErrorBoundary from "./components/ErrorBoundary.jsx";
+import DownPage from "./components/DownPage.jsx";
 
 const App = () => {
   return (
@@ -108,6 +110,7 @@ const App = () => {
               </>
             }
           />
+          <Route path="/down" element={<DownPage />} />
         </Routes>
         <Footer />
       </div>
@@ -117,7 +120,9 @@ const App = () => {
 
 const WrappedApp = () => (
   <Router>
-    <App />
+    <ErrorBoundary>
+      <App />
+    </ErrorBoundary>
   </Router>
 );
 
