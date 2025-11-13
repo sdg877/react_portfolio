@@ -17,7 +17,6 @@ body {
   box-sizing: border-box;
 }
 
-
 body.light {
   background-color: #ffffff;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%2366cdaa' fill-opacity='0.07' d='M0 99c13-8 23-17 35-24 13-7 25-14 38-21 12-7 24-15 36-19 12-5 25-6 38-4 12 2 25 8 37 16 13 9 25 21 38 28 13 7 27 9 40 4 12-5 24-15 36-25v146H0V99z'/%3E%3C/svg%3E");
@@ -35,7 +34,6 @@ body.dark {
   background-size: auto;
   color: #fff;
 }
-
 
 body.dark .theme-toggle {
   background-color: #d3d3d3;
@@ -95,17 +93,13 @@ body.dark .layout-sub {
   border-radius: 50%;
 }
 
-.layout-name .layout-sub {
+.layout-name {
   color: #666;
   margin-bottom: 5px;
 }
 
 .layout-name {
   font-size: 36px;
-}
-
-.layout-sub {
-  font-size: 22px;
 }
 
 .layout > .layout-content {
@@ -135,10 +129,6 @@ body.dark .layout-sub {
     font-size: 1.2rem;
   }
 
-  .layout-sub {
-    font-size: 1rem;
-  }
-
   .nav-link {
     margin: 0 10px;
   }
@@ -152,11 +142,6 @@ body.dark .layout-sub {
 
   .layout-name {
     font-size: 1rem;
-  }
-
-  .layout-sub {
-    font-size: 0.8rem;
-    padding-bottom: 5px;
   }
 }
 
