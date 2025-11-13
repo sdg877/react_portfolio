@@ -73,8 +73,8 @@ const Layout = () => {
                 alt="Logo"
                 className="layout-logo"
               />
-              <h2 className="layout-name">Sylvia Drake-Gill</h2>
-              <h3 className="layout-sub">Software Engineer</h3>
+              <h2 className="layout-name">Kitty Coding</h2>
+
             </div>
           }
         />
