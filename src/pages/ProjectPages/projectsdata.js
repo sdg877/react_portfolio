@@ -9,6 +9,20 @@ import SSSImg from "../../Images/SSS.png";
 
 const projects = [
   {
+    id: "CarbonCalculator",
+    title: "Carbon Tracker & News Dashboard",
+    image: CarbonCalculatorImg,
+    description: [
+      "Developed over six months, this production-standard full-stack application calculates and visualises personal carbon footprints. It features a bespoke Python calculation engine that transforms raw user data into CO2e metrics, tracking environmental impact trends over time.",
+      "The frontend features a complex, dynamic React form supporting 20+ activity types, with conditional logic that adjusts fields based on user selection. Data is presented through interactive Recharts visualisations, comparing personal stats against global averages.",
+      "A key technical challenge involved pivoting from a volunteering API to a curated real-time news feed. I engineered a backend proxy to fetch and sanitise NewsAPI data, using strict domain filtering and boolean search operators to eliminate 'noise' and ensure content relevancy.",
+      "I also implemented a custom, self-managed authentication system. You can view the <a href='https://www.loom.com/share/ea25a4e63cb3406bb1af218bf6b46bfd' target='_blank' rel='noopener noreferrer' style='text-decoration: underline; font-weight: bold;'>technical walkthrough and auth logic here</a>.",
+    ],
+    siteUrl: "https://carbon-calculator-fe-pi.vercel.app/",
+    githubFrontendUrl: "https://github.com/sdg877/carbon_calculator_fe",
+    githubBackendUrl: "https://github.com/sdg877/carbon_calculator_be",
+  },
+  {
     id: "AIChatBot",
     title: "AI Chatbot",
     image: AIChatBotImg,
