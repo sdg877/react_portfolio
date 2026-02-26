@@ -1,4 +1,4 @@
-import React from "react";cat
+import React from "react";
 import DownPage from "./DownPage";
 
 class ErrorBoundary extends React.Component {
