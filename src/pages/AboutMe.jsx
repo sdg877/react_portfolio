@@ -38,33 +38,33 @@ const AboutMe = () => {
         alt="Sylvia Drake-Gill"
         className="profile-image"
       />
-      <p className="about-p">
-        For twenty years, I got things done in the fast-paced worlds of TV,
-        advertising, and publishing. I'm good at solving problems and leading
-        teams. In 2020, I decided to try something completely different and took
-        a tech A-level equivalent course with the Open University. Turns out,
-        I'm pretty good at that too (95%). That sparked my interest in coding,
-        and by 2023, I was diving into workshops and teaching myself the basics.
-        I pick things up quickly, and I love figuring out how things work.
+      <div className="about-p">
+        <p>
+          I am a **Full Stack Software Engineer** with a previous 20-year career 
+          driving operations and leadership within TV, advertising, and publishing. 
+          This background gives me a distinct edge: I combine technical rigour with 
+          the high-level communication and problem-solving skills required to 
+          deliver complex projects under pressure.
+        </p>
         <br />
+        <p>
+          Since transitioning into engineering, I have focused on building 
+          **performant, data-driven applications**. I enjoy the intersection of 
+          clean code and user-centric design, recently specialising in 
+          **React, Python, and Node.js**. I approach every codebase with a 
+          combination of logic, curiosity, and a drive for efficiency.
+        </p>
         <br />
-        That curiosity led me to a Software Engineering Immersive course in
-        2023. I'm not afraid of a challenge, and honestly, I'm excited to be a
-        woman in a field that's usually dominated by men. I'm hardworking, I'm
-        driven, and I bring a bit of humour to everything I do. I'm a fast
-        learner, and I'm ready to put my skills to work in a great development
-        team.
-        <br />
-        <br />
-        London is my home, but I love exploring the world. Swimming, cooking,
-        and traveling keep me balanced. I've lived in Germany and Australia, and
-        I'm planning trips to South Korea, Japan, and Mexico. I approach
-        everything, whether it's coding or exploring a new city, with a mix of
-        curiosity and a sense of fun.
-      </p>
+        <p>
+          Based in London, I bring a global perspective to my work, having 
+          lived in Germany and Australia. Beyond the terminal, I’m an avid 
+          swimmer, cook, and traveller—constantly seeking new challenges, whether 
+          it’s mastering a new framework or navigating a new continent.
+        </p>
+      </div>
       <br />
       <div className="about-p">
-        Some of the countries I have visited:
+        <strong>Global Footprint:</strong>
         <div className="flags">
           {countries.map((country, index) => (
             <span key={index} className="flag" title={country.name}>
