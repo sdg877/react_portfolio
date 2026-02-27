@@ -26,7 +26,8 @@ const Experience = () => {
           },
         }}
       >
-        <motion.p
+        {/* FIXED SECTION START */}
+        <motion.div
           variants={{
             hidden: { opacity: 0, y: 20 },
             visible: { opacity: 1, y: 0 },
@@ -34,23 +35,24 @@ const Experience = () => {
           className="details"
         >
           <strong>
-            {" "}
-            Independent Software Development & Freelance Work <br /> Feb 2025 –
-            Present{" "}
+            Freelance Software Engineer <br /> Feb 2025 – Present
           </strong>
           <br />
-          Continuing to enhance my portfolio through self-initiated and
-          client-focused projects. Recent work includes developing an
-          interactive chatbot using React and OpenAI API, designing a personal
-          developer portfolio, and building a carbon footprint calculator to
-          explore environmental data visualisation and sustainability metrics.
+          Providing full-stack development and technical consultancy. Currently engineering 
+          scalable web solutions with a focus on **Python, React, and Node.js**. 
+          <br /><br />
+          <strong>Key Deliverables:</strong>
+          <ul style={{ textAlign: 'left', display: 'inline-block' }}>
+            <li><strong>CarbonCalc:</strong> Architected a sustainability platform using React and Recharts for complex environmental data visualisation.</li>
+            <li><strong>AI Integration:</strong> Developed an interactive chatbot leveraging the OpenAI API and advanced prompt engineering.</li>
+            <li><strong>System Modernisation:</strong> Currently transitioning legacy logic to Python-based microservices to improve system performance.</li>
+          </ul>
           <br />
-          <br />I have also collaborated on a potential commission project and
-          maintained part-time employment in retail alongside my software
-          development practice.
-          <br />
-          <br />
-        </motion.p>
+          Refining technical ownership and agile delivery while maintaining a high-intensity 
+          professional output across multiple concurrent projects.
+          <br /><br />
+        </motion.div>
+        {/* FIXED SECTION END */}
 
         <motion.p
           variants={{
@@ -76,6 +78,7 @@ const Experience = () => {
           <br />
           <br />
         </motion.p>
+
         <motion.p
           variants={{
             hidden: { opacity: 0, y: 20 },
