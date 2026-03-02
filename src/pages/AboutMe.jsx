@@ -3,32 +3,6 @@ import SylviaImage from "../Images/Sylvia.jpeg";
 import "../Styles/AboutPackages.css";
 
 const AboutMe = () => {
-  const countries = [
-    { flag: "🇧🇦", name: "Bosnia and Herzegovina" },
-    { flag: "🇧🇪", name: "Belgium" },
-    { flag: "🇧🇬", name: "Bulgaria" },
-    { flag: "🇨🇦", name: "Canada" },
-    { flag: "🇨🇺", name: "Cuba" },
-    { flag: "🇭🇷", name: "Croatia" },
-    { flag: "🇩🇰", name: "Denmark" },
-    { flag: "🇪🇬", name: "Egypt" },
-    { flag: "🇫🇴", name: "Faroe Islands" },
-    { flag: "🇫🇯", name: "Fiji" },
-    { flag: "🇫🇷", name: "France" },
-    { flag: "🇬🇷", name: "Greece" },
-    { flag: "🇭🇺", name: "Hungary" },
-    { flag: "🇮🇪", name: "Ireland" },
-    { flag: "🇮🇹", name: "Italy" },
-    { flag: "🇳🇱", name: "Netherlands" },
-    { flag: "🇳🇿", name: "New Zealand" },
-    { flag: "🇲🇦", name: "Morocco" },
-    { flag: "🇵🇱", name: "Poland" },
-    { flag: "🇵🇹", name: "Portugal" },
-    { flag: "🇪🇸", name: "Spain" },
-    { flag: "🇹🇷", name: "Turkey" },
-    { flag: "🇺🇸", name: "United States" },
-    { flag: "🇺🇦", name: "Ukraine" },
-  ];
 
   return (
     <div className="info-card">
@@ -63,16 +37,6 @@ const AboutMe = () => {
         </p>
       </div>
       <br />
-      <div className="about-p">
-        <strong>Global Footprint:</strong>
-        <div className="flags">
-          {countries.map((country, index) => (
-            <span key={index} className="flag" title={country.name}>
-              {country.flag}
-            </span>
-          ))}
-        </div>
-      </div>
     </div>
   );
 };
