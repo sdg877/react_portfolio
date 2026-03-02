@@ -11,7 +11,7 @@ const projects = [
   {
     id: "CarbonCalculator",
     title: "Carbon Tracker & News Dashboard",
-    image: CarbonCalculatorImg,
+    image: "",
     description: [
       "Developed over six months, this production-standard full-stack application calculates and visualises personal carbon footprints. It features a bespoke Python calculation engine that transforms raw user data into CO2e metrics, tracking environmental impact trends over time.",
       "The frontend features a complex, dynamic React form supporting 20+ activity types, with conditional logic that adjusts fields based on user selection. Data is presented through interactive Recharts visualisations, comparing personal stats against global averages.",
@@ -51,15 +51,15 @@ const projects = [
   },
   {
     id: "ProjectOne",
-    title: "Confidential MERN Stack Project",
+    title: "Proprietary Workflow & Compliance Platform",
     image: ProjectOneImg,
     description: [
-      "This MERN stack project was developed for a client with specialised workflow requirements. Due to the confidential nature of this project, specific details about its users, data, and workflows cannot be disclosed. This project took 130 hours to complete, and I worked alone.",
-      "The application addresses highly sensitive and regulated tasks, designed to support complex organisational needs and compliance workflows. It features 11 interconnected data models, ensuring seamless organisation, linking, and management of data across various modules.",
-      "A central calendar system allows users to track tasks and monitor compliance. Automated scheduling triggers workflows based on user-inputted dates, ensuring timely completion of critical activities. A traffic light system visually signals task progress and deadlines, enhancing prioritisation.",
-      "Key challenges included dynamically displaying attendee and contact data within a unified table, implementing a context-sensitive help system, and integrating downloadable email templates for seamless communication. Each feature was carefully designed to support the client's workflow needs.",
+      "Architected and delivered a production-ready MVP that served as the primary technical proof-of-concept for a successful £150k seed funding round. This mission-critical platform manages highly regulated, sensitive workflows for professional service providers.",
+      "Engineered a sophisticated data architecture featuring 11 interconnected models. I designed complex relational logic to ensure seamless data integrity across automated scheduling, compliance monitoring, and audit trails.",
+      "Developed a custom 'Traffic Light' prioritisation engine and a central calendar system. These features use dynamic date-trigger logic to automate task generation and visual urgency signalling, directly improving user adherence to strict regulatory deadlines.",
+      "Key technical achievements included building a context-sensitive help system, an integrated email template engine with dynamic data-injection, and high-performance tables capable of aggregating data from multiple relational endpoints.",
     ],
-    siteUrl: "",
+    siteUrl: "", // Project remains confidential
     githubFrontendUrl: "",
     githubBackendUrl: "",
   },
