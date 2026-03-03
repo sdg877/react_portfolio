@@ -9,6 +9,14 @@
   height: 50px;
 }
 
+.custom-link-footer {
+  color: #673147;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+
 body.dark .footer {
   background-color: #284444;
 }
