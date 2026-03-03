@@ -51,7 +51,7 @@ const projects = [
   },
   {
     id: "ProjectOne",
-    title: "Proprietary Workflow & Compliance Platform",
+    title: "Workflow & Compliance Platform",
     image: ProjectOneImg,
     description: [
       "Architected and delivered a production-ready MVP that served as the primary technical proof-of-concept for a successful £150k seed funding round. This mission-critical platform manages highly regulated, sensitive workflows for professional service providers.",
