@@ -8,6 +8,37 @@ html {
   overflow-x: hidden;
 }
 
+.layout-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-top: -20px;
+  text-align: center;
+}
+
+.layout-logo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.layout-name {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.layout-sub {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+}
+
 .header-container.home-page {
   display: flex;
   justify-content: flex-end;
@@ -55,7 +86,9 @@ html {
   box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   max-width: fit-content;
   margin-left: auto;
   margin-right: 15px;
@@ -190,7 +223,9 @@ body.dark .nav-link {
   color: #006666;
   text-decoration: underline;
   transform: scale(1.05);
-  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition:
+    color 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
 }
 
 body.dark .nav-link:hover {
@@ -222,7 +257,9 @@ body.dark .nav-link:hover {
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   background-color: #ffffff;
   color: #2f4f4f;
   box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.1);

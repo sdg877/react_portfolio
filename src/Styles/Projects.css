@@ -10,6 +10,21 @@
   max-width: 1200px;
 }
 
+.info-card {
+  background-color: #90a6a6;
+  color: #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.custom-link {
+  color: #673147;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 10px;
+}
+
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -48,16 +63,27 @@
 
 .project-overlay {
   position: relative;
-  z-index: 2;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 10px 20px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 15px;
   border-radius: 12px;
+  display: inline-block;
+  margin: 10px;
+
+}
+
+.title-project {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  opacity: 1 !important;
 }
 
 .contribution-calendar {
   display: flex;
-  flex-direction: row; 
-  overflow-x: auto; 
+  flex-direction: row;
+  overflow-x: auto;
   padding: 20px;
   margin-top: 20px;
   justify-content: center;
@@ -70,55 +96,86 @@
 }
 
 .contribution-day {
-  width: 16px;  
+  width: 16px;
   height: 16px;
-  margin: 2px; 
+  margin: 2px;
   border-radius: 3px;
 }
 
-/* --- Dark Mode & Links --- */
-body.dark .info-card { background-color: #003333; }
-body.dark .grid-card-label { color: white; }
-body.dark .custom-link { color: #ffb6c1; }
-body.dark .title-project { color: white; }
-
-.info-card {
-  background-color: #90a6a6;
-  color: #e0e0e0;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
+.contribution-day.level-0 {
+  background-color: #fdfbf8;
+}
+.contribution-day.level-1 {
+  background-color: #f7e0c8;
+}
+.contribution-day.level-2 {
+  background-color: #e7b383;
+}
+.contribution-day.level-3 {
+  background-color: #d5854c;
+}
+.contribution-day.level-4 {
+  background-color: #c25e1a;
+}
+.contribution-day.level-5 {
+  background-color: #a8480f;
+}
+.contribution-day.level-6 {
+  background-color: #8b3a0a;
+}
+.contribution-day.level-7 {
+  background-color: #6b2907;
 }
 
-.custom-link {
-  color: #673147;
-  text-decoration: none;
-  font-size: 1.2rem;
-  margin: 10px;
+body.dark .info-card {
+  background-color: #003333;
+}
+body.dark .grid-card-label {
+  color: white;
+}
+body.dark .custom-link {
+  color: #ffb6c1;
 }
 
-/* --- Contribution Colours (Light) --- */
-.contribution-day.level-0 { background-color: #FDFBF8; }
-.contribution-day.level-1 { background-color: #F7E0C8; }
-.contribution-day.level-2 { background-color: #E7B383; }
-.contribution-day.level-3 { background-color: #D5854C; }
-.contribution-day.level-4 { background-color: #C25E1A; }
-.contribution-day.level-5 { background-color: #A8480F; }
-.contribution-day.level-6 { background-color: #8B3A0A; }
-.contribution-day.level-7 { background-color: #6B2907; }
+body.dark .project-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
 
-/* --- Contribution Colours (Dark) --- */
-body.dark .contribution-day.level-0 { background-color: #222222; }
-body.dark .contribution-day.level-1 { background-color: #6A3258; }
-body.dark .contribution-day.level-2 { background-color: #9B497D; }
-body.dark .contribution-day.level-3 { background-color: #C0619C; }
-body.dark .contribution-day.level-4 { background-color: #E77ABF; }
-body.dark .contribution-day.level-5 { background-color: #FFB6C1; }
-body.dark .contribution-day.level-6 { background-color: #FFD2DD; }
-body.dark .contribution-day.level-7 { background-color: #FFFFFF; }
+body.dark .title-project {
+  color: #ffffff !important;
+}
 
-/* --- Responsive --- */
+body.dark .contribution-day.level-0 {
+  background-color: #222222;
+}
+body.dark .contribution-day.level-1 {
+  background-color: #6a3258;
+}
+body.dark .contribution-day.level-2 {
+  background-color: #9b497d;
+}
+body.dark .contribution-day.level-3 {
+  background-color: #c0619c;
+}
+body.dark .contribution-day.level-4 {
+  background-color: #e77abf;
+}
+body.dark .contribution-day.level-5 {
+  background-color: #ffb6c1;
+}
+body.dark .contribution-day.level-6 {
+  background-color: #ffd2dd;
+}
+body.dark .contribution-day.level-7 {
+  background-color: #ffffff;
+}
+
 @media (max-width: 768px) {
-  .bento-grid { grid-template-columns: 1fr 1fr; }
-  .contribution-day { width: 10px; height: 10px; }
+  .bento-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contribution-day {
+    width: 10px;
+    height: 10px;
+  }
 }
