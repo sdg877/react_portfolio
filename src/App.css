@@ -65,93 +65,6 @@ body.dark .layout-sub {
   min-height: 100vh;
 }
 
-.layout {
-  text-align: center;
-  margin: 0;
-  padding-top: 0;
-  position: relative;
-  flex: 1;
-}
-
-.layout-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.layout-logo {
-  width: 200px;
-  height: auto;
-  display: block;
-  margin: 0 auto 10px;
-  border-radius: 50%;
-}
-
-.layout-name .layout-sub {
-  color: #666;
-  margin-bottom: 5px;
-}
-
-.layout-name {
-  font-size: 36px;
-}
-
-.layout-sub {
-  font-size: 22px;
-}
-
-.layout > .layout-content {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-}
-
-@media (max-width: 768px) {
-  .project-item {
-    width: 180px;
-  }
-
-  .footer-heading {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .layout-logo {
-    width: 120px;
-    height: auto;
-  }
-
-  .layout-name {
-    font-size: 1.2rem;
-  }
-
-  .layout-sub {
-    font-size: 1rem;
-  }
-
-  .nav-link {
-    margin: 0 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .layout-logo {
-    width: 120px;
-    height: auto;
-  }
-
-  .layout-name {
-    font-size: 1rem;
-  }
-
-  .layout-sub {
-    font-size: 0.8rem;
-    padding-bottom: 5px;
-  }
-}
-
 .down-page {
   height: 100vh;
   display: flex;
@@ -175,7 +88,6 @@ body.dark .layout-sub {
   line-height: 1.6;
 }
 
-/* dark theme */
 body.dark .down-page {
   background-color: #5c7a7a;
   color: #fff;
