@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import NavBar from "./Navbar.jsx";
 import "../Styles/Header.css";
 
 const Header = ({ showWeather, toggleTheme, theme }) => {
@@ -12,11 +12,11 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
   useEffect(() => {
     const fetchWeather = async (latitude, longitude, fallback = false) => {
       try {
-        const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone; 
+        const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
         if (!fallback) {
           const locationResponse = await axios.get(
-            `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+            `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`,
           );
 
           let locationName =
@@ -36,20 +36,25 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
 
         const weatherResponse = await axios.get(
           `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,precipitation_probability,weathercode&timezone=${encodeURIComponent(
-            userTimeZone
-          )}`
+            userTimeZone,
+          )}`,
         );
 
         const currentHour = new Date().getHours();
-        const temp = Math.round(weatherResponse.data.hourly.temperature_2m[currentHour]);
-        const rainProb = weatherResponse.data.hourly.precipitation_probability[currentHour];
-        const weatherCode = weatherResponse.data.hourly.weathercode[currentHour];
+        const temp = Math.round(
+          weatherResponse.data.hourly.temperature_2m[currentHour],
+        );
+        const rainProb =
+          weatherResponse.data.hourly.precipitation_probability[currentHour];
+        const weatherCode =
+          weatherResponse.data.hourly.weathercode[currentHour];
 
         setTemperature(temp);
         setRainChance(rainProb);
-        setWeatherIcon(getWeatherIcon(weatherCode, rainProb, new Date().toISOString()));
+        setWeatherIcon(
+          getWeatherIcon(weatherCode, rainProb, new Date().toISOString()),
+        );
       } catch (error) {
-        console.error("Error fetching weather:", error);
         setLocation("Unavailable");
         setTemperature("--");
         setRainChance("--");
@@ -57,22 +62,15 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
       }
     };
 
-    const getUserLocation = () => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            fetchWeather(position.coords.latitude, position.coords.longitude);
-          },
-          () => {
-            fetchWeather(51.5074, -0.1278, true); // Fallback to London
-          }
-        );
-      } else {
-        fetchWeather(51.5074, -0.1278, true);
-      }
-    };
-
-    getUserLocation();
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) =>
+          fetchWeather(position.coords.latitude, position.coords.longitude),
+        () => fetchWeather(51.5074, -0.1278, true),
+      );
+    } else {
+      fetchWeather(51.5074, -0.1278, true);
+    }
   }, []);
 
   const getWeatherIcon = (weatherCode, rainChance, timeString) => {
@@ -111,7 +109,7 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
     };
 
     if (rainChance === 0 && weatherCode >= 51 && weatherCode <= 82) {
-      return "☁️"; // Cloud instead of rain if no precipitation expected
+      return "☁️";
     }
 
     return weatherIcons[weatherCode] || "☁️";
@@ -119,21 +117,15 @@ const Header = ({ showWeather, toggleTheme, theme }) => {
 
   return (
     <header className="header">
-      <div className="header-container">
-        <div className="weather-toggle-container">
-          {showWeather && (
-            <Link to="/weather" className="weather-info" title="Click for detailed weather">
-              <h2 className="location">{location}</h2>
-              <span className="weather-icon">{weatherIcon}</span>
-              <p className="temperature">{temperature}°C</p>
-              <p className="rain-chance">💧 {rainChance}%</p>
-            </Link>
-          )}
-          <button className="theme-switch" onClick={toggleTheme}>
-            <span className="theme-icon">{theme === "dark" ? "Light" : "Dark"}</span>
-          </button>
-        </div>
-      </div>
+      <NavBar
+        showWeather={showWeather}
+        toggleTheme={toggleTheme}
+        theme={theme}
+        location={location}
+        temperature={temperature}
+        rainChance={rainChance}
+        weatherIcon={weatherIcon}
+      />
     </header>
   );
 };
