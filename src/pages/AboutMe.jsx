@@ -11,10 +11,6 @@ const AboutMe = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <header className="projects-header">
-          <h2 className="title-project">About Sylvia</h2>
-        </header>
-
         <div className="grid-card-wrapper about-card">
           <div className="about-content">
             <img
@@ -22,6 +18,9 @@ const AboutMe = () => {
               alt="Sylvia Drake-Gill"
               className="profile-image"
             />
+            <header className="projects-header">
+              <h2 className="title-project">About Sylvia</h2>
+            </header>
 
             <div className="about-p">
               <p>
