@@ -1,165 +1,69 @@
-.contact-form-container {
-  width: 75%;
-  max-width: 75%;
-  background-color: #90a6a6;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.home-container {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
-.contact-title {
-  text-align: center;
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 20px;
+.projects-wrapper {
+  width: 100%;
+  max-width: 800px;
 }
 
-.contact-email {
-  text-align: center;
-  font-size: 18px;
-  margin-top: 30px;
+.grid-card-wrapper.contact-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  position: relative;
+  /* Fixed: Removed height constraints so it covers the whole form */
+  height: auto;
+  min-height: min-content;
+  padding-bottom: 40px;
+}
 
-  a {
-    color: rgb(19, 128, 157);
-    text-decoration: none;
-    transition: color 0.3s ease;
+.project-overlay {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 15px;
+  border-radius: 12px;
+  display: inline-block;
+  margin: 20px;
+}
 
-    &:hover {
-      color: rgb(12, 88, 105);
-    }
-  }
+.grid-card-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+.contact-content {
+  padding: 0 40px;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  width: 75%;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-  padding-left: 15px;
-  padding-right: 30px;
-  width: 100%;
+  gap: 20px;
 }
 
 .form-label {
-  font-size: 20px;
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
-.form-input,
-.form-textarea {
-  font-family: "Ubuntu", sans-serif;
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
-
-  &:focus {
-    border-color: rgb(12, 88, 105);
-    outline: none;
-  }
+.form-input, .form-textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+  font-size: 1rem;
 }
 
-.form-textarea {
-  resize: vertical;
-  height: 175px;
-}
-
-.form-button-container {
-  width: 100%;
-  display: flex;
-  justify-content: center !important;
-}
-
-.form-button {
-  padding: 12px 24px;
-  background-color: #2f4f4f;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-align: center;
-  max-width: 100px;
-  width: 100%;
-  margin-top: 20px;
-
-  &:hover {
-    background-color: #243c3c;
-  }
-
-  &:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-  }
-}
-
-body.dark .contact-title,
-body.dark .contact-email,
-body.dark .form-input,
-body.dark .form-textarea {
-  color: white;
-}
-
-body.dark .contact-email a {
-  color: rgb(120, 200, 220);
-}
-
-body.dark .contact-form-container {
-  background-color: #003333;
-}
-
-body.dark .form-label {
-  color: white;
-}
-
-body.dark .form-input,
-body.dark .form-textarea {
-  background-color: #2f4f4f;
-}
-
-@media (max-width: 768px) {
-  .contact-form-container {
-    width: 80%;
-    max-width: 85%;
-    margin: 0 auto;
-    margin-bottom: 25px;
-  }
-
-  .contact-title {
-    font-size: 1rem;
-  }
-
-  .form-label {
-    font-size: 14px;
-  }
-
-  .form-input,
-  .form-textarea {
-    font-size: 14px;
-    padding: 5px;
-  }
-
-  .form-button {
-    font-size: 14px;
-  }
-}
-
+/* Restored Webkit Fix */
 input:-webkit-autofill,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
@@ -167,14 +71,40 @@ textarea:-webkit-autofill:focus {
   background-color: #2f4f4f !important;
   color: white !important;
   -webkit-box-shadow: 0 0 0px 1000px #2f4f4f inset !important;
-  transition: background-color 0s ease-in-out 0s;
+  -webkit-text-fill-color: white !important;
 }
 
-body.dark input:-webkit-autofill,
-body.dark input:-webkit-autofill:focus,
-body.dark textarea:-webkit-autofill,
-body.dark textarea:-webkit-autofill:focus {
-  background-color: #2f4f4f !important;
-  color: white !important;
-  -webkit-box-shadow: 0 0 0px 1000px #2f4f4f inset !important;
+.form-button {
+  padding: 16px;
+  background-color: #673147;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.contact-footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* Dark Mode */
+body.dark .grid-card-wrapper.contact-card {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+body.dark .form-input, body.dark .form-textarea {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+body.dark .form-button {
+  background-color: #ffb6c1;
+  color: #1a1a1a;
+}
+
+body.dark .form-label, body.dark .contact-footer {
+  color: white;
 }
