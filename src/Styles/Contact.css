@@ -2,87 +2,119 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
+  box-sizing: border-box;
 }
 
 .projects-wrapper {
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
 }
 
 .grid-card-wrapper.contact-card {
   background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 16px;
-  position: relative;
-  /* Fixed: Removed height constraints so it covers the whole form */
+  padding: 40px;
   height: auto;
-  min-height: min-content;
-  padding-bottom: 40px;
+  box-sizing: border-box;
 }
 
-.project-overlay {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 8px 15px;
-  border-radius: 12px;
-  display: inline-block;
-  margin: 20px;
+.project-overlay.centered-overlay {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
 .grid-card-label {
-  font-weight: 700;
-  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
   color: #1a1a1a;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.grid-card-label:hover {
+  color: #00ffff !important;
 }
 
 .contact-content {
-  padding: 0 40px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
+  width: 100%;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .form-label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #1a1a1a;
+  font-size: 0.75rem;
+  font-weight: 800;
   margin-bottom: 8px;
   text-transform: uppercase;
+  color: #333;
 }
 
-.form-input, .form-textarea {
-  padding: 12px;
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 14px;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background: white;
+  background: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
-/* Restored Webkit Fix */
 input:-webkit-autofill,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:focus {
-  background-color: #2f4f4f !important;
-  color: white !important;
-  -webkit-box-shadow: 0 0 0px 1000px #2f4f4f inset !important;
-  -webkit-text-fill-color: white !important;
+  -webkit-text-fill-color: #1a1a1a !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 .form-button {
-  padding: 16px;
+  padding: 14px 40px;
   background-color: #673147;
   color: white;
   font-weight: 700;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #4d2535;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .contact-footer {
@@ -90,14 +122,37 @@ textarea:-webkit-autofill:focus {
   text-align: center;
 }
 
-/* Dark Mode */
 body.dark .grid-card-wrapper.contact-card {
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(30, 30, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-body.dark .form-input, body.dark .form-textarea {
-  background: rgba(0, 0, 0, 0.5);
+body.dark .grid-card-label {
+  color: #ffffff;
+}
+
+body.dark .grid-card-label:hover {
+  color: #ffb6c1 !important;
+}
+
+body.dark .form-label,
+body.dark .contact-footer {
+  color: #cccccc;
+}
+
+body.dark .form-input,
+body.dark .form-textarea {
+  background: rgba(45, 45, 45, 0.9);
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark input:-webkit-autofill,
+body.dark input:-webkit-autofill:focus,
+body.dark textarea:-webkit-autofill,
+body.dark textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: white !important;
+  -webkit-box-shadow: 0 0 0px 1000px #2d2d2d inset !important;
 }
 
 body.dark .form-button {
@@ -105,6 +160,8 @@ body.dark .form-button {
   color: #1a1a1a;
 }
 
-body.dark .form-label, body.dark .contact-footer {
-  color: white;
+@media (max-width: 768px) {
+  .grid-card-wrapper.contact-card {
+    padding: 30px 20px;
+  }
 }
