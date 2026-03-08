@@ -13,10 +13,14 @@ const Contact = () => {
     message: "",
     subject: "",
   });
+
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   };
 
   const handleSubmit = (e) => {
@@ -42,10 +46,15 @@ const Contact = () => {
         () => {
           toast.success("Message sent successfully!");
           setLoading(false);
-          setFormData({ name: "", email: "", message: "", subject: "" });
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+            subject: "",
+          });
         },
-        (error) => {
-          toast.error("Error sending message, please try again.");
+        () => {
+          toast.error("Error sending message.");
           setLoading(false);
         }
       );
@@ -53,55 +62,101 @@ const Contact = () => {
 
   return (
     <div className="home-container">
-      <motion.div 
+      <motion.div
         className="projects-wrapper"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <header className="projects-header">
-          <h2 className="title-project">Contact</h2>
-        </header>
-
         <div className="grid-card-wrapper contact-card">
-          <div className="project-overlay">
+
+          <div className="project-overlay centered-overlay">
             <span className="grid-card-label">Send a Message</span>
           </div>
 
           <div className="contact-content">
             {loading && <Spinner />}
-            
+
             <form onSubmit={handleSubmit} className="contact-form">
+
               <div className="form-field">
-                <label htmlFor="name" className="form-label">Name</label>
-                <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required className="form-input" disabled={loading} />
-              </div>
-              
-              <div className="form-field">
-                <label htmlFor="email" className="form-label">Email</label>
-                <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required className="form-input" disabled={loading} />
+                <label className="form-label">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="form-input"
+                  disabled={loading}
+                />
               </div>
 
               <div className="form-field">
-                <label htmlFor="subject" className="form-label">Subject</label>
-                <input type="text" name="subject" id="subject" value={formData.subject} onChange={handleChange} required className="form-input" disabled={loading} />
+                <label className="form-label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="form-input"
+                  disabled={loading}
+                />
               </div>
 
               <div className="form-field">
-                <label htmlFor="message" className="form-label">Message</label>
-                <textarea name="message" id="message" value={formData.message} onChange={handleChange} required rows="5" className="form-textarea" disabled={loading} />
+                <label className="form-label">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="form-input"
+                  disabled={loading}
+                />
               </div>
 
-              <button type="submit" className="form-button" disabled={loading}>
-                {loading ? "Sending..." : "Send Message"}
-              </button>
+              <div className="form-field">
+                <label className="form-label">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows="5"
+                  className="form-textarea"
+                  disabled={loading}
+                />
+              </div>
+
+              <div className="button-wrapper">
+                <button
+                  type="submit"
+                  className="form-button"
+                  disabled={loading}
+                >
+                  {loading ? "Sending..." : "Send Message"}
+                </button>
+              </div>
+
             </form>
           </div>
         </div>
 
         <footer className="contact-footer">
-          <p>Sylvia Drake-Gill | <a href="mailto:sdrakegill@gmail.com" className="custom-link-packages">sdrakegill@gmail.com</a></p>
+          <p>
+            Sylvia Drake-Gill |{" "}
+            <a
+              href="mailto:sdrakegill@gmail.com"
+              className="custom-link-packages"
+            >
+              sdrakegill@gmail.com
+            </a>
+          </p>
         </footer>
       </motion.div>
+
       <ToastContainer />
     </div>
   );
