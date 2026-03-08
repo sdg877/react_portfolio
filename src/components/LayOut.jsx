@@ -14,10 +14,13 @@ const Layout = () => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
-  const toggleTheme = () => setTheme(prev => (prev === "light" ? "dark" : "light"));
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+
+  const isHomePage = location.pathname === "/";
 
   return (
-    <div className={`layout ${theme}`}>
+    <div className={`layout ${theme} ${isHomePage ? "home-layout" : ""}`}>
       <Header
         toggleTheme={toggleTheme}
         theme={theme}
