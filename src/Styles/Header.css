@@ -1,158 +1,143 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
 
-body,
-html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
-
 .navbar {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  padding: 40px;
+  height: 100px;
+  padding: 0 30px;
   box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .header-branding-navbar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  padding-top: 5px;
 }
 
 .name-title-row {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 15px;
-  white-space: nowrap;
+  gap: 2px;
 }
 
 .header-name {
-  font-family: "Dancing Script", cursive;
-  font-size: 2.2rem;
-  font-weight: 700;
+  font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
   margin: 0;
-  color: #2f4f4f;
-  letter-spacing: 1px;
+  color: #1a1a1a;
+  line-height: 1;
+  -webkit-text-stroke: 0.5px #1a1a1a;
 }
 
 .header-divider {
-  color: #ccc;
-  font-size: 1.4rem;
-  font-weight: 300;
+  display: none;
 }
 
 .header-slug {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   color: #666;
+  font-weight: 700;
 }
 
 .right-controls {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 15px;
+  align-items: center;
+  gap: 12px;
 }
 
-.weather-info {
+.weather-info, .theme-switch {
   display: flex;
+  flex-direction: row; 
   align-items: center;
   gap: 8px;
   background-color: #ffffff;
-  padding: 6px 12px;
-  border-radius: 8px;
-  box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 6px 14px;
+  border-radius: 50px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
   text-decoration: none;
-  color: inherit;
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s;
-  height: 38px;
-  box-sizing: border-box;
-}
-
-.weather-info:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.location {
-  font-size: 1rem;
-  color: #333;
-  margin: 0;
-}
-.temperature {
-  font-size: 0.9rem;
-  font-weight: 400;
-  margin: 0;
-}
-.rain-chance {
-  font-size: 0.9rem;
-  margin: 0;
-}
-.weather-icon {
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
 .theme-switch {
-  padding: 8px 15px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  border: none;
   cursor: pointer;
-  background-color: #ffffff;
-  color: #2f4f4f;
-  box-shadow: 2px 2px 2px 4px rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.2s,
-    box-shadow 0.2s;
-  width: fit-content;
+  order: 1;
 }
 
-.theme-switch:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+.weather-info {
+  order: 2;
 }
+
 
 .hamburger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 40px;
-  height: 30px;
   cursor: pointer;
-  z-index: 1001;
-  padding-top: 5px;
 }
 
 .hamburger .line {
-  width: 100%;
-  height: 5px;
-  background-color: #2f4f4f;
+  width: 28px;
+  height: 3.5px;
+  background-color: #1a1a1a;
+  margin: 5px 0;
+  border-radius: 10px;
 }
 
+
+body.dark .navbar {
+  background: rgba(45, 45, 45, 0.98); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .header-name {
+  color: #ffffff;
+  -webkit-text-stroke: 0.5px #ffffff;
+}
+
+body.dark .header-slug {
+  color: #aaaaaa;
+}
+
+body.dark .weather-info, 
+body.dark .theme-switch {
+  background-color: #2d2d2d !important;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .hamburger .line {
+  background-color: #ffffff;
+}
+
+/* --- 6. New Dropdown Appearance --- */
 .nav-links {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 70px;
-  left: 10px;
-  background-color: white;
-  border: 2px solid darkslategrey;
+  top: 100px;
+  left: 30px;
+  background-color: #ffffff;
   border-radius: 8px;
-  z-index: 1000;
-  width: 250px;
-  padding: 15px 20px;
+  padding: 8px 0;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  min-width: 200px;
+  z-index: 2000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .nav-links.active {
@@ -160,55 +145,45 @@ html {
 }
 
 .nav-link {
-  margin: 10px 0;
   text-decoration: none;
-  color: #2f4f4f;
-  font-weight: bold;
-  font-size: 1.2rem;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 24px;
+  transition: background 0.2s;
 }
 
-body.dark {
-  background-color: #1a1a1a;
+.nav-link:hover {
+  background-color: #f5f5f5;
+  color: #2f4f4f;
 }
-body.dark .header-name {
+
+/* Dark Mode Dropdown Overrides */
+body.dark .nav-links {
+  background-color: #2d2d2d !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .nav-link {
   color: #ffffff;
 }
-body.dark .header-slug {
-  color: #aaaaaa;
-}
-body.dark .weather-info,
-body.dark .theme-switch {
-  background-color: #5c7a7a;
-  color: white;
-}
-body.dark .location,
-body.dark .temperature,
-body.dark .rain-chance {
-  color: white;
-}
-body.dark .hamburger .line {
-  background-color: whitesmoke;
-}
-body.dark .nav-links {
-  background-color: #2f4f4f;
-  color: whitesmoke;
-}
-body.dark .nav-link {
-  color: whitesmoke;
+
+body.dark .nav-link:hover {
+  background-color: #3d3d3d;
+  color: #4db6ac;
 }
 
-@media (max-width: 800px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .header-divider {
-    display: none;
-  }
-  .name-title-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-  }
+/* --- 7. Responsive Fixes --- */
+@media (max-width: 850px) {
+  .navbar { height: 80px; padding: 0 20px; }
+  .header-name { font-size: 1.5rem; }
+  .header-slug { font-size: 0.65rem; }
+  .weather-info { display: none; }
+  .nav-links { top: 80px; left: 20px; }
+}
+
+/* --- THE HOME PAGE FIX --- */
+.home-layout .hamburger {
+  visibility: hidden !important;
+  pointer-events: none;
 }
