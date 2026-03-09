@@ -16,6 +16,11 @@ body {
   box-sizing: border-box;
 }
 
+.main-content {
+  flex: 1;
+  display: flex;
+}
+
 body.light {
   background-color: #ffffff;
 
