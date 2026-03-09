@@ -2,7 +2,15 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  /* CHANGE: Center vertically so it doesn't push the footer down */
+  align-items: center; 
+  /* CHANGE: Use flex-grow so it fills the space between header/footer */
+  flex: 1; 
+  /* CHANGE: Reduced padding to ensure it fits on smaller screens */
+  padding: 20px; 
+  box-sizing: border-box;
+  /* CHANGE: Prevent this container from growing larger than the viewport */
+  overflow: hidden; 
 }
 
 .bento-grid {
