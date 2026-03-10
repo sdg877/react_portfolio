@@ -15,115 +15,31 @@ import ProjectComponent from "./pages/ProjectPages/ProjectComponent";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import DownPage from "./components/DownPage.jsx";
 
-const App = () => {
+function App() {
   return (
-    <div className="layout-wrapper">
-      <div className="content">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Layout />
-                <Home />
-              </>
-            }
-          />
-          <Route
-            path="/weather"
-            element={
-              <>
-                <Layout />
-                <Weather />
-              </>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <>
-                <Layout />
-                <AboutMe />
-              </>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <>
-                <Layout />
-                <Contact />
-              </>
-            }
-          />
-          <Route
-            path="/experience"
-            element={
-              <>
-                <Layout />
-                <Experience />
-              </>
-            }
-          />
-          <Route
-            path="/education"
-            element={
-              <>
-                <Layout />
-                <Education />
-              </>
-            }
-          />
-          <Route
-            path="/skills"
-            element={
-              <>
-                <Layout />
-                <Skills />
-              </>
-            }
-          />
-          <Route
-            path="/projects"
-            element={
-              <>
-                <Layout />
-                <Projects />
-              </>
-            }
-          />
-          <Route
-            path="/projects/:id"
-            element={
-              <>
-                <Layout />
-                <ProjectComponent />
-              </>
-            }
-          />
-          <Route
-            path="/packages"
-            element={
-              <>
-                <Layout />
-                <Packages />
-              </>
-            }
-          />
-          <Route path="/down" element={<DownPage />} />
-        </Routes>
-        <Footer />
-      </div>
-    </div>
+    <Router>
+      <ErrorBoundary>
+        <div className="app">
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/weather" element={<Weather />} />
+              <Route path="/about" element={<AboutMe />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/experience" element={<Experience />} />
+              <Route path="/education" element={<Education />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/projects/:id" element={<ProjectComponent />} />
+              <Route path="/packages" element={<Packages />} />
+              <Route path="/down" element={<DownPage />} />
+            </Routes>
+          </Layout>
+          <Footer />
+        </div>
+      </ErrorBoundary>
+    </Router>
   );
-};
+}
 
-const WrappedApp = () => (
-  <Router>
-    <ErrorBoundary>
-      <App />
-    </ErrorBoundary>
-  </Router>
-);
-
-export default WrappedApp;
+export default App;
