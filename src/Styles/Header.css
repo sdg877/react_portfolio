@@ -46,7 +46,6 @@
   line-height: 1;
 }
 
-/* REMOVING THE RANDOM LINE */
 .header-divider {
   display: none !important;
 }
@@ -94,6 +93,10 @@
   font-size: 0.9rem;
 }
 
+.weather-info {
+  order: 2;
+}
+
 .weather-icon {
   font-size: 1.2rem;
 }
@@ -101,10 +104,6 @@
 .theme-switch {
   cursor: pointer;
   order: 1;
-}
-
-.weather-info {
-  order: 2;
 }
 
 .hamburger {
@@ -188,4 +187,23 @@ body.dark .hamburger .line {
 .home-layout .hamburger {
   visibility: hidden !important;
   pointer-events: none;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+  color: #db7093;
+}
+
+body.dark .nav-links {
+  background-color: #2d2d2d;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .nav-link {
+  color: #ffffff;
+}
+
+body.dark .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffb6c1;
 }
