@@ -10,7 +10,6 @@ import Weather from "./pages/Weather.jsx";
 import Home from "./pages/Home.jsx";
 import Packages from "./pages/Packages.jsx";
 import Layout from "./components/Layout.jsx";
-import Footer from "./components/Footer.jsx";
 import ProjectComponent from "./pages/ProjectPages/ProjectComponent";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import DownPage from "./components/DownPage.jsx";
@@ -35,7 +34,6 @@ function App() {
               <Route path="/down" element={<DownPage />} />
             </Routes>
           </Layout>
-          <Footer />
         </div>
       </ErrorBoundary>
     </Router>

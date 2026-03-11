@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header.jsx";
+import Footer from "./Footer.jsx";
 import "../App.css";
 import "../Styles/Header.css";
 
@@ -16,13 +17,14 @@ const Layout = ({ children, showWeather }) => {
 
   return (
     <div className={`layout ${theme}`}>
-      <Header 
-        toggleTheme={toggleTheme} 
-        theme={theme} 
-        showWeather={showWeather} 
+      <Header
+        toggleTheme={toggleTheme}
+        theme={theme}
+        showWeather={showWeather}
       />
 
       <main className="main-content">{children}</main>
+      <Footer />
     </div>
   );
 };
