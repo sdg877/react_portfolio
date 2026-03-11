@@ -6,8 +6,8 @@ import "../Styles/Home.css";
 const Home = () => {
   const menuItems = [
     "About",
-    "Contact",
     "Background",
+    "Contact",
     "Packages",
     "Projects",
     "Skills",
