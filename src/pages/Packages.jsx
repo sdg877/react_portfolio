@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import "../Styles/AboutPackages.css";
+import "../Styles/Packages.css";
 
 const Packages = () => {
   return (
