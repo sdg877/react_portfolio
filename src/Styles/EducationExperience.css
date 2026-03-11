@@ -1,82 +1,56 @@
-.info-card {
-  background-color: white;
-  color: #e0e0e0;
-  border-radius: 8px;
-  padding: 20px;
-  width: 80%;
-  max-width: 600px;
-  margin: 20px auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  text-align: center;
+.edu-exp-container {
+  background: rgba(255, 255, 255, 0.1) !important; 
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 30px !important; /* Normal padding */
+  width: 80% !important; /* Back to your original site width */
+  max-width: 800px !important;
+  margin: 20px auto !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  text-align: left !important;
 }
 
-.details {
-  color: #2f4f4f;
+.edu-exp-title {
+  font-size: 1.8rem !important; /* Normal header size */
+  margin-bottom: 20px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  display: block !important;
 }
 
-.info-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+.edu-exp-content {
+  color: #000000 !important;
+  line-height: 1.6 !important;
+  font-size: 1rem !important; /* Standard body text size */
 }
 
-.info-card p {
-  line-height: 1.6;
+.edu-exp-content strong {
+  font-size: 1.1rem !important;
+  display: block !important;
+  margin-top: 20px !important;
+  color: #000000 !important;
 }
 
-.info-card h5 {
-  margin-bottom: 8px;
-  font-size: 1.2rem;
+.edu-exp-link {
+  color: #000000 !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
 }
 
-.custom-link {
-  color: lightgrey;
-  text-decoration: none;
-  font-weight: bold;
+.edu-exp-link:hover {
+  text-decoration: underline !important;
 }
 
-.custom-link:hover {
-  text-decoration: underline;
-  color: darkslategray;
+/* DARK MODE */
+body.dark .edu-exp-container {
+  background: rgba(255, 255, 255, 0.05) !important; 
 }
 
-@media (max-width: 768px) {
-  .info-card {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 600px) {
-  .info-card {
-    max-width: 80%;
-    margin: 10px auto;
-    padding: 15px;
-  }
-
-  .info-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .info-card p {
-    font-size: 0.9rem;
-  }
-
-  .info-card h5 {
-    font-size: 1rem;
-  }
-
-  .details {
-    font-size: 16px !important;
-  }
-}
-
-body.dark .info-card {
-  background-color: #003333;
-}
-
-body.dark .details {
-  color: white;
-}
-
-body.dark .experience-title {
-  color: white;
+body.dark .edu-exp-title, 
+body.dark .edu-exp-content, 
+body.dark .edu-exp-content strong, 
+body.dark .edu-exp-link {
+  color: #ffffff !important;
 }
