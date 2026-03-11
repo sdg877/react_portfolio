@@ -1,4 +1,7 @@
 .footer {
+  flex-shrink: 0; 
+  margin-top: auto;
+  position: relative;
   padding: 0; 
   background-color: #f5f5f5;
   text-align: center;
@@ -6,7 +9,7 @@
   width: 100%;
   color: #778899;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  height: 75px; 
+  height: 68px; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,17 +20,35 @@
   text-decoration: none;
   font-weight: 400;
   font-size: 14px;
-  display: block;
-  margin-top: 8px; 
+  display: inline-block; 
+  margin-top: 8px;
+  color: #778899;
+  transition: color 0.3s ease, transform 0.2s ease; 
 }
 
+/* Light Mode Hover */
+.custom-link-footer:hover {
+  color: #d87093  !important; 
+  text-decoration: none !important;
+  transform: scale(1.05);
+}
+
+/* Dark Mode Footer Container */
 body.dark .footer {
   background-color: #2d2d2d;
   color: #aaaaaa;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Dark Mode Link - Normal */
 body.dark .custom-link-footer {
-  color: #ffffff;
+  color: #ffffff !important;
   font-weight: 700;
+}
+
+/* Dark Mode Link - Hover */
+body.dark .custom-link-footer:hover {
+  color: #FFB6C1 !important; 
+  text-decoration: none !important; /* Underline removed */
+  transform: scale(1.05);
 }
