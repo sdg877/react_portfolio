@@ -5,31 +5,26 @@ import "../Styles/EducationExperience.css";
 const Education = () => {
   return (
     <motion.div 
-      className="info-card"
-      initial={{ opacity: 0, y: 50 }} 
+      className="edu-exp-container"
+      initial={{ opacity: 0, y: 30 }} 
       animate={{ opacity: 1, y: 0 }} 
-      transition={{ duration: 0.8, ease: "easeOut" }} 
-      whileHover={{ scale: 1.05 }} 
+      transition={{ duration: 0.8 }} 
     >
-      <h3 className="experience-title">Education</h3>
-      <p className="details">
-        <strong>11/2023 - 03/2024
-        <br />General Assembly</strong>
-        <br />Software Engineering Bootcamp
-        <br /><br />
-        <strong>2020
-        <br />Open University</strong>
-        <br />Science, Maths and Technology access course (equivalent to A-levels)   
-        <br />Passed with a distinction (95%) - A grade  
-        <br /><br />
-        <strong>2009
-        <br />City University</strong>
-        <br />Human Resources Management Course (Passed)  
-        <br /><br />
-        <strong>2004 - 2005
-        <br />City of Westminster College</strong>
-        <br />Level 3 NVQ in Business Administration  
-      </p>
+      <h3 className="edu-exp-title">Education</h3>
+      <div className="edu-exp-content">
+        <strong>11/2023 - 03/2024 — General Assembly</strong>
+        <p>Software Engineering Bootcamp</p>
+        
+        <strong>2020 — Open University</strong>
+        <p>Science, Maths and Technology access course (equivalent to A-levels)</p>
+        <p>Passed with a distinction (95%) - A grade</p>
+        
+        <strong>2009 — City University</strong>
+        <p>Human Resources Management Course (Passed)</p>
+        
+        <strong>2004 - 2005 — City of Westminster College</strong>
+        <p>Level 3 NVQ in Business Administration</p>
+      </div>
     </motion.div>
   );
 };
