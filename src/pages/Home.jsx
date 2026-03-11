@@ -15,18 +15,18 @@ const Home = () => {
   ];
 
   return (
-    <div className="home-container">
-      <nav className="bento-grid">
+    <div className="hp-container">
+      <nav className="hp-bento-grid">
         {menuItems.map((item) => (
           <motion.div
             key={item}
             whileHover={{ y: -8, scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
-            className="grid-card-wrapper"
+            className="hp-card-wrapper"
           >
-            <Link to={`/${item.toLowerCase()}`} className="grid-card-link">
-              <span className="grid-card-label">{item}</span>
-              <div className="grid-card-accent" />
+            <Link to={`/${item.toLowerCase()}`} className="hp-card-link">
+              <span className="hp-card-label">{item}</span>
+              <div className="hp-card-accent" />
             </Link>
           </motion.div>
         ))}
