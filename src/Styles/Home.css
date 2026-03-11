@@ -1,78 +1,108 @@
-.home-container {
+.hp-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1;
-  padding: 20px;
+  padding: 40px 20px;
   box-sizing: border-box;
-  min-height: calc(100% - 40px);
+  min-height: calc(100vh - 100px);
 }
 
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.hp-bento-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 25px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
-.grid-card-wrapper {
-  background: rgba(255, 255, 255, 0.6);
+.hp-card-wrapper {
+  flex: 0 1 280px;
+  min-width: 280px;
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
-.grid-card-link {
+/* Dark Mode Card */
+body.dark .hp-card-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hp-card-link {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 200px;
   text-decoration: none;
-  color: #1a1a1a;
   position: relative;
 }
 
-.grid-card-label {
+.hp-card-label {
   font-size: 2rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
+  transition: color 0.3s ease;
+  color: #1a1a1a;
 }
 
-.grid-card-accent {
+body.dark .hp-card-label {
+  color: #ffffff;
+}
+
+.hp-card-accent {
   position: absolute;
   bottom: 0;
   width: 0;
   height: 4px;
-  background: #20b2aa;
+  background: #d87093;
   transition: width 0.3s ease;
   border-radius: 2px;
 }
 
-.grid-card-wrapper:hover .grid-card-accent {
+body.dark .hp-card-accent {
+  background: #ffc0cb;
+}
+
+.hp-card-wrapper:hover {
+  border-color: #d87093;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark .hp-card-wrapper:hover {
+  border-color: #ffc0cb;
+}
+
+.hp-card-wrapper:hover .hp-card-accent {
   width: 40%;
 }
 
-.grid-card-wrapper:hover .grid-card-label {
-  color: #20b2aa;
+.hp-card-wrapper:hover .hp-card-label {
+  color: #d87093 !important;
+}
+
+body.dark .hp-card-wrapper:hover .hp-card-label {
+  color: #ffc0cb !important;
 }
 
 @media (max-width: 768px) {
-  .bento-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .grid-card-label {
+  .hp-card-label {
     font-size: 1.4rem;
   }
 }
 
 @media (max-width: 480px) {
-  .bento-grid {
-    grid-template-columns: 1fr;
+  .hp-card-wrapper {
+    flex: 1 1 100%;
   }
 }
