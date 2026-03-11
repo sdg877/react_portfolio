@@ -20,7 +20,7 @@ function App() {
     <Router>
       <ErrorBoundary>
         <div className="app">
-          <Layout>
+          <Layout showWeather={true}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/weather" element={<Weather />} />
