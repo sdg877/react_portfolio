@@ -1,0 +1,120 @@
+.packages-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.projects-wrapper {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title-project {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.package-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  padding: 20px 20px 40px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.package-card:hover {
+  transform: translateY(-5px);
+}
+
+.package-content h3 {
+  color: #673147;
+  font-size: 1.4rem;
+  margin: 20px 0 10px;
+}
+
+.package-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+.project-overlay {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 8px 15px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.grid-card-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+}
+
+.custom-link-packages {
+  color: #673147;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.custom-link-packages:hover {
+  text-decoration: underline;
+}
+
+.packages-footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+body.dark .package-card {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.dark .package-content h3 {
+  color: #ffb6c1;
+}
+
+body.dark .package-content p,
+body.dark .grid-card-label {
+  color: #ffffff;
+}
+
+body.dark .custom-link-packages {
+  color: #ffb6c1;
+}
+
+@media (max-width: 768px) {
+  .package-card {
+    padding: 20px;
+  }
+  .package-content h3 {
+    font-size: 1.2rem;
+  }
+  .package-content p {
+    font-size: 0.95rem;
+  }
+}
