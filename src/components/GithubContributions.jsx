@@ -1,0 +1,126 @@
+import React, { useEffect, useState } from "react";
+import { request, gql } from "graphql-request";
+
+const token = process.env.REACT_APP_GITHUB_TOKEN;
+
+const query = gql`
+  query {
+    viewer {
+      contributionsCollection {
+        contributionCalendar {
+          weeks {
+            contributionDays {
+              date
+              contributionCount
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+const GithubContributions = () => {
+  const [weeks, setWeeks] = useState([]);
+  const [hoveredDay, setHoveredDay] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const headers = {
+        Authorization: `Bearer ${token}`,
+      };
+      try {
+        const data = await request(
+          "https://api.github.com/graphql",
+          query,
+          {},
+          headers
+        );
+        setWeeks(
+          data.viewer.contributionsCollection.contributionCalendar.weeks
+        );
+      } catch (error) {
+        console.error("Error fetching GitHub data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const getContributionLevel = (count) => {
+    if (count === 0) return "level-0";
+    if (count < 3) return "level-1"; // 1-2 commits
+    if (count < 5) return "level-2"; // 3-4 commits
+    if (count < 7) return "level-3"; // 5-6 commits
+    if (count < 9) return "level-4"; // 7-8 commits
+    if (count < 11) return "level-5"; // 9-10 commits
+    if (count < 15) return "level-6"; // 11-14 commits
+    return "level-7"; // 15+ commits
+  };
+
+  const formatDate = (isoDate) => {
+    const [year, month, day] = isoDate.split("-");
+    return `${day}/${month}/${year}`;
+  };
+
+  return (
+    <div
+      className="info-card-project contributions-card"
+      style={{ position: "relative" }}
+    >
+      <h3 className="title-project">My Contributions</h3>
+      <h9 className="github-desc">
+        I’ve made 1000+ GitHub contributions over the past year, demonstrating
+        consistent engagement with code and project work. The graph below shows
+        my ongoing development activity.
+      </h9>
+
+      <div className="contribution-calendar">
+        {[...weeks].reverse().map((week, i) => (
+          <div key={i} className="week-column">
+            {week.contributionDays.map((day, j) => (
+              <div
+                key={j}
+                className={`contribution-day ${getContributionLevel(
+                  day.contributionCount
+                )}`}
+                onMouseEnter={(e) =>
+                  setHoveredDay({
+                    date: day.date,
+                    commits: day.contributionCount,
+                    position: { x: e.clientX, y: e.clientY },
+                  })
+                }
+                onMouseLeave={() => setHoveredDay(null)}
+              />
+            ))}
+          </div>
+        ))}
+      </div>
+
+      {hoveredDay && (
+        <div
+          className="tooltip"
+          style={{
+            position: "fixed",
+            top: hoveredDay.position.y + 10,
+            left: hoveredDay.position.x + 10,
+            pointerEvents: "none",
+            backgroundColor: "#222",
+            color: "#fff",
+            padding: "6px 10px",
+            borderRadius: "4px",
+            fontSize: "0.9rem",
+            zIndex: 1000,
+            whiteSpace: "nowrap",
+          }}
+        >
+          <div>{formatDate(hoveredDay.date)}</div>
+          <div>{hoveredDay.commits} commits</div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default GithubContributions;
