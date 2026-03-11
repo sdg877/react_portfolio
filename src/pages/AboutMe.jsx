@@ -1,28 +1,28 @@
 import React from "react";
 import { motion } from "framer-motion";
 import SylviaImage from "../Images/Sylvia.jpeg";
-import "../Styles/AboutPackages.css";
+import "../Styles/About.css";
 
 const AboutMe = () => {
   return (
-    <div className="home-container">
+    <div className="about-section">
       <motion.div
-        className="projects-wrapper"
+        className="about-wrapper"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
-        <div className="grid-card-wrapper about-card">
-          <div className="about-content">
+        <div className="about-card-glass">
+          <div className="about-inner-content">
             <img
               src={SylviaImage}
               alt="Sylvia Drake-Gill"
               className="profile-image"
             />
-            <header className="projects-header">
-              <h2 className="title-project">About Sylvia</h2>
+            <header className="about-header">
+              <h2 className="about-title">About Sylvia</h2>
             </header>
 
-            <div className="about-p">
+            <article className="about-text-area">
               <p>
                 I am a Software Engineer with a 15-year career in TV,
                 advertising, and publishing operations. This gives me a distinct
@@ -48,7 +48,7 @@ const AboutMe = () => {
                 Foals. I now live in Merton, South London with my boyfriend and
                 two cats, Kitty & Osborne.
               </p>
-            </div>
+            </article>
           </div>
         </div>
       </motion.div>
