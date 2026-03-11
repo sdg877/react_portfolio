@@ -7,8 +7,7 @@ const Home = () => {
   const menuItems = [
     "About",
     "Contact",
-    "Education",
-    "Experience",
+    "Background",
     "Packages",
     "Projects",
     "Skills",
