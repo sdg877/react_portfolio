@@ -18,8 +18,7 @@ const NavBar = ({
   const links = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About Me" },
-    { path: "/experience", label: "Experience" },
-    { path: "/education", label: "Education" },
+    { path: "/background", label: "Background" },
     { path: "/projects", label: "Projects" },
     { path: "/skills", label: "Skills" },
     { path: "/packages", label: "Packages" },
