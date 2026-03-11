@@ -3,7 +3,7 @@ import Header from "./Header.jsx";
 import "../App.css";
 import "../Styles/Header.css";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, showWeather }) => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
@@ -16,7 +16,11 @@ const Layout = ({ children }) => {
 
   return (
     <div className={`layout ${theme}`}>
-      <Header toggleTheme={toggleTheme} theme={theme} />
+      <Header 
+        toggleTheme={toggleTheme} 
+        theme={theme} 
+        showWeather={showWeather} 
+      />
 
       <main className="main-content">{children}</main>
     </div>
