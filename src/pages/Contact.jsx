@@ -17,10 +17,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -40,124 +37,112 @@ const Contact = () => {
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         emailData,
-        process.env.REACT_APP_EMAILJS_USER_ID
+        process.env.REACT_APP_EMAILJS_USER_ID,
       )
       .then(
         () => {
           toast.success("Message sent successfully!");
           setLoading(false);
-          setFormData({
-            name: "",
-            email: "",
-            message: "",
-            subject: "",
-          });
+          setFormData({ name: "", email: "", message: "", subject: "" });
         },
         () => {
           toast.error("Error sending message.");
           setLoading(false);
-        }
+        },
       );
   };
 
   return (
-    <div className="home-container">
+    <div className="contact-unique-main">
       <motion.div
-        className="projects-wrapper"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        className="contact-unique-wrapper"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
-        <div className="grid-card-wrapper contact-card">
-
-          <div className="project-overlay centered-overlay">
-            <span className="grid-card-label">Send a Message</span>
+        <div className="contact-unique-card">
+          <div className="contact-unique-header">
+            <h3 className="contact-unique-title">Get In Touch</h3>
+            <p className="contact-unique-desc">
+              Whether you have a question about my projects, want to discuss a
+              potential collaboration, or just want to say hello, feel free to
+              drop me a message below.
+            </p>
           </div>
 
-          <div className="contact-content">
+          <div className="contact-unique-content">
             {loading && <Spinner />}
 
-            <form onSubmit={handleSubmit} className="contact-form">
+            <form onSubmit={handleSubmit} className="contact-unique-form">
+              <div className="contact-unique-row">
+                <div className="contact-unique-field">
+                  <label className="contact-unique-label">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="contact-unique-input"
+                    disabled={loading}
+                  />
+                </div>
 
-              <div className="form-field">
-                <label className="form-label">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="form-input"
-                  disabled={loading}
-                />
+                <div className="contact-unique-field">
+                  <label className="contact-unique-label">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="contact-unique-input"
+                    disabled={loading}
+                  />
+                </div>
               </div>
 
-              <div className="form-field">
-                <label className="form-label">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="form-input"
-                  disabled={loading}
-                />
-              </div>
-
-              <div className="form-field">
-                <label className="form-label">Subject</label>
+              <div className="contact-unique-field">
+                <label className="contact-unique-label">Subject</label>
                 <input
                   type="text"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="form-input"
+                  className="contact-unique-input"
                   disabled={loading}
                 />
               </div>
 
-              <div className="form-field">
-                <label className="form-label">Message</label>
+              <div className="contact-unique-field">
+                <label className="contact-unique-label">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="form-textarea"
+                  className="contact-unique-textarea"
                   disabled={loading}
                 />
               </div>
 
-              <div className="button-wrapper">
+              <div className="contact-unique-btn-wrap">
                 <button
                   type="submit"
-                  className="form-button"
+                  className="contact-unique-button"
                   disabled={loading}
                 >
                   {loading ? "Sending..." : "Send Message"}
                 </button>
               </div>
-
             </form>
           </div>
         </div>
-
-        <footer className="contact-footer">
-          <p>
-            Sylvia Drake-Gill |{" "}
-            <a
-              href="mailto:sdrakegill@gmail.com"
-              className="custom-link-packages"
-            >
-              sdrakegill@gmail.com
-            </a>
-          </p>
-        </footer>
       </motion.div>
 
-      <ToastContainer />
+      <ToastContainer position="bottom-right" theme="dark" />
     </div>
   );
 };
