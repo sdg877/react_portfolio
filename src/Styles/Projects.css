@@ -10,19 +10,40 @@
   max-width: 1200px;
 }
 
-.info-card {
-  background-color: #90a6a6;
-  color: #e0e0e0;
-  border-radius: 8px;
-  padding: 20px;
+.projects-header {
   text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.custom-link {
-  color: #673147;
-  text-decoration: none;
-  font-size: 1.2rem;
-  margin: 10px;
+.title-project {
+  font-size: 3.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #1a1a1a;
+  margin: 0 0 15px 0;
+}
+
+.title-project::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 5px;
+  background: #d87093;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.project-description {
+  font-size: 1rem;
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #1a1a1a;
 }
 
 .bento-grid {
@@ -69,123 +90,55 @@
   border-radius: 12px;
   display: inline-block;
   margin: 10px;
-
 }
 
-.projects-header {
-  text-align: center;
-  margin-bottom: 40px; 
-  width: 100%;
-}
-
-.title-project {
-  font-size: 1.5rem;
-  font-weight: 700;
+.grid-card-label {
+  font-weight: 600;
   color: #1a1a1a;
-  margin: 0;
-  opacity: 1 !important;
 }
 
-.project-description {
-  font-size: 1rem;
-}
-
-.contribution-calendar {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
+.info-card {
+  background-color: #90a6a6;
+  color: #e0e0e0;
+  border-radius: 8px;
   padding: 20px;
-  margin-top: 20px;
-  justify-content: center;
-}
-
-.week-column {
-  display: flex;
-  flex-direction: column;
-  margin-right: 2px;
-}
-
-.contribution-day {
-  width: 16px;
-  height: 16px;
-  margin: 2px;
-  border-radius: 3px;
-}
-
-.contribution-day.level-0 {
-  background-color: #fdfbf8;
-}
-.contribution-day.level-1 {
-  background-color: #f7e0c8;
-}
-.contribution-day.level-2 {
-  background-color: #e7b383;
-}
-.contribution-day.level-3 {
-  background-color: #d5854c;
-}
-.contribution-day.level-4 {
-  background-color: #c25e1a;
-}
-.contribution-day.level-5 {
-  background-color: #a8480f;
-}
-.contribution-day.level-6 {
-  background-color: #8b3a0a;
-}
-.contribution-day.level-7 {
-  background-color: #6b2907;
-}
-
-body.dark .info-card {
-  background-color: #003333;
-}
-body.dark .grid-card-label {
-  color: white;
-}
-body.dark .custom-link {
-  color: #ffb6c1;
-}
-
-body.dark .project-overlay {
-  background: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 body.dark .title-project {
   color: #ffffff !important;
 }
-
-body.dark .contribution-day.level-0 {
-  background-color: #222222;
+body.dark .project-description {
+  color: #ffffff;
 }
-body.dark .contribution-day.level-1 {
-  background-color: #6a3258;
+body.dark .project-overlay {
+  background: rgba(0, 0, 0, 0.7);
 }
-body.dark .contribution-day.level-2 {
-  background-color: #9b497d;
+body.dark .grid-card-label {
+  color: white;
 }
-body.dark .contribution-day.level-3 {
-  background-color: #c0619c;
+body.dark .info-card {
+  background-color: #003333;
 }
-body.dark .contribution-day.level-4 {
-  background-color: #e77abf;
+body.dark .custom-link {
+  color: #ffb6c1;
 }
-body.dark .contribution-day.level-5 {
-  background-color: #ffb6c1;
-}
-body.dark .contribution-day.level-6 {
-  background-color: #ffd2dd;
-}
-body.dark .contribution-day.level-7 {
-  background-color: #ffffff;
+body.dark .title-project::after {
+  background: #ffb6c1;
 }
 
 @media (max-width: 768px) {
+  .title-project {
+    font-size: 2.2rem;
+  }
   .bento-grid {
     grid-template-columns: 1fr 1fr;
   }
-  .contribution-day {
-    width: 10px;
-    height: 10px;
+}
+
+@media (max-width: 480px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
   }
 }
