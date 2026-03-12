@@ -1,0 +1,183 @@
+.background-page-wrapper {
+  width: 100%;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edu-exp-container {
+  background: rgba(255, 255, 255, 0.1) !important; 
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 30px !important;
+  width: 80% !important;
+  max-width: 800px !important;
+  margin: 20px auto !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  text-align: left !important;
+  position: relative !important;
+}
+
+.edu-exp-title {
+  font-size: 1.8rem !important;
+  margin-bottom: 20px !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  display: inline-block !important;
+}
+
+.edu-exp-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: #d87093;
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+/* STATS LAYOUT */
+.github-stats-layout {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.pie-chart-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pie-chart {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pie-inner {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.total-label {
+  font-size: 0.7rem;
+  text-align: center;
+  font-weight: 700;
+  color: #d87093;
+  line-height: 1.1;
+}
+
+.pie-legend {
+  font-size: 0.85rem;
+  color: #000;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.legend-item .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.github-info-side { flex: 1; }
+.github-desc { font-size: 1rem; color: #000000; margin-bottom: 15px; line-height: 1.5; }
+
+/* GROWING LINK */
+.custom-link-grow {
+  display: inline-block;
+  color: #d87093 !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.custom-link-grow:hover { transform: scale(1.1); text-decoration: none !important; }
+
+/* HEATMAP SCROLL */
+.heatmap-scroll-area {
+  width: 100%;
+  overflow-x: auto;
+  padding-top: 35px;
+  padding-bottom: 15px;
+  position: relative;
+  scrollbar-width: thin;
+  scrollbar-color: #d87093 transparent;
+}
+
+.heatmap-scroll-area::-webkit-scrollbar { height: 6px; }
+.heatmap-scroll-area::-webkit-scrollbar-thumb { background: #d87093; border-radius: 10px; }
+
+.contribution-calendar { display: flex; gap: 3px; min-width: max-content; }
+.week-column { display: flex; flex-direction: column; position: relative; flex-shrink: 0; }
+
+.month-label-scroll {
+  position: absolute;
+  top: -28px;
+  left: 0;
+  font-size: 0.75rem;
+  color: #d87093;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.contribution-day { width: 15px; height: 15px; margin: 1px; border-radius: 3px; }
+
+/* TOOLTIP */
+.tooltip-github {
+  position: absolute;
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  z-index: 2000;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.tooltip-date { font-weight: 700; margin-bottom: 2px; }
+
+/* COLOURS - LIGHT MODE (BROWN/ORANGE) */
+.contribution-day.level-0 { background-color: #fdfbf8; }
+.contribution-day.level-1 { background-color: #f7e0c8; }
+.contribution-day.level-2 { background-color: #e7b383; }
+.contribution-day.level-3 { background-color: #d5854c; }
+.contribution-day.level-4 { background-color: #c25e1a; }
+.contribution-day.level-5 { background-color: #a8480f; }
+.contribution-day.level-6 { background-color: #8b3a0a; }
+.contribution-day.level-7 { background-color: #6b2907; }
+
+/* DARK MODE OVERRIDES (PINK/PURPLE) */
+body.dark .edu-exp-container { background: rgba(255, 255, 255, 0.05) !important; }
+body.dark .edu-exp-title, body.dark .github-desc, body.dark .pie-legend { color: #ffffff !important; }
+body.dark .pie-inner { background: rgba(0, 0, 0, 0.6); }
+
+body.dark .contribution-day.level-0 { background-color: #222222; }
+body.dark .contribution-day.level-1 { background-color: #6a3258; }
+body.dark .contribution-day.level-2 { background-color: #9b497d; }
+body.dark .contribution-day.level-3 { background-color: #c0619c; }
+body.dark .contribution-day.level-4 { background-color: #e77abf; }
+body.dark .contribution-day.level-5 { background-color: #ffb6c1; }
+body.dark .contribution-day.level-6 { background-color: #ffd2dd; }
+body.dark .contribution-day.level-7 { background-color: #ffffff; }
