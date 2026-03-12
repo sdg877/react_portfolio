@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import GithubContributions from "../components/GithubContributions.jsx";
 import "../Styles/Background.css";
 
 const Background = () => {
@@ -124,6 +125,17 @@ const Background = () => {
           <p>Level 3 NVQ in Business Administration</p>
         </div>
       </motion.div>
+      <motion.div 
+        className="edu-exp-container"
+        initial={{ opacity: 0, y: 30 }} 
+        animate={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.8, delay: 0.6 }} 
+      >
+        <div className="heatmap-scroll-container">
+          <GithubContributions />
+        </div>
+      </motion.div>
+      
     </div>
   );
 };
