@@ -8,8 +8,8 @@ const Home = () => {
     "About",
     "Background",
     "Contact",
-    "Packages",
     "Projects",
+    "Services",
     "Skills",
   ];
 
