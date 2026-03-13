@@ -7,7 +7,7 @@ import Skills from "./pages/Skills.jsx";
 import Contact from "./pages/Contact.jsx";
 import Weather from "./pages/Weather.jsx";
 import Home from "./pages/Home.jsx";
-import Packages from "./pages/Packages.jsx";
+import Services from "./pages/Services.jsx";
 import Layout from "./components/Layout.jsx";
 import ProjectComponent from "./pages/ProjectPages/ProjectComponent";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
@@ -28,7 +28,7 @@ function App() {
               <Route path="/skills" element={<Skills />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:id" element={<ProjectComponent />} />
-              <Route path="/packages" element={<Packages />} />
+              <Route path="/services" element={<Services />} />
               <Route path="/down" element={<DownPage />} />
             </Routes>
           </Layout>
