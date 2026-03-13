@@ -17,7 +17,7 @@ const Weather = () => {
 
         if (!fallback) {
           const locationResponse = await axios.get(
-            `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+            `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`,
           );
 
           const town =
@@ -43,20 +43,33 @@ const Weather = () => {
         }
 
         const weatherResponse = await axios.get(
-          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weathercode,precipitation_probability,uv_index,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_probability_mean,uv_index_max&timezone=${encodeURIComponent(userTimeZone)}`
+          `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&hourly=temperature_2m,weathercode,precipitation_probability,uv_index,apparent_temperature&daily=temperature_2m_max,temperature_2m_min,weathercode,precipitation_probability_mean,uv_index_max,sunrise,sunset&timezone=${encodeURIComponent(userTimeZone)}`,
         );
 
         const currentHour = new Date().getHours();
+
+        const todaySunrise = weatherResponse.data.daily.sunrise[0];
+        const todaySunset = weatherResponse.data.daily.sunset[0];
 
         const hourlyData = weatherResponse.data.hourly.time
           .slice(currentHour, currentHour + 12)
           .map((time, index) => ({
             time,
-            temperature: weatherResponse.data.hourly.temperature_2m[currentHour + index],
-            weatherCode: weatherResponse.data.hourly.weathercode[currentHour + index],
-            rainChance: weatherResponse.data.hourly.precipitation_probability[currentHour + index],
+            temperature:
+              weatherResponse.data.hourly.temperature_2m[currentHour + index],
+            weatherCode:
+              weatherResponse.data.hourly.weathercode[currentHour + index],
+            rainChance:
+              weatherResponse.data.hourly.precipitation_probability[
+                currentHour + index
+              ],
             uvIndex: weatherResponse.data.hourly.uv_index[currentHour + index],
-            feelsLike: weatherResponse.data.hourly.apparent_temperature[currentHour + index],
+            feelsLike:
+              weatherResponse.data.hourly.apparent_temperature[
+                currentHour + index
+              ],
+            sunrise: todaySunrise,
+            sunset: todaySunset,
           }));
 
         const dailyData = weatherResponse.data.daily.time
@@ -66,8 +79,13 @@ const Weather = () => {
             tempMin: weatherResponse.data.daily.temperature_2m_min[index + 1],
             tempMax: weatherResponse.data.daily.temperature_2m_max[index + 1],
             weatherCode: weatherResponse.data.daily.weathercode[index + 1],
-            rainChance: weatherResponse.data.daily.precipitation_probability_mean[index + 1],
+            rainChance:
+              weatherResponse.data.daily.precipitation_probability_mean[
+                index + 1
+              ],
             uvIndex: weatherResponse.data.daily.uv_index_max[index + 1],
+            sunrise: weatherResponse.data.daily.sunrise[index + 1],
+            sunset: weatherResponse.data.daily.sunset[index + 1],
           }));
 
         setHourlyWeather(hourlyData);
@@ -87,7 +105,7 @@ const Weather = () => {
           },
           () => {
             fetchWeather(51.5074, -0.1278, true);
-          }
+          },
         );
       } else {
         fetchWeather(51.5074, -0.1278, true);
@@ -97,14 +115,23 @@ const Weather = () => {
     getUserLocation();
   }, []);
 
-  const getWeatherIcon = (weatherCode, rainChance, timeString) => {
-    const hour = new Date(timeString).getHours();
-    const isDayTime = hour >= 6 && hour < 20;
+  const getWeatherIcon = (
+    weatherCode,
+    rainChance,
+    timeString,
+    sunriseStr,
+    sunsetStr,
+  ) => {
+    const currentTime = new Date(timeString).getTime();
+    const sunriseTime = new Date(sunriseStr).getTime();
+    const sunsetTime = new Date(sunsetStr).getTime();
+
+    const isDayTime = currentTime >= sunriseTime && currentTime < sunsetTime;
 
     const weatherIcons = {
       0: isDayTime ? "☀️" : "🌙",
       1: isDayTime ? "🌤️" : "🌙",
-      2: "⛅",
+      2: isDayTime ? "⛅" : "☁️",
       3: "☁️",
       45: "🌫️",
       48: "🌫️",
@@ -136,7 +163,7 @@ const Weather = () => {
       return "☁️";
     }
 
-    return weatherIcons[weatherCode] || "☁️";
+    return weatherIcons[weatherCode] || (isDayTime ? "☀️" : "🌙");
   };
 
   const formatTime = (timeString) => {
@@ -175,9 +202,19 @@ const Weather = () => {
               {hourlyWeather.map((hour, index) => (
                 <div key={index} className="weather-card">
                   <p>{formatTime(hour.time)}</p>
-                  <p className="weather-icon">{getWeatherIcon(hour.weatherCode, hour.rainChance, hour.time)}</p>
+                  <p className="weather-icon">
+                    {getWeatherIcon(
+                      hour.weatherCode,
+                      hour.rainChance,
+                      hour.time,
+                      hour.sunrise,
+                      hour.sunset,
+                    )}
+                  </p>
                   <p className="temp">{Math.round(hour.temperature)}°C</p>
-                  <p className="weatherdetail">Feels like: {Math.round(hour.feelsLike)}°C</p>
+                  <p className="weatherdetail">
+                    Feels like: {Math.round(hour.feelsLike)}°C
+                  </p>
                   <p className="weatherdetail">Rain: {hour.rainChance}%</p>
                   <p className="weatherdetail">UV Index: {hour.uvIndex}</p>
                 </div>
@@ -189,8 +226,18 @@ const Weather = () => {
               {dailyWeather.map((day, index) => (
                 <div key={index} className="weather-week-card">
                   <p>{formatDate(day.date)}</p>
-                  <p className="weather-icon">{getWeatherIcon(day.weatherCode, day.rainChance, day.date)}</p>
-                  <p>{Math.round(day.tempMin)}°C - {Math.round(day.tempMax)}°C</p>
+                  <p className="weather-icon">
+                    {getWeatherIcon(
+                      day.weatherCode,
+                      day.rainChance,
+                      day.date,
+                      day.sunrise,
+                      day.sunset,
+                    )}
+                  </p>
+                  <p>
+                    {Math.round(day.tempMin)}°C - {Math.round(day.tempMax)}°C
+                  </p>
                   <p className="weatherdetail">Rain: {day.rainChance}%</p>
                   <p className="weatherdetail">UV Index: {day.uvIndex}</p>
                 </div>
