@@ -1,17 +1,18 @@
-import AIChatBotImg from "../../Images/AIChatBot.png";
-import GourmetGalleryImg from "../../Images/GourmetGallery.png";
-import HTreharneJonesImg from "../../Images/HTJ.png";
-import InTechJobsImg from "../../Images/InTech.png";
-import ProjectOneImg from "../../Images/ProjectOne.jpg";
-import SnakeImg from "../../Images/Snake.png";
-import SpookSpottersImg from "../../Images/SpookSpotters.png";
-import SSSImg from "../../Images/SSS.png";
+import AIChatBotImg from "../../Images/Projects/AIChatBot.png";
+import GourmetGalleryImg from "../../Images/Projects/GourmetGallery.png";
+import HTreharneJonesImg from "../../Images/Projects/HTJ.png";
+import InTechJobsImg from "../../Images/Projects/InTech.png";
+import ProjectOneImg from "../../Images/Projects/ProjectOne.jpg";
+import SnakeImg from "../../Images/Projects/Snake.png";
+import SpookSpottersImg from "../../Images/Projects/SpookSpotters.png";
+import SSSImg from "../../Images/Projects/SSS.png";
+import CCImg from "../../Images/Projects/CarbonCalc.png";
 
 const projects = [
   {
     id: "CarbonCalculator",
     title: "Carbon Tracker",
-    image: "",
+    image: CCImg,
     description: [
       "Developed over six months, this production-standard full-stack application calculates and visualises personal carbon footprints. It features a bespoke Python calculation engine that transforms raw user data into CO2e metrics, tracking environmental impact trends over time.",
       "The frontend features a complex, dynamic React form supporting 20+ activity types, with conditional logic that adjusts fields based on user selection. Data is presented through interactive Recharts visualisations, comparing personal stats against global averages.",
@@ -51,7 +52,7 @@ const projects = [
   },
   {
     id: "ProjectOne",
-    title: "Workflow & Compliance Platform",
+    title: "Confidential Project",
     image: ProjectOneImg,
     description: [
       "A high-impact commercial project: I architected and delivered a production-ready MVP that served as the primary technical proof-of-concept for a successful £150k seed funding round. This mission-critical platform manages highly regulated, sensitive workflows for professional service providers.",
@@ -59,7 +60,7 @@ const projects = [
       "Developed a custom 'Traffic Light' prioritisation engine and a central calendar system. These features use dynamic date-trigger logic to automate task generation and visual urgency signalling, directly improving user adherence to strict regulatory deadlines.",
       "Key technical achievements included building a context-sensitive help system, an integrated email template engine with dynamic data-injection, and high-performance tables capable of aggregating data from multiple relational endpoints.",
     ],
-    siteUrl: "", 
+    siteUrl: "",
     githubFrontendUrl: "",
     githubBackendUrl: "",
   },
