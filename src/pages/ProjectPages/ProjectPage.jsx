@@ -1,109 +1,79 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import "../../Styles/Projects.css";
 
-const ProjectPage = ({
-  title,
-  image,
+const ProjectPage = ({ 
+  title, 
+  image, 
+  altText, 
+  descriptionParagraphs, 
   video, 
-  altText,
-  descriptionParagraphs = [],
-  siteLink,
-  githubLinks = [],
-  nextProjectPath,
-  nextProjectLabel,
+  codeSnippets, 
+  siteLink, 
+  githubLinks, 
+  nextProjectPath, 
+  nextProjectLabel 
 }) => {
   return (
-    <div className="project-page-container"> {/* Renamed from home-container */}
-      <motion.div
-        className="info-card-project"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <motion.h3
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
-        >
-          {title}
-        </motion.h3>
+    <div className="project-page-container">
+      <div className="projects-wrapper">
+        <div className="info-card-project">
+          <h3>{title}</h3>
+          
+          <img src={image} alt={altText} className="project-image" />
 
-        <motion.img
-          src={image}
-          alt={altText}
-          className="project-image"
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.5 }}
-        />
-
-        {descriptionParagraphs.map((paragraph, idx) => (
-          <motion.p
-            key={idx}
-            className="details"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 + idx * 0.1 }}
-          >
-            {paragraph}
-          </motion.p>
-        ))}
-
-        {video && (
-          <div className="video-section">
-             <h4 className="video-heading">Project Walkthrough</h4>
-             <motion.video
-               className="project-video"
-               controls
-               muted
-               playsInline
-               initial={{ opacity: 0, y: 10 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ delay: 0.8, duration: 0.5 }}
-             >
-               <source src={video} type="video/mp4" />
-               Your browser does not support the video tag.
-             </motion.video>
+          <div className="description-container">
+            {descriptionParagraphs.map((para, index) => (
+              <p key={index} className="details">{para}</p>
+            ))}
           </div>
-        )}
 
-        <div className="links-container">
-          {siteLink && (
-            <motion.a
-              href={siteLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="custom-link"
-              whileHover={{ scale: 1.05 }}
-            >
-              Check out my site!
-            </motion.a>
+          {/* Technical Highlights Section */}
+          {codeSnippets && codeSnippets.length > 0 && (
+            <div className="technical-highlights">
+              <h4 className="video-heading">Technical Highlights</h4>
+              <div className="highlights-grid">
+                {codeSnippets.map((snippet, idx) => (
+                  <div key={idx} className="highlight-item">
+                    <img src={snippet.image} alt="Code Snippet" className="project-image" />
+                    <p className="highlight-caption">{snippet.caption}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           )}
 
-          {githubLinks.map(({ label, url }, idx) => (
-            <motion.a
-              key={idx}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="custom-link"
-              whileHover={{ scale: 1.05 }}
-            >
-              {label}
-            </motion.a>
-          ))}
-
-          {nextProjectPath && nextProjectLabel && (
-            <motion.div whileHover={{ scale: 1.05 }}>
-              <Link to={nextProjectPath} className="custom-link-bottom">
-                Next Project: {nextProjectLabel} →
-              </Link>
-            </motion.div>
+          {/* Video Section */}
+          {video && (
+            <div className="video-section">
+              <h4 className="video-heading">Walkthrough & Logic Demo</h4>
+              <video controls className="project-video">
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           )}
+
+          {/* Links Section */}
+          <div className="links-container">
+            {siteLink && (
+              <a href={siteLink} target="_blank" rel="noopener noreferrer" className="custom-link">
+                View Live Site
+              </a>
+            )}
+            {githubLinks && githubLinks.map((link, index) => (
+              <a key={index} href={link.url} target="_blank" rel="noopener noreferrer" className="custom-link">
+                {link.label}
+              </a>
+            ))}
+            
+            <Link to={nextProjectPath} className="custom-link-bottom">
+              Next Project: {nextProjectLabel} →
+            </Link>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import projects from "./projectsdata";
 import ProjectPage from "./ProjectPage";
 
@@ -36,6 +36,7 @@ const ProjectComponent = () => {
       altText={project.title}
       descriptionParagraphs={project.description}
       video={project.video}
+      codeSnippets={project.codeSnippets} // This line is crucial
       siteLink={project.siteUrl}
       githubLinks={githubLinks}
       nextProjectPath={`/projects/${nextProject.id}`}

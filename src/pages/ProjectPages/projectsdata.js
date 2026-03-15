@@ -12,12 +12,23 @@ import {
 
 import CarbonVideo from "../../Assets/Videos/CarbonCalcVideo.mp4";
 
+import CarbonCode from "../../Assets/Images/Code/CarbonCalcCode.png";
+import ChatBotCode from "../../Assets/Images/Code/ChatBotCode.png";
+import HTJCode from "../../Assets/Images/Code/HTJCode.png";
+
 const projects = [
   {
     id: "CarbonCalculator",
     title: "Carbon Tracker",
     image: CCImg,
     video: CarbonVideo,
+    codeSnippets: [
+      {
+        image: CarbonCode,
+        caption:
+          "Next.js App Router logic using useEffect and fetch to integrate real-time environmental news APIs.",
+      },
+    ],
     description: [
       "Developed over six months, this production-standard full-stack application calculates and visualises personal carbon footprints. It features a bespoke Python calculation engine that transforms raw user data into CO2e metrics, tracking environmental impact trends over time.",
       "The frontend features a complex, dynamic React form supporting 20+ activity types, with conditional logic that adjusts fields based on user selection. Data is presented through interactive Recharts visualisations, comparing personal stats against global averages.",
@@ -32,6 +43,13 @@ const projects = [
     id: "AIChatBot",
     title: "AI Chatbot",
     image: AIChatBotImg,
+    codeSnippets: [
+      {
+        image: ChatBotCode,
+        caption:
+          "Asynchronous fetch logic in JavaScript for managing conversation IDs and persistent user sessions.",
+      },
+    ],
     description: [
       "Built in March 2025 using Flask, MongoDB, and the OpenAI API, this web app allows users to register, log in, and chat with an AI while storing and managing conversation history. It features a clean, responsive interface created with HTML, CSS, and JavaScript.",
       "Key features include user authentication, persistent chat history with renaming/deletion, a search function, smart subject generation, and a welcome message for new chats. Managing these involved careful handling of state and API responses.",
@@ -43,8 +61,15 @@ const projects = [
   },
   {
     id: "HTJ",
-    title: "Heather Treharne Jones Portfolio",
+    title: "Artist's Portfolio",
     image: HTreharneJonesImg,
+    codeSnippets: [
+      {
+        image: HTJCode,
+        caption:
+          "Dynamic data mapping and character encoding resolution using axios and decodeURIComponent.",
+      },
+    ],
     description: [
       "A bespoke freelance commission: a clean, professional portfolio site for an artist to showcase work, connect with customers, and manage commissions.",
       "The build includes an admin area, galleries, contact form, news section, and a commissions page. The client had a clear vision for the layout, colours, and banner image, and wanted to update content independently. I handled both design and development, ensuring responsive performance across devices.",
