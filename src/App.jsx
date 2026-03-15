@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import AboutMe from "./pages/AboutMe.jsx";
+import About from "./pages/About.jsx";
 import Background from "./pages/Background.jsx";
 import Projects from "./pages/Projects.jsx";
 import Skills from "./pages/Skills.jsx";
@@ -22,7 +22,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/weather" element={<Weather />} />
-              <Route path="/about" element={<AboutMe />} />
+              <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/background" element={<Background />} />
               <Route path="/skills" element={<Skills />} />

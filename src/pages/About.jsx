@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import SylviaImage from "../Images/Sylvia.jpeg";
+import SylviaImage from "../Images/Branding/Sylvia.jpeg";
 import "../Styles/About.css";
 
-const AboutMe = () => {
+const About = () => {
   return (
     <div className="about-section">
       <motion.div
@@ -56,4 +56,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default About;
