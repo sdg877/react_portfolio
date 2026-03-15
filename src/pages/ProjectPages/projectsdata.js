@@ -10,7 +10,7 @@ import SSSImg from "../../Images/SSS.png";
 const projects = [
   {
     id: "CarbonCalculator",
-    title: "Carbon Tracker & News Dashboard",
+    title: "Carbon Tracker",
     image: "",
     description: [
       "Developed over six months, this production-standard full-stack application calculates and visualises personal carbon footprints. It features a bespoke Python calculation engine that transforms raw user data into CO2e metrics, tracking environmental impact trends over time.",
@@ -37,10 +37,10 @@ const projects = [
   },
   {
     id: "HTJ",
-    title: "Heather Treharne Jones Project",
+    title: "Heather Treharne Jones Portfolio",
     image: HTreharneJonesImg,
     description: [
-      "My first freelance commission: a clean, professional portfolio site for an artist to showcase work, connect with customers, and manage commissions.",
+      "A bespoke freelance commission: a clean, professional portfolio site for an artist to showcase work, connect with customers, and manage commissions.",
       "The build includes an admin area, galleries, contact form, news section, and a commissions page. The client had a clear vision for the layout, colours, and banner image, and wanted to update content independently. I handled both design and development, ensuring responsive performance across devices.",
       "Key challenges included configuring the S3 bucket for uploads, handling mobile upload issues via nginx settings, and resolving character encoding errors with backend encryption and frontend decoding.",
       "This project sharpened my ability to explain technical concepts to non-technical clients and strengthened my project management skills. The site has no known bugs and gives the client full control over content updates.",
@@ -54,12 +54,12 @@ const projects = [
     title: "Workflow & Compliance Platform",
     image: ProjectOneImg,
     description: [
-      "Architected and delivered a production-ready MVP that served as the primary technical proof-of-concept for a successful £150k seed funding round. This mission-critical platform manages highly regulated, sensitive workflows for professional service providers.",
+      "A high-impact commercial project: I architected and delivered a production-ready MVP that served as the primary technical proof-of-concept for a successful £150k seed funding round. This mission-critical platform manages highly regulated, sensitive workflows for professional service providers.",
       "Engineered a sophisticated data architecture featuring 11 interconnected models. I designed complex relational logic to ensure seamless data integrity across automated scheduling, compliance monitoring, and audit trails.",
       "Developed a custom 'Traffic Light' prioritisation engine and a central calendar system. These features use dynamic date-trigger logic to automate task generation and visual urgency signalling, directly improving user adherence to strict regulatory deadlines.",
       "Key technical achievements included building a context-sensitive help system, an integrated email template engine with dynamic data-injection, and high-performance tables capable of aggregating data from multiple relational endpoints.",
     ],
-    siteUrl: "", // Project remains confidential
+    siteUrl: "", 
     githubFrontendUrl: "",
     githubBackendUrl: "",
   },
@@ -124,7 +124,7 @@ const projects = [
 
   {
     id: "Snake",
-    title: "Unit 1 Project - Snake",
+    title: "Snake",
     image: SnakeImg,
     description: [
       "This was my first coding project during General Assembly’s Software Engineering Bootcamp. I chose to build the classic Snake game using JavaScript, HTML, and CSS.",
