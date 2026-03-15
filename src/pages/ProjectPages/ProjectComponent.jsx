@@ -35,9 +35,9 @@ const ProjectComponent = () => {
       image={project.image}
       altText={project.title}
       descriptionParagraphs={project.description}
+      video={project.video}
       siteLink={project.siteUrl}
       githubLinks={githubLinks}
-      // Pass the next project details here
       nextProjectPath={`/projects/${nextProject.id}`}
       nextProjectLabel={nextProject.title}
     />

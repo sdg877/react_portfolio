@@ -1,8 +1,8 @@
-.home-container {
+.project-page-container {
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 20px;
 }
 
 .projects-wrapper {
@@ -12,7 +12,7 @@
 
 .projects-header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@
   text-transform: uppercase;
   letter-spacing: 5px;
   color: #1a1a1a;
-  margin: 0 0 15px 0;
+  margin: 0 0 10px 0;
 }
 
 .title-project::after {
@@ -33,7 +33,7 @@
   width: 80px;
   height: 5px;
   background: #d87093;
-  margin: 12px auto 0;
+  margin: 8px auto 0;
   border-radius: 2px;
 }
 
@@ -49,9 +49,9 @@
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
+  gap: 20px;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .grid-card-wrapper {
@@ -97,33 +97,128 @@
   color: #1a1a1a;
 }
 
-.info-card {
-  background-color: #90a6a6;
-  color: #e0e0e0;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-  margin-bottom: 30px;
+.info-card-project {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-body.dark .title-project {
+.info-card-project h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.project-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: #fffafb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.details {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+  margin: 0 auto 12px auto;
+  text-align: justify;
+  width: 100%;
+  max-width: 650px;
+}
+
+.video-section {
+  width: 100%;
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-heading {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.project-video {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  background: #000;
+}
+
+.links-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.custom-link {
+  color: #d87093;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 1.05rem;
+}
+
+.custom-link:hover {
+  text-decoration: underline;
+}
+
+.custom-link-bottom {
+  margin-top: 15px;
+  font-weight: 800;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-size: 1.05rem;
+}
+
+body.dark .title-project,
+body.dark .info-card-project h3,
+body.dark .custom-link-bottom,
+body.dark .grid-card-label,
+body.dark .video-heading {
   color: #ffffff !important;
 }
-body.dark .project-description {
+
+body.dark .project-description,
+body.dark .details {
   color: #ffffff;
 }
+
+body.dark .info-card-project {
+  background: rgba(26, 26, 26, 0.8);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
 body.dark .project-overlay {
   background: rgba(0, 0, 0, 0.7);
 }
-body.dark .grid-card-label {
-  color: white;
-}
-body.dark .info-card {
-  background-color: #003333;
-}
+
 body.dark .custom-link {
   color: #ffb6c1;
 }
+
 body.dark .title-project::after {
   background: #ffb6c1;
 }
@@ -131,14 +226,32 @@ body.dark .title-project::after {
 @media (max-width: 768px) {
   .title-project {
     font-size: 2.2rem;
+    letter-spacing: 2px;
   }
   .bento-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .info-card-project {
+    padding: 20px 15px;
+    width: 95%;
+  }
+  .project-video,
+  .project-image {
+    max-width: 100%;
+  }
+  .details {
+    text-align: left;
+  }
 }
 
 @media (max-width: 480px) {
+  .title-project {
+    font-size: 1.8rem;
+  }
   .bento-grid {
     grid-template-columns: 1fr;
+  }
+  .info-card-project {
+    border-radius: 12px;
   }
 }

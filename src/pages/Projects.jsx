@@ -29,7 +29,7 @@ const Projects = () => {
   }, [controls]);
 
   return (
-    <div className="home-container">
+    <div className="project-page-container">
       <motion.div
         className="projects-wrapper"
         variants={containerVariants}
