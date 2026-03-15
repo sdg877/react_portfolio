@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import SylviaImage from "../Images/Branding/Sylvia.jpeg";
+import SylviaImage from "../Assets/Images/Branding/Sylvia.jpeg";
 import "../Styles/About.css";
 
 const About = () => {
