@@ -1,43 +1,45 @@
 .footer {
-  flex-shrink: 0; 
+  flex-shrink: 0;
   margin-top: auto;
   position: relative;
-  padding: 0; 
-  background-color: #f5f5f5;
+  padding: 0;
+  background-color: rgba(255, 250, 250, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   text-align: center;
-  font-size: 14px; 
   width: 100%;
-  color: #778899;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  height: 68px; 
+  height: 68px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 14.5px;
 }
 
 .custom-link-footer {
   text-decoration: none;
   font-weight: 400;
   font-size: 14px;
-  display: inline-block; 
+  display: inline-block;
   margin-top: 8px;
   color: #778899;
-  transition: color 0.3s ease, transform 0.2s ease; 
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease;
 }
 
 /* Light Mode Hover */
 .custom-link-footer:hover {
-  color: #d87093  !important; 
+  color: #d87093 !important;
   text-decoration: none !important;
   transform: scale(1.05);
 }
 
 /* Dark Mode Footer Container */
 body.dark .footer {
-  background-color: #2d2d2d;
-  color: #aaaaaa;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(45, 45, 45, 0.98);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Dark Mode Link - Normal */
@@ -48,7 +50,7 @@ body.dark .custom-link-footer {
 
 /* Dark Mode Link - Hover */
 body.dark .custom-link-footer:hover {
-  color: #FFB6C1 !important; 
+  color: #ffb6c1 !important;
   text-decoration: none !important; /* Underline removed */
   transform: scale(1.05);
 }
