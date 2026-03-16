@@ -17,12 +17,12 @@ const NavBar = ({
 
   const links = [
     { path: "/", label: "Home" },
-    { path: "/about", label: "About Me" },
+    { path: "/about", label: "About" },
     { path: "/background", label: "Background" },
-    { path: "/projects", label: "Projects" },
-    { path: "/skills", label: "Skills" },
-    { path: "/services", label: "Services" },
     { path: "/contact", label: "Contact" },
+    { path: "/projects", label: "Projects" },
+    { path: "/services", label: "Services" },
+    { path: "/skills", label: "Skills" },
   ];
 
   return (
