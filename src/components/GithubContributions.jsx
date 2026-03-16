@@ -8,6 +8,7 @@ const query = gql`
     viewer {
       contributionsCollection {
         contributionCalendar {
+          totalContributions
           weeks {
             contributionDays {
               date
@@ -23,6 +24,7 @@ const query = gql`
 const GithubContributions = () => {
   const [weeks, setWeeks] = useState([]);
   const [monthlyTotals, setMonthlyTotals] = useState([]);
+  const [totalYearly, setTotalYearly] = useState(0);
   const [hoveredDay, setHoveredDay] = useState(null);
   const scrollRef = useRef(null);
 
@@ -36,10 +38,10 @@ const GithubContributions = () => {
           {},
           headers,
         );
-        const fetchedWeeks =
-          data.viewer.contributionsCollection.contributionCalendar.weeks;
-        setWeeks(fetchedWeeks);
-        processMonthlyData(fetchedWeeks);
+        const cal = data.viewer.contributionsCollection.contributionCalendar;
+        setWeeks(cal.weeks);
+        setTotalYearly(cal.totalContributions);
+        processMonthlyData(cal.weeks);
       } catch (error) {
         console.error("Error fetching GitHub data:", error);
       }
@@ -68,36 +70,32 @@ const GithubContributions = () => {
     weeksData.forEach((week) => {
       week.contributionDays.forEach((day) => {
         const date = new Date(day.date);
-        const mName = monthNames[date.getMonth()];
-        countsMap[mName] += day.contributionCount;
+        countsMap[monthNames[date.getMonth()]] += day.contributionCount;
       });
     });
 
     const totalCommits = Object.values(countsMap).reduce((a, b) => a + b, 0);
-    let currentStart = 0;
-
     const stats = monthNames
-      .map((name) => {
-        const count = countsMap[name];
-        const percent = totalCommits > 0 ? (count / totalCommits) * 100 : 0;
-        const start = currentStart;
-        currentStart += percent;
-        return { name, count, start, end: currentStart };
-      })
-      .filter((m) => m.count > 0);
+      .map((name) => ({ name, count: countsMap[name] }))
+      .filter((m) => m.count > 0)
+      .sort((a, b) => b.count - a.count);
 
-    setMonthlyTotals(stats);
+    let currentStart = 0;
+    const finalStats = stats.map((m) => {
+      const percent = totalCommits > 0 ? (m.count / totalCommits) * 100 : 0;
+      const start = currentStart;
+      currentStart += percent;
+      return { ...m, start, end: currentStart };
+    });
+    setMonthlyTotals(finalStats);
   };
 
   const getLevel = (count) => {
     if (count === 0) return "level-0";
     if (count < 3) return "level-1";
-    if (count < 5) return "level-2";
-    if (count < 7) return "level-3";
-    if (count < 9) return "level-4";
-    if (count < 11) return "level-5";
-    if (count < 15) return "level-6";
-    return "level-7";
+    if (count < 6) return "level-2";
+    if (count < 10) return "level-3";
+    return "level-4";
   };
 
   const getMonthLabel = (week, index, allWeeks) => {
@@ -110,113 +108,108 @@ const GithubContributions = () => {
     return null;
   };
 
-  const reversedWeeks = [...weeks].reverse();
-
   const pieGradient =
     monthlyTotals.length > 0
       ? monthlyTotals
-          .map((m, i) => {
-            const color = `rgba(216, 112, 147, ${1 - i * 0.08})`;
-            return `${color} ${m.start}% ${m.end}%`;
+          .map((m) => {
+            const opacity = Math.max(0.2, m.count / monthlyTotals[0].count);
+            return `rgba(216, 112, 147, ${opacity}) ${m.start}% ${m.end}%`;
           })
           .join(", ")
       : "#333 0% 100%";
 
   return (
-    <div className="contributions-section-wrapper">
-      <div className="edu-exp-container github-card-styled">
-        <h3 className="edu-exp-title">My Contributions</h3>
+    <div className="edu-exp-container">
+      <h3 className="edu-exp-title">My Contributions</h3>
 
-        <div className="github-stats-layout">
-          <div className="pie-chart-container">
-            <div
-              className="pie-chart"
-              style={{ background: `conic-gradient(${pieGradient})` }}
-            >
-              <div className="pie-inner">
-                <span className="total-label">
-                  Monthly
-                  <br />
-                  Split
+      <div className="github-stats-layout">
+        <div className="pie-chart-container">
+          <div
+            className="pie-chart"
+            style={{ background: `conic-gradient(${pieGradient})` }}
+          >
+            <div className="pie-inner">
+              <span className="total-label">
+                {totalYearly}
+                <br />
+                Total
+              </span>
+            </div>
+          </div>
+          <div className="pie-legend">
+            {monthlyTotals.slice(0, 4).map((m, i) => (
+              <div key={i} className="legend-item">
+                <span
+                  className="dot"
+                  style={{
+                    backgroundColor: `rgba(216, 112, 147, ${Math.max(0.2, m.count / monthlyTotals[0].count)})`,
+                  }}
+                ></span>
+                <span className="legend-text">
+                  {m.name}: {m.count}
                 </span>
               </div>
-            </div>
-            <div className="pie-legend">
-              {monthlyTotals.slice(-4).map((m, i) => (
-                <div key={i} className="legend-item">
-                  <span
-                    className="dot"
-                    style={{
-                      backgroundColor: `rgba(216, 112, 147, ${1 - i * 0.2})`,
-                    }}
-                  ></span>
-                  {m.name}: {m.count}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="github-info-side">
-            <p className="github-desc">
-              I’ve made 1000+ GitHub contributions over the past year,
-              demonstrating consistent engagement with code and project work.
-            </p>
-            <a
-              href="https://github.com/sdg877"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="custom-link-grow"
-            >
-              My GitHub Profile
-            </a>
+            ))}
           </div>
         </div>
 
-        <div className="heatmap-scroll-area" ref={scrollRef}>
-          <div className="contribution-calendar">
-            {reversedWeeks.map((week, i) => {
-              const label = getMonthLabel(week, i, reversedWeeks);
-              return (
-                <div key={i} className="week-column">
-                  <span className="month-label-scroll">{label}</span>
-                  {week.contributionDays.map((day, j) => (
-                    <div
-                      key={j}
-                      className={`contribution-day ${getLevel(day.contributionCount)}`}
-                      onMouseEnter={(e) => {
-                        const rect = e.currentTarget.getBoundingClientRect();
-                        const cRect = scrollRef.current.getBoundingClientRect();
-                        setHoveredDay({
-                          date: day.date,
-                          commits: day.contributionCount,
-                          x: rect.left - cRect.left,
-                          y: rect.top - cRect.top,
-                        });
-                      }}
-                      onMouseLeave={() => setHoveredDay(null)}
-                    />
-                  ))}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {hoveredDay && (
-          <div
-            className="tooltip-github"
-            style={{
-              left: `${hoveredDay.x + 20}px`,
-              top: `${hoveredDay.y - 40}px`,
-            }}
+        <div className="github-info-side">
+          <p className="github-desc">
+            I’ve made {totalYearly}+ GitHub contributions over the past year,
+            reflecting consistent engagement.
+          </p>
+          <a
+            href="https://github.com/sdg877"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="global-link"
           >
-            <strong>
-              {new Date(hoveredDay.date).toLocaleDateString("en-GB")}
-            </strong>
-            <div>{hoveredDay.commits} commits</div>
-          </div>
-        )}
+            My GitHub Profile →
+          </a>
+        </div>
       </div>
+
+      <div className="heatmap-scroll-area" ref={scrollRef}>
+        <div className="contribution-calendar">
+          {[...weeks].reverse().map((week, i, allWeeks) => {
+            const label = getMonthLabel(week, i, allWeeks);
+            return (
+              <div key={i} className="week-column">
+                <span className="month-label-scroll">{label}</span>
+                {week.contributionDays.map((day, j) => (
+                  <div
+                    key={j}
+                    className={`contribution-day ${getLevel(day.contributionCount)}`}
+                    onMouseEnter={(e) => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      const cRect = scrollRef.current.getBoundingClientRect();
+                      setHoveredDay({
+                        date: day.date,
+                        commits: day.contributionCount,
+                        x: rect.left - cRect.left,
+                        y: rect.top - cRect.top,
+                      });
+                    }}
+                    onMouseLeave={() => setHoveredDay(null)}
+                  />
+                ))}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {hoveredDay && (
+        <div
+          className="tooltip-github"
+          style={{ left: `${hoveredDay.x}px`, top: `${hoveredDay.y - 35}px` }}
+        >
+          <strong>
+            {new Date(hoveredDay.date).toLocaleDateString("en-GB")}
+          </strong>
+          : {hoveredDay.commits} commits
+        </div>
+      )}
     </div>
   );
 };
