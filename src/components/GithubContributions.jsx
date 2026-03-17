@@ -24,7 +24,6 @@ const query = gql`
 const GithubContributions = () => {
   const [weeks, setWeeks] = useState([]);
   const [monthlyTotals, setMonthlyTotals] = useState([]);
-  const [totalYearly, setTotalYearly] = useState(0);
   const [hoveredDay, setHoveredDay] = useState(null);
   const scrollRef = useRef(null);
 
@@ -40,7 +39,6 @@ const GithubContributions = () => {
         );
         const cal = data.viewer.contributionsCollection.contributionCalendar;
         setWeeks(cal.weeks);
-        setTotalYearly(cal.totalContributions);
         processMonthlyData(cal.weeks);
       } catch (error) {
         console.error("Error fetching GitHub data:", error);
@@ -130,9 +128,9 @@ const GithubContributions = () => {
           >
             <div className="pie-inner">
               <span className="total-label">
-                {totalYearly}
+                GitHub
                 <br />
-                Total
+                Activity
               </span>
             </div>
           </div>
@@ -155,8 +153,9 @@ const GithubContributions = () => {
 
         <div className="github-info-side">
           <p className="github-desc">
-            I’ve made {totalYearly}+ GitHub contributions over the past year,
-            reflecting consistent engagement.
+            Since August 2024, I have maintained a near-daily coding presence on
+            GitHub, reflecting my commitment to consistent technical growth and
+            active project development.
           </p>
           <a
             href="https://github.com/sdg877"
