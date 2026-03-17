@@ -1,87 +1,118 @@
-.contact-unique-main {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 60px 20px;
-}
+/* --- DEFAULT (LARGE SCREENS) --- */
+/* This is exactly the code you provided for your ideal layout */
 
-.contact-unique-wrapper {
+.contact-unique-main {
+  min-height: calc(100vh - 150px);
   width: 100%;
-  max-width: 850px;
+  overflow: hidden !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 10px 20px;
 }
 
 .contact-unique-card {
-  background: rgba(30, 30, 30, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 16px;
-  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 900px;
+  padding: 30px 40px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+body.dark .contact-unique-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-unique-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .contact-unique-title {
-  font-size: 2rem;
-  color: #fff;
-  font-weight: 700;
+  font-size: 1.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #1a1a1a;
   display: inline-block;
+}
+
+body.dark .contact-unique-title {
+  color: #fff;
 }
 
 .contact-unique-title::after {
   content: "";
   display: block;
-  width: 55px;
+  width: 45px;
   height: 4px;
   background: #d87093;
-  margin: 8px auto 0;
+  margin: 6px auto 0;
   border-radius: 2px;
 }
 
-.contact-unique-desc {
-  color: #cccccc;
-  line-height: 1.6;
-  margin-top: 20px;
+body.dark .contact-unique-title::after {
+  background: #ffc0cb;
+}
+
+.contact-unique-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .contact-unique-row {
   display: flex;
-  gap: 30px;
-  margin-bottom: 10px;
+  gap: 20px;
 }
 
 .contact-unique-field {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  margin-bottom: 20px;
 }
 
 .contact-unique-label {
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.75rem;
+  font-weight: 800;
   text-transform: uppercase;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+}
+
+body.dark .contact-unique-label {
   color: #fff;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
 }
 
 .contact-unique-input,
 .contact-unique-textarea {
-  background: rgba(45, 45, 45, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100% !important;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
   border-radius: 8px;
-  padding: 15px;
-  color: #fff;
+  padding: 12px;
   font-size: 1rem;
+  color: #1a1a1a;
 }
 
-.contact-unique-input:focus,
-.contact-unique-textarea:focus {
-  outline: none;
-  border-color: #d87093;
+body.dark .contact-unique-input,
+body.dark .contact-unique-textarea {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff;
+}
+
+.contact-unique-textarea {
+  height: 110px;
+  resize: none;
 }
 
 .contact-unique-btn-wrap {
@@ -91,26 +122,59 @@
 }
 
 .contact-unique-button {
-  background-color: #d87093;
-  color: #fff;
-  padding: 15px 50px;
-  border: none;
+  background-color: #d87093 !important;
+  color: #fff !important;
+  padding: 12px 60px;
   border-radius: 8px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
+  border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
-.contact-unique-button:hover {
-  transform: translateY(-3px);
-  background-color: #c25e81;
-  box-shadow: 0 5px 15px rgba(216, 112, 147, 0.3);
+body.dark .contact-unique-button {
+  background-color: #ffc0cb !important;
+  color: #1a1a1a !important;
 }
 
-@media (max-width: 700px) {
-  .contact-unique-row {
-    flex-direction: column;
-    gap: 0;
+@media screen and (max-height: 900px) {
+  .contact-unique-main {
+    height: calc(100vh - 190px);
+    min-height: auto;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 25px;
+    overflow: hidden !important;
+  }
+
+  .contact-unique-card {
+    padding: 15px 35px;
+    max-height: 100%;
+    height: 550px;
+  }
+
+  .contact-unique-header {
+    margin-bottom: 0px;
+  }
+
+  .contact-unique-desc {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-unique-form {
+    gap: 4px;
+  }
+
+  .contact-unique-textarea {
+    height: 70px;
+  }
+
+  .contact-unique-btn-wrap {
+    margin-top: 20px;
   }
 }
