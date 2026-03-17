@@ -1,37 +1,35 @@
-
 .background-page-wrapper {
   width: 100%;
-  padding: 10px 0; 
+  padding: 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .edu-exp-container {
-  background: rgba(255, 255, 255, 0.1) !important; 
+  background: rgba(255, 255, 255, 0.1) !important;
   backdrop-filter: blur(10px) !important;
   -webkit-backdrop-filter: blur(10px) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: 12px !important;
-  padding: 30px !important; 
+  padding: 30px !important;
   width: 950px !important;
   max-width: 1200px !important;
-  margin: 15px auto !important; 
+  margin: 15px auto !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
   box-sizing: border-box;
-  text-align: left !important; 
+  text-align: left !important;
 }
-
 
 .edu-exp-title {
   font-size: 1.8rem !important;
-  margin-top: 0 !important; 
-  padding-top: 20px !important; 
+  margin-top: 0 !important;
+  padding-top: 20px !important;
   margin-bottom: 25px !important;
   color: #000000 !important;
   font-weight: 700 !important;
-  display: block !important; 
-  text-align: center !important; 
+  display: block !important;
+  text-align: center !important;
   width: 100%;
 }
 
@@ -41,7 +39,7 @@
   width: 50px;
   height: 4px;
   background: #d87093;
-  margin: 8px auto 0 auto !important; 
+  margin: 8px auto 0 auto !important;
   border-radius: 2px;
 }
 
@@ -49,7 +47,6 @@
   color: #000000;
   line-height: 1.6;
 }
-
 
 .global-link {
   color: #d87093 !important;
@@ -65,7 +62,6 @@
   text-decoration: underline !important;
   opacity: 0.8;
 }
-
 
 .github-stats-layout {
   display: flex;
@@ -93,18 +89,19 @@
 .pie-inner {
   width: 70px;
   height: 70px;
-  background: rgba(255, 255, 255, 0.9);
+  background: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .total-label {
   font-size: 0.7rem;
   text-align: center;
   font-weight: 700;
-  color: #d87093;
+  color: #880e4f;
   line-height: 1.1;
 }
 
@@ -133,7 +130,7 @@
   padding: 5px 10px;
   border-radius: 4px;
   font-size: 0.8rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 10;
   pointer-events: none;
   color: #000;
@@ -149,11 +146,26 @@
   scrollbar-color: #d87093 transparent;
 }
 
-.heatmap-scroll-area::-webkit-scrollbar { height: 6px; }
-.heatmap-scroll-area::-webkit-scrollbar-thumb { background: #d87093; border-radius: 10px; }
+.heatmap-scroll-area::-webkit-scrollbar {
+  height: 6px;
+}
+.heatmap-scroll-area::-webkit-scrollbar-thumb {
+  background: #d87093;
+  border-radius: 10px;
+}
 
-.contribution-calendar { display: flex; gap: 4px; min-width: max-content; }
-.week-column { display: flex; flex-direction: column; position: relative; flex-shrink: 0; gap: 4px; }
+.contribution-calendar {
+  display: flex;
+  gap: 4px;
+  min-width: max-content;
+}
+.week-column {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-shrink: 0;
+  gap: 4px;
+}
 
 .month-label-scroll {
   position: absolute;
@@ -165,50 +177,100 @@
   text-transform: uppercase;
 }
 
-.contribution-day { 
-  width: 18px !important; 
-  height: 18px !important; 
-  border-radius: 3px; 
+.contribution-day {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 3px;
 }
 
-.contribution-day.level-0 { background-color: #f3e5f5; } /* Very light purple */
-.contribution-day.level-1 { background-color: #e1bee7; } /* Light purple */
-.contribution-day.level-2 { background-color: #ce93d8; } /* Medium-light purple */
-.contribution-day.level-3 { background-color: #ba68c8; } /* Medium purple */
-.contribution-day.level-4 { background-color: #ab47bc; } /* Medium-dark purple */
-.contribution-day.level-5 { background-color: #9c27b0; } /* Dark purple */
-.contribution-day.level-6 { background-color: #8e24aa; } /* Very dark purple */
-.contribution-day.level-7 { background-color: #7b1fa2; } /* Darkest purple */
-
-
-body.dark .edu-exp-container { 
-  background: rgba(255, 255, 255, 0.05) !important; 
+.contribution-day.level-0 {
+  background-color: white;
+} /* Very light shell pink */
+.contribution-day.level-1 {
+  background-color: #f8bbd0;
+}
+.contribution-day.level-2 {
+  background-color: #f48fb1;
+}
+.contribution-day.level-3 {
+  background-color: #f06292;
+}
+.contribution-day.level-4 {
+  background-color: #ec407a;
+} /* Dark Pink */
+.contribution-day.level-5 {
+  background-color: #e91e63;
+}
+.contribution-day.level-6 {
+  background-color: #d81b60;
+}
+.contribution-day.level-7 {
+  background-color: #880e4f;
 }
 
-body.dark .edu-exp-title, 
-body.dark .github-desc, 
-body.dark .pie-legend, 
+body.dark .edu-exp-container {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark .edu-exp-title,
+body.dark .github-desc,
+body.dark .pie-legend,
 body.dark .legend-text,
-body.dark .edu-exp-content { 
-  color: #ffffff !important; 
+body.dark .edu-exp-content {
+  color: #ffffff !important;
 }
 
-body.dark .pie-inner { background: rgba(0, 0, 0, 0.6); }
-body.dark .global-link { color: #ffb6c1 !important; }
-body.dark .tooltip-github { background: #333; color: #fff; }
+body.dark .pie-inner {
+  background: rgba(0, 0, 0, 0.6);
+}
+body.dark .global-link {
+  color: #ffb6c1 !important;
+}
+body.dark .tooltip-github {
+  background: #333;
+  color: #fff;
+}
 
-/* DARK MODE HEATMAP COLOURS (PURPLE/PINK) */
-body.dark .contribution-day.level-0 { background-color: #222222; }
-body.dark .contribution-day.level-1 { background-color: #6a3258; }
-body.dark .contribution-day.level-2 { background-color: #9b497d; }
-body.dark .contribution-day.level-3 { background-color: #c0619c; }
-body.dark .contribution-day.level-4 { background-color: #e77abf; }
-body.dark .contribution-day.level-5 { background-color: #ffb6c1; }
-body.dark .contribution-day.level-6 { background-color: #ffd2dd; }
-body.dark .contribution-day.level-7 { background-color: #ffffff; }
+body.dark .contribution-day.level-0 {
+  background-color: #222222;
+}
+body.dark .contribution-day.level-1 {
+  background-color: #6a3258;
+}
+body.dark .contribution-day.level-2 {
+  background-color: #9b497d;
+}
+body.dark .contribution-day.level-3 {
+  background-color: #c0619c;
+}
+body.dark .contribution-day.level-4 {
+  background-color: #e77abf;
+}
+body.dark .contribution-day.level-5 {
+  background-color: #ffb6c1;
+}
+body.dark .contribution-day.level-6 {
+  background-color: #ffd2dd;
+}
+body.dark .contribution-day.level-7 {
+  background-color: #ffffff;
+}
 
+body.dark .pie-inner {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+body.dark .total-label {
+  color: #ffb6c1; /* Lighter pink for dark mode contrast */
+}
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  .edu-exp-container { width: 95% !important; padding: 0 20px 20px 20px !important; }
-  .github-stats-layout { flex-direction: column; gap: 20px; }
+  .edu-exp-container {
+    width: 95% !important;
+    padding: 0 20px 20px 20px !important;
+  }
+  .github-stats-layout {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
