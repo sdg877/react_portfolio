@@ -1,4 +1,3 @@
-
 .contact-unique-main {
   min-height: calc(100vh - 190px);
   width: 100%;
@@ -174,5 +173,37 @@ body.dark .contact-unique-button {
 
   .contact-unique-btn-wrap {
     margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contact-unique-main {
+    min-height: calc(100vh - 80px);
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 40px 10px !important;
+    overflow-y: visible !important;
+  }
+
+  .contact-unique-card {
+    width: 92% !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 0 auto !important;
+    padding: 30px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-unique-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-unique-button {
+    width: 100%;
+    padding: 12px 20px;
   }
 }

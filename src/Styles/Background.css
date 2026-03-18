@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .edu-exp-container {
@@ -185,7 +186,7 @@
 
 .contribution-day.level-0 {
   background-color: white;
-} /* Very light shell pink */
+}
 .contribution-day.level-1 {
   background-color: #f8bbd0;
 }
@@ -197,7 +198,7 @@
 }
 .contribution-day.level-4 {
   background-color: #ec407a;
-} /* Dark Pink */
+}
 .contribution-day.level-5 {
   background-color: #e91e63;
 }
@@ -208,10 +209,10 @@
   background-color: #880e4f;
 }
 
+/* --- DARK MODE --- */
 body.dark .edu-exp-container {
   background: rgba(255, 255, 255, 0.05) !important;
 }
-
 body.dark .edu-exp-title,
 body.dark .github-desc,
 body.dark .pie-legend,
@@ -219,7 +220,6 @@ body.dark .legend-text,
 body.dark .edu-exp-content {
   color: #ffffff !important;
 }
-
 body.dark .pie-inner {
   background: rgba(0, 0, 0, 0.6);
 }
@@ -229,6 +229,9 @@ body.dark .global-link {
 body.dark .tooltip-github {
   background: #333;
   color: #fff;
+}
+body.dark .total-label {
+  color: #ffb6c1;
 }
 
 body.dark .contribution-day.level-0 {
@@ -255,22 +258,65 @@ body.dark .contribution-day.level-6 {
 body.dark .contribution-day.level-7 {
   background-color: #ffffff;
 }
-
-body.dark .pie-inner {
-  background: rgba(0, 0, 0, 0.6);
-}
-
-body.dark .total-label {
-  color: #ffb6c1; /* Lighter pink for dark mode contrast */
-}
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-  .edu-exp-container {
-    width: 95% !important;
-    padding: 0 20px 20px 20px !important;
+@media (max-width: 950px) {
+  .background-page-wrapper {
+    padding: 10px 5px !important;
+    display: block !important;
   }
+
+  .edu-exp-container {
+    width: 94% !important;
+    max-width: 94% !important;
+    min-width: 0 !important;
+    padding: 25px 15px !important;
+    margin: 15px auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    overflow: visible !important;
+  }
+
   .github-stats-layout {
-    flex-direction: column;
-    gap: 20px;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 25px !important;
+    margin-bottom: 20px !important;
+    position: relative !important;
+  }
+
+  .edu-exp-content {
+    display: block !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+    position: relative !important;
+  }
+
+  .heatmap-scroll-area {
+    width: 100% !important;
+    display: block !important;
+    overflow-x: auto !important;
+    padding-top: 45px !important;
+    margin-top: 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .contribution-calendar {
+    display: flex !important;
+    width: max-content !important;
+    padding-bottom: 15px !important;
+  }
+
+  .contribution-day {
+    width: 14px !important;
+    height: 14px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .edu-exp-title {
+    font-size: 1.5rem !important;
+    text-align: center !important;
   }
 }
