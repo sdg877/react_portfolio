@@ -43,7 +43,11 @@ const NavBar = ({
 
   return (
     <nav className="navbar" ref={menuRef}>
-      <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <div
+        className="hamburger"
+        style={{ visibility: currentPath === "/" ? "hidden" : "visible" }}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
         <div className="line"></div>
         <div className="line"></div>
         <div className="line"></div>
@@ -83,7 +87,6 @@ const NavBar = ({
         </button>
       </div>
 
-      {/* Dropdown Menu */}
       <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
         {links.map(
           (link) =>
