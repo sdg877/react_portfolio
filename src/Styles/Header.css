@@ -176,6 +176,46 @@ body.dark .nav-links {
   padding: 14px 24px;
 }
 
+@media screen and (min-width: 851px) and (max-width: 1024px) {
+  .right-controls {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 8px !important;
+    justify-content: center !important;
+  }
+
+  .weather-info {
+    order: 1 !important;
+  }
+
+  .theme-switch {
+    order: 2 !important;
+  }
+
+  .weather-info,
+  .theme-switch {
+    padding: 5px 12px !important;
+    font-size: 0.8rem !important;
+    margin: 0 !important;
+    width: fit-content !important;
+  }
+
+  .header-branding-navbar {
+    transform: translateX(-50%) scale(0.85) !important;
+  }
+
+  .header-name {
+    font-size: 2rem !important;
+    white-space: nowrap !important;
+  }
+
+  .navbar {
+    height: 115px !important;
+    padding: 0 20px !important;
+  }
+}
+
 @media (max-width: 850px) {
   .navbar {
     height: 80px;
