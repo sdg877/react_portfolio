@@ -96,14 +96,34 @@ body.dark .hp-card-wrapper:hover .hp-card-label {
 @media (max-width: 900px) {
   .hp-bento-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
-  @media (max-width: 600px) {
-    .hp-bento-grid {
-      grid-template-columns: 1fr;
-    }
-    .hp-card-label {
-      font-size: 1.4rem;
-    }
+  .hp-card-link {
+    height: 150px;
+  }
+
+  .hp-card-label {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .hp-container {
+    padding: 15px;
+    margin-top: 5vh;
+  }
+
+  .hp-bento-grid {
+    gap: 10px;
+  }
+
+  .hp-card-link {
+    height: 130px;
+  }
+
+  .hp-card-label {
+    font-size: 1rem;
+    letter-spacing: 1px;
   }
 }
