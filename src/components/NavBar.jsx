@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../Styles/Header.css";
 
@@ -15,8 +15,24 @@ const NavBar = ({
   const currentPath = routerLocation.pathname;
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isMenuOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isMenuOpen]);
+
   const links = [
-    { path: "/", label: "Home" },
     { path: "/about", label: "About" },
     { path: "/background", label: "Background" },
     { path: "/contact", label: "Contact" },
@@ -26,7 +42,7 @@ const NavBar = ({
   ];
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" ref={menuRef}>
       <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <div className="line"></div>
         <div className="line"></div>
@@ -34,11 +50,16 @@ const NavBar = ({
       </div>
 
       <div className="header-branding-navbar">
-        <div className="name-title-row">
+        <Link
+          to="/"
+          className="name-title-row"
+          style={{ textDecoration: "none" }}
+          onClick={() => setIsMenuOpen(false)}
+        >
           <h1 className="header-name">Sylvia Drake-Gill</h1>
           <span className="header-divider">|</span>
           <span className="header-slug">Software Engineer</span>
-        </div>
+        </Link>
       </div>
 
       <div className="right-controls">
@@ -62,6 +83,7 @@ const NavBar = ({
         </button>
       </div>
 
+      {/* Dropdown Menu */}
       <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
         {links.map(
           (link) =>
