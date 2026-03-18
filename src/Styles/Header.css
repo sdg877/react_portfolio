@@ -148,12 +148,20 @@ body.dark .hamburger .line {
   position: absolute;
   top: 100px;
   left: 30px;
-  background-color: #ffffff;
+  background: rgba(255, 250, 250, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   padding: 8px 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   min-width: 200px;
   z-index: 2000;
+}
+
+body.dark .nav-links {
+  background: rgba(45, 45, 45, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-links.active {
@@ -192,11 +200,6 @@ body.dark .hamburger .line {
 .nav-link:hover {
   background-color: rgba(0, 0, 0, 0.03);
   color: #db7093;
-}
-
-body.dark .nav-links {
-  background-color: #2d2d2d;
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 body.dark .nav-link {
