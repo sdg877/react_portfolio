@@ -1,8 +1,6 @@
-/* --- DEFAULT (LARGE SCREENS) --- */
-/* This is exactly the code you provided for your ideal layout */
 
 .contact-unique-main {
-  min-height: calc(100vh - 150px);
+  min-height: calc(100vh - 190px);
   width: 100%;
   overflow: hidden !important;
   display: flex;
