@@ -1,10 +1,15 @@
 .services-page {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 80px 20px;
-  min-height: 100vh;
+  padding: 40px 20px;
+  height: calc(100vh - 190px);
+  max-height: 100vh !important;
+  overflow: hidden !important;
   box-sizing: border-box;
+  margin: 0;
 }
 
 .services-wrapper {
@@ -24,16 +29,21 @@
   letter-spacing: 1px;
   margin-bottom: 15px;
   display: inline-block;
+  position: relative;
 }
 
-.services-header::after {
+.services-title::after {
   content: "";
   display: block;
   width: 60px;
   height: 5px;
   background: #d87093;
-  margin: 0 auto;
+  margin: 10px auto 0;
   border-radius: 2px;
+}
+
+.services-header::after {
+  display: none !important;
 }
 
 .services-intro {
@@ -43,7 +53,6 @@
   opacity: 0.8;
 }
 
-/* --- GRID & CARDS --- */
 .services-bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -101,7 +110,6 @@ body.dark .service-card {
   border-radius: 12px;
   display: inline-block;
   margin: 0 auto 20px;
-  width: fit-content;
 }
 
 .badge-text {
@@ -138,17 +146,66 @@ body.dark .service-card {
   text-decoration: underline;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-height: 900px) {
+  .services-page {
+    height: calc(100vh - 180px) !important;
+    padding: 10px 20px !important;
+    min-height: auto !important;
+    overflow: hidden !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .services-header {
+    margin-bottom: 20px;
+  }
+  .services-title {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+  }
+  .services-title::after {
+    width: 45px;
+    height: 4px;
+    margin-top: 6px;
+  }
+  .services-intro {
+    font-size: 0.85rem;
+    margin-top: 10px;
+    line-height: 1.3;
+  }
   .services-bento-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .service-card {
+    height: 230px !important;
+    padding: 20px;
+    min-height: auto !important;
+  }
+
+  .service-content h3 {
+    font-size: 1.2rem;
+  }
+  .service-content p {
+    font-size: 0.8rem;
+  }
+  .services-footer {
+    margin-top: 15px;
   }
 }
 
 @media (max-width: 600px) {
+  .services-page {
+    height: auto !important;
+    overflow: visible !important;
+    padding: 40px 20px !important;
+  }
   .services-bento-grid {
     grid-template-columns: 1fr;
   }
   .service-card {
     min-height: 200px;
+    height: auto !important;
   }
 }
