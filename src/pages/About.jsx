@@ -24,29 +24,27 @@ const About = () => {
 
             <article className="about-text-area">
               <p>
-                I am a Software Engineer with a 15-year career in TV,
-                advertising, and publishing operations. This gives me a distinct
-                edge; I balance technical detail with the clear communication
-                needed to keep complex projects on track.
+                I’m a Software Engineer with 15 years of experience in TV, 
+                advertising, and publishing operations. That background matters because 
+                it taught me how to handle the pressure of complex projects and why 
+                clear communication is just as important as the code itself.
               </p>
               <p>
-                I build fast, data-driven apps using Python and the MERN stack.
-                I’m at my best when writing clean, efficient code that makes
-                life easier for the end user.
+                I build fast, data-driven apps using Python and the MERN stack. 
+                I’m at my best when I’m writing clean, efficient code that genuinely 
+                makes life easier for the end user.
               </p>
               <p>
-                Based in London, I’ve lived in Germany and Australia and visited
-                30 countries. When I’m not coding, I’m usually hiking,
-                experimenting with new recipes, or diving into current affairs.
-                I also have a massive curiosity for the paranormal, I love a
-                good ghost story as much as a clean codebase.
+                I grew up in Ladbroke Grove, West London, listening to Garage, RnB, 
+                and Reggae—and I’m still a huge music fan (Little Simz and Foals are usually 
+                on repeat lately). I’ve also lived in Germany and Australia and travelled 
+                to 30 countries, but these days I’m based in Merton with my boyfriend 
+                and our two cats, Kitty and Osborne.
               </p>
               <p>
-                I'm also a huge music fan with my taste spanning all genres, I
-                grew up in Ladbroke Grove, West london listening to Garage, RnB
-                and Reggae. My current favourite artists are Little Simz and
-                Foals. I now live in Merton, South London with my boyfriend and
-                two cats, Kitty & Osborne.
+                When I’m not coding, I’m usually hiking, trying out a new recipe, 
+                or looking into current affairs. I also have a massive curiosity for 
+                the paranormal; I love a good ghost story almost as much as a clean codebase.
               </p>
             </article>
           </div>
