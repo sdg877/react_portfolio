@@ -36,7 +36,7 @@ const ProjectComponent = () => {
       altText={project.title}
       descriptionParagraphs={project.description}
       video={project.video}
-      codeSnippets={project.codeSnippets} // This line is crucial
+      codeSnippets={project.codeSnippets}
       siteLink={project.siteUrl}
       githubLinks={githubLinks}
       nextProjectPath={`/projects/${nextProject.id}`}
