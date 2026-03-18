@@ -210,3 +210,7 @@ body.dark .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.05);
   color: #ffb6c1;
 }
+
+.hamburger.home-hide {
+  display: none !important;
+}
