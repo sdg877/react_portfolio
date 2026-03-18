@@ -184,11 +184,62 @@ body.dark .nav-links {
   .header-name {
     font-size: 1.4rem;
   }
-
   .weather-info {
-    display: flex;
     padding: 6px 14px;
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    height: 70px;
+    padding: 0 15px;
+    justify-content: space-between;
+  }
+
+  .header-branding-navbar {
+    position: static !important;
+    transform: none !important;
+    display: flex;
+    flex: 1;
+    pointer-events: auto;
+  }
+
+  .name-title-row {
+    align-items: flex-start;
+  }
+
+  .header-name {
+    font-size: 1rem !important;
+    white-space: nowrap;
+  }
+
+  .header-slug,
+  .header-divider {
+    display: none !important;
+  }
+
+  .right-controls {
+    gap: 6px;
+  }
+
+  .weather-info,
+  .theme-switch {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    gap: 4px;
+  }
+
+  .weather-info .location,
+  .weather-info .rain-chance,
+  .theme-icon {
+    display: none !important;
+  }
+
+  .nav-links {
+    top: 70px;
+    left: 0;
+    width: 100%;
   }
 }
 
@@ -209,8 +260,4 @@ body.dark .nav-link {
 body.dark .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.05);
   color: #ffb6c1;
-}
-
-.hamburger.home-hide {
-  display: none !important;
 }
