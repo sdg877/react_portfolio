@@ -10,7 +10,8 @@ const Education = () => {
           (2023-2024)
         </p>
         <p>
-          <strong>Open University:</strong> Science & Tech (Distinction) (2020)
+          <strong>Open University:</strong> Science, Maths and Tech access
+          course (A-levels) – 95% Distinction (2020)
         </p>
         <p>
           <strong>City University:</strong> Human Resources Management Course
