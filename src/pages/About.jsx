@@ -36,8 +36,8 @@ const About = () => {
               </p>
               <p>
                 I grew up in Ladbroke Grove, West London, listening to Garage, RnB, 
-                and Reggae—and I’m still a huge music fan (Little Simz and Foals are usually 
-                on repeat lately). I’ve also lived in Germany and Australia and travelled 
+                and Reggae. I’m still a huge music fan (Little Simz and Foals are usually 
+                on repeat lately). I’ve lived in Berlin and Australia and travelled 
                 to 30 countries, but these days I’m based in Merton with my boyfriend 
                 and our two cats, Kitty and Osborne.
               </p>

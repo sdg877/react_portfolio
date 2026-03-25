@@ -93,7 +93,24 @@ body.dark .hp-card-wrapper:hover .hp-card-label {
   color: #ffc0cb !important;
 }
 
-@media (max-width: 900px) {
+@media screen and (min-width: 851px) and (max-width: 1024px) {
+    .hp-bento-grid {
+    grid-template-columns: repeat(2, 3fr);
+    gap: 50px;
+    padding: 0px 20px 10px 20px;
+
+
+      .hp-card-link {
+    height: 250px;
+  }
+
+  .hp-card-label {
+    font-size: 1.7rem;
+  }
+  }
+}
+
+@media (max-width: 850px) {
   .hp-bento-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
