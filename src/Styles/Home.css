@@ -94,19 +94,18 @@ body.dark .hp-card-wrapper:hover .hp-card-label {
 }
 
 @media screen and (min-width: 851px) and (max-width: 1024px) {
-    .hp-bento-grid {
+  .hp-bento-grid {
     grid-template-columns: repeat(2, 3fr);
     gap: 50px;
     padding: 0px 20px 10px 20px;
 
+    .hp-card-link {
+      height: 250px;
+    }
 
-      .hp-card-link {
-    height: 250px;
-  }
-
-  .hp-card-label {
-    font-size: 1.7rem;
-  }
+    .hp-card-label {
+      font-size: 1.7rem;
+    }
   }
 }
 
