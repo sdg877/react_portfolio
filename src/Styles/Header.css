@@ -176,12 +176,12 @@ body.dark .nav-links {
   padding: 14px 24px;
 }
 
-@media screen and (min-width: 800px) and (max-width: 1024px) {
+@media screen and (min-width: 750px) and (max-width: 1024px) {
   .right-controls {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-end !important;
-    gap: 8px !important;
+    gap: 7px !important;
     justify-content: center !important;
   }
 
@@ -195,8 +195,8 @@ body.dark .nav-links {
 
   .weather-info,
   .theme-switch {
-    padding: 5px 12px !important;
-    font-size: 0.8rem !important;
+    padding: 5px 8px !important;
+    font-size: 0.7rem !important;
     margin: 0 !important;
     width: fit-content !important;
   }
@@ -206,7 +206,7 @@ body.dark .nav-links {
   }
 
   .header-name {
-    font-size: 2rem !important;
+    font-size: 1.9rem !important;
     white-space: nowrap !important;
   }
 
@@ -216,7 +216,7 @@ body.dark .nav-links {
   }
 }
 
-@media (max-width: 799px) {
+@media (max-width: 749px) {
   .navbar {
     height: 80px;
     padding: 0 20px;
