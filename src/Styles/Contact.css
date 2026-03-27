@@ -1,12 +1,12 @@
 .contact-unique-main {
-  min-height: calc(100vh - 190px);
+  min-height: calc(100vh - 200px);
   width: 100%;
   overflow: hidden !important;
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 10px 20px;
+  padding: 20px 30px;
 }
 
 .contact-unique-card {
@@ -18,7 +18,7 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   width: 100%;
   max-width: 900px;
-  padding: 30px 40px;
+  padding: 5px 50px;
   position: relative;
   box-sizing: border-box;
 }
@@ -39,7 +39,9 @@ body.dark .contact-unique-card {
   text-transform: uppercase;
   color: #1a1a1a;
   display: inline-block;
+  margin-bottom: 20px;
 }
+
 
 body.dark .contact-unique-title {
   color: #fff;
@@ -63,6 +65,7 @@ body.dark .contact-unique-title::after {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding-top: 15px;
 }
 
 .contact-unique-row {
@@ -134,7 +137,11 @@ body.dark .contact-unique-button {
   color: #1a1a1a !important;
 }
 
-@media screen and (max-height: 900px) {
+@media screen and (min-width: 750px) and (max-width: 1024px) {
+
+}
+
+@media screen and (max-height: 749px) {
   .contact-unique-main {
     height: calc(100vh - 190px);
     min-height: auto;
