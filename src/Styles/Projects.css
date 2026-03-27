@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .title-project {
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -278,7 +278,7 @@ body.dark .title-project::after {
 
 @media (max-width: 768px) {
   .project-page-container {
-    padding: 10px 10px 10px 10px;
+    padding: 10px 10px 10px;
     margin: 10px auto 10px;
   }
 
@@ -321,6 +321,16 @@ body.dark .title-project::after {
   .project-image {
     max-width: 100% !important;
   }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1024px) {
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto 30px auto;
+}
 }
 
 @media (max-width: 480px) {
