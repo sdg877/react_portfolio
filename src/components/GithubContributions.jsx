@@ -48,7 +48,20 @@ const GithubContributions = () => {
   }, []);
 
   const processMonthlyData = (weeksData) => {
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const monthNames = [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ];
     const countsMap = {};
     monthNames.forEach((m) => (countsMap[m] = 0));
 
@@ -109,16 +122,30 @@ const GithubContributions = () => {
 
       <div className="github-stats-layout">
         <div className="pie-chart-container">
-          <div className="pie-chart" style={{ background: `conic-gradient(${pieGradient})` }}>
+          <div
+            className="pie-chart"
+            style={{ background: `conic-gradient(${pieGradient})` }}
+          >
             <div className="pie-inner">
-              <span className="total-label">GitHub<br />Activity</span>
+              <span className="total-label">
+                GitHub
+                <br />
+                Activity
+              </span>
             </div>
           </div>
           <div className="pie-legend">
             {monthlyTotals.slice(0, 4).map((m, i) => (
               <div key={i} className="legend-item">
-                <span className="dot" style={{ backgroundColor: `rgba(216, 112, 147, ${Math.max(0.2, m.count / monthlyTotals[0].count)})` }}></span>
-                <span className="legend-text">{m.name}: {m.count}</span>
+                <span
+                  className="dot"
+                  style={{
+                    backgroundColor: `rgba(216, 112, 147, ${Math.max(0.2, m.count / monthlyTotals[0].count)})`,
+                  }}
+                ></span>
+                <span className="legend-text">
+                  {m.name}: {m.count}
+                </span>
               </div>
             ))}
           </div>
@@ -126,9 +153,16 @@ const GithubContributions = () => {
 
         <div className="github-info-side">
           <p className="github-desc">
-            Since August 2024, I have maintained a near-daily coding presence on GitHub.
+            Since August 2024, I have maintained a near-daily coding presence on
+            GitHub. This has allowed me to develop my skills and created a daily
+            habit they I love and amd really proud of.
           </p>
-          <a href="https://github.com/sdg877" target="_blank" rel="noopener noreferrer" className="global-link">
+          <a
+            href="https://github.com/sdg877"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="global-link"
+          >
             My GitHub Profile →
           </a>
         </div>
@@ -166,8 +200,14 @@ const GithubContributions = () => {
       </div>
 
       {hoveredDay && (
-        <div className="tooltip-github" style={{ left: `${hoveredDay.x}px`, top: `${hoveredDay.y - 35}px` }}>
-          <strong>{new Date(hoveredDay.date).toLocaleDateString("en-GB")}</strong>: {hoveredDay.commits} commits
+        <div
+          className="tooltip-github"
+          style={{ left: `${hoveredDay.x}px`, top: `${hoveredDay.y - 35}px` }}
+        >
+          <strong>
+            {new Date(hoveredDay.date).toLocaleDateString("en-GB")}
+          </strong>
+          : {hoveredDay.commits} commits
         </div>
       )}
     </div>
