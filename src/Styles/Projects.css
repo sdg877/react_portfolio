@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
+  margin-top: 40px;
   box-sizing: border-box;
 }
 
@@ -18,7 +19,7 @@
 
 .projects-header {
   text-align: center;
-  margin: 40px;
+  margin: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,15 +51,15 @@
   font-style: italic;
   opacity: 0.8;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
   color: #1a1a1a;
   text-align: center;
 }
 
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  gap: 45px;
   width: 100%;
   margin: 0 auto 30px auto;
 }
@@ -109,7 +110,7 @@
 .info-card-project {
   max-width: 800px;
   width: 100%;
-  margin: 0 auto;
+  margin: 40 auto;
   padding: 20px 25px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(12px);
@@ -276,7 +277,64 @@ body.dark .title-project::after {
   background: #ffb6c1;
 }
 
-@media (max-width: 768px) {
+@media screen and (min-width: 750px) and (max-width: 1024px) {
+  .project-page-container {
+    padding: 30px;
+    margin: 10px auto 10px;
+  }
+
+  .project-description {
+    margin-bottom: 25px;
+  }
+
+  .title-project {
+    font-size: 2rem !important;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    margin: 0 auto 10px auto;
+  }
+
+  .title-project::after {
+    width: 60px;
+    height: 4px;
+  }
+
+  .bento-grid {
+    grid-template-columns: 60px 60px;
+    gap: 15px !important;
+    width: 100% !important;
+  }
+
+  .grid-card-wrapper {
+    height: 180px;
+  }
+
+  .info-card-project {
+    width: 100% !important;
+    max-width: 94% !important;
+    min-width: 0 !important;
+    padding: 20px 20px !important;
+    margin: 15px auto 35px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    overflow: visible !important;
+  }
+
+  .details {
+    text-align: justified;
+    font-size: 0.95rem;
+    padding: 0 5px;
+  }
+
+  .project-video,
+  .project-image {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 749px) {
   .project-page-container {
     padding: 10px 10px 10px;
     margin: 10px auto 10px;
@@ -324,13 +382,13 @@ body.dark .title-project::after {
 }
 
 @media screen and (min-width: 750px) and (max-width: 1024px) {
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
-  gap: 20px;
-  width: 100%;
-  margin: 0 auto 30px auto;
-}
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    gap: 20px;
+    width: 100%;
+    margin: 0 auto 30px auto;
+  }
 }
 
 @media (max-width: 480px) {
