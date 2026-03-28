@@ -38,10 +38,20 @@ const About = () => {
                 frontend user friendly too.
               </p>
               <p>
+                In 2025, I was diagnosed with ADHD-C. While it was a huge shock
+                for me, it wasn't for those around me. My working style, ability
+                to hyperfocus, my unique problem solving skills and huge sense
+                of justice suddenly made a lot more sense. I have learnt to
+                channel my energy into things I love and I feel blessed to have
+                found coding. I love that the answer is black and white and you
+                are able to move on once a problem is solved, which I never had
+                in my previous life in operations.
+              </p>
+              <p>
                 I grew up in Ladbroke Grove, West London, listening to Garage,
-                RnB, and Reggae. I’m still a huge music fan (Little Simz and
-                Foals are usually on repeat lately). I have visited over 30
-                countries accross the globe. I lived in Berlin for three years
+                RnB, HipHop and Reggae. I’m still a huge music fan (Little Simz and
+                Foals are solid favourites). I have visited over 30
+                countries and I lived in Berlin for three years
                 in my 20s and still visit my friends there regularly, but these
                 days I’m based in Merton with my boyfriend of eight years and
                 our two cats, Kitty and Osborne.
