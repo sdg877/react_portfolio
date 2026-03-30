@@ -270,10 +270,10 @@ body.dark .contribution-day.level-7 {
 
   .edu-exp-container {
     width: 100% !important;
-    max-width: 94% !important;
+    max-width: 90% !important;
     min-width: 0 !important;
     padding: 20px 20px !important;
-    margin: 15px auto 35px !important;
+    margin: 15px auto 20px !important;
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
@@ -333,11 +333,11 @@ body.dark .contribution-day.level-7 {
   }
 
   .edu-exp-container {
-    width: 94% !important;
-    max-width: 94% !important;
+    width: 100% !important;
+    max-width: 89% !important;
     min-width: 0 !important;
-    padding: 25px 15px !important;
-    margin: 15px auto !important;
+    padding: 0px 15px !important;
+    margin: 30px auto !important;
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
