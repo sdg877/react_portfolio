@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 60px 20px;
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
@@ -12,9 +12,10 @@
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 20px;
-  padding: 30px;
-  width: 100%;
-  max-width: 800px;
+  padding: 40px;
+  width: 950px !important;
+  max-width: 1200px;
+  margin: 20px auto !important;
 }
 
 .about-title {
@@ -54,20 +55,22 @@ body.dark .about-text-area {
 
 @media screen and (min-width: 800px) and (max-width: 1024px) {
   .about-section {
-    margin-top: 30px;
-    padding: 30px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    width: 100% !important;
+    max-width: 89% !important;
+    min-width: 0 !important;
+    padding: 0px 15px !important;
+    margin: 15px auto 20px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: visible !important;
   }
 
   .about-card-glass {
-    width: 90%;
-    max-width: 90%;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 30px;
+    padding: 25px;
     box-sizing: border-box;
     display: block;
   }
@@ -92,48 +95,20 @@ body.dark .about-text-area {
 
 @media (max-width: 799px) {
   .about-section {
-    padding: 40px 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 19px 20px !important;
+    box-sizing: border-box !important;
+    margin: 0 auto !important;
+    height: auto !important;
   }
 
   .about-card-glass {
-    width: 90%;
-    max-width: 90%;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
     margin: 0 auto;
     padding: 30px 20px;
-    box-sizing: border-box;
     display: block;
-  }
-
-  .profile-image {
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 15px;
-  }
-
-  .about-title {
-    font-size: 1.5rem;
-    text-align: center;
-    width: 100%;
-  }
-
-  .about-text-area {
-    font-size: 0.9rem;
-    padding: 0 10px;
-  }
-}
-
-@media (max-width: 380px) {
-  .about-card-glass {
-    width: 95%;
-    padding: 25px 15px;
-  }
-
-  .about-title {
-    font-size: 1.3rem;
   }
 }
