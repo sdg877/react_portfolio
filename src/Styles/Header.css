@@ -193,10 +193,16 @@ body.dark .nav-links {
     order: 2 !important;
   }
 
-  .weather-info,
   .theme-switch {
     padding: 5px 8px !important;
-    font-size: 0.7rem !important;
+    font-size: 0.8rem !important;
+    margin: 0 !important;
+    width: fit-content !important;
+  }
+
+  .weather-info {
+    padding: 5px 5px !important;
+    font-size: 0.4rem !important;
     margin: 0 !important;
     width: fit-content !important;
   }
@@ -206,8 +212,9 @@ body.dark .nav-links {
   }
 
   .header-name {
-    font-size: 1.9rem !important;
+    font-size: 1.66rem !important;
     white-space: nowrap !important;
+    margin-top: 35px;
   }
 
   .navbar {
