@@ -49,12 +49,12 @@ const About = () => {
               </p>
               <p>
                 I grew up in Ladbroke Grove, West London, listening to Garage,
-                RnB, HipHop and Reggae. I’m still a huge music fan (Little Simz and
-                Foals are solid favourites). I have visited over 30
-                countries and I lived in Berlin for three years
-                in my 20s and still visit my friends there regularly, but these
-                days I’m based in Merton with my boyfriend of eight years and
-                our two cats, Kitty and Osborne.
+                RnB, HipHop and Reggae. I’m still a huge music fan (Little Simz
+                and Foals are solid favourites). I have visited over 30
+                countries and I lived in Berlin for three years in my 20s and
+                still visit my friends there regularly, but these days I’m based
+                in Merton with my boyfriend of eight years and our two cats,
+                Kitty and Osborne.
               </p>
               <p>
                 When I’m not coding, I’m usually hiking, trying out a new
