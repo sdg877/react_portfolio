@@ -116,18 +116,6 @@ const GithubContributions = () => {
           })}
         </div>
       </div>
-
-      {hoveredDay && (
-        <div
-          className="tooltip-github"
-          style={{ left: `${hoveredDay.x}px`, top: `${hoveredDay.y - 35}px` }}
-        >
-          <strong>
-            {new Date(hoveredDay.date).toLocaleDateString("en-GB")}
-          </strong>
-          : {hoveredDay.commits} commits
-        </div>
-      )}
     </div>
   );
 };
