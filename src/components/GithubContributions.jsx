@@ -153,9 +153,10 @@ const GithubContributions = () => {
 
         <div className="github-info-side">
           <p className="github-desc">
-            Since August 2024, I have maintained a near-daily coding presence on
-            GitHub. This has allowed me to develop my skills and created a daily
-            habit they I love and amd really proud of.
+            Since August 2024, I have committed to coding on GitHub nearly every
+            day. This daily practice has not only sharpend my technical skills
+            but has also built a disciplined workflow that I genuinely love and
+            take pride in.
           </p>
           <a
             href="https://github.com/sdg877"
