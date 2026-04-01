@@ -23,7 +23,6 @@ const query = gql`
 
 const GithubContributions = () => {
   const [weeks, setWeeks] = useState([]);
-  const [monthlyTotals, setMonthlyTotals] = useState([]);
   const [hoveredDay, setHoveredDay] = useState(null);
   const scrollRef = useRef(null);
 
@@ -39,54 +38,12 @@ const GithubContributions = () => {
         );
         const cal = data.viewer.contributionsCollection.contributionCalendar;
         setWeeks(cal.weeks);
-        processMonthlyData(cal.weeks);
       } catch (error) {
         console.error("Error fetching GitHub data:", error);
       }
     };
     fetchData();
   }, []);
-
-  const processMonthlyData = (weeksData) => {
-    const monthNames = [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ];
-    const countsMap = {};
-    monthNames.forEach((m) => (countsMap[m] = 0));
-
-    weeksData.forEach((week) => {
-      week.contributionDays.forEach((day) => {
-        const date = new Date(day.date);
-        countsMap[monthNames[date.getMonth()]] += day.contributionCount;
-      });
-    });
-
-    const totalCommits = Object.values(countsMap).reduce((a, b) => a + b, 0);
-    const stats = monthNames
-      .map((name) => ({ name, count: countsMap[name] }))
-      .filter((m) => m.count > 0)
-      .sort((a, b) => b.count - a.count);
-
-    let currentStart = 0;
-    const finalStats = stats.map((m) => {
-      const percent = totalCommits > 0 ? (m.count / totalCommits) * 100 : 0;
-      const start = currentStart;
-      currentStart += percent;
-      return { ...m, start, end: currentStart };
-    });
-    setMonthlyTotals(finalStats);
-  };
 
   const getLevel = (count) => {
     if (count === 0) return "level-0";
@@ -106,55 +63,15 @@ const GithubContributions = () => {
     return null;
   };
 
-  const pieGradient =
-    monthlyTotals.length > 0
-      ? monthlyTotals
-          .map((m) => {
-            const opacity = Math.max(0.2, m.count / monthlyTotals[0].count);
-            return `rgba(216, 112, 147, ${opacity}) ${m.start}% ${m.end}%`;
-          })
-          .join(", ")
-      : "#333 0% 100%";
-
   return (
     <div className="edu-exp-container">
       <h3 className="edu-exp-title">My Contributions</h3>
 
       <div className="github-stats-layout">
-        <div className="pie-chart-container">
-          <div
-            className="pie-chart"
-            style={{ background: `conic-gradient(${pieGradient})` }}
-          >
-            <div className="pie-inner">
-              <span className="total-label">
-                GitHub
-                <br />
-                Activity
-              </span>
-            </div>
-          </div>
-          <div className="pie-legend">
-            {monthlyTotals.slice(0, 4).map((m, i) => (
-              <div key={i} className="legend-item">
-                <span
-                  className="dot"
-                  style={{
-                    backgroundColor: `rgba(216, 112, 147, ${Math.max(0.2, m.count / monthlyTotals[0].count)})`,
-                  }}
-                ></span>
-                <span className="legend-text">
-                  {m.name}: {m.count}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
         <div className="github-info-side">
           <p className="github-desc">
             Since August 2024, I have committed to coding on GitHub nearly every
-            day. This daily practice has not only sharpend my technical skills
+            day. This daily practice has not only sharpened my technical skills
             but has also built a disciplined workflow that I genuinely love and
             take pride in.
           </p>
