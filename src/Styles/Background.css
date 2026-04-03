@@ -8,25 +8,23 @@
 }
 
 .edu-exp-container {
-  background: rgba(255, 255, 255, 0.1) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 12px !important;
-  padding: 40px !important;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px 40px 30px 40px;
   width: 950px !important;
-  max-width: 1200px !important;
   margin: 20px auto !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
   box-sizing: border-box;
   text-align: left !important;
+  flex-shrink: 0 !important;
 }
 
 .edu-exp-title {
   font-size: 1.8rem !important;
-  margin-top: 0 !important;
-  padding-top: 20px !important;
-  margin-bottom: 25px !important;
+  margin-bottom: 30px !important;
   color: #000000 !important;
   font-weight: 700 !important;
   display: block !important;
@@ -47,6 +45,7 @@
 .edu-exp-content {
   color: #000000;
   line-height: 1.6;
+  margin-top: 0;
 }
 
 .global-link {
@@ -56,6 +55,15 @@
   font-size: 0.95rem;
   transition: opacity 0.2s ease-in-out;
   display: inline-block;
+  margin-top: 5px;
+}
+
+.github-link {
+  color: #d87093 !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease-in-out;
   margin-top: 5px;
 }
 
@@ -71,70 +79,12 @@
   margin-bottom: 30px;
 }
 
-.pie-chart-container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.pie-chart {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pie-inner {
-  width: 70px;
-  height: 70px;
-  background: #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.total-label {
-  font-size: 0.7rem;
-  text-align: center;
-  font-weight: 700;
-  color: #880e4f;
-  line-height: 1.1;
-}
-
-.pie-legend {
-  font-size: 0.85rem;
-  color: #000;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-  margin-bottom: 4px;
-}
-
-.legend-text {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #000;
-}
-
 .tooltip-github {
-  position: absolute;
-  background: #fff;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  pointer-events: none;
-  color: #000;
+  display: none !important;
+}
+
+.contribution-day {
+  pointer-events: none !important;
 }
 
 .heatmap-scroll-area {
@@ -273,7 +223,7 @@ body.dark .contribution-day.level-7 {
     max-width: 90% !important;
     min-width: 0 !important;
     padding: 20px 20px !important;
-    margin: 15px auto 20px !important;
+    margin: 20px auto 20px !important;
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
@@ -321,23 +271,23 @@ body.dark .contribution-day.level-7 {
   }
 
   .edu-exp-title {
-    font-size: 1.5rem !important;
+    font-size: 1.6rem !important;
     text-align: center !important;
   }
 }
 
 @media (max-width: 799px) {
   .background-page-wrapper {
-    padding: 10px 5px !important;
+    padding: 10px 5px 10px 5px !important;
     display: block !important;
   }
 
   .edu-exp-container {
     width: 100% !important;
-    max-width: 89% !important;
+    max-width: 90% !important;
     min-width: 0 !important;
-    padding: 0px 15px !important;
-    margin: 30px auto !important;
+    padding: 25px;
+    margin: 20px auto !important;
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
@@ -349,17 +299,30 @@ body.dark .contribution-day.level-7 {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 25px !important;
-    margin-bottom: 20px !important;
+    gap: 15px !important;
+    margin: 5px !important;
     position: relative !important;
+  }
+
+  .github-desc {
+    margin-bottom: 5px !important;
+    position: relative !important;
+    font-size: 0.82rem;
+    line-height: 1.2;
+  }
+
+  .global-link {
+    font-size: 0.82rem;
+    line-height: 1.2;
+    margin: 5px 0 5px 0;
   }
 
   .edu-exp-content {
     display: block !important;
     width: 100% !important;
-    margin-bottom: 20px !important;
     position: relative !important;
-    font-size: 0.9rem;
+    font-size: 0.82rem;
+    line-height: 1.2;
   }
 
   .heatmap-scroll-area {
@@ -367,7 +330,7 @@ body.dark .contribution-day.level-7 {
     display: block !important;
     overflow-x: auto !important;
     padding-top: 45px !important;
-    margin-top: 20px !important;
+    margin: 0px !important;
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
     -webkit-overflow-scrolling: touch;
   }
@@ -375,17 +338,32 @@ body.dark .contribution-day.level-7 {
   .contribution-calendar {
     display: flex !important;
     width: max-content !important;
-    padding-bottom: 15px !important;
+    padding-bottom: 5px !important;
   }
 
   .contribution-day {
-    width: 14px !important;
-    height: 14px !important;
+    width: 13px !important;
+    height: 13px !important;
     flex-shrink: 0 !important;
   }
 
   .edu-exp-title {
-    font-size: 1.5rem !important;
-    text-align: center !important;
+    font-size: 1.3rem !important;
+    margin-top: 0 !important;
+    padding-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+
+  .contribution-calendar {
+    display: flex;
+    gap: 2px;
+  }
+
+  .week-column {
+    gap: 2px;
+  }
+
+  .edu-exp-content {
+    padding-top: 0 !important;
   }
 }

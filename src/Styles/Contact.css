@@ -1,12 +1,12 @@
 .contact-unique-main {
-  min-height: calc(100vh - 200px);
+  height: calc(100vh - 170px);
   width: 100%;
   overflow: hidden !important;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 20px 30px;
+  padding: 10px 30px;
 }
 
 .contact-unique-card {
@@ -18,9 +18,14 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   width: 100%;
   max-width: 900px;
-  padding: 5px 50px;
+  padding: 20px;
   position: relative;
   box-sizing: border-box;
+}
+
+.contact-unique-textarea {
+  height: 100px !important;
+  resize: none;
 }
 
 body.dark .contact-unique-card {
@@ -30,7 +35,11 @@ body.dark .contact-unique-card {
 
 .contact-unique-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+}
+
+.contact-unique-desc {
+  font-size: 0.95rem;
 }
 
 .contact-unique-title {
@@ -39,9 +48,8 @@ body.dark .contact-unique-card {
   text-transform: uppercase;
   color: #1a1a1a;
   display: inline-block;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
-
 
 body.dark .contact-unique-title {
   color: #fff;
@@ -91,8 +99,19 @@ body.dark .contact-unique-label {
   color: #fff;
 }
 
-.contact-unique-input,
+.contact-unique-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 15px;
+}
+
 .contact-unique-textarea {
+  height: 110pxpx;
+  resize: none;
+}
+
+.contact-unique-input {
   width: 100% !important;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.5) !important;
@@ -110,10 +129,10 @@ body.dark .contact-unique-textarea {
   color: #fff;
 }
 
-.contact-unique-textarea {
+/* .contact-unique-textarea {
   height: 110px;
   resize: none;
-}
+} */
 
 .contact-unique-btn-wrap {
   display: flex;
@@ -137,71 +156,97 @@ body.dark .contact-unique-button {
   color: #1a1a1a !important;
 }
 
-@media screen and (min-width: 750px) and (max-width: 1024px) {
-
-}
-
-@media screen and (max-height: 749px) {
+@media screen and (min-width: 800px) and (max-width: 1024px) {
   .contact-unique-main {
-    height: calc(100vh - 190px);
-    min-height: auto;
-    display: flex;
-    align-items: flex-start;
-    padding-top: 25px;
-    overflow: hidden !important;
+    width: 100% !important;
+    max-width: 90% !important;
+    min-width: 0 !important;
+    padding: 18px 18px !important;
+    margin: 35px auto 20px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: calc(100vh - 165px);
+    height: 95% !important;
   }
 
   .contact-unique-card {
-    padding: 15px 35px;
-    max-height: 100%;
-    height: 550px;
-  }
-
-  .contact-unique-header {
-    margin-bottom: 0px;
-  }
-
-  .contact-unique-desc {
-    font-size: 0.8rem;
-    line-height: 1.2;
-    margin-bottom: 10px;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .contact-unique-form {
-    gap: 4px;
+    min-height: calc(60vh) !important;
+    width: 100% !important; 
+    box-sizing: border-box !important;
   }
 
   .contact-unique-textarea {
-    height: 70px;
+    height: 225px !important; 
   }
 
-  .contact-unique-btn-wrap {
-    margin-top: 20px;
-  }
+  .contact-unique-button {
+  padding: 15px 70px;
+  border-radius: 8px;
+  font-weight: 1000;
+  margin: 15px;
+  font-size: 1.2rem;
 }
 
-@media screen and (max-width: 768px) {
+.contact-unique-header {
+  text-align: center;
+}
+
+.contact-unique-desc {
+  font-size: 1.2rem;
+  margin: 15px;
+}
+
+.contact-unique-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.contact-unique-label {
+  font-size: 1rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  margin: 18px;
+}
+
+.contact-unique-input {
+  padding: 12px;
+  font-size: 1.2rem;
+}
+
+.contact-unique-textarea {
+font-size: 1.2rem;
+}
+}
+
+@media screen and (max-width: 799px) {
   .contact-unique-main {
-    min-height: calc(100vh - 80px);
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: calc(100vh - 190px) !important;
     height: auto !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    padding: 40px 10px !important;
+    padding: 30px 20px !important;
     overflow-y: visible !important;
   }
 
   .contact-unique-card {
-    width: 92% !important;
+    width: 100% !important;
     height: auto !important;
     max-height: none !important;
     margin: 0 auto !important;
-    padding: 30px 20px !important;
+    padding: 10px 20px;
     box-sizing: border-box !important;
+  }
+
+  .contact-unique-desc {
+    font-size: 0.75rem;
   }
 
   .contact-unique-row {
@@ -209,8 +254,50 @@ body.dark .contact-unique-button {
     gap: 15px;
   }
 
-  .contact-unique-button {
-    width: 100%;
-    padding: 12px 20px;
+
+    .contact-unique-textarea {
+    height: 225px !important; 
   }
+
+  .contact-unique-button {
+  padding: 15px 70px;
+  border-radius: 8px;
+  font-weight: 1000;
+  margin: 15px;
+  font-size: 1.2rem;
+}
+
+.contact-unique-header {
+  text-align: center;
+}
+
+.contact-unique-desc {
+  font-size: 1.2rem;
+  margin: 15px;
+}
+
+.contact-unique-title {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.contact-unique-label {
+  font-size: 1rem;
+  font-weight: 1000;
+  text-transform: uppercase;
+  margin: 18px;
+}
+
+.contact-unique-input {
+  padding: 12px;
+  font-size: 1.2rem;
+}
+
+.contact-unique-textarea {
+font-size: 1.2rem;
+}
 }
