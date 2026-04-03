@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { request, gql } from "graphql-request";
 
 const token = process.env.REACT_APP_GITHUB_TOKEN;
@@ -23,8 +23,6 @@ const query = gql`
 
 const GithubContributions = () => {
   const [weeks, setWeeks] = useState([]);
-  const [hoveredDay, setHoveredDay] = useState(null);
-  const scrollRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -86,10 +84,9 @@ const GithubContributions = () => {
         </div>
       </div>
 
-      {/* MOBILE SCROLL FIX WRAPPER */}
-      <div className="heatmap-scroll-area" ref={scrollRef}>
+      <div className="heatmap-scroll-area">
         <div className="contribution-calendar">
-          {[...weeks].reverse().map((week, i, allWeeks) => {
+          {weeks.map((week, i, allWeeks) => {
             const label = getMonthLabel(week, i, allWeeks);
             return (
               <div key={i} className="week-column">
@@ -98,17 +95,6 @@ const GithubContributions = () => {
                   <div
                     key={j}
                     className={`contribution-day ${getLevel(day.contributionCount)}`}
-                    onMouseEnter={(e) => {
-                      const rect = e.currentTarget.getBoundingClientRect();
-                      const cRect = scrollRef.current.getBoundingClientRect();
-                      setHoveredDay({
-                        date: day.date,
-                        commits: day.contributionCount,
-                        x: rect.left - cRect.left,
-                        y: rect.top - cRect.top,
-                      });
-                    }}
-                    onMouseLeave={() => setHoveredDay(null)}
                   />
                 ))}
               </div>
