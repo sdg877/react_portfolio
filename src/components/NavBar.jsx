@@ -50,7 +50,6 @@ const NavBar = ({
       >
         <div className="line"></div>
         <div className="line"></div>
-        <div className="line"></div>
       </div>
 
       <div className="header-branding-navbar">
