@@ -35,7 +35,8 @@ const GithubContributions = () => {
           headers,
         );
         const cal = data.viewer.contributionsCollection.contributionCalendar;
-        setWeeks(cal.weeks);
+        
+        setWeeks([...cal.weeks].reverse());
       } catch (error) {
         console.error("Error fetching GitHub data:", error);
       }
@@ -54,8 +55,12 @@ const GithubContributions = () => {
   const getMonthLabel = (week, index, allWeeks) => {
     const date = new Date(week.contributionDays[0].date);
     const m = date.getMonth();
-    const prev = allWeeks[index - 1];
-    if (!prev || m !== new Date(prev.contributionDays[0].date).getMonth()) {
+    
+    // Since we are moving backwards in time (left-to-right), 
+    // we look at the NEXT week in the array instead of the previous one.
+    const nextWeekInArray = allWeeks[index + 1];
+    
+    if (!nextWeekInArray || m !== new Date(nextWeekInArray.contributionDays[0].date).getMonth()) {
       return date.toLocaleString("en-GB", { month: "short" }).toUpperCase();
     }
     return null;
