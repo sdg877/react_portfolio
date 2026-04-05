@@ -164,7 +164,7 @@ body.dark .service-card {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 799px) {
   .services-page {
     height: auto !important;
     max-height: none !important;
