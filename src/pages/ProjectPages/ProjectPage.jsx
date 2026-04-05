@@ -37,7 +37,7 @@ const ProjectPage = ({
 
           {codeSnippets && codeSnippets.length > 0 && (
             <div className="technical-highlights">
-              <h4 className="video-heading">Technical Highlights</h4>
+              <h3 className="video-heading">Technical Highlights</h3>
               <div className="highlights-grid">
                 {codeSnippets.map((snippet, idx) => (
                   <div key={idx} className="highlight-item">
@@ -55,7 +55,7 @@ const ProjectPage = ({
 
           {video && (
             <div className="video-section">
-              <h4 className="video-heading">Walkthrough & Logic Demo</h4>
+              <h3 className="video-heading">Walkthrough & Logic Demo</h3>
               <video controls className="project-video">
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
