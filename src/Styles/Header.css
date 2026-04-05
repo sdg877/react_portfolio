@@ -212,7 +212,7 @@ body.dark .nav-links {
   }
 
   .header-name {
-    font-size: 1.66rem !important;
+    font-size: 2rem !important;
     white-space: nowrap !important;
     margin-top: 35px;
   }
@@ -220,6 +220,12 @@ body.dark .nav-links {
   .navbar {
     height: 115px !important;
     padding: 0 20px !important;
+  }
+
+  .hamburger .line {
+    width: 35px;
+    height: 4px;
+    margin: 9px 0;
   }
 }
 
@@ -234,6 +240,12 @@ body.dark .nav-links {
   .weather-info {
     padding: 6px 14px;
     font-size: 0.8rem;
+  }
+
+  .hamburger .line {
+    width: 22px;
+    height: 3px;
+    margin: 7px 0;
   }
 }
 
@@ -257,8 +269,10 @@ body.dark .nav-links {
   }
 
   .header-name {
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
+    font-weight: 800 !important;
     white-space: nowrap;
+
   }
 
   .header-slug,
@@ -273,7 +287,7 @@ body.dark .nav-links {
   .weather-info,
   .theme-switch {
     padding: 6px 10px;
-    font-size: 0.75rem;
+    font-size: 0.7rem !important;
     gap: 4px;
   }
 
@@ -287,6 +301,12 @@ body.dark .nav-links {
     top: 70px;
     left: 0;
     width: 100%;
+  }
+
+  .hamburger .line {
+    width: 22px;
+    height: 3px;
+    margin: 7px 0;
   }
 }
 
