@@ -129,11 +129,6 @@ body.dark .contact-unique-textarea {
   color: #fff;
 }
 
-/* .contact-unique-textarea {
-  height: 110px;
-  resize: none;
-} */
-
 .contact-unique-btn-wrap {
   display: flex;
   justify-content: center;
@@ -172,54 +167,54 @@ body.dark .contact-unique-button {
 
   .contact-unique-card {
     min-height: calc(60vh) !important;
-    width: 100% !important; 
+    width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .contact-unique-textarea {
-    height: 225px !important; 
+    height: 200px !important;
   }
 
   .contact-unique-button {
-  padding: 15px 70px;
-  border-radius: 8px;
-  font-weight: 1000;
-  margin: 15px;
-  font-size: 1.2rem;
-}
+    padding: 15px 70px;
+    border-radius: 8px;
+    font-weight: 1000;
+    margin: 15px;
+    font-size: 1.2rem;
+  }
 
-.contact-unique-header {
-  text-align: center;
-}
+  .contact-unique-header {
+    text-align: center;
+  }
 
-.contact-unique-desc {
-  font-size: 1.2rem;
-  margin: 15px;
-}
+  .contact-unique-desc {
+    font-size: 1.2rem;
+    margin: 15px;
+  }
 
-.contact-unique-title {
-  font-size: 1.6rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  display: inline-block;
-  margin-bottom: 10px;
-}
+  .contact-unique-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
 
-.contact-unique-label {
-  font-size: 1rem;
-  font-weight: 1000;
-  text-transform: uppercase;
-  margin: 18px;
-}
+  .contact-unique-label {
+    font-size: 1rem;
+    font-weight: 1000;
+    text-transform: uppercase;
+    margin: 18px;
+  }
 
-.contact-unique-input {
-  padding: 12px;
-  font-size: 1.2rem;
-}
+  .contact-unique-input {
+    padding: 12px;
+    font-size: 1.2rem;
+  }
 
-.contact-unique-textarea {
-font-size: 1.2rem;
-}
+  .contact-unique-textarea {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (max-width: 799px) {
@@ -237,7 +232,7 @@ font-size: 1.2rem;
   }
 
   .contact-unique-card {
-    width: 100% !important;
+    width: 95% !important;
     height: auto !important;
     max-height: none !important;
     margin: 0 auto !important;
@@ -254,50 +249,56 @@ font-size: 1.2rem;
     gap: 15px;
   }
 
+  .contact-unique-label {
+    font-size: 0.8rem !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin: 18px;
+  }
 
-    .contact-unique-textarea {
-    height: 225px !important; 
+  .contact-unique-textarea {
+    height: 150px !important;
   }
 
   .contact-unique-button {
-  padding: 15px 70px;
-  border-radius: 8px;
-  font-weight: 1000;
-  margin: 15px;
-  font-size: 1.2rem;
-}
+    padding: 15px 50px;
+    border-radius: 8px;
+    font-weight: 750;
+    margin: 15px;
+    font-size: 0.82rem;
+  }
 
-.contact-unique-header {
-  text-align: center;
-}
+  .contact-unique-header {
+    text-align: center;
+  }
 
-.contact-unique-desc {
-  font-size: 1.2rem;
-  margin: 15px;
-}
+  .contact-unique-desc {
+    font-size: 0.82rem;
+    margin: 15px;
+  }
 
-.contact-unique-title {
-  font-size: 2rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  color: #1a1a1a;
-  display: inline-block;
-  margin-bottom: 10px;
-}
+  .contact-unique-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
 
-.contact-unique-label {
-  font-size: 1rem;
-  font-weight: 1000;
-  text-transform: uppercase;
-  margin: 18px;
-}
+  .contact-unique-label {
+    font-size: 1rem;
+    font-weight: 1000;
+    text-transform: uppercase;
+    margin: 18px;
+  }
 
-.contact-unique-input {
-  padding: 12px;
-  font-size: 1.2rem;
-}
+  .contact-unique-input {
+    padding: 12px;
+    font-size: 0.82rem;
+  }
 
-.contact-unique-textarea {
-font-size: 1.2rem;
-}
+  .contact-unique-textarea {
+    font-size: 0.82rem;
+  }
 }
