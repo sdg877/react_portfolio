@@ -60,7 +60,7 @@
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 16px;
-  padding: 40px 25px;
+  padding: 40px 30px;
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
@@ -119,22 +119,48 @@ body.dark .service-card {
   font-weight: 700;
 }
 
-@media screen and (min-width: 769px) and (max-height: 900px) {
+@media screen and (min-width: 800px) and (max-width: 1024px) {
   .services-page {
-    height: calc(100vh - 180px) !important;
-    padding: 10px 20px !important;
-    overflow: hidden !important;
+    padding: 20px !important;
+    display: block !important;
+    height: auto !important;
+    min-height: calc(100vh - 200px) !important;
+    overflow: visible !important;
   }
+
+  .services-wrapper {
+    width: 100% !important;
+    max-width: 95% !important;
+    padding: 20px 20px !important;
+    margin: 20px auto 20px !important;
+    box-sizing: border-box;
+  }
+
+  .services-bento-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+  }
+
   .services-header {
-    margin-bottom: 20px;
+    margin-bottom: 40px !important;
   }
+
+  .services-title {
+    font-size: 1.6rem !important;
+  }
+
   .service-card {
-    height: 230px !important;
-    min-height: auto !important;
-    padding: 20px;
+    min-height: 220px !important;
+    height: auto !important;
+    padding: 25px !important;
   }
-  .services-footer {
-    margin-top: 15px;
+
+  .service-card:nth-child(3) {
+    grid-column: 1 / -1 !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
   }
 }
 
@@ -154,30 +180,35 @@ body.dark .service-card {
   }
 
   .services-title {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
+  }
+
+  .services-intro {
+    max-width: 100%;
+    width: 92% !important;
   }
 
   .services-bento-grid {
     grid-template-columns: 1fr !important;
     gap: 20px !important;
-    width: 85% !important;
+    max-width: 100%;
+    width: 92% !important;
     margin: 0 auto !important;
   }
 
   .service-card {
     height: auto !important;
     min-height: 150px !important;
-    padding: 20px !important;
+    padding: 15px !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
 
   .service-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .services-footer {
     margin-top: 30px;
-    padding-bottom: 60px;
   }
 }
