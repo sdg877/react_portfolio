@@ -14,7 +14,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 25px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 90%;
   height: auto;
 }
 
@@ -152,7 +152,47 @@ body.dark .skills-icon-grid i::after {
   grid-column: span 2;
 }
 
-@media (max-width: 768px) {
+@media screen and (min-width: 800px) and (max-width: 1024px) {
+  .skills-page-wrapper {
+    padding: 30px !important;
+    display: block !important;
+    height: auto !important;
+    min-height: calc(100vh - 190px) !important;
+    overflow: visible !important;
+  }
+
+  .skills-bento-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 90% !important;
+    margin: 20px auto 20px !important;
+  }
+
+  .skills-card {
+    min-height: 180px !important;
+    height: auto !important;
+    padding: 20px !important;
+  }
+
+  .soft-skills-card {
+    grid-column: span 2 !important;
+  }
+
+  .skills-card-label {
+    font-size: 1.2rem !important;
+  }
+
+  .skills-icon-grid {
+    gap: 20px !important;
+  }
+
+  .skills-icon-grid i {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (max-width: 799px) {
   .skills-page-wrapper {
     padding: 30px 15px !important;
     height: auto !important;
@@ -165,15 +205,15 @@ body.dark .skills-icon-grid i::after {
   .skills-bento-grid {
     grid-template-columns: 1fr !important;
     width: 100% !important;
-    max-width: 100% !important;
-    gap: 15px !important;
+    max-width: 95% !important;
+    gap: 20px !important;
     margin: 0 auto !important;
   }
 
   .skills-card {
     width: 100% !important;
     min-height: auto !important;
-    padding: 25px 15px !important;
+    padding: 25px !important;
     box-sizing: border-box !important;
     display: flex !important;
     flex-direction: column !important;
@@ -184,7 +224,7 @@ body.dark .skills-icon-grid i::after {
     width: 100% !important;
     text-align: center !important;
     font-size: 1.2rem !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 20px !important;
     display: block !important;
   }
 
