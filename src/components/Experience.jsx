@@ -6,38 +6,16 @@ const Experience = () => {
     <div className="edu-exp-container">
       <h3 className="edu-exp-title">Experience</h3>
       <div className="edu-exp-content">
+        
         <div className="exp-item">
           <strong>Freelance Software Engineer | Feb 2024 – Present</strong>
           <p>
             Full-stack development and technical consultancy focusing on Python
             and the MERN stack.
           </p>
-          <ul className="edu-exp-list">
-            <li>
-              <strong>Confidential MERN App:</strong> Engineered compliance
-              workflows with 11 interconnected models.
-              <Link to="/projects/ProjectOne" className="global-link">
-                {" "}
-                → View Project
-              </Link>
-            </li>
-            <li>
-              <strong>Heather Treharne Jones Portfolio:</strong> Responsive
-              artist site with a custom CMS.
-              <Link to="/projects/HTJ" className="global-link">
-                {" "}
-                → View Project
-              </Link>
-            </li>
-            <li>
-              <strong>CarbonCalc:</strong> Sustainability platform using React
-              and Recharts.
-            </li>
-            <li>
-              <strong>AI Integration:</strong> Interactive chatbot leveraging
-              OpenAI API.
-            </li>
-          </ul>
+          <Link to="/projects" className="exp-link">
+            → View Projects Worked On
+          </Link>
         </div>
 
         <div className="exp-item">
@@ -49,9 +27,6 @@ const Experience = () => {
             software engineering, mastering modern frameworks and agile
             methodologies.
           </p>
-          <Link to="/projects" className="global-link">
-            View All Projects
-          </Link>
         </div>
 
         <div className="exp-item">
@@ -90,8 +65,7 @@ const Experience = () => {
           href="https://www.linkedin.com/in/sdrakegill/"
           target="_blank"
           rel="noopener noreferrer"
-          className="global-link"
-          style={{ marginTop: "20px", display: "block" }}
+          className="exp-link"
         >
           Full history on LinkedIn →
         </a>

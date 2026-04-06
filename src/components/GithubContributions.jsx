@@ -56,8 +56,6 @@ const GithubContributions = () => {
     const date = new Date(week.contributionDays[0].date);
     const m = date.getMonth();
     
-    // Since we are moving backwards in time (left-to-right), 
-    // we look at the NEXT week in the array instead of the previous one.
     const nextWeekInArray = allWeeks[index + 1];
     
     if (!nextWeekInArray || m !== new Date(nextWeekInArray.contributionDays[0].date).getMonth()) {
@@ -82,7 +80,7 @@ const GithubContributions = () => {
             href="https://github.com/sdg877"
             target="_blank"
             rel="noopener noreferrer"
-            className="global-link"
+            className="exp-link"
           >
             My GitHub Profile →
           </a>
