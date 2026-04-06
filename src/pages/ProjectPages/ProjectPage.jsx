@@ -22,10 +22,22 @@ const ProjectPage = ({
   return (
     <div className="project-page-container">
       <div className="projects-wrapper">
-        <div className="info-card-project">
+        <motion.div
+          className="info-card-project"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <h3>{title}</h3>
 
-          <img src={image} alt={altText} className="project-image" />
+          {image && !image.includes("sdg-dark") && (
+            <img
+              src={image}
+              alt={altText}
+              className="project-image"
+              loading="lazy"
+            />
+          )}
 
           <div className="description-container">
             {descriptionParagraphs.map((para, index) => (
@@ -87,11 +99,11 @@ const ProjectPage = ({
                 </a>
               ))}
 
-            <Link to={nextProjectPath} className="custom-link-bottom">
+            <Link to={nextProjectPath} className="custom-link">
               Next Project: {nextProjectLabel} →
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
