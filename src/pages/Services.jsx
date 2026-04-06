@@ -6,11 +6,12 @@ import "../Styles/Services.css";
 const Services = () => {
   return (
     <div className="services-page">
+      {/* Animation updated here to match the About page */}
       <motion.div
         className="services-wrapper"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
       >
         <header className="services-header">
           <h2 className="services-title">Services</h2>
