@@ -12,6 +12,7 @@ const Contact = () => {
     email: "",
     message: "",
     subject: "",
+    company: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -22,14 +23,20 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (formData.company) {
+      console.log("Bot detected!");
+      return;
+    }
+
     setLoading(true);
     toast.dismiss();
 
     const emailData = {
-      ...formData,
       from_name: formData.name,
       from_email: formData.email,
       subject: formData.subject,
+      message: formData.message,
     };
 
     emailjs
@@ -43,7 +50,13 @@ const Contact = () => {
         () => {
           toast.success("Message sent successfully!");
           setLoading(false);
-          setFormData({ name: "", email: "", message: "", subject: "" });
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+            subject: "",
+            company: "",
+          });
         },
         () => {
           toast.error("Error sending message.");
@@ -74,6 +87,18 @@ const Contact = () => {
             {loading && <Spinner />}
 
             <form onSubmit={handleSubmit} className="contact-unique-form">
+              {/* HONEYPOT FIELD: Humans cannot see this, but bots will fill it */}
+              <div style={{ display: "none" }} aria-hidden="true">
+                <input
+                  type="text"
+                  name="company"
+                  value={formData.company}
+                  onChange={handleChange}
+                  tabIndex="-1"
+                  autoComplete="off"
+                />
+              </div>
+
               <div className="contact-unique-row">
                 <div className="contact-unique-field">
                   <label className="contact-unique-label">Name</label>
