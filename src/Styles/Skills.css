@@ -71,6 +71,10 @@ body.dark .skills-card-label {
   color: #fff;
 }
 
+body.dark .skills-icon-grid i {
+  color: #ffffff;
+}
+
 .soft-skills-text {
   text-align: center;
   line-height: 1.6;
