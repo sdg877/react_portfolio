@@ -66,11 +66,12 @@ const NavBar = ({
       </div>
 
       <div className="right-controls">
-        {showWeather && (
+        {showWeather && currentPath !== '/weather' && (
           <Link
             to="/weather"
             className="weather-info"
             title="Click for detailed weather"
+            onClick={() => setIsMenuOpen(false)}
           >
             <h2 className="location">{location}</h2>
             <span className="weather-icon">{weatherIcon}</span>
