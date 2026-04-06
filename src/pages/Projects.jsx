@@ -25,6 +25,10 @@ const Projects = () => {
   const controls = useAnimation();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     controls.start("visible");
   }, [controls]);
 
