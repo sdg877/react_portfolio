@@ -28,6 +28,9 @@ const ProjectPage = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <Link to="/projects" className="back-to-projects">
+            ← Back to Projects
+          </Link>
           <h3>{title}</h3>
 
           {image && !image.includes("sdg-dark") && (
