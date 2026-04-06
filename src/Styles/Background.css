@@ -48,14 +48,14 @@
   margin-top: 0;
 }
 
-.global-link {
+.exp-link {
   color: #d87093 !important;
   font-weight: 700 !important;
   text-decoration: none !important;
   font-size: 0.95rem;
   transition: opacity 0.2s ease-in-out;
   display: inline-block;
-  margin-top: 5px;
+  margin-bottom: 25px;
 }
 
 .github-link {
@@ -67,7 +67,7 @@
   margin-top: 5px;
 }
 
-.global-link:hover {
+.exp-link:hover {
   text-decoration: underline !important;
   opacity: 0.8;
 }
@@ -164,17 +164,14 @@ body.dark .edu-exp-container {
 }
 body.dark .edu-exp-title,
 body.dark .github-desc,
-body.dark .pie-legend,
-body.dark .legend-text,
 body.dark .edu-exp-content {
   color: #ffffff !important;
 }
-body.dark .pie-inner {
-  background: rgba(0, 0, 0, 0.6);
-}
-body.dark .global-link {
+
+body.dark .exp-link {
   color: #ffb6c1 !important;
 }
+
 body.dark .tooltip-github {
   background: #333;
   color: #fff;
@@ -308,13 +305,13 @@ body.dark .contribution-day.level-7 {
     margin-bottom: 5px !important;
     position: relative !important;
     font-size: 0.82rem;
-    line-height: 1.2;
+    line-height: 1.5;
   }
 
-  .global-link {
-    font-size: 0.82rem;
-    line-height: 1.2;
-    margin: 5px 0 5px 0;
+  .exp-link {
+    font-size: 0.8rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
   }
 
   .edu-exp-content {
@@ -322,7 +319,7 @@ body.dark .contribution-day.level-7 {
     width: 100% !important;
     position: relative !important;
     font-size: 0.82rem;
-    line-height: 1.2;
+    line-height: 1.5;
   }
 
   .heatmap-scroll-area {
