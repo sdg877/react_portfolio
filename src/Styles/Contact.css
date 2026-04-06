@@ -95,6 +95,36 @@ body.dark .contact-unique-title::after {
   color: #1a1a1a;
 }
 
+.contact-unique-input:focus,
+.contact-unique-textarea:focus {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border: 1px solid #d87093 !important;
+  outline: none;
+}
+
+body.dark .contact-unique-input:focus,
+body.dark .contact-unique-textarea:focus {
+  background: rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid #ffc0cb !important;
+  outline: none;
+}
+
+.contact-unique-input:-webkit-autofill,
+.contact-unique-input:-webkit-autofill:hover,
+.contact-unique-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #1a1a1a !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.5) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+body.dark .contact-unique-input:-webkit-autofill,
+body.dark .contact-unique-input:-webkit-autofill:hover,
+body.dark .contact-unique-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #fff !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0.2) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 body.dark .contact-unique-label {
   color: #fff;
 }
@@ -149,6 +179,18 @@ body.dark .contact-unique-textarea {
 body.dark .contact-unique-button {
   background-color: #ffc0cb !important;
   color: #1a1a1a !important;
+}
+
+.contact-unique-input,
+.contact-unique-textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.contact-unique-input:focus,
+.contact-unique-textarea:focus {
+  outline: none !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
 }
 
 @media screen and (min-width: 800px) and (max-width: 1024px) {
@@ -292,7 +334,6 @@ body.dark .contact-unique-button {
     text-transform: uppercase;
     margin: 18px;
   }
-  
 
   .contact-unique-input {
     padding: 12px;
