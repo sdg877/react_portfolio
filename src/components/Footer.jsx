@@ -6,7 +6,7 @@ const Footer = () => {
     <footer>
       <div className="footer">
         <p className="footer-text">
-          © 2026 Sylvia Drake-Gill. All rights reserved. Built with React.
+          © 2026 Sylvia Drake-Gill
           <br/>
           <a 
             href="https://github.com/sdg877/react_portfolio" 
