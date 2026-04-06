@@ -14,13 +14,13 @@
   align-items: center;
   justify-content: center;
   border-top: 1px solid rgba(0, 0, 0, 0.05);
-  font-size: 14.5px;
+  font-size: 0.9rem;
 }
 
 .custom-link-footer {
   text-decoration: none;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.8rem;
   display: inline-block;
   margin-top: 8px;
   color: #778899;
@@ -29,28 +29,40 @@
     transform 0.2s ease;
 }
 
-/* Light Mode Hover */
 .custom-link-footer:hover {
   color: #d87093 !important;
   text-decoration: none !important;
   transform: scale(1.05);
 }
 
-/* Dark Mode Footer Container */
 body.dark .footer {
   background-color: rgba(45, 45, 45, 0.98);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Dark Mode Link - Normal */
 body.dark .custom-link-footer {
   color: #ffffff !important;
   font-weight: 700;
 }
 
-/* Dark Mode Link - Hover */
 body.dark .custom-link-footer:hover {
   color: #ffb6c1 !important;
-  text-decoration: none !important; /* Underline removed */
+  text-decoration: none !important;
   transform: scale(1.05);
+}
+
+@media (max-width: 799px) {
+  .footer {
+    height: 60px !important;
+    min-height: 30px !important;
+    padding: 10px 10px !important;
+    box-sizing: border-box;
+    font-size: 0.6rem;
+    font-weight: 450;
+  }
+
+  .custom-link-footer {
+    font-size: 0.55rem;
+    font-weight: 400;
+  }
 }
