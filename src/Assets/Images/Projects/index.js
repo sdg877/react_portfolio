@@ -2,7 +2,6 @@ import AIChatBotImg from "./AIChatBot.png";
 import GourmetGalleryImg from "./GourmetGallery.png";
 import HTreharneJonesImg from "./HTJ.png";
 import InTechJobsImg from "./InTech.png";
-import ProjectOneImg from "./ProjectOne.jpg";
 import SnakeImg from "./Snake.png";
 import SpookSpottersImg from "./SpookSpotters.png";
 import SSSImg from "./SSS.png";
@@ -13,7 +12,6 @@ export {
   GourmetGalleryImg,
   HTreharneJonesImg,
   InTechJobsImg,
-  ProjectOneImg,
   SnakeImg,
   SpookSpottersImg,
   SSSImg,
