@@ -3,20 +3,29 @@ import {
   GourmetGalleryImg,
   HTreharneJonesImg,
   InTechJobsImg,
-  ProjectOneImg,
   SnakeImg,
   SpookSpottersImg,
   SSSImg,
   CCImg,
 } from "../../Assets/Images/Projects";
-
+import sdgDark from "../../Assets/Images/Branding/sdg-dark.png";
 import CarbonVideo from "../../Assets/Videos/CarbonCalcVideo.mp4";
-
 import CarbonCode from "../../Assets/Images/Code/CarbonCalcCode.png";
 import ChatBotCode from "../../Assets/Images/Code/ChatBotCode.png";
 import HTJCode from "../../Assets/Images/Code/HTJCode.png";
 
 const projects = [
+  {
+    id: "ADHDPlanner",
+    title: "Project in Development: Next-Gen ADHD Planner",
+    image: sdgDark,
+    description: [
+      "I am currently building a bespoke digital planner tailored for ADHD brains. After struggling to find an app that met my needs, I decided to build my own. Unlike traditional planners that force rigid productivity, this project focuses on low-friction task management and dopamine-friendly tracking. I am currently finalising the core UI wireframes and aiming for a working MVP by the end of May 2026.",
+    ],
+    siteUrl: "",
+    githubFrontendUrl: "",
+    githubBackendUrl: "",
+  },
   {
     id: "CarbonCalculator",
     title: "Carbon Tracker",
@@ -83,7 +92,7 @@ const projects = [
   {
     id: "ProjectOne",
     title: "Confidential Project",
-    image: ProjectOneImg,
+    image: sdgDark,
     description: [
       "A high-impact commercial project: I architected and delivered a production-ready MVP that served as the primary technical proof-of-concept for a successful £150k seed funding round. This mission-critical platform manages highly regulated, sensitive workflows for professional service providers.",
       "Engineered a sophisticated data architecture featuring 11 interconnected models. I designed complex relational logic to ensure seamless data integrity across automated scheduling, compliance monitoring, and audit trails.",
