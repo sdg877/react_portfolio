@@ -5,9 +5,8 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  margin-top: 40px;
-  margin-bottom: 40px;
   box-sizing: border-box;
+  margin: 10px auto !important;
 }
 
 .projects-wrapper {
@@ -28,12 +27,12 @@
 }
 
 .title-project {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 5px;
   color: #1a1a1a;
-  margin: 0 0 10px 0;
+  margin: 30px 0 10px 0;
   text-align: center;
 }
 
@@ -109,35 +108,37 @@
 }
 
 .info-card-project {
-  max-width: 800px;
+  max-width: 950px;
   width: 100%;
-  margin: 40 auto;
-  padding: 20px 25px;
-  background: (255, 250, 250, 0.98);
+  margin: 40px auto;
+  padding: 40px;
+  background: rgba(255, 250, 250, 0.98);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
 }
 
 .info-card-project h3 {
   font-size: 2rem;
   font-weight: 800;
   color: #1a1a1a;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
 .project-image {
   width: 100%;
-  max-width: 500px;
+  max-width: 75%;
   height: auto;
   object-fit: contain;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   background: #fffafb;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
@@ -149,7 +150,7 @@
   margin: 0 auto 12px auto;
   text-align: justify;
   width: 100%;
-  max-width: 650px;
+  max-width: 75%;
 }
 
 .technical-highlights {
@@ -242,6 +243,25 @@
   font-size: 1.05rem;
 }
 
+.back-to-projects {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  color: #d87093;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.back-to-projects:hover {
+  text-decoration: underline;
+}
+
+body.dark .back-to-projects {
+  color: #ffb6c1;
+}
+
 body.dark .title-project,
 body.dark .info-card-project h3,
 body.dark .custom-link-bottom,
@@ -308,12 +328,8 @@ body.dark .title-project::after {
 
   .bento-grid {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 25px !important;
+    gap: 30px !important;
     width: 100% !important;
-  }
-
-  .grid-card-wrapper {
-    height: 200px !important;
   }
 
   .grid-card-wrapper:hover .project-img-bg {
@@ -345,7 +361,7 @@ body.dark .title-project::after {
 
   .project-video,
   .project-image {
-    max-width: 95% !important;
+    max-width: 80% !important;
   }
 
   .video-heading {
@@ -396,7 +412,7 @@ body.dark .title-project::after {
   .info-card-project {
     width: 92% !important;
     max-width: 92% !important;
-    padding: 15px 15px !important;
+    padding: 15px 5px !important;
     margin: 0 auto !important;
   }
 
@@ -415,9 +431,17 @@ body.dark .title-project::after {
     line-height: 1.2;
   }
 
-  .project-video,
-  .project-image {
-    max-width: 95% !important;
-    margin: 5px;
+  .custom-link {
+    font-size: 0.82rem;
+  }
+
+  .back-to-projects {
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+    align-self: flex-start;
+    padding-left: 10px;
   }
 }
