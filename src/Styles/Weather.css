@@ -1,7 +1,6 @@
 .weather-title {
-  padding: 40px 20px 5px;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 700;
   display: flex;
   flex-direction: column;
@@ -20,15 +19,16 @@
 
 .location-title {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 600;
   margin-top: 5px;
-  margin-bottom: 30px;
+  margin: 30px;
 }
 
 .weather-content-wrapper {
   min-height: unset;
-  min-width: 100%;
+  width: 100%;
+  min-width: 90%;
 }
 
 .weather-container {
@@ -46,7 +46,7 @@
   flex-wrap: wrap;
   gap: 15px;
   justify-content: center;
-  max-width: 1200px;
+  max-width: 90%;
   width: 100%;
   margin: 0 auto;
 }
@@ -70,17 +70,17 @@
 
 body.light .weather-card,
 body.light .weather-week-card {
-  background-color: #ffffff;
+  background-color: rgba(255, 250, 250, 0.98);
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-  color: #333333;
 }
 
 body.dark .weather-card,
 body.dark .weather-week-card {
-  background-color: rgba(30, 30, 30, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
 }
 
 .weather-card p,
@@ -100,7 +100,7 @@ body.dark .weather-week-card {
 }
 
 .weather-icon {
-  font-size: 2.5rem;
+  font-size: 1rem;
   margin: 10px 0;
   color: #d87093;
 }
@@ -123,60 +123,92 @@ body.dark .weather-week-card {
   padding: 50px;
 }
 
-@media (max-width: 1200px) {
-  .weather-card,
-  .weather-week-card {
-    flex: 1 1 calc(20% - 15px);
-    max-width: calc(20% - 15px);
-  }
-}
-
-@media (max-width: 1024px) {
+@media screen and (min-width: 800px) and (max-width: 1024px) {
   .weather-card,
   .weather-week-card {
     flex: 1 1 calc(33.33% - 15px);
     max-width: calc(33.33% - 15px);
-  }
-}
-
-@media (max-width: 768px) {
-  .weather-card,
-  .weather-week-card {
-    flex: 1 1 calc(50% - 15px);
-    max-width: calc(50% - 15px);
-  }
-}
-
-@media (max-width: 600px) {
-  .location-title {
-    font-size: 1.2rem;
-  }
-
-  .weather-title {
-    font-size: 1.5rem;
+    box-sizing: border-box;
   }
 
   .weather-card,
   .weather-week-card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column !important;
     align-items: center;
-    justify-content: space-between;
-    min-width: 90vw;
-    max-width: 90vw;
-    height: 100px !important;
-    min-height: unset !important;
-    text-align: left;
-    padding: 0 25px;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 15px;
+    min-height: 150px;
   }
 
   .weather-icon {
-    font-size: 2rem;
-    margin: 0;
+    font-size: 1.5rem !important;
+    margin-bottom: 10px !important;
   }
 
   .weather-card p,
   .weather-week-card p {
-    margin: 2px;
+    margin: 5px 0 !important;
+  }
+}
+
+@media (max-width: 799px) {
+  .location-title {
+    font-size: 1.2rem;
+  }
+
+  .weather-title {
+    font-size: 1rem;
+  }
+
+  .weather-card,
+  .weather-week-card {
+    display: grid !important;
+    /* This creates 2 main zones: left for main info, right for details */
+    grid-template-columns: 1fr 1.2fr; 
+    align-items: center;
+    
+    width: 90vw;
+    max-width: 350px;
+    height: auto !important;
+    min-height: 80px !important;
+    padding: 12px 15px !important;
+    box-sizing: border-box;
+    margin-bottom: 10px !important;
+  }
+
+  /* --- LEFT ZONE (Items 1, 2, and 3) --- */
+  /* This groups the time, icon, and temp on the left */
+  .weather-card p:nth-child(1),
+  .weather-card p.weather-icon,
+  .weather-card p.temp,
+  .weather-week-card p:nth-child(1),
+  .weather-week-card p.weather-icon,
+  .weather-week-card p:nth-child(3) {
+    grid-column: 1;
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .weather-card p.weather-icon,
+  .weather-week-card p.weather-icon {
+    font-size: 1.4rem;
+    margin: 0 6px;
+  }
+
+  /* --- RIGHT ZONE (Items 4, 5, and 6) --- */
+  /* This stacks the details on the right on multiple lines */
+  .weather-card p.weatherdetail,
+  .weather-week-card p.weatherdetail {
+    grid-column: 2;
+    justify-self: end;
+    text-align: right;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    margin: 1px 0 !important;
+    white-space: nowrap;
   }
 }
