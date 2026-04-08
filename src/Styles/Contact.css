@@ -1,7 +1,6 @@
 .contact-unique-main {
-  height: calc(100vh - 170px);
   width: 100%;
-  overflow: hidden !important;
+  overflow: visible;
   display: flex !important;
   align-items: center;
   justify-content: center;
@@ -17,14 +16,16 @@
   border-radius: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   width: 100%;
-  max-width: 900px;
-  padding: 20px;
+  max-width: 950px;
+  margin-top: 50px;
+  margin-bottom: 35px;
+  padding: 30px 35px 35px 30px;
   position: relative;
   box-sizing: border-box;
 }
 
 .contact-unique-textarea {
-  height: 100px !important;
+  height: 200px !important;
   resize: none;
   font-family: inherit;
   border-radius: 8px;
@@ -41,11 +42,11 @@ body.dark .contact-unique-card {
 }
 
 .contact-unique-desc {
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .contact-unique-title {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 800;
   text-transform: uppercase;
   color: #1a1a1a;
@@ -74,8 +75,7 @@ body.dark .contact-unique-title::after {
 .contact-unique-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding-top: 15px;
+  gap: 20px !important;
 }
 
 .contact-unique-row {
@@ -87,13 +87,14 @@ body.dark .contact-unique-title::after {
   flex: 1;
   display: flex;
   flex-direction: column;
+  height: 75px;
 }
 
 .contact-unique-label {
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 10px;
   color: #1a1a1a;
 }
 

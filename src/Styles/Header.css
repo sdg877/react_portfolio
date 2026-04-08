@@ -231,6 +231,10 @@ body.dark .nav-links {
     height: 4px;
     margin: 9px 0;
   }
+
+  .rain-chance {
+    display: none !important;
+  }
 }
 
 @media (max-width: 799px) {
