@@ -67,7 +67,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 250px;
+  min-height: 200px;
 }
 
 body.dark .service-card {
@@ -125,14 +125,14 @@ body.dark .service-card {
     display: block !important;
     height: auto !important;
     min-height: calc(100vh - 200px) !important;
-    overflow: visible !important;
+    overflow: hidden !important;
   }
 
   .services-wrapper {
     width: 100% !important;
     max-width: 95% !important;
     padding: 20px 20px !important;
-    margin: 20px auto 20px !important;
+    margin: 0px auto 20px !important;
     box-sizing: border-box;
   }
 
@@ -151,8 +151,8 @@ body.dark .service-card {
   }
 
   .service-card {
-    min-height: 220px !important;
-    height: auto !important;
+    min-height: 200px !important;
+    height: 200px !important;
     padding: 25px !important;
   }
 

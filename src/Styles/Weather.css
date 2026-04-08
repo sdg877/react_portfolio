@@ -85,16 +85,9 @@ body.dark .weather-card {
   margin: 4px;
 }
 
-.weather-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(216, 112, 147, 0.2);
-  border-color: #d87093;
-}
-
 .weather-icon {
-  font-size: 1rem;
+  font-size: 1.6rem !important;
   margin: 10px 0;
-  color: #d87093;
 }
 
 .temp {
@@ -143,7 +136,7 @@ body.dark .weather-card {
   }
 
   .weather-icon {
-    font-size: 1.5rem !important;
+    font-size: 1.2rem !important;
     margin-bottom: 10px !important;
   }
 

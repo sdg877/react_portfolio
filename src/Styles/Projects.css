@@ -300,7 +300,7 @@ body.dark .title-project::after {
 
 @media screen and (min-width: 800px) and (max-width: 1024px) {
   .project-page-container {
-    padding: 25px;
+    padding: 30px;
     margin: 10px auto 10px;
   }
 
@@ -371,7 +371,7 @@ body.dark .title-project::after {
 
 @media (max-width: 799px) {
   .project-page-container {
-    padding: 10px 10px 10px;
+    padding: 20px 10px 10px;
     margin: 20px auto 25px;
   }
 
