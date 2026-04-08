@@ -26,6 +26,8 @@
 .contact-unique-textarea {
   height: 100px !important;
   resize: none;
+  font-family: inherit;
+  border-radius: 8px;
 }
 
 body.dark .contact-unique-card {
@@ -315,12 +317,13 @@ body.dark .success-icon {
   }
 
   .contact-unique-desc {
-    font-size: 0.75rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
   }
 
   .contact-unique-row {
     flex-direction: column;
-    gap: 15px;
+    gap: 5px;
   }
 
   .contact-unique-label {
