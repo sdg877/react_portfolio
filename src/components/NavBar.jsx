@@ -74,7 +74,7 @@ const NavBar = ({
             onClick={() => setIsMenuOpen(false)}
           >
             <h2 className="location">{location}</h2>
-            <span className="weather-icon">{weatherIcon}</span>
+            <span className="weather-icon-header">{weatherIcon}</span>
             <p className="temperature">{temperature}°C</p>
             <p className="rain-chance">💧 {rainChance}%</p>
           </Link>
