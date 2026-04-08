@@ -154,11 +154,11 @@ body.dark .weather-card {
 
 @media (max-width: 799px) {
   .location-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .weather-title {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .weather-card {

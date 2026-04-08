@@ -227,7 +227,7 @@ body.dark .skills-icon-grid i::after {
   .skills-card-label {
     width: 100% !important;
     text-align: center !important;
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
     margin-bottom: 20px !important;
     display: block !important;
   }

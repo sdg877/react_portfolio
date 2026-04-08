@@ -376,7 +376,7 @@ body.dark .title-project::after {
   }
 
   .title-project {
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
     letter-spacing: 2px;
     line-height: 1.2;
     margin: 0 auto 10px auto;
@@ -417,7 +417,7 @@ body.dark .title-project::after {
   }
 
   .info-card-project h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .grid-card-label {
