@@ -116,18 +116,52 @@ body.dark .hp-card-wrapper:hover .hp-card-label {
   }
 
   .hp-card-link {
-    height: 150px;
+    height: 195px;
   }
 
   .hp-card-label {
     font-size: 1.4rem;
   }
 }
+/* 
+@media (max-width: 400px) {
+  .hp-container {
+    padding: 10px !important;
+    margin-top: 5vh;
+  }
+
+  .hp-bento-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    max-width: 370px !important;
+    margin: 0 auto !important;
+  }
+
+  .hp-card-wrapper {
+    width: 170px !important;
+    flex: none !important;
+  }
+
+  .hp-card-link {
+    height: 180px !important;
+  }
+
+  .hp-card-label {
+    font-size: 0.85rem !important;
+    text-align: center;
+    padding: 0 5px;
+  }
+} */
 
 @media (max-width: 450px) {
   .hp-container {
     padding: 15px;
     margin-top: 5vh;
+      overflow: hidden !important;
+      margin-bottom: 5px;
+
   }
 
   .hp-bento-grid {
