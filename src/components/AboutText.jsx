@@ -23,20 +23,22 @@ const AboutText = () => {
           solid backend as well as making the frontend user-friendly too.
         </p>
         <p>
-          I started my career in Operations in TV, advertising and publishing.
-          That background taught me how to handle the pressure of complex
-          projects and why clear communication is just as important as the code
-          itself.
+          I started out in Operations across TV, advertising and publishing.
+          That previous life was a masterclass in project management and
+          logistics; it taught me how to handle the pressure of messy projects
+          and why clear communication is just as important as the code itself. I
+          still use that operational mindset to break down complex problems and
+          find the most efficient path to a solution.
         </p>
         <p>
           In 2025, I was diagnosed with ADHD-C. While it was a huge shock for
           me, it wasn't for those close to me. My working style, ability to
           hyperfocus, my unique problem-solving skills and huge sense of justice
-          suddenly made a lot more sense. I have learnt to channel my energy
-          into things I love, and I feel blessed to have found coding. I love
-          that the answer is black and white, and you are able to move on once a
-          problem is solved, which I never had in my previous life in
-          operations.
+          suddenly made a lot more sense. I’ve learnt to channel that energy
+          into coding, and I feel lucky to have found it. I love the logic of
+          it; the satisfaction when a problem is actually solved and you can
+          move on, is unmatched. Which is something I rarely had in the
+          open-ended world of ops.
         </p>
         <p>
           I'm a born and bred Londoner, having grown up in Ladbroke Grove, West
@@ -49,10 +51,11 @@ const AboutText = () => {
           looking into current affairs. I spend a lot of time with my
           92-year-old Grandad; we go out for lunch, discuss politics, and
           generally enjoy each other's company. I also have a massive curiosity
-          for the paranormal, I love a good ghost story almost as much as a
-          clean codebase. There's something about the unknown that excites me. I
-          also love travelling and have visited over 30 countries, including
-          stints living in Berlin and Sydney.
+          for the paranormal. I love a good ghost story almost as much as a
+          clean codebase. There's something about the unknown that excites me.
+          I've also visited over 30 countries, including stints living in Berlin
+          and Sydney; some of my favourite countries I have visited are Canada,
+          Cuba, Turkey, Morocco, Fiji, and the Faroe Islands.
         </p>
       </article>
     </div>
