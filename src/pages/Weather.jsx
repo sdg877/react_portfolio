@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import axios from "axios";
 import "../Styles/Weather.css";
 import "../Styles/Header.css";
@@ -16,30 +17,19 @@ const Weather = () => {
         const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
         if (!fallback) {
-          const locationResponse = await axios.get(
-            `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`,
-          );
-
-          const town =
-            locationResponse.data.address.town ||
-            locationResponse.data.address.village ||
-            locationResponse.data.address.suburb ||
-            locationResponse.data.address.neighbourhood ||
-            null;
-
-          const city =
-            locationResponse.data.address.city ||
-            locationResponse.data.address.state ||
-            null;
-
-          const locationName =
-            town && city && town !== city
-              ? `${town}, ${city}`
-              : town || city || "Your Area";
-
-          setLocation(locationName);
+          try {
+            const locationResponse = await axios.get(
+              `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`,
+            );
+            const addr = locationResponse.data.address;
+            const locationName =
+              addr.town || addr.village || addr.suburb || addr.city || "Merton";
+            setLocation(locationName);
+          } catch (locError) {
+            setLocation("Merton");
+          }
         } else {
-          setLocation("London");
+          setLocation("Merton");
         }
 
         const weatherResponse = await axios.get(
@@ -47,7 +37,6 @@ const Weather = () => {
         );
 
         const currentHour = new Date().getHours();
-
         const todaySunrise = weatherResponse.data.daily.sunrise[0];
         const todaySunset = weatherResponse.data.daily.sunset[0];
 
@@ -91,6 +80,7 @@ const Weather = () => {
         setHourlyWeather(hourlyData);
         setDailyWeather(dailyData);
         setLoading(false);
+        setError(null);
       } catch (error) {
         setError("Unable to fetch weather data.");
         setLoading(false);
@@ -100,15 +90,12 @@ const Weather = () => {
     const getUserLocation = () => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
-          (position) => {
-            fetchWeather(position.coords.latitude, position.coords.longitude);
-          },
-          () => {
-            fetchWeather(51.5074, -0.1278, true);
-          },
+          (position) =>
+            fetchWeather(position.coords.latitude, position.coords.longitude),
+          () => fetchWeather(51.415, -0.17, true),
         );
       } else {
-        fetchWeather(51.5074, -0.1278, true);
+        fetchWeather(51.415, -0.17, true);
       }
     };
 
@@ -125,7 +112,6 @@ const Weather = () => {
     const currentTime = new Date(timeString).getTime();
     const sunriseTime = new Date(sunriseStr).getTime();
     const sunsetTime = new Date(sunsetStr).getTime();
-
     const isDayTime = currentTime >= sunriseTime && currentTime < sunsetTime;
 
     const weatherIcons = {
@@ -159,17 +145,13 @@ const Weather = () => {
       99: "⛈️",
     };
 
-    if (rainChance === 0 && weatherCode >= 51 && weatherCode <= 82) {
-      return "☁️";
-    }
-
+    if (rainChance === 0 && weatherCode >= 51 && weatherCode <= 82) return "☁️";
     return weatherIcons[weatherCode] || (isDayTime ? "☀️" : "🌙");
   };
 
   const formatTime = (timeString) => {
     const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const date = new Date(timeString);
-    return date.toLocaleTimeString("en-GB", {
+    return new Date(timeString).toLocaleTimeString("en-GB", {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
@@ -178,8 +160,7 @@ const Weather = () => {
   };
 
   const formatDate = (datetime) => {
-    const date = new Date(datetime);
-    return date.toLocaleDateString("en-GB", {
+    return new Date(datetime).toLocaleDateString("en-GB", {
       weekday: "short",
       day: "2-digit",
       month: "2-digit",
@@ -188,15 +169,27 @@ const Weather = () => {
 
   return (
     <div className="weather-container">
-      <div className="weather-content-wrapper">
+      <motion.div
+        className="weather-content-wrapper"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         {loading ? (
-          <p className="loading">Loading weather...</p>
+          <div className="status-message-wrapper">
+            <div className="weather-card status-card">
+              <p>Gathering data for Merton...</p>
+            </div>
+          </div>
         ) : error ? (
-          <p>{error}</p>
+          <div className="status-message-wrapper">
+            <div className="weather-card status-card">
+              <p>{error}</p>
+            </div>
+          </div>
         ) : (
           <>
             <h2 className="location-title">Weather in {location}</h2>
-
             <h3 className="weather-title">Next 12 Hours</h3>
             <div className="weather-card-container">
               {hourlyWeather.map((hour, index) => (
@@ -224,7 +217,7 @@ const Weather = () => {
             <h3 className="weather-title">The Coming Week</h3>
             <div className="weather-card-container">
               {dailyWeather.map((day, index) => (
-                <div key={index} className="weather-week-card">
+                <div key={index} className="weather-card">
                   <p>{formatDate(day.date)}</p>
                   <p className="weather-icon">
                     {getWeatherIcon(
@@ -235,7 +228,7 @@ const Weather = () => {
                       day.sunset,
                     )}
                   </p>
-                  <p>
+                  <p className="temp">
                     {Math.round(day.tempMin)}°C - {Math.round(day.tempMax)}°C
                   </p>
                   <p className="weatherdetail">Rain: {day.rainChance}%</p>
@@ -245,7 +238,7 @@ const Weather = () => {
             </div>
           </>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };
