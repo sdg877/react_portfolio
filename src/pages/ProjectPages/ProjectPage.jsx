@@ -58,7 +58,7 @@ const ProjectPage = ({
                   <div key={idx} className="highlight-item">
                     <img
                       src={snippet.image}
-                      alt="Code Snippet"
+                      alt={`Technical highlight: ${snippet.caption}`}
                       className="project-image"
                     />
                     <p className="highlight-caption">{snippet.caption}</p>
