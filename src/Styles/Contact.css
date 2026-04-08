@@ -137,8 +137,9 @@ body.dark .contact-unique-label {
 }
 
 .contact-unique-textarea {
-  height: 110pxpx;
+  height: 110px;
   resize: none;
+  font-family: inherit;
 }
 
 .contact-unique-input {
@@ -150,6 +151,7 @@ body.dark .contact-unique-label {
   padding: 12px;
   font-size: 1rem;
   color: #1a1a1a;
+  font-family: inherit;
 }
 
 body.dark .contact-unique-input,
@@ -191,6 +193,36 @@ body.dark .contact-unique-button {
   outline: none !important;
   -webkit-appearance: none;
   box-shadow: none !important;
+}
+
+.contact-success-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  min-height: 300px;
+}
+
+.success-icon {
+  font-size: 3rem;
+  color: #d87093;
+  margin-bottom: 20px;
+}
+
+body.dark .success-icon {
+  color: #ffc0cb;
+}
+
+.contact-success-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-success-overlay p {
+  margin-bottom: 25px;
+  opacity: 0.8;
 }
 
 @media screen and (min-width: 800px) and (max-width: 1024px) {
@@ -255,7 +287,7 @@ body.dark .contact-unique-button {
   }
 
   .contact-unique-textarea {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -342,5 +374,15 @@ body.dark .contact-unique-button {
 
   .contact-unique-textarea {
     font-size: 0.82rem;
+  }
+
+  .contact-success-overlay {
+    padding: 10px !important;
+    min-height: auto !important;
+  }
+
+  .success-icon {
+    font-size: 2rem !important;
+    margin-bottom: 10px !important;
   }
 }
