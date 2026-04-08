@@ -16,6 +16,7 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,7 +26,6 @@ const Contact = () => {
     e.preventDefault();
 
     if (formData.company) {
-      console.log("Bot detected!");
       return;
     }
 
@@ -48,8 +48,8 @@ const Contact = () => {
       )
       .then(
         () => {
-          toast.success("Message sent successfully!");
           setLoading(false);
+          setSubmitted(true);
           setFormData({
             name: "",
             email: "",
@@ -76,36 +76,87 @@ const Contact = () => {
         <div className="contact-unique-card">
           <div className="contact-unique-header">
             <h3 className="contact-unique-title">Get In Touch</h3>
-            <p className="contact-unique-desc">
-              Whether you have a question about my projects, want to discuss a
-              potential collaboration, or just want to say hello, feel free to
-              drop me a message below.
-            </p>
+            {!submitted && (
+              <p className="contact-unique-desc">
+                Whether you have a question about my projects, want to discuss a
+                potential collaboration, or just want to say hello, feel free to
+                drop me a message below.
+              </p>
+            )}
           </div>
 
           <div className="contact-unique-content">
             {loading && <Spinner />}
 
-            <form onSubmit={handleSubmit} className="contact-unique-form">
-              {/* HONEYPOT FIELD: Humans cannot see this, but bots will fill it */}
-              <div style={{ display: "none" }} aria-hidden="true">
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  tabIndex="-1"
-                  autoComplete="off"
-                />
-              </div>
-
-              <div className="contact-unique-row">
-                <div className="contact-unique-field">
-                  <label className="contact-unique-label">Name</label>
+            {submitted ? (
+              <motion.div
+                className="contact-success-overlay"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+              >
+                <div className="success-icon">✓</div>
+                <h3 className="contact-unique-title">Message Sent!</h3>
+                <p className="contact-unique-desc">
+                  {window.innerWidth < 768
+                    ? "Successfully sent."
+                    : "Thanks for reaching out. I'll get back to you shortly."}
+                </p>
+                <div className="contact-unique-btn-wrap">
+                  <button
+                    className="contact-unique-button"
+                    onClick={() => setSubmitted(false)}
+                  >
+                    Send Another
+                  </button>
+                </div>
+              </motion.div>
+            ) : (
+              <form onSubmit={handleSubmit} className="contact-unique-form">
+                <div style={{ display: "none" }} aria-hidden="true">
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    tabIndex="-1"
+                    autoComplete="off"
+                  />
+                </div>
+
+                <div className="contact-unique-row">
+                  <div className="contact-unique-field">
+                    <label className="contact-unique-label">Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="contact-unique-input"
+                      disabled={loading}
+                    />
+                  </div>
+
+                  <div className="contact-unique-field">
+                    <label className="contact-unique-label">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="contact-unique-input"
+                      disabled={loading}
+                    />
+                  </div>
+                </div>
+
+                <div className="contact-unique-field">
+                  <label className="contact-unique-label">Subject</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
                     required
                     className="contact-unique-input"
@@ -114,60 +165,37 @@ const Contact = () => {
                 </div>
 
                 <div className="contact-unique-field">
-                  <label className="contact-unique-label">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
+                  <label className="contact-unique-label">Message</label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
                     onChange={handleChange}
                     required
-                    className="contact-unique-input"
+                    rows="5"
+                    className="contact-unique-textarea"
                     disabled={loading}
                   />
                 </div>
-              </div>
 
-              <div className="contact-unique-field">
-                <label className="contact-unique-label">Subject</label>
-                <input
-                  type="text"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="contact-unique-input"
-                  disabled={loading}
-                />
-              </div>
-
-              <div className="contact-unique-field">
-                <label className="contact-unique-label">Message</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="5"
-                  className="contact-unique-textarea"
-                  disabled={loading}
-                />
-              </div>
-
-              <div className="contact-unique-btn-wrap">
-                <button
-                  type="submit"
-                  className="contact-unique-button"
-                  disabled={loading}
-                >
-                  {loading ? "Sending..." : "Send Message"}
-                </button>
-              </div>
-            </form>
+                <div className="contact-unique-btn-wrap">
+                  <button
+                    type="submit"
+                    className="contact-unique-button"
+                    disabled={loading}
+                  >
+                    {loading ? "Sending..." : "Send Message"}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         </div>
       </motion.div>
 
-      <ToastContainer position="bottom-right" theme="dark" />
+      <ToastContainer
+        position="bottom-right"
+        theme={document.body.classList.contains("dark") ? "dark" : "light"}
+      />
     </div>
   );
 };
