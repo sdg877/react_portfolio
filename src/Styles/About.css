@@ -126,4 +126,10 @@ body.dark .about-text-area {
     padding: 0;
     line-height: 1.5;
   }
+
+    .profile-image {
+    width: 135px;
+    height: 135px;
+    margin: 0 auto 15px;
+  }
 }
