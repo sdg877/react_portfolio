@@ -445,3 +445,17 @@ body.dark .title-project::after {
     padding-left: 10px;
   }
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .grid-card-wrapper:hover .project-img-bg {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@media (pointer: coarse) {
+  .grid-card-wrapper:hover .project-img-bg {
+    transform: none !important;
+    opacity: 0.75 !important;
+  }
+}
