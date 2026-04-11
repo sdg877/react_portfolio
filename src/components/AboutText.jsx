@@ -26,9 +26,10 @@ const AboutText = () => {
           I started out in Operations across TV, advertising and publishing.
           That previous life was a masterclass in project management and
           logistics; it taught me how to handle the pressure of messy projects
-          and why clear communication is just as important as the code itself. I
-          still use that operational mindset to break down complex problems and
-          find the most efficient path to a solution.
+          and why clear communication is just as important as the code itself.
+          That background taught me how to untangle complicated problems, a
+          skill that translates directly to architecting clean, predictable
+          code.
         </p>
         <p>
           In 2025, I was diagnosed with ADHD-C. While it was a huge shock for
