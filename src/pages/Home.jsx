@@ -14,7 +14,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="hp-container">
+    <div className="hp-container home-page-container">
       <nav className="hp-bento-grid">
         {menuItems.map((item) => (
           <motion.div
