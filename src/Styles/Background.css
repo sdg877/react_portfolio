@@ -161,7 +161,11 @@
 
 body.dark .edu-exp-container {
   background: rgba(255, 255, 255, 0.05) !important;
+  will-change: transform, opacity;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
 }
+
 body.dark .edu-exp-title,
 body.dark .github-desc,
 body.dark .edu-exp-content {
