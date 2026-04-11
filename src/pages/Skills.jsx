@@ -2,19 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import "../Styles/Skills.css";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 const skillSections = [
   {
     title: "Frontend",
@@ -63,16 +50,13 @@ const Skills = () => {
     <div className="skills-page-wrapper">
       <motion.div
         className="skills-bento-grid"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+        /* Match About.jsx exactly */
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
       >
         {skillSections.map((section, index) => (
-          <motion.div
-            key={index}
-            className="skills-card"
-            variants={cardVariants}
-          >
+          <div key={index} className="skills-card">
             <h3 className="skills-card-label">{section.title}</h3>
             <div
               className={`skills-icon-grid ${section.isPulse ? "pulse-anim" : ""}`}
@@ -86,20 +70,17 @@ const Skills = () => {
               ))}
             </div>
             <div className="skills-card-accent"></div>
-          </motion.div>
+          </div>
         ))}
 
-        <motion.div
-          className="skills-card soft-skills-card"
-          variants={cardVariants}
-        >
+        <div className="skills-card soft-skills-card">
           <h3 className="skills-card-label">Soft Skills</h3>
           <p className="soft-skills-text">
             Organisation, Communication, Team Work, Team Management,
             Problem-Solving, Project Management.
           </p>
           <div className="skills-card-accent"></div>
-        </motion.div>
+        </div>
       </motion.div>
     </div>
   );

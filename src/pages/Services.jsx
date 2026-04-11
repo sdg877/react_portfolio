@@ -6,7 +6,6 @@ import "../Styles/Services.css";
 const Services = () => {
   return (
     <div className="services-page">
-      {/* Animation updated here to match the About page */}
       <motion.div
         className="services-wrapper"
         initial={{ opacity: 0, y: 30 }}
@@ -23,7 +22,6 @@ const Services = () => {
         </header>
 
         <div className="services-bento-grid">
-          {/* Card 1: Starter */}
           <div className="service-card">
             <div className="service-badge">
               <span className="badge-text">Starter</span>
@@ -37,7 +35,6 @@ const Services = () => {
             </div>
           </div>
 
-          {/* Card 2: Standard */}
           <div className="service-card">
             <div className="service-badge">
               <span className="badge-text">Standard</span>
@@ -51,7 +48,6 @@ const Services = () => {
             </div>
           </div>
 
-          {/* Card 3: Custom App */}
           <div className="service-card">
             <div className="service-badge">
               <span className="badge-text">Custom App</span>
