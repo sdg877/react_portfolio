@@ -15,13 +15,40 @@ const Services = () => {
         <header className="services-header">
           <h2 className="services-title">Services</h2>
           <p className="services-intro">
-            Web development services for individuals, creatives, and small
-            businesses. Every project is different, but here is a guide to
-            pricing.
+            Web development and technical solutions for individuals, creatives,
+            and small businesses. Every project is different, but here is a
+            guide to pricing.
           </p>
         </header>
 
         <div className="services-bento-grid">
+          <div className="service-card">
+            <div className="service-badge">
+              <span className="badge-text">Fixes</span>
+            </div>
+            <div className="service-content">
+              <h3>From £150</h3>
+              <p>
+                Targeted updates for existing sites. Fixing layouts, adding
+                components, or squashing persistent bugs.
+              </p>
+            </div>
+          </div>
+
+          <div className="service-card">
+            <div className="service-badge">
+              <span className="badge-text">Audit</span>
+            </div>
+            <div className="service-content">
+              <h3>£250</h3>
+              <p>
+                Technical health check. I audit speed, SEO, and accessibility
+                (WCAG) with a roadmap for fixes.
+              </p>
+            </div>
+          </div>
+
+          {/* 3. Starter */}
           <div className="service-card">
             <div className="service-badge">
               <span className="badge-text">Starter</span>
@@ -35,6 +62,21 @@ const Services = () => {
             </div>
           </div>
 
+          {/* 4. Automation */}
+          <div className="service-card">
+            <div className="service-badge">
+              <span className="badge-text">Automation</span>
+            </div>
+            <div className="service-content">
+              <h3>From £450</h3>
+              <p>
+                Python scripts to automate manual tasks. Connecting your tools
+                to save hours of admin work.
+              </p>
+            </div>
+          </div>
+
+          {/* 5. Standard */}
           <div className="service-card">
             <div className="service-badge">
               <span className="badge-text">Standard</span>
@@ -48,6 +90,7 @@ const Services = () => {
             </div>
           </div>
 
+          {/* 6. Custom App */}
           <div className="service-card">
             <div className="service-badge">
               <span className="badge-text">Custom App</span>
@@ -64,7 +107,7 @@ const Services = () => {
 
         <footer className="services-footer">
           <p className="footer-text">
-            Not sure what you need? Check my{" "}
+            Looking for <strong>agency white-label rates</strong>? Check my{" "}
             <Link to="/projects" className="service-link">
               projects
             </Link>{" "}
