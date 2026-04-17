@@ -48,7 +48,6 @@ const Services = () => {
             </div>
           </div>
 
-          {/* 3. Starter */}
           <div className="service-card">
             <div className="service-badge">
               <span className="badge-text">Starter</span>
@@ -62,7 +61,6 @@ const Services = () => {
             </div>
           </div>
 
-          {/* 4. Automation */}
           <div className="service-card">
             <div className="service-badge">
               <span className="badge-text">Automation</span>
@@ -76,7 +74,6 @@ const Services = () => {
             </div>
           </div>
 
-          {/* 5. Standard */}
           <div className="service-card">
             <div className="service-badge">
               <span className="badge-text">Standard</span>
@@ -90,10 +87,9 @@ const Services = () => {
             </div>
           </div>
 
-          {/* 6. Custom App */}
           <div className="service-card">
             <div className="service-badge">
-              <span className="badge-text">Custom App</span>
+              <span className="badge-text">Custom</span>
             </div>
             <div className="service-content">
               <h3>From £1500</h3>
