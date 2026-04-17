@@ -53,22 +53,6 @@
   width: 100%;
 }
 
-/* .service-card {
-  background: rgba(255, 250, 250, 0.98);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 16px;
-  padding: 40px 30px;
-  text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 200px;
-} */
-
 .service-card {
   background: rgba(255, 250, 250, 0.98);
   backdrop-filter: blur(8px);
@@ -81,10 +65,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  
-  /* THE FIXES */
-  justify-content: flex-start !important; /* Forces the header to the top */
-  max-height: 300px;                      /* Makes all boxes the same height */
+  justify-content: flex-start !important;
+  max-height: 300px;
 }
 
 body.dark .service-card {
@@ -197,7 +179,7 @@ body.dark .service-card {
   }
 
   .services-title {
-    font-size: 1.4rem; 
+    font-size: 1.4rem;
   }
 
   .services-intro {
@@ -207,14 +189,14 @@ body.dark .service-card {
 
   .services-bento-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; 
+    grid-template-columns: repeat(2, 1fr) !important;
     width: 95% !important;
     margin: 0 auto !important;
   }
 
   .service-card {
     height: auto !important;
-    min-height: 160px !important; 
+    min-height: 160px !important;
     padding: 15px !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
