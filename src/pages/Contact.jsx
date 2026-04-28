@@ -13,6 +13,7 @@ const Contact = () => {
     message: "",
     subject: "",
     company: "",
+    confirm_email: "",
   });
 
   const [loading, setLoading] = useState(false);
@@ -25,7 +26,9 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (formData.company) {
+    // Check both honey traps
+    if (formData.company || formData.confirm_email) {
+      setSubmitted(true); // Pretend it worked to fool the bot
       return;
     }
 
@@ -56,6 +59,7 @@ const Contact = () => {
             message: "",
             subject: "",
             company: "",
+            confirm_email: "",
           });
         },
         () => {
@@ -112,11 +116,20 @@ const Contact = () => {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="contact-unique-form">
+                {/* Honey Trap Container */}
                 <div style={{ display: "none" }} aria-hidden="true">
                   <input
                     type="text"
                     name="company"
                     value={formData.company}
+                    onChange={handleChange}
+                    tabIndex="-1"
+                    autoComplete="off"
+                  />
+                  <input
+                    type="email"
+                    name="confirm_email"
+                    value={formData.confirm_email}
                     onChange={handleChange}
                     tabIndex="-1"
                     autoComplete="off"
