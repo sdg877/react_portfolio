@@ -20,11 +20,12 @@ const projects = [
     title: "In Development: Next-Gen ADHD Planner",
     image: sdgDark,
     description: [
-      "I am currently building a bespoke digital planner tailored for ADHD brains. After struggling to find an app that met my needs, I decided to build my own. Unlike traditional planners that force rigid productivity, this project focuses on low-friction task management and dopamine-friendly tracking. I am currently finalising the core UI wireframes and aiming for a working MVP by the end of May 2026.",
+      "I am currently building a bespoke digital planner tailored for ADHD brains. After struggling to find an app that met my needs, I decided to build my own. Unlike traditional planners that force rigid productivity, this project focuses on low-friction task management and dopamine-friendly tracking.",
+      "I am currently finalising the core UI wireframes and aiming for a working MVP by the end of May 2026.",
     ],
     siteUrl: "",
-    githubFrontendUrl: "",
-    githubBackendUrl: "",
+    githubFrontendUrl: "https://github.com/sdg877/tfmc-fe",
+    githubBackendUrl: "https://github.com/sdg877/tfmc-be",
   },
   {
     id: "CarbonCalculator",
