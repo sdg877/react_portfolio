@@ -20,8 +20,9 @@ const projects = [
     title: "In Development: Next-Gen ADHD Planner",
     image: sdgDark,
     description: [
-      "I am currently building a bespoke digital planner tailored for ADHD brains. After struggling to find an app that met my needs, I decided to build my own. Unlike traditional planners that force rigid productivity, this project focuses on low-friction task management and dopamine-friendly tracking.",
-      "I am currently finalising the core UI wireframes and aiming for a working MVP by the end of May 2026.",
+      "I'm building a digital planner designed specifically for ADHD brains. After trying countless productivity apps that felt too rigid and overwhelming, I decided to build a tool that actually works for me.",
+      "The project focuses on low-friction task management, dynamic energy tracking, and dopamine-friendly progress indicators rather than forcing strict scheduling.",
+      "It's a full-stack MERN application featuring Google Calendar integration, currently in active development as I refine the core features.",
     ],
     siteUrl: "",
     githubFrontendUrl: "https://github.com/sdg877/tfmc-fe",
