@@ -8,6 +8,7 @@ import Contact from "./pages/Contact.jsx";
 import Weather from "./pages/Weather.jsx";
 import Home from "./pages/Home.jsx";
 import Services from "./pages/Services.jsx";
+import Gallery from "./pages/Gallery.jsx";
 import Layout from "./components/Layout.jsx";
 import ProjectComponent from "./pages/ProjectPages/ProjectComponent";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
@@ -25,6 +26,7 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/background" element={<Background />} />
+              <Route path="/gallery" element={<Gallery />} />
               <Route path="/skills" element={<Skills />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:id" element={<ProjectComponent />} />
