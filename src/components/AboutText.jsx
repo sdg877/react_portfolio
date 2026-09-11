@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; 
 import SylviaImage from "../Assets/Images/Branding/Sylvia.jpeg";
 
 const AboutText = () => {
@@ -48,7 +49,8 @@ const AboutText = () => {
           Merton.
         </p>
         <p>
-          When I’m not coding, I’m usually hiking, trying out a new recipe, or
+          When I’m not coding, I’m usually hiking, experimenting with{" "}
+          <Link to="/gallery" className="custom-link">photography</Link>, trying out a new recipe, or
           looking into current affairs. I spend a lot of time with my
           92-year-old Grandad; we go out for lunch, discuss politics, and
           generally enjoy each other's company. I also have a massive curiosity
