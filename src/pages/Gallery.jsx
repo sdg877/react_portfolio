@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
+import WorldMap from "../components/WorldMap";
 import galleryData from "../Data/galleryData";
 import "../Styles/Gallery.css";
 
@@ -6,32 +7,43 @@ const importAll = (r) =>
   r.keys().map((key) => ({ file: key.replace("./", ""), src: r(key) }));
 
 const rawImages = importAll(
-  require.context("../Assets/Images/Gallery", false, /\.(png|jpe?g|svg|webp)$/),
+  require.context(
+    "../Assets/Images/Gallery",
+    false,
+    /\.(png|jpe?g|svg|webp)$/i,
+  ),
 );
 
-// Merge the imported image files with their metadata by filename.
-// Any image without a matching data entry still shows up, just
-// labelled as unknown, so nothing silently disappears from the folder.
+const parseUKDate = (dateStr) => {
+  if (!dateStr) return null;
+  const [day, month, year] = dateStr.split("/").map(Number);
+  if (!day || !month || !year) return null;
+  return new Date(year, month - 1, day);
+};
+
 const buildImageList = () => {
-  const dataByFile = new Map(galleryData.map((entry) => [entry.file, entry]));
+  const dataByFile = new Map(
+    galleryData.map((entry) => [entry.file.toLowerCase(), entry]),
+  );
 
   const merged = rawImages.map(({ file, src }) => {
-    const meta = dataByFile.get(file);
+    const meta = dataByFile.get(file.toLowerCase());
 
     if (!meta) {
       console.warn(`No metadata entry found for image "${file}"`);
     }
 
-    const dateTaken = meta?.date ? new Date(meta.date) : null;
+    const dateTaken = parseUKDate(meta?.date);
 
     return {
       src,
       file,
       title: meta?.title || file,
-      category: meta?.category || "Uncategorized",
+      categories: meta?.categories?.length
+        ? meta.categories
+        : ["Uncategorized"],
       location: meta?.location || "Unknown Location",
       coordinates: meta?.coordinates || null,
-      description: meta?.description || "",
       dateTaken,
       formattedDate: dateTaken
         ? dateTaken.toLocaleDateString("en-GB", {
@@ -51,22 +63,29 @@ const allImages = buildImageList();
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [activeLocation, setActiveLocation] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [showMap, setShowMap] = useState(false);
+  const [showFilters, setShowFilters] = useState(false);
 
   const categories = useMemo(() => {
-    const unique = new Set(allImages.map((img) => img.category));
+    const unique = new Set(allImages.flatMap((img) => img.categories));
     return ["All", ...Array.from(unique).sort()];
   }, []);
 
   const images = useMemo(() => {
-    if (activeCategory === "All") return allImages;
-    return allImages.filter((img) => img.category === activeCategory);
-  }, [activeCategory]);
+    return allImages.filter((img) => {
+      const matchesCategory =
+        activeCategory === "All" || img.categories.includes(activeCategory);
+      const matchesLocation =
+        !activeLocation || img.location === activeLocation;
+      return matchesCategory && matchesLocation;
+    });
+  }, [activeCategory, activeLocation]);
 
-  const handleCategoryChange = (category) => {
-    setActiveCategory(category);
+  useEffect(() => {
     setCurrentIndex(0);
-  };
+  }, [activeCategory, activeLocation]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -84,67 +103,108 @@ const Gallery = () => {
     return <div className="gallery-empty">No images found in folder.</div>;
   }
 
-  if (images.length === 0) {
-    return (
-      <div className="gallery-container">
-        <div className="gallery-filters">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={`filter-btn ${activeCategory === category ? "active" : ""}`}
-              onClick={() => handleCategoryChange(category)}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-        <div className="gallery-empty">No images in this category yet.</div>
-      </div>
-    );
-  }
-
-  const currentImage = images[currentIndex];
+  const currentImage = images[0] ? images[currentIndex] : null;
 
   return (
-    <div className="gallery-container">
-      <div className="gallery-filters">
-        {categories.map((category) => (
-          <button
-            key={category}
-            className={`filter-btn ${activeCategory === category ? "active" : ""}`}
-            onClick={() => handleCategoryChange(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-
-      <div className="slideshow-wrapper">
-        <button className="nav-btn prev" onClick={prevSlide}>
-          &#10094;
-        </button>
-
-        <div className="image-frame">
-          <img
-            src={currentImage.src}
-            alt={currentImage.title}
-            className="slideshow-image"
-          />
+    <div className="gallery-page-container">
+      <div className="gallery-wrapper">
+        <div className="gallery-header">
+          <h1 className="title-gallery">Photo Gallery</h1>
         </div>
 
-        <button className="nav-btn next" onClick={nextSlide}>
-          &#10095;
-        </button>
-      </div>
+        <div className="gallery-card-glass">
+          <div className="gallery-toggle-row">
+            <button
+              className="map-toggle-btn"
+              onClick={() => setShowMap((prev) => !prev)}
+            >
+              {showMap ? "✕ Hide World Map" : "View World Map"}
+            </button>
 
-      <div className="gallery-meta">
-        <p className="meta-title">{currentImage.title}</p>
-        <p className="meta-location">📍 {currentImage.location}</p>
-        <p className="meta-date">📅 {currentImage.formattedDate}</p>
-        <p className="meta-category">🏷️ {currentImage.category}</p>
-        <p className="meta-counter">
-          {currentIndex + 1} / {images.length}
-        </p>
+            <button
+              className="filter-toggle-btn"
+              onClick={() => setShowFilters((prev) => !prev)}
+            >
+              {showFilters ? "✕ Hide Filters" : "Filter Photos"}
+            </button>
+          </div>
+
+          {showMap && (
+            <WorldMap
+              activeLocation={activeLocation}
+              onSelectLocation={setActiveLocation}
+            />
+          )}
+
+          {showFilters && (
+            <div className="gallery-filters">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className={`filter-btn ${activeCategory === category ? "active" : ""}`}
+                  onClick={() => setActiveCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {!currentImage ? (
+            <div className="gallery-empty">
+              No images match the current filters.
+            </div>
+          ) : (
+            <>
+              <h2 className="photo-title">{currentImage.title}</h2>
+
+              <div className="slideshow-wrapper">
+                <button className="nav-btn prev" onClick={prevSlide}>
+                  &#10094;
+                </button>
+
+                <div className="image-frame">
+                  <img
+                    src={currentImage.src}
+                    alt={currentImage.title}
+                    className="slideshow-image"
+                  />
+                </div>
+
+                <button className="nav-btn next" onClick={nextSlide}>
+                  &#10095;
+                </button>
+              </div>
+
+              <div className="gallery-meta">
+                <span className="meta-item"> {currentImage.location}</span>
+                <span className="meta-item">
+                  {currentImage.formattedDate}
+                </span>
+                <span className="meta-item">
+                {currentImage.categories.join(", ")}
+                </span>
+                <span className="meta-counter">
+                  {currentIndex + 1} / {images.length}
+                </span>
+              </div>
+
+              <div className="thumbnail-strip">
+                {images.map((img, index) => (
+                  <img
+                    key={img.file}
+                    src={img.src}
+                    alt={img.title}
+                    className={`thumbnail ${index === currentIndex ? "active" : ""}`}
+                    onClick={() => setCurrentIndex(index)}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+
+          <p className="gallery-note">More photos being added soon. All photos taken on my Canon EAS800D.</p>
+        </div>
       </div>
     </div>
   );
