@@ -46,11 +46,7 @@ const buildImageList = () => {
       coordinates: meta?.coordinates || null,
       dateTaken,
       formattedDate: dateTaken
-        ? dateTaken.toLocaleDateString("en-GB", {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })
+        ? dateTaken.getFullYear().toString()
         : "Date Unknown",
     };
   });
@@ -63,7 +59,6 @@ const allImages = buildImageList();
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [activeLocation, setActiveLocation] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showMap, setShowMap] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
@@ -77,15 +72,20 @@ const Gallery = () => {
     return allImages.filter((img) => {
       const matchesCategory =
         activeCategory === "All" || img.categories.includes(activeCategory);
-      const matchesLocation =
-        !activeLocation || img.location === activeLocation;
-      return matchesCategory && matchesLocation;
+      return matchesCategory;
     });
-  }, [activeCategory, activeLocation]);
+  }, [activeCategory]);
 
   useEffect(() => {
     setCurrentIndex(0);
-  }, [activeCategory, activeLocation]);
+  }, [activeCategory]);
+
+  const toggleMap = () => {
+    setShowMap((prev) => {
+      if (!prev) setShowFilters(false);
+      return !prev;
+    });
+  };
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
@@ -114,98 +114,96 @@ const Gallery = () => {
 
         <div className="gallery-card-glass">
           <div className="gallery-toggle-row">
-            <button
-              className="map-toggle-btn"
-              onClick={() => setShowMap((prev) => !prev)}
-            >
+            <button className="map-toggle-btn" onClick={toggleMap}>
               {showMap ? "✕ Hide World Map" : "View World Map"}
             </button>
 
-            <button
-              className="filter-toggle-btn"
-              onClick={() => setShowFilters((prev) => !prev)}
-            >
-              {showFilters ? "✕ Hide Filters" : "Filter Photos"}
-            </button>
+            {!showMap && (
+              <button
+                className="filter-toggle-btn"
+                onClick={() => setShowFilters((prev) => !prev)}
+              >
+                {showFilters ? "✕ Hide Filters" : "Filter Photos"}
+              </button>
+            )}
           </div>
 
-          {showMap && (
-            <WorldMap
-              activeLocation={activeLocation}
-              onSelectLocation={setActiveLocation}
-            />
-          )}
-
-          {showFilters && (
-            <div className="gallery-filters">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  className={`filter-btn ${activeCategory === category ? "active" : ""}`}
-                  onClick={() => setActiveCategory(category)}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {!currentImage ? (
-            <div className="gallery-empty">
-              No images match the current filters.
-            </div>
+          {showMap ? (
+            <WorldMap allImages={allImages} />
           ) : (
             <>
-              <h2 className="photo-title">{currentImage.title}</h2>
-
-              <div className="slideshow-wrapper">
-                <button className="nav-btn prev" onClick={prevSlide}>
-                  &#10094;
-                </button>
-
-                <div className="image-frame">
-                  <img
-                    src={currentImage.src}
-                    alt={currentImage.title}
-                    className="slideshow-image"
-                    loading="lazy"
-                  />
+              {showFilters && (
+                <div className="gallery-filters">
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      className={`filter-btn ${activeCategory === category ? "active" : ""}`}
+                      onClick={() => setActiveCategory(category)}
+                    >
+                      {category}
+                    </button>
+                  ))}
                 </div>
+              )}
 
-                <button className="nav-btn next" onClick={nextSlide}>
-                  &#10095;
-                </button>
-              </div>
+              {!currentImage ? (
+                <div className="gallery-empty">
+                  No images match the current filters.
+                </div>
+              ) : (
+                <>
+                  <h2 className="photo-title">{currentImage.title}</h2>
 
-              <div className="gallery-meta">
-                <span className="meta-item"> {currentImage.location}</span>
-                <span className="meta-item">
-                  {currentImage.formattedDate}
-                </span>
-                <span className="meta-item">
-                {currentImage.categories.join(", ")}
-                </span>
-                <span className="meta-counter">
-                  {currentIndex + 1} / {images.length}
-                </span>
-              </div>
+                  <div className="slideshow-wrapper">
+                    <button className="nav-btn prev" onClick={prevSlide}>
+                      &#10094;
+                    </button>
 
-              <div className="thumbnail-strip">
-                {images.map((img, index) => (
-                  <img
-                    key={img.file}
-                    src={img.src}
-                    alt={img.title}
-                    className={`thumbnail ${index === currentIndex ? "active" : ""}`}
-                    onClick={() => setCurrentIndex(index)}
-                    loading="lazy"
-                  />
-                ))}
-              </div>
+                    <div className="image-frame">
+                      <img
+                        src={currentImage.src}
+                        alt={currentImage.title}
+                        className="slideshow-image"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    <button className="nav-btn next" onClick={nextSlide}>
+                      &#10095;
+                    </button>
+                  </div>
+
+                  {/* Cleaned meta strip: only Location, Year, and Counter */}
+                  <div className="gallery-meta">
+                    <span className="meta-item">{currentImage.location}</span>
+                    <span className="meta-item">
+                      {currentImage.formattedDate}
+                    </span>
+                    <span className="meta-counter">
+                      {currentIndex + 1} / {images.length}
+                    </span>
+                  </div>
+
+                  <div className="thumbnail-strip">
+                    {images.map((img, index) => (
+                      <img
+                        key={img.file}
+                        src={img.src}
+                        alt={img.title}
+                        className={`thumbnail ${index === currentIndex ? "active" : ""}`}
+                        onClick={() => setCurrentIndex(index)}
+                        loading="lazy"
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
             </>
           )}
 
-          <p className="gallery-note">More photos being added soon. All photos taken on my Canon EAS800D.</p>
+          <p className="gallery-note">
+            More photos being added soon. All photos taken on my Canon EOS 800D.
+          </p>
         </div>
       </div>
     </div>
