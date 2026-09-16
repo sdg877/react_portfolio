@@ -168,6 +168,7 @@ const Gallery = () => {
                     src={currentImage.src}
                     alt={currentImage.title}
                     className="slideshow-image"
+                    loading="lazy"
                   />
                 </div>
 
@@ -197,6 +198,7 @@ const Gallery = () => {
                     alt={img.title}
                     className={`thumbnail ${index === currentIndex ? "active" : ""}`}
                     onClick={() => setCurrentIndex(index)}
+                    loading="lazy"
                   />
                 ))}
               </div>
