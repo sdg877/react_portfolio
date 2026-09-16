@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
 import SylviaImage from "../Assets/Images/Branding/Sylvia.jpeg";
 
 const AboutText = () => {
@@ -17,11 +17,11 @@ const AboutText = () => {
 
       <article className="about-text-area">
         <p>
-          I’m a Software Engineer who has been coding for two and a half years.
-          I love building fast, data-driven apps using Python and the MERN
-          stack. I write clean, efficient code that makes life easier for the
-          end user. I'm an all-rounder who enjoys the complexities of building a
-          solid backend as well as making the frontend user-friendly too.
+          I’m a Software Engineer who has been coding for almost three years. I
+          love building fast, data-driven apps using Python and the MERN stack.
+          I write clean, efficient code that makes life easier for the end user.
+          I'm an all-rounder who enjoys the complexities of building a solid
+          backend as well as making the frontend user-friendly too.
         </p>
         <p>
           I started out in Operations across TV, advertising and publishing.
@@ -40,7 +40,8 @@ const AboutText = () => {
           into coding, and I feel lucky to have found it. I love the logic of
           it; the satisfaction when a problem is actually solved and you can
           move on, is unmatched. Which is something I rarely had in the
-          open-ended world of ops.
+          open-ended world of ops. I am also currently building an APP to help
+          users with ADHD navigate some of the struggles it can cause.
         </p>
         <p>
           I'm a born and bred Londoner, having grown up in Ladbroke Grove, West
@@ -49,16 +50,19 @@ const AboutText = () => {
           Merton.
         </p>
         <p>
-          When I’m not coding, I’m usually hiking, experimenting with{" "}
-          <Link to="/gallery" className="custom-link">photography</Link>, trying out a new recipe, or
+          When I’m not coding, I’m usually hiking, trying out a new recipe, or
           looking into current affairs. I spend a lot of time with my
           92-year-old Grandad; we go out for lunch, discuss politics, and
-          generally enjoy each other's company. I also have a massive curiosity
-          for the paranormal. I love a good ghost story almost as much as a
-          clean codebase. There's something about the unknown that excites me.
-          I've also visited over 30 countries, including stints living in Berlin
-          and Sydney; some of my favourite countries I have visited are Canada,
-          Cuba, Turkey, Morocco, Fiji, and the Faroe Islands.
+          generally enjoy each other's company. I love{" "}
+          <Link to="/gallery" className="custom-link">
+            photography
+          </Link>{" "}
+          and trying to make art out of everyday objects. I also have a massive
+          curiosity for the paranormal. I love a good ghost story almost as much
+          as a clean codebase. There's something about the unknown that excites
+          me. I've also visited over 30 countries, including stints living in
+          Berlin and Sydney; some of my favourite countries I have visited are
+          Canada, Cuba, Turkey, Morocco, Fiji, and the Faroe Islands.
         </p>
       </article>
     </div>
