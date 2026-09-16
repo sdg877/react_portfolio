@@ -1,81 +1,198 @@
-// Dummy photo metadata. Match `file` to the actual filename in
-// src/Assets/Images/Gallery. Add new entries here as you add photos.
-// `coordinates` is included now so the future world map can plot pins
-// without needing another data pass later.
-
 const galleryData = [
   {
-    file: "tokyo-crossing.jpg",
-    title: "Shibuya Crossing",
-    category: "Street",
-    location: "Tokyo, Japan",
-    coordinates: { lat: 35.6595, lng: 139.7005 },
-    date: "2024-03-12",
-    description: "The famous scramble crossing at dusk.",
+    file: "rainbow-faroes.JPG",
+    title: "Double Rainbow",
+    categories: ["Rainbow", "Travel", "Fjord"],
+    location: "Faroe Islands",
+    coordinates: { lat: 62.0, lng: -6.78 },
+    date: "01/01/2020", 
   },
   {
-    file: "swiss-alps.jpg",
-    title: "Above the Clouds",
-    category: "Landscape",
-    location: "Zermatt, Switzerland",
-    coordinates: { lat: 46.0207, lng: 7.7491 },
-    date: "2023-07-04",
-    description: "Sunrise over the Matterhorn ridge line.",
+    file: "boxhill-view.JPG",
+    title: "View over Surrey Countryside",
+    categories: ["Nature", "Trees"],
+    location: "Box Hill, Surrey, UK",
+    coordinates: { lat: 51.2497, lng: -0.3266 },
+    date: "25/05/2019",
   },
   {
-    file: "lisbon-tram.jpg",
-    title: "Tram 28",
-    category: "Street",
-    location: "Lisbon, Portugal",
-    coordinates: { lat: 38.7169, lng: -9.1399 },
-    date: "2023-09-21",
-    description: "Classic yellow tram winding through Alfama.",
+    file: "butterfly-montreal.JPG",
+    title: "Butterfly at Montreal Botanical Garden",
+    categories: ["Travel", "Canada", "Nature"],
+    location: "Jardin botanique de Montréal, Canada",
+    coordinates: { lat: 45.5583, lng: -73.5658 },
+    date: "25/04/2019",
   },
   {
-    file: "serengeti-lion.jpg",
-    title: "Watching the Plains",
-    category: "Wildlife",
-    location: "Serengeti, Tanzania",
-    coordinates: { lat: -2.3333, lng: 34.8333 },
-    date: "2022-08-15",
-    description: "A lioness surveying the grasslands at golden hour.",
+    file: "waterfall-faroes.JPG",
+    title: "Waterfall on the Faroe Islands",
+    categories: ["Nature", "Travel", "Waterfall"],
+    location: "Faroe Islands",
+    coordinates: { lat: 62.0, lng: -6.78 },
+    date: "30/12/2019", 
   },
   {
-    file: "nyc-skyline.jpg",
-    title: "Concrete Canyon",
-    category: "Architecture",
-    location: "New York City, USA",
-    coordinates: { lat: 40.7128, lng: -74.006 },
-    date: "2024-01-30",
-    description: "Looking up Sixth Avenue from street level.",
+    file: "sunset-brixton.JPG",
+    title: "Sunset over Brixton",
+    categories: ["Sunset", "Clouds"],
+    location: "Brixton, London, UK",
+    coordinates: { lat: 51.4613, lng: -0.1156 },
+    date: "11/09/2019", 
   },
   {
-    file: "kyoto-portrait.jpg",
-    title: "Maiko in the Garden",
-    category: "Portrait",
-    location: "Kyoto, Japan",
-    coordinates: { lat: 35.0116, lng: 135.7681 },
-    date: "2024-03-15",
-    description: "Portrait shot in Maruyama Park.",
+    file: "cuba-view.JPG",
+    title: "View over Havana",
+    categories: ["View", "Abstract"],
+    location: "Havana, Cuba",
+    coordinates: { lat: 23.1136, lng: -82.3666 },
+    date: "02/05/2019",
   },
-  {
-    file: "iceland-falls.jpg",
-    title: "Seljalandsfoss",
-    category: "Landscape",
-    location: "South Iceland",
-    coordinates: { lat: 63.6156, lng: -19.9886 },
-    date: "2023-05-02",
-    description: "Long exposure behind the falls.",
-  },
-  {
-    file: "marrakech-souk.jpg",
-    title: "Souk Colours",
-    category: "Street",
-    location: "Marrakech, Morocco",
-    coordinates: { lat: 31.6295, lng: -7.9811 },
-    date: "2022-11-19",
-    description: "Spice stalls in the medina.",
-  },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   {
+//     file: "",
+//     title: "",
+//     categories: [],
+//     location: "",
+//     coordinates: { lat: 0, lng: 0 },
+//     date: "DD/MM/YYYY", // e.g. "12/03/2024"
+//     description: "",
+//   },
+//   // ...keep the rest of your existing entries, just update each `date`
+//   // value to DD/MM/YYYY format
 ];
 
 export default galleryData;
