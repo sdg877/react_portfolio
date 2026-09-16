@@ -1,4 +1,4 @@
-Personal Portfolio – Completed March 2025 (Updated November 2025)
+Personal Portfolio – Completed March 2025 (Updated November 2025 and September 2026)
 
 
 Description
