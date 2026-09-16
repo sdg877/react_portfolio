@@ -1,23 +1,18 @@
-import React, { useMemo, useEffect } from "react";
+import React, { useMemo, useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
-import galleryData from "../Data/galleryData";
 import "../Styles/WorldMap.css";
 
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: markerIcon2x,
-  iconUrl: markerIcon,
-  shadowUrl: markerShadow,
-});
+const createPinIcon = (count) =>
+  L.divIcon({
+    className: "custom-map-pin-wrapper",
+    html: `<div class="custom-pin">${count > 1 ? `<span class="pin-badge">${count}</span>` : ""}</div>`,
+    iconSize: [14, 14],
+    iconAnchor: [7, 7],
+    popupAnchor: [0, -8],
+  });
 
-// Fits the map view to whatever pins exist, instead of a fixed zoom level.
-// Runs after the container is visible/sized, since fitBounds needs an
-// accurate container size to calculate zoom correctly.
 const FitBoundsToMarkers = ({ pins }) => {
   const map = useMap();
 
@@ -28,10 +23,7 @@ const FitBoundsToMarkers = ({ pins }) => {
       map.invalidateSize();
 
       if (pins.length === 1) {
-        map.setView(
-          [pins[0].coordinates.lat, pins[0].coordinates.lng],
-          4,
-        );
+        map.setView([pins[0].coordinates.lat, pins[0].coordinates.lng], 4);
       } else {
         const bounds = L.latLngBounds(
           pins.map((p) => [p.coordinates.lat, p.coordinates.lng]),
@@ -50,24 +42,71 @@ const groupByLocation = (data) => {
   const groups = new Map();
 
   data.forEach((photo) => {
-    if (!photo.coordinates || !photo.file) return;
+    if (!photo.coordinates || !photo.src) return;
     const key = photo.location;
 
     if (!groups.has(key)) {
       groups.set(key, {
         location: key,
         coordinates: photo.coordinates,
-        count: 0,
+        photos: [],
       });
     }
-    groups.get(key).count += 1;
+    groups.get(key).photos.push(photo);
   });
 
   return Array.from(groups.values());
 };
 
-const WorldMap = ({ activeLocation, onSelectLocation }) => {
-  const pins = useMemo(() => groupByLocation(galleryData), []);
+const WorldMap = ({ allImages }) => {
+  const [modalData, setModalData] = useState(null);
+
+  const pins = useMemo(() => groupByLocation(allImages), [allImages]);
+
+  const openLightbox = (photos, index) => {
+    setModalData({ photos, index });
+  };
+
+  const closeLightbox = () => {
+    setModalData(null);
+  };
+
+  const handleNext = () => {
+    setModalData((prev) =>
+      prev
+        ? {
+            ...prev,
+            index: prev.index === prev.photos.length - 1 ? 0 : prev.index + 1,
+          }
+        : null,
+    );
+  };
+
+  const handlePrev = () => {
+    setModalData((prev) =>
+      prev
+        ? {
+            ...prev,
+            index: prev.index === 0 ? prev.photos.length - 1 : prev.index - 1,
+          }
+        : null,
+    );
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!modalData) return;
+      if (e.key === "ArrowRight") handleNext();
+      if (e.key === "ArrowLeft") handlePrev();
+      if (e.key === "Escape") closeLightbox();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [modalData]);
+
+  const activePhoto = modalData ? modalData.photos[modalData.index] : null;
+  const totalPhotos = modalData ? modalData.photos.length : 0;
 
   return (
     <div className="world-map-wrapper">
@@ -89,26 +128,88 @@ const WorldMap = ({ activeLocation, onSelectLocation }) => {
           <Marker
             key={pin.location}
             position={[pin.coordinates.lat, pin.coordinates.lng]}
-            eventHandlers={{
-              click: () =>
-                onSelectLocation(
-                  activeLocation === pin.location ? null : pin.location,
-                ),
-            }}
+            icon={createPinIcon(pin.photos.length)}
           >
-            <Popup>
-              <strong>{pin.location}</strong>
-              <br />
-              {pin.count} photo{pin.count > 1 ? "s" : ""}
+            <Popup className="map-photo-popup">
+              <div className="popup-container">
+                <strong className="popup-title">{pin.location}</strong>
+                <p className="popup-subtitle">
+                  {pin.photos.length} photo{pin.photos.length > 1 ? "s" : ""}
+                </p>
+
+                <div className="popup-thumbnails-grid">
+                  {pin.photos.map((photo, index) => (
+                    <div
+                      key={photo.file}
+                      className="popup-thumb-wrapper"
+                      onClick={() => openLightbox(pin.photos, index)}
+                      title={`Click to view: ${photo.title}`}
+                    >
+                      <img
+                        src={photo.src}
+                        alt={photo.title}
+                        className="popup-thumb-img"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </Popup>
           </Marker>
         ))}
       </MapContainer>
 
-      {activeLocation && (
-        <button className="map-clear-btn" onClick={() => onSelectLocation(null)}>
-          ✕ Clear location filter ({activeLocation})
-        </button>
+      {modalData && activePhoto && (
+        <div className="map-lightbox-overlay" onClick={closeLightbox}>
+          <div
+            className="map-lightbox-card"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="map-lightbox-close" onClick={closeLightbox}>
+              ✕
+            </button>
+
+            <div className="map-lightbox-media-wrapper">
+              {totalPhotos > 1 && (
+                <button
+                  className="map-lightbox-nav prev"
+                  onClick={handlePrev}
+                  aria-label="Previous photo"
+                >
+                  &#10094;
+                </button>
+              )}
+
+              <img
+                src={activePhoto.src}
+                alt={activePhoto.title}
+                className="map-lightbox-img"
+              />
+
+              {totalPhotos > 1 && (
+                <button
+                  className="map-lightbox-nav next"
+                  onClick={handleNext}
+                  aria-label="Next photo"
+                >
+                  &#10095;
+                </button>
+              )}
+            </div>
+
+            <div className="map-lightbox-meta">
+              <h3>{activePhoto.title}</h3>
+              <p>
+                {activePhoto.location} • {activePhoto.formattedDate}
+              </p>
+              {totalPhotos > 1 && (
+                <span className="map-lightbox-counter">
+                  {modalData.index + 1} / {totalPhotos}
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
