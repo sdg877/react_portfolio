@@ -5,7 +5,6 @@ import {
   InTechJobsImg,
   SnakeImg,
   SpookSpottersImg,
-  SSSImg,
   CCImg,
 } from "../../Assets/Images/Projects";
 import sdgDark from "../../Assets/Images/Branding/sdg-dark.png";
