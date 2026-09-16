@@ -120,20 +120,6 @@ const projects = [
     githubBackendUrl: "https://github.com/sdg877/recipe_site_be",
   },
   {
-    id: "SSS",
-    title: "Sustainable Swap Shop",
-    image: SSSImg,
-    description: [
-      "My Unit 4 project, Sustainable Swap Shop, is a full-stack app built with Django and React to facilitate clothes swapping and promote sustainability.",
-      "It’s a fully CRUD application using Django, PostgreSQL, and React, with user authentication and AWS S3 image uploads.",
-      "Challenges included setting up authentication, permissions, and resolving JWT issues on mobile by adjusting token storage and decoding.",
-      "Since then, I’ve gained more Django and React experience; if I revisited this, I’d refine the swap approval, UI, and search/filtering for better UX.",
-    ],
-    siteUrl: "http://sustainableswapfe-production.up.railway.app/",
-    githubFrontendUrl: "https://github.com/sdg877/sustainableswapfe",
-    githubBackendUrl: "https://github.com/sdg877/sustainableswapbackend",
-  },
-  {
     id: "InTech",
     title: "inTech Jobs",
     image: InTechJobsImg,
