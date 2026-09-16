@@ -62,12 +62,325 @@
   font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .map-clear-btn:hover {
   background: #d87093;
   color: #ffffff;
+}
+
+/* --- Leaflet Popup Thumbnails --- */
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+}
+
+.popup-title {
+  color: #d87093;
+  font-size: 0.95rem;
+}
+
+.popup-subtitle {
+  margin: 2px 0 8px 0;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.popup-thumbnails-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  max-height: 140px;
+  overflow-y: auto;
+  padding: 2px;
+}
+
+.popup-thumb-wrapper {
+  width: 52px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.popup-thumb-wrapper:hover {
+  transform: scale(1.05);
+  border-color: #d87093;
+}
+
+.popup-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* --- Lightbox Modal Overlay --- */
+
+.map-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.map-lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-lightbox-media-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-lightbox-img {
+  max-width: 80vw;
+  max-height: 70vh;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.map-lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  backdrop-filter: blur(8px);
+}
+
+/* Opaque container card to stop text from showing underneath */
+.map-lightbox-card {
+  position: relative;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 40px 25px 25px;
+  max-width: 850px;
+  width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  box-sizing: border-box;
+}
+
+.map-lightbox-media-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.map-lightbox-img {
+  max-width: 100%;
+  max-height: 58vh;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* Close button placed inside top-right of the card */
+.map-lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 10;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.map-lightbox-close:hover {
+  color: #d87093;
+  transform: scale(1.15);
+}
+
+/* Nav Arrows */
+.map-lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #d87093;
+  font-size: 1.4rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+  z-index: 5;
+}
+
+.map-lightbox-nav:hover {
+  background: #d87093;
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.map-lightbox-nav.prev {
+  left: 10px;
+}
+
+.map-lightbox-nav.next {
+  right: 10px;
+}
+
+/* Meta Footer */
+.map-lightbox-meta {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.map-lightbox-meta h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.map-lightbox-meta p {
+  margin: 4px 0 0 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.map-lightbox-counter {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #d87093;
+}
+
+/* Light theme support for modal card */
+body:not(.dark) .map-lightbox-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark) .map-lightbox-close {
+  color: #1a1a1a;
+}
+
+body:not(.dark) .map-lightbox-meta {
+  color: #1a1a1a;
+}
+
+/* --- Custom Small Pink Map Pins --- */
+
+.custom-map-pin-wrapper {
+  background: transparent;
+  border: none;
+}
+
+.custom-pin {
+  width: 14px;
+  height: 14px;
+  background-color: #d87093;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(216, 112, 147, 0.4);
+  position: relative;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.custom-pin:hover {
+  transform: scale(1.3);
+  background-color: #c75b80;
+}
+
+/* Badge for locations with multiple photos */
+.pin-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #1a1a1a;
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ffffff;
+  line-height: 1;
+}
+
+/* --- Dark Mode Pin Palette --- */
+
+body.dark .custom-pin {
+  background-color: #ffb6c1;
+  border-color: #1c1c1c;
+  box-shadow: 0 2px 6px rgba(255, 182, 193, 0.3);
+}
+
+body.dark .custom-pin:hover {
+  background-color: #ffa0b0;
+}
+
+body.dark .pin-badge {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: #1c1c1c;
+}
+
+/* --- Mobile Pin Size Adjustment --- */
+
+@media (max-width: 799px) {
+  .custom-pin {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* --- Dark Mode for Popup Subtitle --- */
+
+body.dark .popup-subtitle {
+  color: #aaa;
 }
 
 /* --- Dark mode --- */
@@ -123,5 +436,43 @@ body.dark .map-clear-btn:hover {
   .map-clear-btn {
     font-size: 0.78rem;
     padding: 0.35rem 0.8rem;
+  }
+
+  .map-lightbox-card {
+    padding: 35px 12px 16px;
+    width: 95vw;
+    border-radius: 12px;
+  }
+
+  .map-lightbox-close {
+    top: 8px;
+    right: 12px;
+    font-size: 1.2rem;
+  }
+
+  .map-lightbox-img {
+    max-height: 50vh;
+  }
+
+  .map-lightbox-nav {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .map-lightbox-nav.prev {
+    left: 4px;
+  }
+
+  .map-lightbox-nav.next {
+    right: 4px;
+  }
+
+  .map-lightbox-meta h3 {
+    font-size: 1rem;
+  }
+
+  .map-lightbox-meta p {
+    font-size: 0.8rem;
   }
 }
