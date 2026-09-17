@@ -1,3 +1,7 @@
+/* /* ==========================================================================
+   Base Layout & Containers
+   ========================================================================== */
+
 .gallery-page-container {
   width: 100%;
   display: flex;
@@ -19,7 +23,7 @@
 
 .gallery-header {
   text-align: center;
-  margin: 0px;
+  margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,10 +67,27 @@
   align-items: center;
 }
 
-.map-toggle-btn {
-  display: block;
-  margin: 0 auto 20px;
-  padding: 0.5rem 1.2rem;
+/* ==========================================================================
+   Buttons & Toggle Controls
+   ========================================================================== */
+
+.gallery-toggle-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.map-toggle-btn,
+.filter-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 1.2rem;
+  line-height: 1;
+  box-sizing: border-box;
   border-radius: 999px;
   border: 1px solid rgba(216, 112, 147, 0.4);
   background: transparent;
@@ -77,11 +98,64 @@
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.map-toggle-btn:hover {
+.map-toggle-btn:hover,
+.filter-toggle-btn:hover {
   background: #d87093;
   color: #ffffff;
 }
 
+/* ==========================================================================
+   Filter Elements (Side-by-Side & Styled Selects)
+   ========================================================================== */
+
+.gallery-filters-container {
+  display: flex;
+  flex-direction: row; /* Keeps elements side-by-side */
+  gap: 12px;           /* Space between Category and Year */
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  flex: 1;             /* Takes equal 50/50 width */
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background-color: #2a2a2a; /* Dark background */
+  color: #ffffff;            /* White text */
+  border: 1px solid #444444;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.filter-select option {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.filter-select:focus {
+  border-color: #666666;
+}
+
+/* Fallback button styles (if used) */
 .gallery-filters {
   display: flex;
   flex-wrap: wrap;
@@ -114,13 +188,9 @@
   border-color: #d87093;
 }
 
-.photo-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  text-align: center;
-  margin: 0 0 20px;
-}
+/* ==========================================================================
+   Slideshow & Image Frame
+   ========================================================================== */
 
 .slideshow-wrapper {
   display: flex;
@@ -133,10 +203,10 @@
 .image-frame {
   width: 100%;
   max-width: 75%;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  background: #fffafb;
+  background-color: transparent; /* Fixed white side bars */
 }
 
 .slideshow-image {
@@ -162,16 +232,9 @@
   opacity: 0.6;
 }
 
-.map-toggle-btn,
-.filter-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 42px;
-  padding: 0 1.2rem;
-  line-height: 1;
-  box-sizing: border-box;
-}
+/* ==========================================================================
+   Metadata & Thumbnails
+   ========================================================================== */
 
 .gallery-meta {
   display: flex;
@@ -234,7 +297,9 @@
   color: #666666;
 }
 
-/* --- Dark mode --- */
+/* ==========================================================================
+   Dark Mode Styles
+   ========================================================================== */
 
 body.dark .title-gallery {
   color: #ffffff;
@@ -249,12 +314,14 @@ body.dark .gallery-card-glass {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-body.dark .map-toggle-btn {
+body.dark .map-toggle-btn,
+body.dark .filter-toggle-btn {
   color: #ffb6c1;
   border-color: rgba(255, 182, 193, 0.4);
 }
 
-body.dark .map-toggle-btn:hover {
+body.dark .map-toggle-btn:hover,
+body.dark .filter-toggle-btn:hover {
   background: #ffb6c1;
   color: #1a1a1a;
 }
@@ -297,8 +364,11 @@ body.dark .thumbnail.active {
   border-color: #ffb6c1;
 }
 
-/* --- Tablet --- */
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
 
+/* --- Tablet --- */
 @media screen and (min-width: 800px) and (max-width: 1024px) {
   .gallery-page-container {
     padding: 30px;
@@ -337,47 +407,6 @@ body.dark .thumbnail.active {
   .slideshow-image {
     max-height: 420px;
   }
-
-  .photo-title {
-    font-size: 1.3rem;
-  }
-}
-
-.gallery-toggle-row {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 15px;
-  flex-wrap: wrap;
-}
-
-.filter-toggle-btn {
-  display: block;
-  margin: 0 auto 15px;
-  padding: 0.5rem 1.2rem;
-  border-radius: 999px;
-  border: 1px solid rgba(216, 112, 147, 0.4);
-  background: transparent;
-  color: #d87093;
-  font-weight: 700;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.filter-toggle-btn:hover {
-  background: #d87093;
-  color: #ffffff;
-}
-
-body.dark .filter-toggle-btn {
-  color: #ffb6c1;
-  border-color: rgba(255, 182, 193, 0.4);
-}
-
-body.dark .filter-toggle-btn:hover {
-  background: #ffb6c1;
-  color: #1a1a1a;
 }
 
 /* --- Mobile --- */
@@ -415,20 +444,7 @@ body.dark .filter-toggle-btn:hover {
   .filter-toggle-btn {
     font-size: 0.75rem;
     padding: 0.4rem 0.9rem;
-    height: 0.80;
-  }
-
-  .gallery-filters {
-    gap: 5px;
-  }
-
-  .filter-btn {
-    font-size: 0.68rem;
-    padding: 0.3rem 0.65rem;
-  }
-
-  .photo-title {
-    font-size: 1rem;
+    height: auto;
   }
 
   .slideshow-wrapper {
@@ -457,4 +473,4 @@ body.dark .filter-toggle-btn:hover {
     width: 52px;
     height: 38px;
   }
-}
+} 
