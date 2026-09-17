@@ -421,7 +421,6 @@ const WorldMap = ({ allImages }) => {
             </div>
 
             <div className="map-lightbox-meta">
-              <h3>{activePhoto.title}</h3>
               <p>
                 {activePhoto.location} • {activePhoto.formattedDate}
               </p>
