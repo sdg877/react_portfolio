@@ -16,9 +16,15 @@ const rawImages = importAll(
 
 const parseUKDate = (dateStr) => {
   if (!dateStr) return null;
-  const [day, month, year] = dateStr.split("/").map(Number);
-  if (!day || !month || !year) return null;
-  return new Date(year, month - 1, day);
+  const str = String(dateStr).trim();
+  if (/^\d{4}$/.test(str)) {
+    return new Date(Number(str), 0, 1);
+  }
+  const parts = str.split("/").map(Number);
+  if (parts.length === 3 && parts.every((p) => !isNaN(p))) {
+    return new Date(parts[2], parts[1] - 1, parts[0]);
+  }
+  return null;
 };
 
 const buildImageList = () => {
@@ -35,13 +41,17 @@ const buildImageList = () => {
 
     const dateTaken = parseUKDate(meta?.date);
 
+    const categoryList = meta?.category
+      ? [meta.category]
+      : meta?.categories?.length
+        ? meta.categories
+        : ["Uncategorized"];
+
     return {
       src,
       file,
       title: meta?.title || file,
-      categories: meta?.categories?.length
-        ? meta.categories
-        : ["Uncategorized"],
+      categories: categoryList,
       location: meta?.location || "Unknown Location",
       coordinates: meta?.coordinates || null,
       dateTaken,
@@ -51,7 +61,16 @@ const buildImageList = () => {
     };
   });
 
-  merged.sort((a, b) => (a.dateTaken || 0) - (b.dateTaken || 0));
+  merged.sort((a, b) => {
+    const yearA = a.dateTaken ? a.dateTaken.getFullYear() : 0;
+    const yearB = b.dateTaken ? b.dateTaken.getFullYear() : 0;
+
+    if (yearA !== yearB) {
+      return yearA - yearB;
+    }
+    return a.file.localeCompare(b.file);
+  });
+
   return merged;
 };
 
@@ -59,32 +78,55 @@ const allImages = buildImageList();
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [activeYear, setActiveYear] = useState("All");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showMap, setShowMap] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
 
+  // Extract unique categories sorted alphabetically
   const categories = useMemo(() => {
     const unique = new Set(allImages.flatMap((img) => img.categories));
-    return ["All", ...Array.from(unique).sort()];
+    return ["All", ...Array.from(unique).sort((a, b) => a.localeCompare(b))];
+  }, []);
+
+  const years = useMemo(() => {
+    const unique = new Set(
+      allImages
+        .map((img) => img.formattedDate)
+        .filter((y) => y !== "Date Unknown"),
+    );
+    return ["All", ...Array.from(unique).sort((a, b) => b - a)];
   }, []);
 
   const images = useMemo(() => {
     return allImages.filter((img) => {
       const matchesCategory =
         activeCategory === "All" || img.categories.includes(activeCategory);
-      return matchesCategory;
+      const matchesYear =
+        activeYear === "All" || img.formattedDate === activeYear;
+      return matchesCategory && matchesYear;
     });
-  }, [activeCategory]);
+  }, [activeCategory, activeYear]);
 
   useEffect(() => {
     setCurrentIndex(0);
-  }, [activeCategory]);
+  }, [activeCategory, activeYear]);
 
   const toggleMap = () => {
     setShowMap((prev) => {
       if (!prev) setShowFilters(false);
       return !prev;
     });
+  };
+
+  const handleCategorySelect = (category) => {
+    setActiveCategory(category);
+    setActiveYear("All");
+  };
+
+  const handleYearSelect = (year) => {
+    setActiveYear(year);
+    setActiveCategory("All");
   };
 
   const nextSlide = () => {
@@ -133,16 +175,42 @@ const Gallery = () => {
           ) : (
             <>
               {showFilters && (
-                <div className="gallery-filters">
-                  {categories.map((category) => (
-                    <button
-                      key={category}
-                      className={`filter-btn ${activeCategory === category ? "active" : ""}`}
-                      onClick={() => setActiveCategory(category)}
+                <div className="gallery-filters-container">
+                  <div className="filter-group">
+                    <label htmlFor="category-select" className="filter-label">
+                      Category
+                    </label>
+                    <select
+                      id="category-select"
+                      className="filter-select"
+                      value={activeCategory}
+                      onChange={(e) => handleCategorySelect(e.target.value)}
                     >
-                      {category}
-                    </button>
-                  ))}
+                      {categories.map((category) => (
+                        <option key={category} value={category}>
+                          {category}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="filter-group">
+                    <label htmlFor="year-select" className="filter-label">
+                      Year
+                    </label>
+                    <select
+                      id="year-select"
+                      className="filter-select"
+                      value={activeYear}
+                      onChange={(e) => handleYearSelect(e.target.value)}
+                    >
+                      {years.map((year) => (
+                        <option key={year} value={year}>
+                          {year}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
               )}
 
@@ -152,8 +220,6 @@ const Gallery = () => {
                 </div>
               ) : (
                 <>
-                  <h2 className="photo-title">{currentImage.title}</h2>
-
                   <div className="slideshow-wrapper">
                     <button className="nav-btn prev" onClick={prevSlide}>
                       &#10094;
@@ -162,7 +228,7 @@ const Gallery = () => {
                     <div className="image-frame">
                       <img
                         src={currentImage.src}
-                        alt={currentImage.title}
+                        alt={currentImage.file}
                         className="slideshow-image"
                         loading="lazy"
                       />
@@ -173,7 +239,6 @@ const Gallery = () => {
                     </button>
                   </div>
 
-                  {/* Cleaned meta strip: only Location, Year, and Counter */}
                   <div className="gallery-meta">
                     <span className="meta-item">{currentImage.location}</span>
                     <span className="meta-item">
@@ -189,8 +254,10 @@ const Gallery = () => {
                       <img
                         key={img.file}
                         src={img.src}
-                        alt={img.title}
-                        className={`thumbnail ${index === currentIndex ? "active" : ""}`}
+                        alt={img.file}
+                        className={`thumbnail ${
+                          index === currentIndex ? "active" : ""
+                        }`}
                         onClick={() => setCurrentIndex(index)}
                         loading="lazy"
                       />
