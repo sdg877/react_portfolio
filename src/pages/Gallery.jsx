@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import WorldMap from "../components/WorldMap";
 import galleryData from "../Data/galleryData";
 import "../Styles/Gallery.css";
+import "../Styles/WorldMap.css";
 
 const importAll = (r) =>
   r.keys().map((key) => ({ file: key.replace("./", ""), src: r(key) }));
@@ -82,8 +83,8 @@ const Gallery = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showMap, setShowMap] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
 
-  // Extract unique categories sorted alphabetically
   const categories = useMemo(() => {
     const unique = new Set(allImages.flatMap((img) => img.categories));
     return ["All", ...Array.from(unique).sort((a, b) => a.localeCompare(b))];
@@ -140,6 +141,22 @@ const Gallery = () => {
       prevIndex === 0 ? images.length - 1 : prevIndex - 1,
     );
   };
+
+  const openLightbox = () => setLightboxOpen(true);
+  const closeLightbox = () => setLightboxOpen(false);
+
+  useEffect(() => {
+    if (!lightboxOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "ArrowRight") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+      if (e.key === "Escape") closeLightbox();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxOpen, images.length]);
 
   if (allImages.length === 0) {
     return <div className="gallery-empty">No images found in folder.</div>;
@@ -231,6 +248,7 @@ const Gallery = () => {
                         alt={currentImage.file}
                         className="slideshow-image"
                         loading="lazy"
+                        onClick={openLightbox}
                       />
                     </div>
 
@@ -258,7 +276,10 @@ const Gallery = () => {
                         className={`thumbnail ${
                           index === currentIndex ? "active" : ""
                         }`}
-                        onClick={() => setCurrentIndex(index)}
+                        onClick={() => {
+                          setCurrentIndex(index);
+                          openLightbox();
+                        }}
                         loading="lazy"
                       />
                     ))}
@@ -273,6 +294,58 @@ const Gallery = () => {
           </p>
         </div>
       </div>
+
+      {lightboxOpen && currentImage && (
+        <div className="map-lightbox-overlay" onClick={closeLightbox}>
+          <div
+            className="map-lightbox-card"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="map-lightbox-close" onClick={closeLightbox}>
+              ✕
+            </button>
+
+            <div className="map-lightbox-media-wrapper">
+              {images.length > 1 && (
+                <button
+                  className="map-lightbox-nav prev"
+                  onClick={prevSlide}
+                  aria-label="Previous photo"
+                >
+                  &#10094;
+                </button>
+              )}
+
+              <img
+                src={currentImage.src}
+                alt={currentImage.title}
+                className="map-lightbox-img"
+              />
+
+              {images.length > 1 && (
+                <button
+                  className="map-lightbox-nav next"
+                  onClick={nextSlide}
+                  aria-label="Next photo"
+                >
+                  &#10095;
+                </button>
+              )}
+            </div>
+
+            <div className="map-lightbox-meta">
+              <p>
+                {currentImage.location} • {currentImage.formattedDate}
+              </p>
+              {images.length > 1 && (
+                <span className="map-lightbox-counter">
+                  {currentIndex + 1} / {images.length}
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
