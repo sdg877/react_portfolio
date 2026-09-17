@@ -269,6 +269,10 @@
   border-color: #d87093;
 }
 
+.slideshow-image {
+  cursor: pointer;
+}
+
 .gallery-note {
   text-align: center;
   margin-top: 25px;
