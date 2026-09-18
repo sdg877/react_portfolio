@@ -113,13 +113,6 @@ const galleryData = [
     date: "2026",
   },
   {
-    file: "edinburgh-silohette.jpg",
-    category: "Object",
-    location: "Edinburgh, Scotland, UK",
-    coordinates: { lat: 55.9533, lng: -3.1883 },
-    date: "2021",
-  },
-  {
     file: "sorrento-harbour.jpeg",
     category: "Travel",
     location: "Sorrento, Italy",
@@ -134,53 +127,11 @@ const galleryData = [
     date: "2020",
   },
   {
-    file: "edinburgh-castle.jpg",
-    category: "Objects",
-    location: "Edinburgh Castle, Scotland, UK",
-    coordinates: { lat: 55.9486, lng: -3.1999 },
-    date: "2021",
-  },
-  {
-    file: "england-tube.jpg",
-    category: "Urban",
-    location: "Charing Cross Station, London, UK",
-    coordinates: { lat: 51.508, lng: -0.1247 },
-    date: "2021",
-  },
-  {
-    file: "police-horses.jpg",
-    category: "Urban",
-    location: "Charing Cross, London, UK",
-    coordinates: { lat: 51.5074, lng: -0.1278 },
-    date: "2021",
-  },
-  {
-    file: "cat-malta.jpg",
-    category: "Animals",
-    location: "Valletta, Malta",
-    coordinates: { lat: 35.8997, lng: 14.5111 },
-    date: "2026",
-  },
-  {
     file: "tower-birds-brockwell.jpeg",
     category: "Animals",
     location: "Brockwell Park, London, UK",
     coordinates: { lat: 51.4533, lng: -0.1067 },
     date: "2026",
-  },
-  {
-    file: "cristo-rei.jpg",
-    category: "Urban",
-    location: "Lisbon, Portugal",
-    coordinates: { lat: 38.7223, lng: -9.1393 },
-    date: "2018",
-  },
-  {
-    file: "lisbon-fishing.jpg",
-    category: "Urban",
-    location: "Lisbon, Portugal",
-    coordinates: { lat: 38.7223, lng: -9.1393 },
-    date: "2018",
   },
 ];
 
