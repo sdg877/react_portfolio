@@ -67,7 +67,7 @@ const buildImageList = () => {
     const yearB = b.dateTaken ? b.dateTaken.getFullYear() : 0;
 
     if (yearA !== yearB) {
-      return yearA - yearB;
+      return yearB - yearA;
     }
     return a.file.localeCompare(b.file);
   });
