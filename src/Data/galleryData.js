@@ -133,6 +133,35 @@ const galleryData = [
     coordinates: { lat: 51.4533, lng: -0.1067 },
     date: "2026",
   },
+  {
+    file: "sunset-faroes.jpeg",
+    category: "Travel",
+    location: "Faroe Islands",
+    coordinates: { lat: 62.0, lng: -6.78 },
+    date: "2019",
+  },
+  {
+    file: "",
+    category: "",
+    location: "",
+    // coordinates: { lat: 51.4533, lng: -0.1067 },
+    date: "",
+  },
+  {
+    file: "",
+    category: "",
+    location: "",
+    // coordinates: { lat: 51.4533, lng: -0.1067 },
+    date: "",
+  },
+  {
+    file: "",
+    category: "",
+    location: "",
+    // coordinates: { lat: 51.4533, lng: -0.1067 },
+    date: "",
+  },
+
 ];
 
 export default galleryData;
