@@ -287,6 +287,30 @@
   color: #666666;
 }
 
+.photo-description {
+  max-width: 480px;
+  margin: 10px auto 0;
+  text-align: center;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: #888888;
+  line-height: 1.5;
+}
+
+body.dark .photo-description {
+  color: #999999;
+}
+
+.lightbox-description {
+  max-width: 480px;
+  margin: 4px auto 0;
+  text-align: center;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+}
+
 body.dark .title-gallery {
   color: #ffffff;
 }
