@@ -55,6 +55,7 @@ const buildImageList = () => {
       categories: categoryList,
       location: meta?.location || "Unknown Location",
       coordinates: meta?.coordinates || null,
+      description: meta?.description || "",
       dateTaken,
       formattedDate: dateTaken
         ? dateTaken.getFullYear().toString()
@@ -78,12 +79,28 @@ const buildImageList = () => {
 const allImages = buildImageList();
 
 const Gallery = () => {
-  const [activeCategory, setActiveCategory] = useState("All");
-  const [activeYear, setActiveYear] = useState("All");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [showMap, setShowMap] = useState(false);
-  const [showFilters, setShowFilters] = useState(false);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+
+    const [activeCategory, setActiveCategory] = useState(
+    () => localStorage.getItem("gallery_activeCategory") || "All",
+  );
+  const [activeYear, setActiveYear] = useState(
+    () => localStorage.getItem("gallery_activeYear") || "All",
+  );
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showMap, setShowMap] = useState(
+    () => localStorage.getItem("gallery_showMap") === "true",
+  );
+  const [showFilters, setShowFilters] = useState(
+    () => localStorage.getItem("gallery_showFilters") === "true",
+  );
+
+  useEffect(() => {
+    localStorage.setItem("gallery_activeCategory", activeCategory);
+    localStorage.setItem("gallery_activeYear", activeYear);
+    localStorage.setItem("gallery_showMap", showMap);
+    localStorage.setItem("gallery_showFilters", showFilters);
+  }, [activeCategory, activeYear, showMap, showFilters]);
 
   const categories = useMemo(() => {
     const unique = new Set(allImages.flatMap((img) => img.categories));
@@ -268,6 +285,12 @@ const Gallery = () => {
                     </span>
                   </div>
 
+                  {currentImage.description && (
+                    <p className="photo-description">
+                      {currentImage.description}
+                    </p>
+                  )}
+
                   <div className="thumbnail-strip">
                     {images.map((img, index) => (
                       <img
@@ -338,6 +361,11 @@ const Gallery = () => {
               <p>
                 {currentImage.location} • {currentImage.formattedDate}
               </p>
+              {currentImage.description && (
+                <p className="lightbox-description">
+                  {currentImage.description}
+                </p>
+              )}
               {images.length > 1 && (
                 <span className="map-lightbox-counter">
                   {currentIndex + 1} / {images.length}
