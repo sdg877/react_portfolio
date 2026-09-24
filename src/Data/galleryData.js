@@ -164,7 +164,7 @@ const galleryData = [
   {
     file: "epping-trees.JPG",
     category: "Nature",
-    location: "Epping Forrest, Essex, UK",
+    location: "Epping Forest, Essex, UK",
     coordinates: { lat: 51.683, lng: 0.077 },
     date: "2026",
     description: "Wide shot of spooky trees in Epping Forest.",
