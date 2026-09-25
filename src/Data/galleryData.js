@@ -4,7 +4,7 @@ const galleryData = [
     category: "Nature",
     location: "Faroe Islands",
     coordinates: { lat: 62.0, lng: -6.78 },
-    date: "2020",
+    date: "01.2020",
     description: "Double rainbow over a fjord in the Faroe Islands.",
   },
   {
@@ -12,7 +12,7 @@ const galleryData = [
     category: "Nature",
     location: "Box Hill, Surrey, UK",
     coordinates: { lat: 51.2497, lng: -0.3266 },
-    date: "2019",
+    date: "05.2019",
     description: "View over the Surrey countryside from Box Hill.",
   },
   {
@@ -20,7 +20,7 @@ const galleryData = [
     category: "Nature",
     location: "Jardin botanique de Montréal, Canada",
     coordinates: { lat: 45.5583, lng: -73.5658 },
-    date: "2019",
+    date: "04.2019",
     description:
       "Close up of a monarch butterfly at the Montreal Botanical Gardens.",
   },
@@ -29,7 +29,7 @@ const galleryData = [
     category: "Nature",
     location: "Faroe Islands",
     coordinates: { lat: 62.0, lng: -6.78 },
-    date: "2020",
+    date: "01.2020",
     description: "Moss covered waterfall in the Faroe Islands.",
   },
   {
@@ -37,7 +37,7 @@ const galleryData = [
     category: "Nature",
     location: "Brixton, London, UK",
     coordinates: { lat: 51.4613, lng: -0.1156 },
-    date: "2019",
+    date: "09.2019",
     description: "Pink, orange and grey sunset over rooftops.",
   },
   {
@@ -45,7 +45,7 @@ const galleryData = [
     category: "Urban",
     location: "Havana, Cuba",
     coordinates: { lat: 23.1136, lng: -82.3666 },
-    date: "2019",
+    date: "05.2019",
     description: "View of Havana, Cuba from above through a wall tile.",
   },
   {
@@ -53,7 +53,7 @@ const galleryData = [
     category: "Animals",
     location: "Herne Hill, London, UK",
     coordinates: { lat: 51.4533, lng: -0.1017 },
-    date: "2026",
+    date: "09.2026",
     description: "Image of a parakeet flying over Herne Hill.",
   },
   {
@@ -61,7 +61,7 @@ const galleryData = [
     category: "Animals",
     location: "Brockwell Park, London, UK",
     coordinates: { lat: 51.4508, lng: -0.1091 },
-    date: "2026",
+    date: "09.2026",
     description: "Birds and a plane flying over Brockwell Park.",
   },
   {
@@ -69,7 +69,7 @@ const galleryData = [
     category: "Nature",
     location: "Wiltshire, UK",
     coordinates: { lat: 51.349, lng: -1.916 },
-    date: "2022",
+    date: "08.2022",
     description: "Sunset over the Wiltshire countryside.",
   },
   {
@@ -77,7 +77,7 @@ const galleryData = [
     category: "Animals",
     location: "Merton, UK",
     coordinates: { lat: 51.4116, lng: -0.1843 },
-    date: "2026",
+    date: "08.2026",
     description: "Close up of grey tabby cat with green eyes.",
   },
   {
@@ -85,7 +85,7 @@ const galleryData = [
     category: "Nature",
     location: "Brockwell Park, London, UK",
     coordinates: { lat: 51.4533, lng: -0.1067 },
-    date: "2026",
+    date: "09.2026",
     description: "Close up of bee pollinating flower.",
   },
   {
@@ -93,7 +93,7 @@ const galleryData = [
     category: "Animal",
     location: "Mitcham, UK",
     coordinates: { lat: 51.4009, lng: -0.1786 },
-    date: "2026",
+    date: "09.2026",
     description: "Close up of ginger and white cat with one eye.",
   },
   {
@@ -101,7 +101,7 @@ const galleryData = [
     category: "Nature",
     location: "Tulse Hill, London, UK",
     coordinates: { lat: 51.4426, lng: -0.1118 },
-    date: "2020",
+    date: "09.2020",
     description: "Moon over streetlight in Tulse Hill.",
   },
   {
@@ -109,7 +109,7 @@ const galleryData = [
     category: "Urban",
     location: "Havana, Cuba",
     coordinates: { lat: 23.1136, lng: -82.3666 },
-    date: "2019",
+    date: "05.2019",
     description: "Close up of roof tops in Havana, Cuba.",
   },
   {
@@ -118,7 +118,7 @@ const galleryData = [
     location:
       "Mysterium Fidei Museum St Catherine's Monastery and Secret Garden, Malta",
     coordinates: { lat: 35.8978, lng: 14.5125 },
-    date: "2026",
+    date: "03.2026",
     description: "Religious statues at the St Catherine's Monastery.",
   },
   {
@@ -126,7 +126,7 @@ const galleryData = [
     category: "Animals",
     location: "Valletta, Malta",
     coordinates: { lat: 35.8989, lng: 14.5141 },
-    date: "2026",
+    date: "03.2026",
     description: "Pigeon on statues head.",
   },
   {
@@ -134,7 +134,7 @@ const galleryData = [
     category: "Travel",
     location: "Sorrento, Italy",
     coordinates: { lat: 40.6281, lng: 14.3758 },
-    date: "2019",
+    date: "07.2019",
     description: "Boats in Sorrento Harbour.",
   },
   {
@@ -142,7 +142,7 @@ const galleryData = [
     category: "Travel",
     location: "Mevagissey, Cornwall, UK",
     coordinates: { lat: 50.2681, lng: -4.7855 },
-    date: "2020",
+    date: "09.2020",
     description: "Boats in Mevagissey Harbour.",
   },
   {
@@ -150,7 +150,7 @@ const galleryData = [
     category: "Animals",
     location: "Brockwell Park, London, UK",
     coordinates: { lat: 51.4533, lng: -0.1067 },
-    date: "2026",
+    date: "09.2026",
     description: "Birds flying over trees with tower block in the background.",
   },
   {
@@ -158,7 +158,7 @@ const galleryData = [
     category: "Travel",
     location: "Faroe Islands",
     coordinates: { lat: 62.0, lng: -6.78 },
-    date: "2019",
+    date: "01.2020",
     description: "Woman taking photo of Faroese sunset.",
   },
   {
@@ -166,7 +166,7 @@ const galleryData = [
     category: "Nature",
     location: "Epping Forest, Essex, UK",
     coordinates: { lat: 51.683, lng: 0.077 },
-    date: "2026",
+    date: "09.2026",
     description: "Wide shot of spooky trees in Epping Forest.",
   },
   {
@@ -174,7 +174,7 @@ const galleryData = [
     category: "Animals",
     location: "Epping Forest, Essex, UK",
     coordinates: { lat: 51.683, lng: 0.077 },
-    date: "2026",
+    date: "09.2026",
     description: "Bull grazing in Epping Forest.",
   },
   {
@@ -182,7 +182,7 @@ const galleryData = [
     category: "Animals",
     location: "Epping Forest, Essex, UK",
     coordinates: { lat: 51.683, lng: 0.077 },
-    date: "2026",
+    date: "09.2026",
     description: "Bull grazing in Epping Forest.",
   },
   // {
