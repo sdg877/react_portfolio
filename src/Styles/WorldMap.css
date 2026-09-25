@@ -51,29 +51,6 @@
   color: #d87093 !important;
 }
 
-.map-clear-btn {
-  display: block;
-  margin: 12px auto 0;
-  padding: 0.4rem 1rem;
-  border-radius: 999px;
-  border: 1px solid rgba(216, 112, 147, 0.4);
-  background: transparent;
-  color: #d87093;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-}
-
-.map-clear-btn:hover {
-  background: #d87093;
-  color: #ffffff;
-}
-
-/* --- Leaflet Popup Thumbnails --- */
-
 .popup-container {
   display: flex;
   flex-direction: column;
@@ -109,9 +86,7 @@
   overflow: hidden;
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  transition:
-    transform 0.15s ease,
-    border-color 0.15s ease;
+  transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
 .popup-thumb-wrapper:hover {
@@ -124,48 +99,11 @@
   height: 100%;
   object-fit: cover;
 }
-/* --- Lightbox Modal Overlay --- */
 
 .map-lightbox-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.88);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  padding: 20px;
-  backdrop-filter: blur(5px);
-}
-
-.map-lightbox-content {
-  position: relative;
-  max-width: 90vw;
-  max-height: 85vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.map-lightbox-media-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.map-lightbox-img {
-  max-width: 80vw;
-  max-height: 70vh;
-  border-radius: 10px;
-  object-fit: contain;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.map-lightbox-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.82);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -174,11 +112,10 @@
   backdrop-filter: blur(8px);
 }
 
-/* Opaque container card to stop text from showing underneath */
 .map-lightbox-card {
   position: relative;
-  background: #1a1a1a;
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 16px;
   padding: 40px 25px 25px;
   max-width: 850px;
@@ -189,6 +126,25 @@
   align-items: center;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
+}
+
+.cluster-overview-card {
+  background: rgba(255, 250, 250, 0.98);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 90vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.cluster-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 8px;
+  margin-top: 10px;
+  max-width: 500px;
 }
 
 .map-lightbox-media-wrapper {
@@ -206,20 +162,17 @@
   object-fit: contain;
 }
 
-/* Close button placed inside top-right of the card */
 .map-lightbox-close {
   position: absolute;
   top: 12px;
   right: 16px;
   background: transparent;
   border: none;
-  color: #ffffff;
+  color: #1a1a1a;
   font-size: 1.4rem;
   cursor: pointer;
   z-index: 10;
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .map-lightbox-close:hover {
@@ -227,7 +180,6 @@
   transform: scale(1.15);
 }
 
-/* Nav Arrows */
 .map-lightbox-nav {
   position: absolute;
   top: 50%;
@@ -243,10 +195,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
   z-index: 5;
 }
 
@@ -264,23 +213,10 @@
   right: 10px;
 }
 
-/* Meta Footer */
 .map-lightbox-meta {
-  color: #ffffff;
+  color: #1a1a1a;
   text-align: center;
   margin-top: 15px;
-}
-
-.map-lightbox-meta h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 700;
-}
-
-.map-lightbox-meta p {
-  margin: 4px 0 0 0;
-  font-size: 0.9rem;
-  opacity: 0.8;
 }
 
 .map-lightbox-counter {
@@ -291,107 +227,90 @@
   color: #d87093;
 }
 
-/* Light theme support for modal card */
-body:not(.dark) .map-lightbox-card {
-  background: #ffffff;
-  border-color: rgba(0, 0, 0, 0.1);
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background-color: transparent !important;
+  background: none !important;
+  box-shadow: none !important;
 }
 
-body:not(.dark) .map-lightbox-close {
-  color: #1a1a1a;
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+  background-color: rgba(65, 105, 225, 0.85) !important;
+  color: #ffffff !important;
+  margin: 0 !important;
 }
 
-body:not(.dark) .map-lightbox-meta {
-  color: #1a1a1a;
-}
-
-/* --- Custom Small Pink Map Pins --- */
-
-.custom-map-pin-wrapper {
+.custom-pin-wrapper {
   background: transparent;
   border: none;
 }
 
-.custom-pin {
-  width: 14px;
-  height: 14px;
-  background-color: #d87093;
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(216, 112, 147, 0.4);
+.pin-shape {
   position: relative;
-  transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
-  cursor: pointer;
+  width: 25px;
+  height: 41px;
 }
 
-.custom-pin:hover {
-  transform: scale(1.3);
-  background-color: #c75b80;
-}
-
-/* Badge for locations with multiple photos */
-.pin-badge {
+.pin-img {
   position: absolute;
-  top: -8px;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 41px;
+  z-index: 2;
+}
+
+.pin-shadow-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 41px;
+  height: 41px;
+  z-index: 1;
+}
+
+.pin-count-badge {
+  position: absolute;
+  top: -4px;
   right: -8px;
-  background: #1a1a1a;
+  background: #d87093;
   color: #ffffff;
   font-size: 0.65rem;
   font-weight: 700;
-  width: 15px;
-  height: 15px;
+  min-width: 16px;
+  height: 16px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid #ffffff;
-  line-height: 1;
+  z-index: 3;
+  padding: 0 2px;
 }
 
-/* --- Dark Mode Pin Palette --- */
-
-body.dark .custom-pin {
-  background-color: #ffb6c1;
-  border-color: #1c1c1c;
-  box-shadow: 0 2px 6px rgba(255, 182, 193, 0.3);
+body.dark .marker-cluster-small div,
+body.dark .marker-cluster-medium div,
+body.dark .marker-cluster-large div {
+  background-color: rgba(65, 105, 225, 0.85) !important;
+  color: #ffffff !important;
 }
 
-body.dark .custom-pin:hover {
-  background-color: #ffa0b0;
+body.dark .leaflet-popup-content-wrapper,
+body.dark .cluster-overview-card {
+  background: #1c1c1c;
+  color: #f5f5f5;
 }
-
-body.dark .pin-badge {
-  background: #ffffff;
-  color: #1a1a1a;
-  border-color: #1c1c1c;
-}
-
-/* --- Mobile Pin Size Adjustment --- */
-
-@media (max-width: 799px) {
-  .custom-pin {
-    width: 12px;
-    height: 12px;
-  }
-}
-
-/* --- Dark Mode for Popup Subtitle --- */
 
 body.dark .popup-subtitle {
   color: #aaa;
 }
 
-/* --- Dark mode --- */
-
-body.dark .leaflet-popup-content-wrapper {
-  background: #1c1c1c;
-  color: #f5f5f5;
-}
-
-body.dark .leaflet-popup-content strong {
-  color: #ffb6c1;
+body.dark .leaflet-popup-content strong,
+body.dark .leaflet-control-attribution a {
+  color: #ffb6c1 !important;
 }
 
 body.dark .leaflet-popup-tip {
@@ -403,21 +322,15 @@ body.dark .leaflet-control-attribution {
   color: #ccc !important;
 }
 
-body.dark .leaflet-control-attribution a {
-  color: #ffb6c1 !important;
+body.dark .map-lightbox-card {
+  background: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
-body.dark .map-clear-btn {
-  color: #ffb6c1;
-  border-color: rgba(255, 182, 193, 0.4);
+body.dark .map-lightbox-close,
+body.dark .map-lightbox-meta {
+  color: #ffffff;
 }
-
-body.dark .map-clear-btn:hover {
-  background: #ffb6c1;
-  color: #1a1a1a;
-}
-
-/* --- Tablet --- */
 
 @media screen and (min-width: 800px) and (max-width: 1024px) {
   .world-map {
@@ -425,17 +338,10 @@ body.dark .map-clear-btn:hover {
   }
 }
 
-/* --- Mobile --- */
-
 @media (max-width: 799px) {
   .world-map {
     height: 240px;
     border-radius: 10px;
-  }
-
-  .map-clear-btn {
-    font-size: 0.78rem;
-    padding: 0.35rem 0.8rem;
   }
 
   .map-lightbox-card {
@@ -466,13 +372,5 @@ body.dark .map-clear-btn:hover {
 
   .map-lightbox-nav.next {
     right: 4px;
-  }
-
-  .map-lightbox-meta h3 {
-    font-size: 1rem;
-  }
-
-  .map-lightbox-meta p {
-    font-size: 0.8rem;
   }
 }
