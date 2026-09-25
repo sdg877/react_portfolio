@@ -15,17 +15,52 @@ const rawImages = importAll(
   ),
 );
 
-const parseUKDate = (dateStr) => {
-  if (!dateStr) return null;
+const MONTH_ORDER = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+const parseDateFields = (dateStr) => {
+  if (!dateStr) return { date: null, year: null, month: null };
   const str = String(dateStr).trim();
-  if (/^\d{4}$/.test(str)) {
-    return new Date(Number(str), 0, 1);
+
+  const mmYyyy = str.match(/^(\d{1,2})\.(\d{4})$/);
+  if (mmYyyy) {
+    const month = Number(mmYyyy[1]);
+    const year = Number(mmYyyy[2]);
+    return {
+      date: new Date(year, month - 1, 1),
+      year,
+      month: MONTH_ORDER[month - 1],
+    };
   }
+
+  if (/^\d{4}$/.test(str)) {
+    const year = Number(str);
+    return { date: new Date(year, 0, 1), year, month: null };
+  }
+
   const parts = str.split("/").map(Number);
   if (parts.length === 3 && parts.every((p) => !isNaN(p))) {
-    return new Date(parts[2], parts[1] - 1, parts[0]);
+    const [day, month, year] = parts;
+    return {
+      date: new Date(year, month - 1, day),
+      year,
+      month: MONTH_ORDER[month - 1],
+    };
   }
-  return null;
+
+  return { date: null, year: null, month: null };
 };
 
 const buildImageList = () => {
@@ -40,13 +75,19 @@ const buildImageList = () => {
       console.warn(`No metadata entry found for image "${file}"`);
     }
 
-    const dateTaken = parseUKDate(meta?.date);
+    const { date: dateTaken, year, month } = parseDateFields(meta?.date);
 
     const categoryList = meta?.category
       ? [meta.category]
       : meta?.categories?.length
         ? meta.categories
         : ["Uncategorized"];
+
+    const formattedDate = year
+      ? month
+        ? `${month} ${year}`
+        : `${year}`
+      : "Date Unknown";
 
     return {
       src,
@@ -57,19 +98,16 @@ const buildImageList = () => {
       coordinates: meta?.coordinates || null,
       description: meta?.description || "",
       dateTaken,
-      formattedDate: dateTaken
-        ? dateTaken.getFullYear().toString()
-        : "Date Unknown",
+      year: year ? year.toString() : null,
+      month,
+      formattedDate,
     };
   });
 
   merged.sort((a, b) => {
-    const yearA = a.dateTaken ? a.dateTaken.getFullYear() : 0;
-    const yearB = b.dateTaken ? b.dateTaken.getFullYear() : 0;
-
-    if (yearA !== yearB) {
-      return yearB - yearA;
-    }
+    const tA = a.dateTaken ? a.dateTaken.getTime() : -Infinity;
+    const tB = b.dateTaken ? b.dateTaken.getTime() : -Infinity;
+    if (tA !== tB) return tB - tA;
     return a.file.localeCompare(b.file);
   });
 
@@ -81,11 +119,14 @@ const allImages = buildImageList();
 const Gallery = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
-    const [activeCategory, setActiveCategory] = useState(
+  const [activeCategory, setActiveCategory] = useState(
     () => localStorage.getItem("gallery_activeCategory") || "All",
   );
   const [activeYear, setActiveYear] = useState(
     () => localStorage.getItem("gallery_activeYear") || "All",
+  );
+  const [activeMonth, setActiveMonth] = useState(
+    () => localStorage.getItem("gallery_activeMonth") || "All",
   );
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showMap, setShowMap] = useState(
@@ -98,9 +139,10 @@ const Gallery = () => {
   useEffect(() => {
     localStorage.setItem("gallery_activeCategory", activeCategory);
     localStorage.setItem("gallery_activeYear", activeYear);
+    localStorage.setItem("gallery_activeMonth", activeMonth);
     localStorage.setItem("gallery_showMap", showMap);
     localStorage.setItem("gallery_showFilters", showFilters);
-  }, [activeCategory, activeYear, showMap, showFilters]);
+  }, [activeCategory, activeYear, activeMonth, showMap, showFilters]);
 
   const categories = useMemo(() => {
     const unique = new Set(allImages.flatMap((img) => img.categories));
@@ -108,27 +150,28 @@ const Gallery = () => {
   }, []);
 
   const years = useMemo(() => {
-    const unique = new Set(
-      allImages
-        .map((img) => img.formattedDate)
-        .filter((y) => y !== "Date Unknown"),
-    );
+    const unique = new Set(allImages.map((img) => img.year).filter(Boolean));
     return ["All", ...Array.from(unique).sort((a, b) => b - a)];
+  }, []);
+
+  const months = useMemo(() => {
+    const present = new Set(allImages.map((img) => img.month).filter(Boolean));
+    return ["All", ...MONTH_ORDER.filter((m) => present.has(m))];
   }, []);
 
   const images = useMemo(() => {
     return allImages.filter((img) => {
       const matchesCategory =
         activeCategory === "All" || img.categories.includes(activeCategory);
-      const matchesYear =
-        activeYear === "All" || img.formattedDate === activeYear;
-      return matchesCategory && matchesYear;
+      const matchesYear = activeYear === "All" || img.year === activeYear;
+      const matchesMonth = activeMonth === "All" || img.month === activeMonth;
+      return matchesCategory && matchesYear && matchesMonth;
     });
-  }, [activeCategory, activeYear]);
+  }, [activeCategory, activeYear, activeMonth]);
 
   useEffect(() => {
     setCurrentIndex(0);
-  }, [activeCategory, activeYear]);
+  }, [activeCategory, activeYear, activeMonth]);
 
   const toggleMap = () => {
     setShowMap((prev) => {
@@ -140,10 +183,16 @@ const Gallery = () => {
   const handleCategorySelect = (category) => {
     setActiveCategory(category);
     setActiveYear("All");
+    setActiveMonth("All");
   };
 
   const handleYearSelect = (year) => {
     setActiveYear(year);
+    setActiveCategory("All");
+  };
+
+  const handleMonthSelect = (month) => {
+    setActiveMonth(month);
     setActiveCategory("All");
   };
 
@@ -192,7 +241,7 @@ const Gallery = () => {
         <div className="gallery-card-glass">
           <div className="gallery-toggle-row">
             <button className="map-toggle-btn" onClick={toggleMap}>
-              {showMap ? "✕ Hide World Map" : "View World Map"}
+              {showMap ? "Hide World Map" : "View World Map"}
             </button>
 
             {!showMap && (
@@ -224,6 +273,24 @@ const Gallery = () => {
                       {categories.map((category) => (
                         <option key={category} value={category}>
                           {category}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="filter-group">
+                    <label htmlFor="month-select" className="filter-label">
+                      Month
+                    </label>
+                    <select
+                      id="month-select"
+                      className="filter-select"
+                      value={activeMonth}
+                      onChange={(e) => handleMonthSelect(e.target.value)}
+                    >
+                      {months.map((month) => (
+                        <option key={month} value={month}>
+                          {month}
                         </option>
                       ))}
                     </select>
