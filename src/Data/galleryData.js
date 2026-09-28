@@ -186,7 +186,7 @@ const galleryData = [
     description: "Bull grazing in Epping Forest.",
   },
   // {
-  //   file: "",
+  //   file: "barbican-concrete-lights.JPG",
   //   category: "",
   //   location: "",
   //   coordinates: {},
