@@ -194,7 +194,7 @@ const galleryData = [
   //   description: "",
   // },
   // {
-  //   file: "",
+  //   file: "cctv-hammersmith.JPG",
   //   category: "",
   //   location: "",
   //   coordinates: {},
