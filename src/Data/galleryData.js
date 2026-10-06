@@ -187,7 +187,7 @@ const galleryData = [
   },
   // {
   //   file: "barbican-concrete-lights.JPG",
-  //   category: "",
+  //   category: "Objects",
   //   location: "",
   //   coordinates: {},
   //   date: "",
@@ -195,7 +195,7 @@ const galleryData = [
   // },
   // {
   //   file: "cctv-hammersmith.JPG",
-  //   category: "Objectss",
+  //   category: "Objects",
   //   location: "",
   //   coordinates: {},
   //   date: "",
