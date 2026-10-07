@@ -202,7 +202,7 @@ const galleryData = [
   //   description: "",
   // },
   // {
-  //   file: "",
+  //   file: "close-up-building-londonbridge.JPG",
   //   category: "",
   //   location: "",
   //   coordinates: {},
