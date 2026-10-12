@@ -210,7 +210,7 @@ const galleryData = [
   //   description: "",
   // },
   // {
-  //   file: "",
+  //   file: "epping-bull-long.JPG",
   //   category: "",
   //   location: "",
   //   coordinates: {},
@@ -218,7 +218,7 @@ const galleryData = [
   //   description: "",
   // },
   // {
-  //   file: "",
+  //   file: "epping-tree.JPG",
   //   category: "",
   //   location: "",
   //   coordinates: {},
