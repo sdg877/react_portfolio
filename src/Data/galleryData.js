@@ -275,8 +275,8 @@ const galleryData = [
     description: "Birds and swan on pond.",
   },
   // {
-  //   file: "",
-  //   category: "",
+  //   file: "cat-window-malta.JPG",
+  //   category: "Animals",
   //   location: "",
   //   coordinates: {},
   //   date: "",
