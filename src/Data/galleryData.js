@@ -277,7 +277,7 @@ const galleryData = [
   // {
   //   file: "cat-window-malta.JPG",
   //   category: "Animals",
-  //   location: "",
+  //   location: "Valletta, Malta",
   //   coordinates: {},
   //   date: "",
   //   description: "",
