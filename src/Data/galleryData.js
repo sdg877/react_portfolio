@@ -279,7 +279,7 @@ const galleryData = [
   //   category: "Animals",
   //   location: "Valletta, Malta",
   //   coordinates: {},
-  //   date: "",
+  //   date: "03/2026",
   //   description: "",
   // },
   // {
