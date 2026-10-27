@@ -283,7 +283,7 @@ const galleryData = [
   //   description: "",
   // },
   // {
-  //   file: "",
+  //   file: "statue-NGS.JPG",
   //   category: "",
   //   location: "",
   //   coordinates: {},
