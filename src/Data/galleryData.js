@@ -284,8 +284,8 @@ const galleryData = [
   // },
   // {
   //   file: "statue-NGS.JPG",
-  //   category: "",
-  //   location: "",
+  //   category: "Objects",
+  //   location: "Edinburgh",
   //   coordinates: {},
   //   date: "",
   //   description: "",
