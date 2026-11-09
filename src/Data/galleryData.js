@@ -288,7 +288,7 @@ const galleryData = [
   //   location: "Edinburgh",
   //   coordinates: {},
   //   date: "",
-  //   description: "",
+  //   description: "Statue at Edinburg Castle",
   // },
   // {
   //   file: "",
