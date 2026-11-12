@@ -292,7 +292,7 @@ const galleryData = [
   // ",
   // },
   // {
-  //   file: "",
+  //   file: "gozo-harbour.JPG",
   //   category: "",
   //   location: "",
   //   coordinates: {},
