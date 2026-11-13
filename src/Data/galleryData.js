@@ -300,7 +300,7 @@ const galleryData = [
   //   description: "",
   // },
   // {
-  //   file: "",
+  //   file: "edinburgh-beach.JPG",
   //   category: "",
   //   location: "",
   //   coordinates: {},
