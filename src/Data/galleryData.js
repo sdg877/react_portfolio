@@ -293,7 +293,7 @@ const galleryData = [
   // },
   // {
   //   file: "gozo-harbour.JPG",
-  //   category: "",
+  //   category: "Nature",
   //   location: "",
   //   coordinates: {},
   //   date: "",
@@ -301,7 +301,7 @@ const galleryData = [
   // },
   // {
   //   file: "edinburgh-beach.JPG",
-  //   category: "",
+  //   category: "Nature",
   //   location: "",
   //   coordinates: {},
   //   date: "",
