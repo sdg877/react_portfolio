@@ -308,7 +308,7 @@ const galleryData = [
   //   description: "",
   // },
   // {
-  //   file: "",
+  //   file: "cctv-edgware-road.JPG",
   //   category: "",
   //   location: "",
   //   coordinates: {},
