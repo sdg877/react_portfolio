@@ -302,7 +302,7 @@ const galleryData = [
   // {
   //   file: "edinburgh-beach.JPG",
   //   category: "Nature",
-  //   location: "",
+  //   location: "Portobello, Edinburgh",
   //   coordinates: {},
   //   date: "",
   //   description: "",
@@ -310,7 +310,7 @@ const galleryData = [
   // {
   //   file: "cctv-edgware-road.JPG",
   //   category: "Objects",
-  //   location: "",
+  //   location: "Edgware Road",
   //   coordinates: {},
   //   date: "",
   //   description: "",
