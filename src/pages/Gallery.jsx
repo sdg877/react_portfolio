@@ -347,9 +347,6 @@ const Gallery = () => {
                     <span className="meta-item">
                       {currentImage.formattedDate}
                     </span>
-                    <span className="meta-counter">
-                      {currentIndex + 1} / {images.length}
-                    </span>
                   </div>
 
                   {currentImage.description && (
