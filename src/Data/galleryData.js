@@ -304,7 +304,7 @@ const galleryData = [
   //   category: "Nature",
   //   location: "Portobello, Edinburgh",
   //   coordinates: {},
-  //   date: "",
+  //   date: "10/2021",
   //   description: "",
   // },
   // {
@@ -312,7 +312,7 @@ const galleryData = [
   //   category: "Objects",
   //   location: "Edgware Road",
   //   coordinates: {},
-  //   date: "",
+  //   date: "09/2026",
   //   description: "",
   // },
   // {
