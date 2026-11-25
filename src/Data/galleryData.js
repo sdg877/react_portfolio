@@ -317,7 +317,7 @@ const galleryData = [
   // },
   // {
   //   file: "clouds-mitcham.JPG",
-  //   category: "",
+  //   category: "Nature",
   //   location: "",
   //   coordinates: {},
   //   date: "",
