@@ -381,7 +381,7 @@ const galleryData = [
   // },
   // {
   //   file: "malta-cross-carve.JPG",
-  //   category: "",
+  //   category: "Objects",
   //   location: "",
   //   coordinates: {},
   //   date: "",
@@ -389,7 +389,7 @@ const galleryData = [
   // },
   // {
   //   file: "parakeet-flying-tree.JPG",
-  //   category: "",
+  //   category: "Animals",
   //   location: "",
   //   coordinates: {},
   //   date: "",
